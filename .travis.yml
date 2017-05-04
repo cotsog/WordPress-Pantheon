@@ -35,15 +35,3 @@ script:
 
 after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
-
-after_success:
-    - |
-          if [ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
-              git config --global user.name "Travis Owl Repo"
-              git config --global user.email "merenuou@gmail.com"
-              ssh-keyscan -p 2222 codeserver.dev.drush.in >> ~/.ssh/known_hosts
-              git remote add pantheonUpstream ssh://codeserver.dev.repository.git
-              git fetch pantheonUpstream
-              git merge -s ours -m "Merge changes from pantheon using the ours merge strategy" pantheonUpstream/master
-              git push pantheon HEAD:master
-          fi
