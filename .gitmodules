@@ -6,3 +6,7 @@
 # 	path = wp-content/plugins/owl-utility
 # 	url = https://github.com/OWL-Labs/owl-utility.git
 # 	branch = master
+[submodule "dev-lib"]
+	path = dev-lib
+	url = https://github.com/OWL-Labs/wp-dev-lib.git
+	branch = master
