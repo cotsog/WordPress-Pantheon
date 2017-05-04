@@ -14,6 +14,7 @@ env:
     global:
         - WP_MULTISITE=1
         - PHANTOMJS_CDNURL='http://files.urldocs.com/share/phantomjs'
+        - SITE_UUID='ecc3a39c-c237-415b-b8fc-b00f58e1eb69'
 
 branches:
     only:
@@ -41,8 +42,19 @@ after_success:
           if [ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
               git config --global user.name "Travis Owl Repo"
               git config --global user.email "merenuou@gmail.com"
-              ssh-keyscan -p 2222 codeserver.dev.drush.in >> ~/.ssh/known_hosts
-              git remote add pantheonUpstream ssh://codeserver.dev.repository.git
+              ssh-keyscan -p 2222 codeserver.dev.$PANTHEON_UUID.drush.in >> ~/.ssh/known_hosts
+              git remote add pantheon ssh://codeserver.dev.$PANTHEON_UUID@codeserver.dev.$PANTHEON_UUID.drush.in:2222/~/repository.git
+              git fetch pantheon
+              git merge -s ours -m "Merge changes from pantheon using ours merge strategy" pantheon/master
+              git push pantheon HEAD:master
+          fi
+after_success:
+    - |
+          if [ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
+              git config --global user.name "Travis Owl Repo"
+              git config --global user.email "merenuou@gmail.com"
+              ssh-keyscan -p 2222 codeserver.dev.$SITE_UUID.drush.in >> ~/.ssh/known_hosts
+              git remote add pantheonUpstream ssh://codeserver.dev.$SITE_UUID@codeserver.dev.$SITE_UUID.drush.in:2222/~/repository.git
               git fetch pantheonUpstream
               git merge -s ours -m "Merge changes from pantheon using the ours merge strategy" pantheonUpstream/master
               git push pantheon HEAD:master
