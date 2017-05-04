@@ -103,7 +103,7 @@ For testing out environment / devOp / WP workflow tools.
 1. Get otestsite git repo.
 
 ```
-cd ../www/otestsite.com
+cd ../www/otestsite
 then
 git clone --recursive git@github.com:OWL-Labs/WordPress-Pantheon.git htdocs
 cd htdocs
