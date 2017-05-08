@@ -16,37 +16,8 @@ env:
         - PHANTOMJS_CDNURL='http://files.urldocs.com/share/phantomjs'
         - SITE_UUID='ecc3a39c-c237-415b-b8fc-b00f58e1eb69'
 
-before_install:
-    - WP_VERSION=$( cat ./wp-includes/version.php | grep 'wp_version =' | grep -oE '[0-9][0-9]*\.[0-9][0-9]*(\.[0-9][0-9]*)*(-[0-9a-z]*)*' )
-    - echo "WP_VERSION=$WP_VERSION"
-
-install:
-    - export DEV_LIB_PATH=dev-lib
-    - if [ ! -e "$DEV_LIB_PATH" ] && [ -L .travis.yml ]; then export DEV_LIB_PATH=$( dirname $( readlink .travis.yml ) ); fi
-    - if [ ! -e "$DEV_LIB_PATH" ]; then git clone https://github.com/OWL-Labs/wp-dev-lib.git $DEV_LIB_PATH; fi
-    - set -x
-    - source $DEV_LIB_PATH/travis.install.sh
-sudo: false
-
-language:
-    - php
-    - node_js
-
-php:
-    - 5.5
-
-node_js:
-    - stable
-
-env:
-    global:
-        - WP_MULTISITE=1
-        - PHANTOMJS_CDNURL='http://files.urldocs.com/share/phantomjs'
-        - SITE_UUID='ecc3a39c-c237-415b-b8fc-b00f58e1eb69'
-
 branches:
     only:
-        - master
         - production
 
 before_install:
