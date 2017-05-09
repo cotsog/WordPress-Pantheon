@@ -40,7 +40,7 @@ after_success:
     - |
           if [ $TRAVIS_BRANCH == 'production' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
               git config --global user.name "Travis Owl Repo"
-              git config --global user.email "merenuou@gmail.com"
+              git config --global user.email "merenuou@yahoo.com"
               ssh-keyscan -p 2222 codeserver.dev.$SITE_UUID.drush.in >> ~/.ssh/known_hosts
               git remote add pantheonUpstream ssh://codeserver.dev.$SITE_UUID@codeserver.dev.$SITE_UUID.drush.in:2222/~/repository.git
               git fetch pantheonUpstream
