@@ -10,7 +10,6 @@ php:
 node_js:
     - stable
 
-
 env:
     global:
         - WP_MULTISITE=1
