@@ -36,8 +36,6 @@ script:
 
 after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
-
-
 after_success:
     - |
           if [ $TRAVIS_BRANCH == 'production' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
