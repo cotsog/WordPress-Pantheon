@@ -38,8 +38,10 @@ script:
 
 after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
+
 after_success:
     - declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/github_deploy_key)"
+
        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
        # Decrypt the file containing the private key
