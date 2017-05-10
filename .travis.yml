@@ -41,7 +41,7 @@ after_script:
 
 after_success:
       - |
-       declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/github_deploy_key)"
+       declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/XXXXX)"
 
        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
