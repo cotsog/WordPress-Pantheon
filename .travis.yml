@@ -40,7 +40,8 @@ after_script:
     - source $DEV_LIB_PATH/travis.after_script.sh
 
 after_success:
-    - declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/github_deploy_key)"
+      - |
+       declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/github_deploy_key)"
 
        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -61,7 +62,8 @@ after_success:
               "Host github.com" \
               "  IdentityFile $SSH_FILE" \
               "  LogLevel ERROR" >> ~/.ssh/config
-    - |
+
+
           if [ $TRAVIS_BRANCH == 'production' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
               git config --global user.name "Travis Owl"
               git config --global user.email "merenuou@gmail.com"
