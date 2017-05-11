@@ -37,12 +37,12 @@ script:
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 after_success:
-  - git config --global user.email "merenuou@gmail.com"
-  - git config --global user.name "unerem"
-  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
-  - ls -R
+  #- git config --global user.email "talk@quietnoise.com"
+  #- git config --global user.name "Your Name"
+  #- export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
+  #- git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  #- git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
+  #- ls -R
 
 deploy:
   provider: releases
