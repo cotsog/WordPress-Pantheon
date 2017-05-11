@@ -41,7 +41,7 @@ after_success:
   - git config --global user.name "unerem"
   - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
+  - git push -q git://github.com/OWL-Labs/WordPress-Pantheon.git --tags
   - ls -R
 
 deploy:
