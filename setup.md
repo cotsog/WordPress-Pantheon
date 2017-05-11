@@ -29,25 +29,6 @@ git diff --staged # sanity check
 git commit
 git push origin master
 ```
-
-There is a script for updating plugins. You can define the plugins from WordPress.org to keep updated by creating a file `private/wordpress-org-plugins.txt` which contains a list of the slugs you want to update:
-
-```
-wp-redis
-jetpack
-customize-widgets-plus
-```
-
-You can then run [`private/update.sh`](private/update.sh) inside of Vagrant (you'll want to make sure you have first [set your git identity](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#Your-Identity) inside of Vagrant).
-
-Any additional update logic can be committed to `private/update-custom.sh`.
-
-You can also get the latest from this repo via:
-
-```bash
-git pull https://github.com/xwp/pantheon-wordpress-upstream.git master
-```
-
 ## Public Environments and Deployments
 
 The site is hosted with Pantheon.
