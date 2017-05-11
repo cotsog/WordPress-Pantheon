@@ -2,7 +2,7 @@ sudo: false
 
 language:
     - php
-    - node_js
+    #- node_js
 
 php:
     - 5.5 # set for current environ
@@ -14,7 +14,7 @@ node_js:
 env:
     global:
         - WP_MULTISITE=1
-        - PHANTOMJS_CDNURL='http://files.urldocs.com/share/phantomjs'
+      #  - PHANTOMJS_CDNURL='http://files.urldocs.com/share/phantomjs'
 
 branches:
     only:
