@@ -37,9 +37,8 @@ script:
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 after_success:
-  api_key:
-    secure: Ifdvkr/pPrqHJTh4SMhabEJB4O5HS8nHn8YC24T/nx5DcxW5BcmpGG1ul9WzPcCtDsFWo+vAGawjf/Ex05q9VniXLToKhUu8pT36n0pLQDbfSRmmSE6WELUJoF5643tReYa+FD41O0fTqve/65pzwC2CvrUqSLx1bArs1N2igN+6Qw4IVzddh7O/Srol6uRzoWkRtkJPHD+Ena2jBfXQaORHwPXKLtUiNZI/r8tRnVCxvXy6LE/IRfwqYarRm+2j2gS1pCoTICv92SlLoOueccLVJPaqXfRVfCTppudHrJi3XiqTc38uH6X6sldW4GwP/zOhTmjbPLSiWlSkWYsc0wWKY71HOmq6+KTwkhYCZGIKqTwyoJi5+SBfUKFvEOlS4GvI4SywLgSXvO1gYTblubkHPYWIRuijEZnExvnRwrjFsb0PldUj6xeLI0v0UHZHo4vzPxLoAFt+InSZSR8Aizp+JM37UC9k1ddH3yL/UMtMJbI4/ZMLt5kj1YIDyYgUb66GP5NkA2G2UH2NBfkfXeqGSRVMg4X0QnXZutf9ztq0UgMD4T11gpatS007DSs3G4UDxNZKdxo7Y4akxLXVGVw+hCzwYu/9sWzfcNfgZtA+aoKdkuvRQVfFL39nkq7U7kJVXbrlEpA2FLkT69Cx0rBrKpoP2imV5lQtWMAI/Y4=
-
+  - git config --global user.email "talk@quietnoise.io"
+  - git config --global user.name "unerem"
   - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
   - git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
