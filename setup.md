@@ -6,15 +6,13 @@
 	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" />
 </head>
 <body>
-<h1 id="logo">
-	<a href="https://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a>
-</h1>
 
 # otestsite
 For testing out environment / devOp / WP workflow tools.
 [![Build Status](https://travis-ci.org/OWL-Labs/WordPress-Pantheon.svg?branch=master)](https://travis-ci.org/OWL-Labs/WordPress-Pantheon)
 
-<p style="text-align: center">Semantic Personal Publishing Platform</p>
+<p style="text-align: center">
+[[For more]](https://github.com/OWL-Labs/Notepad/blob/master/working_with_pantheon.md)</p>
 
 ## Upgrading
 
@@ -60,6 +58,6 @@ cd htdocs
 2. Config values.
 
 These are found in the `private` folder.
-
+  
 </body>
 </html>
