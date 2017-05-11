@@ -9,7 +9,7 @@
 [submodule "dev-lib"]
 	path = dev-lib
 	url = https://github.com/OWL-Labs/wp-dev-lib.git
-	branch = master	
+	branch = master
 [submodule "owl-utility"]
 	 	path = wp-content/plugins/owl-utility
 	 	url = https://github.com/OWL-Labs/owl-utility.git

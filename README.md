@@ -1,5 +1,8 @@
 # WordPress
 [![Build Status](https://travis-ci.org/OWL-Labs/WordPress-Pantheon.svg?branch=master)](https://travis-ci.org/OWL-Labs/WordPress-Pantheon)
+
+
+ [setup platform](https://github.com/OWL-Labs/WordPress-Pantheon/blob/master/setup.md).
 This is a WordPress repository configured to run on the [Pantheon platform](https://pantheon.io).
 
 Pantheon is website platform optimized and configured to run high performance sites with an amazing developer workflow. There is built-in support for features such as Varnish, Redis, Apache Solr, New Relic, Nginx, PHP-FPM, MySQL, PhantomJS and more. 
