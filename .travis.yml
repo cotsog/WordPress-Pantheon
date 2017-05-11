@@ -5,8 +5,7 @@ language:
     #- node_js
 
 php:
-    - 5.5 # set for current environment
-    - 7.0 # set for future environment
+    - 7.0 
 
 node_js:
     - stable
