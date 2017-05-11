@@ -5,7 +5,7 @@ language:
 - node_js
 
 php:
-    - 7.0 
+    - 7.0
 
 node_js:
 - stable
@@ -37,10 +37,10 @@ script:
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 after_success:
-  #- export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  #- git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  #- git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
-  #- ls -R
+  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://github.com/OWL-Labs/WordPress-Pantheon.git --tags
+  - ls -R
 
 deploy:
   provider: releases
