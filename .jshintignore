@@ -1,4 +1,4 @@
 **/*.min.js
 **/node_modules/**
 **/vendor/**
-**/gruntfile.js
+**/Gruntfile.js
