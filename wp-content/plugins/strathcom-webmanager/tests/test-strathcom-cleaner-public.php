@@ -16,7 +16,7 @@ class Strathcom_Cleaner_Public_Test extends WP_UnitTestCase {
 	public function test_sample() {
 
 	    // boilerplate WIP for tester
-			// 	$class = new Strathcom_Cleaner_Public();
+			// $class = new Strathcom_Cleaner_Public();
 			// $class->strat_ob_class_slug();
 			//
 			// $this->assertTrue( true );

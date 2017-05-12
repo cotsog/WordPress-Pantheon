@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- *
+ * Di.
  *
  * @since      1.0.0
  * @package    Strathcom_Cleaner
@@ -24,7 +24,4 @@ class Strathcom_Cleaner_i18n {
 		);
 
 	}
-
-
-
 }

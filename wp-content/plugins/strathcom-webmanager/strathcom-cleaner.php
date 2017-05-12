@@ -19,8 +19,8 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (! defined('WPINC') ) {
+    die;
 }
 
 /**
@@ -28,9 +28,10 @@ if ( ! defined( 'WPINC' ) ) {
  *
  * @return void
  */
-function activate_strathcom_cleaner() {
-	include_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-activator.php';
-	Strathcom_Cleaner_Activator::activate();
+function activate_strathcom_cleaner() 
+{
+    include_once plugin_dir_path(__FILE__) . 'includes/class-strathcom-cleaner-activator.php';
+    Strathcom_Cleaner_Activator::activate();
 }
 
 /**
@@ -38,29 +39,31 @@ function activate_strathcom_cleaner() {
  *
  * @return void
  */
-function deactivate_strathcom_cleaner() {
-	include_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-deactivator.php';
-	Strathcom_Cleaner_Deactivator::deactivate();
+function deactivate_strathcom_cleaner() 
+{
+    include_once plugin_dir_path(__FILE__) . 'includes/class-strathcom-cleaner-deactivator.php';
+    Strathcom_Cleaner_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_strathcom_cleaner' );
-register_deactivation_hook( __FILE__, 'deactivate_strathcom_cleaner' );
+register_activation_hook(__FILE__, 'activate_strathcom_cleaner');
+register_deactivation_hook(__FILE__, 'deactivate_strathcom_cleaner');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner.php';
+require plugin_dir_path(__FILE__) . 'includes/class-strathcom-cleaner.php';
 
 /**
  * .
  *
  * @return void
  */
-function run_strathcom_cleaner() {
+function run_strathcom_cleaner() 
+{
 
-	$plugin = new Strathcom_Cleaner();
-	$plugin->run();
+    $plugin = new Strathcom_Cleaner();
+    $plugin->run();
 
 }
 run_strathcom_cleaner();

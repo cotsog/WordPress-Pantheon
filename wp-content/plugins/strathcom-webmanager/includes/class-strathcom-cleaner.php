@@ -57,7 +57,6 @@ class Strathcom_Cleaner {
 	/**
 	 * Load the required dependencies for this plugin.
 	 *
-	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
@@ -65,7 +64,6 @@ class Strathcom_Cleaner {
 	 * @access   private
 	 */
 	private function load_dependencies() {
-
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-strathcom-cleaner-loader.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-strathcom-cleaner-i18n.php';
@@ -103,8 +101,7 @@ class Strathcom_Cleaner {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'options_update');
-
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'options_update' );
 
 		// Add menu item
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_admin_menu' );
@@ -126,19 +123,18 @@ class Strathcom_Cleaner {
 		$plugin_public = new Strathcom_Cleaner_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'init', $plugin_public, 'strat_cleanup' );
-        $this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_remove_comments_inline_styles' );
-        $this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_remove_gallery_styles' );
-        $this->loader->add_action( 'wp_enqueue_style', $plugin_public, 'dequeue_styles', PHP_INT_MAX );
-        $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'dequeue_scripts', PHP_INT_MAX );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_remove_comments_inline_styles' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_remove_gallery_styles' );
+		$this->loader->add_action( 'wp_enqueue_style', $plugin_public, 'dequeue_styles', PHP_INT_MAX );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'dequeue_scripts', PHP_INT_MAX );
 		$this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_clear_post_revisions' );
-        $this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_clear_spam_comments' );
-        $this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_clear_awaiting_moderation' );
-        $this->loader->add_action( 'wp_loaded', $plugin_public, 'disable_front_page_redirect' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_clear_spam_comments' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'strat_clear_awaiting_moderation' );
+		$this->loader->add_action( 'wp_loaded', $plugin_public, 'disable_front_page_redirect' );
 
-           //Filters
-        $this->loader->add_filter( 'wp_headers', $plugin_public, 'strat_remove_x_pingback' );
-        $this->loader->add_filter( 'body_class', $plugin_public, 'strat_ob_class_slug' );
-
+		   // Filters
+		$this->loader->add_filter( 'wp_headers', $plugin_public, 'strat_remove_x_pingback' );
+		$this->loader->add_filter( 'body_class', $plugin_public, 'strat_ob_class_slug' );
 
 	}
 
