@@ -1,0 +1,12 @@
+.slide-image img {
+    height: auto;
+    width: 100%;
+}
+
+.slide-size-warning {
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #dc3232;
+    overflow: hidden;
+    padding: 0 0 0 15px;
+    background: #f1f1f1;
+}

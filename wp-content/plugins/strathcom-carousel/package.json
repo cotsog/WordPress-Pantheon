@@ -1,0 +1,14 @@
+{
+  "name": "strathcom-carousel",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "XWP",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}

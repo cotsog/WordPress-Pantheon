@@ -1,7 +1,4 @@
 <?php
-/**
- * @package Admin
- */
 class Wbounce_Admin_Options {
 
 	private $animationOptions = array(

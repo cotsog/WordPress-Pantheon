@@ -1,0 +1,9 @@
+.p2p-results,
+.p2p-connections {
+    border-radius: 0;
+}
+
+.p2p-col-title .strathcom-carousel-preview-image {
+    max-width: 300px;
+    max-height: 100%;
+}

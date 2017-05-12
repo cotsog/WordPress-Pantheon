@@ -1,0 +1,568 @@
+# Copyright (C) 2016 Strathcom Carousel
+# This file is distributed under the same license as the Strathcom Carousel package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Strathcom Carousel 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/strathcom-"
+"carousel\n"
+"POT-Creation-Date: 2016-10-03 12:31:49+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: php/class-admin.php:42 php/class-admin.php:43
+#: php/class-custom-post-types.php:61 php/class-custom-post-types.php:62
+#: php/class-custom-post-types.php:63
+msgid "New Slide"
+msgstr ""
+
+#: php/class-archive.php:70 php/class-archive.php:93
+msgid "Archived"
+msgstr ""
+
+#: php/class-archive.php:100
+msgid "Archived <span class=\"count\">(%s)</span>"
+msgid_plural "Archived <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: php/class-archive.php:168
+msgid "Ready to Archive?"
+msgstr ""
+
+#: php/class-archive.php:171 php/class-archive.php:197
+msgid "This slide currently appears in the following Carousels:"
+msgstr ""
+
+#: php/class-archive.php:177
+msgid "Archiving this slide will remove it from the above items."
+msgstr ""
+
+#: php/class-archive.php:179
+msgid "Archiving this slide will not affect any Carousels."
+msgstr ""
+
+#: php/class-archive.php:181
+msgid "This slide will not be deleted."
+msgstr ""
+
+#: php/class-archive.php:185 php/class-archive.php:211
+msgid "Cancel"
+msgstr ""
+
+#: php/class-archive.php:189
+msgid "Proceed with Archiving"
+msgstr ""
+
+#: php/class-archive.php:194
+msgid "Ready to Delete?"
+msgstr ""
+
+#: php/class-archive.php:203
+msgid "Deleting this slide will remove it from the above items."
+msgstr ""
+
+#: php/class-archive.php:205
+msgid "Deleting this slide will not affect any Carousels."
+msgstr ""
+
+#: php/class-archive.php:207
+msgid "This slide will not be recoverable."
+msgstr ""
+
+#: php/class-archive.php:215
+msgid "Proceed with Deletion"
+msgstr ""
+
+#: php/class-archive.php:286
+msgid "Archive"
+msgstr ""
+
+#: php/class-carousel-admin.php:51
+msgid "Carousel Properties"
+msgstr ""
+
+#: php/class-carousel-admin.php:70
+msgid "Slide Display Time (in seconds)"
+msgstr ""
+
+#: php/class-carousel-admin.php:74
+msgid "Enable Graphical Incentives"
+msgstr ""
+
+#: php/class-carousel-admin.php:87
+msgid "Carousel Aspect Ratio"
+msgstr ""
+
+#: php/class-carousel-widget.php:33
+msgid "Add a carousel"
+msgstr ""
+
+#: php/class-carousel-widget.php:68
+msgid "Select Carousel:"
+msgstr ""
+
+#: php/class-carousel-widget.php:75 php/class-shortcode.php:73
+msgid "Select a Carousel"
+msgstr ""
+
+#: php/class-carousel-widget.php:81 php/class-shortcode.php:79
+msgid "Please create a Carousel first"
+msgstr ""
+
+#: php/class-custom-post-types.php:60 php/class-posts-to-posts.php:79
+msgid "Slides"
+msgstr ""
+
+#: php/class-custom-post-types.php:64
+msgid "Edit Slide"
+msgstr ""
+
+#: php/class-custom-post-types.php:65
+msgid "Update Slide"
+msgstr ""
+
+#: php/class-custom-post-types.php:66
+msgid "View Slide"
+msgstr ""
+
+#: php/class-custom-post-types.php:67 php/class-posts-to-posts.php:80
+msgid "Search Slides"
+msgstr ""
+
+#: php/class-custom-post-types.php:68 php/class-custom-post-types.php:116
+#: php/class-custom-post-types.php:167
+msgid "Not found"
+msgstr ""
+
+#: php/class-custom-post-types.php:69 php/class-custom-post-types.php:117
+#: php/class-custom-post-types.php:168
+msgid "Not found in Trash"
+msgstr ""
+
+#: php/class-custom-post-types.php:70 php/class-custom-post-types.php:118
+#: php/class-custom-post-types.php:169
+msgid "Featured Image"
+msgstr ""
+
+#: php/class-custom-post-types.php:71 php/class-custom-post-types.php:119
+#: php/class-custom-post-types.php:170
+msgid "Set featured image"
+msgstr ""
+
+#: php/class-custom-post-types.php:72 php/class-custom-post-types.php:120
+#: php/class-custom-post-types.php:171
+msgid "Remove featured image"
+msgstr ""
+
+#: php/class-custom-post-types.php:73 php/class-custom-post-types.php:121
+#: php/class-custom-post-types.php:172
+msgid "Use as featured image"
+msgstr ""
+
+#: php/class-custom-post-types.php:74
+msgid "Insert into Slide"
+msgstr ""
+
+#: php/class-custom-post-types.php:75
+msgid "Uploaded to this Slide"
+msgstr ""
+
+#: php/class-custom-post-types.php:76
+msgid "Slides list"
+msgstr ""
+
+#: php/class-custom-post-types.php:77
+msgid "Slides list navigation"
+msgstr ""
+
+#: php/class-custom-post-types.php:78
+msgid "Filter Slides list"
+msgstr ""
+
+#: php/class-custom-post-types.php:108 php/class-gi-list.php:122
+#: php/class-posts-to-posts.php:72
+msgid "Carousels"
+msgstr ""
+
+#: php/class-custom-post-types.php:109 php/class-custom-post-types.php:110
+#: php/class-custom-post-types.php:111
+msgid "New Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:112
+msgid "Edit Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:113
+msgid "Update Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:114
+msgid "View Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:115 php/class-posts-to-posts.php:73
+msgid "Search Carousels"
+msgstr ""
+
+#: php/class-custom-post-types.php:122
+msgid "Insert into Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:123
+msgid "Uploaded to this Carousel"
+msgstr ""
+
+#: php/class-custom-post-types.php:124
+msgid "Carousels list"
+msgstr ""
+
+#: php/class-custom-post-types.php:125
+msgid "Carousels list navigation"
+msgstr ""
+
+#: php/class-custom-post-types.php:126
+msgid "Filter Carousels list"
+msgstr ""
+
+#: php/class-custom-post-types.php:159 php/class-gi-list.php:52
+#: php/class-gi-utils.php:113 php/class-gi-utils.php:114
+msgid "Graphical Incentives"
+msgstr ""
+
+#: php/class-custom-post-types.php:160
+msgid "Add Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:161 php/class-custom-post-types.php:162
+#: php/class-gi-utils.php:123 php/class-gi-utils.php:124
+msgid "New Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:163 php/class-gi-add-edit.php:66
+msgid "Edit Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:164
+msgid "Update Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:165
+msgid "View Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:166
+msgid "Search Graphical Incentives"
+msgstr ""
+
+#: php/class-custom-post-types.php:173
+msgid "Insert into Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:174
+msgid "Uploaded to this Graphical Incentive"
+msgstr ""
+
+#: php/class-custom-post-types.php:175
+msgid "Graphical Incentives list"
+msgstr ""
+
+#: php/class-custom-post-types.php:176
+msgid "Graphical Incentives list navigation"
+msgstr ""
+
+#: php/class-custom-post-types.php:177
+msgid "Filter Graphical Incentives list"
+msgstr ""
+
+#: php/class-gi-add-edit.php:69
+msgid "Graphical Incentive updated."
+msgstr ""
+
+#: php/class-gi-add-edit.php:74
+msgid "Add New Graphical Incentive"
+msgstr ""
+
+#: php/class-gi-add-edit.php:78
+msgid "Errors found. Please check your entries and save again."
+msgstr ""
+
+#: php/class-gi-add-edit.php:94 php/class-gi-list.php:121
+msgid "Start/End Date"
+msgstr ""
+
+#: php/class-gi-add-edit.php:97
+msgid "Current Status:"
+msgstr ""
+
+#: php/class-gi-add-edit.php:99
+msgid "Current Time: "
+msgstr ""
+
+#: php/class-gi-add-edit.php:109 php/class-gi-list.php:123
+msgid "Image"
+msgstr ""
+
+#: php/class-gi-add-edit.php:117
+msgid "Add to Carousels"
+msgstr ""
+
+#: php/class-gi-add-edit.php:120
+msgid "Filter sites: "
+msgstr ""
+
+#: php/class-gi-add-edit.php:134
+msgid "No sites match the filters selected"
+msgstr ""
+
+#: php/class-gi-add-edit.php:143
+msgid "Save"
+msgstr ""
+
+#: php/class-gi-add-edit.php:163 php/class-gi-add-edit.php:164
+msgid "Enter title here"
+msgstr ""
+
+#: php/class-gi-add-edit.php:183 php/class-slide-admin.php:176
+msgid "Slide Link URL"
+msgstr ""
+
+#: php/class-gi-add-edit.php:188 php/class-slide-admin.php:187
+msgid "Open In"
+msgstr ""
+
+#: php/class-gi-add-edit.php:190 php/class-slide-admin.php:189
+msgid "Existing Window/Tab"
+msgstr ""
+
+#: php/class-gi-add-edit.php:191 php/class-slide-admin.php:190
+msgid "New Window/Tab"
+msgstr ""
+
+#: php/class-gi-add-edit.php:254
+msgid ""
+"Warning! The image is smaller than the minimum size of %dx%d pixels and will "
+"not be displayed."
+msgstr ""
+
+#: php/class-gi-add-edit.php:276
+msgid "Choose or Upload an Image"
+msgstr ""
+
+#: php/class-gi-add-edit.php:279
+msgid "Remove Image"
+msgstr ""
+
+#: php/class-gi-add-edit.php:296
+msgid "All OEMs"
+msgstr ""
+
+#: php/class-gi-add-edit.php:300
+msgid "All Countries"
+msgstr ""
+
+#: php/class-gi-add-edit.php:301
+msgid "Canada"
+msgstr ""
+
+#: php/class-gi-add-edit.php:302
+msgid "United States"
+msgstr ""
+
+#: php/class-gi-add-edit.php:305
+msgid "All Provinces"
+msgstr ""
+
+#: php/class-gi-add-edit.php:309
+msgid "Filter"
+msgstr ""
+
+#: php/class-gi-list.php:80
+msgid "Edit"
+msgstr ""
+
+#: php/class-gi-list.php:81
+msgid "Trash"
+msgstr ""
+
+#: php/class-gi-list.php:88
+msgid "Start:"
+msgstr ""
+
+#: php/class-gi-list.php:90
+msgid "End:"
+msgstr ""
+
+#: php/class-gi-list.php:119
+msgid "Title"
+msgstr ""
+
+#: php/class-gi-list.php:120
+msgid "Current Status"
+msgstr ""
+
+#: php/class-gi-list.php:136
+msgid "None"
+msgstr ""
+
+#: php/class-gi-list.php:139
+msgid "%s Carousel"
+msgid_plural "%s Carousels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: php/class-gi-list.php:153
+msgid "Expired"
+msgstr ""
+
+#: php/class-gi-list.php:155
+msgid "Scheduled"
+msgstr ""
+
+#: php/class-gi-list.php:157
+msgid "Published"
+msgstr ""
+
+#: php/class-gi-list.php:159
+msgid "Unpublished"
+msgstr ""
+
+#: php/class-gi-list.php:212
+msgid "Incentive deleted."
+msgstr ""
+
+#: php/class-gi-utils.php:266
+msgid "No input data for saving."
+msgstr ""
+
+#: php/class-gi-utils.php:278
+msgid "Graphical Incentive Not Saved."
+msgstr ""
+
+#: php/class-gi-utils.php:394
+msgid "No data sent."
+msgstr ""
+
+#: php/class-gi-utils.php:404
+msgid "Incentive did not delete"
+msgstr ""
+
+#: php/class-gi-utils.php:721 php/class-slide-admin.php:306
+msgid "Select or upload a slide image"
+msgstr ""
+
+#: php/class-gi-utils.php:722 php/class-slide-admin.php:307
+msgid "Insert slide image"
+msgstr ""
+
+#: php/class-gi-utils.php:723
+msgid ""
+"This Graphical Incentive will be permanently deleted.  Do you want to "
+"proceed?"
+msgstr ""
+
+#: php/class-posts-to-posts.php:68 php/class-posts-to-posts.php:76
+msgid "Connected Slides"
+msgstr ""
+
+#: php/class-posts-to-posts.php:69 php/class-posts-to-posts.php:83
+msgid "Connected Carousels"
+msgstr ""
+
+#: php/class-posts-to-posts.php:74
+msgid "No Carousels found."
+msgstr ""
+
+#: php/class-posts-to-posts.php:75
+msgid "Add to Carousel"
+msgstr ""
+
+#: php/class-posts-to-posts.php:81
+msgid "No Slides found."
+msgstr ""
+
+#: php/class-posts-to-posts.php:82
+msgid "Add Slide"
+msgstr ""
+
+#: php/class-posts-to-posts.php:105
+msgid ""
+"Warning! This image is smaller than the minimum size of %dx%d pixels and "
+"will not be displayed."
+msgstr ""
+
+#: php/class-shortcode.php:84
+msgid "Carousel"
+msgstr ""
+
+#: php/class-shortcode.php:88
+msgid "Select Carousel"
+msgstr ""
+
+#: php/class-slide-admin.php:107
+msgid "Select Slide"
+msgstr ""
+
+#: php/class-slide-admin.php:108
+msgid "Slide Settings"
+msgstr ""
+
+#: php/class-slide-admin.php:126
+msgid ""
+"Warning! This image is smaller than the minimum size of %1$dx%2$d pixels and "
+"will not be displayed."
+msgstr ""
+
+#: php/class-slide-admin.php:138
+msgid "Choose or upload a slide"
+msgstr ""
+
+#: php/class-slide-admin.php:142
+msgid "Remove slide"
+msgstr ""
+
+#: php/class-slide-admin.php:170
+msgid "Slide Linking Options"
+msgstr ""
+
+#: php/class-slide-admin.php:171
+msgid "Enter A URL"
+msgstr ""
+
+#: php/class-slide-admin.php:172
+msgid "Choose A Page"
+msgstr ""
+
+#: php/class-slide-admin.php:182
+msgid "Slide Link Page"
+msgstr ""
+
+#: strathcom-carousel.php:56
+msgid ""
+"Strathcom Carousel plugin error: Your version of PHP is too old to run this "
+"plugin. You must be running PHP 5.3 or higher."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Strathcom Carousel"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/xwp/wp-strathcom-carousel"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Enable the carousel feature"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "XWP"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://xwp.co/"
+msgstr ""

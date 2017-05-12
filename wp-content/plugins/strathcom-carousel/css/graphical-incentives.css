@@ -1,0 +1,79 @@
+#graphical-incentives-edit-page {
+	width: 100%;
+	max-width: 700px;
+}
+
+#graphical-incentives-edit-page #titlewrap {
+	margin-bottom: 20px;
+}
+
+#graphical-incentives-edit-page #filters {
+	margin: 11px 0;
+}
+
+#graphical-incentives-edit-page .filter {
+	margin-top: 0;
+}
+
+#graphical-incentives-edit-page #reset-button {
+	margin-left: 10px;
+}
+
+#graphical-incentives-edit-page #image-settings .slide-size-warning {
+	margin-bottom: 10px;
+	max-width: 95%;
+}
+
+#incentives-preview-image img {
+	width: 600px;
+	max-width: 80%;
+	height: auto;
+}
+
+#incentives-delete-image-button .dashicons {
+	vertical-align: middle;
+	height: 23px;
+	margin-right: 5px;
+}
+
+#incentives-delete-image-button:hover {
+	color: #c00;
+}
+
+#graphical-incentives-form .error {
+	border-color: #c00;
+}
+
+#graphical-incentives-edit-page .notification {
+	padding: 15px;
+	background: #fff;
+	margin: 10px 0;
+	border: 1px solid #e0e0e0;
+	width: 100%;
+}
+
+#graphical-incentives-edit-page .notification.notice-success {
+	border-left: 4px solid #46b450;
+}
+
+#graphical-incentives-edit-page .notification.notice-error {
+	border-left: 4px solid #c00;
+	font-weight: bold;
+	display: none;
+}
+
+#graphical-incentives-edit-page .slide-size-warning {
+	background: #fff;
+	width: 100%
+}
+
+#graphical-incentives-edit-page .js .widget .widget-top,
+#graphical-incentives-edit-page .js .postbox .hndle {
+	cursor: default;
+}
+
+#graphical-incentives-list .column-image img {
+	width: 100px;
+	max-width: 100%;
+	height: auto;
+}

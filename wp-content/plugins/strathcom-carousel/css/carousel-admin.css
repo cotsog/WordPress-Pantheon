@@ -1,0 +1,18 @@
+.ar-radio-inputs label {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.ar-radio-inputs .radio-span {
+    width: 80px;
+    display: inline-block;
+}
+
+.ar-radio-inputs img {
+    vertical-align: middle;
+}
+
+.ar-radio-inputs .ar-radio-button {
+    margin-bottom: 10px;
+    display: block;
+}
