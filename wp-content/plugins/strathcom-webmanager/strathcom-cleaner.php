@@ -29,7 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @return void
  */
 function activate_strathcom_cleaner() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-activator.php';
+	include_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-activator.php';
 	Strathcom_Cleaner_Activator::activate();
 }
 
@@ -39,7 +39,7 @@ function activate_strathcom_cleaner() {
  * @return void
  */
 function deactivate_strathcom_cleaner() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-deactivator.php';
+	include_once plugin_dir_path( __FILE__ ) . 'includes/class-strathcom-cleaner-deactivator.php';
 	Strathcom_Cleaner_Deactivator::deactivate();
 }
 
