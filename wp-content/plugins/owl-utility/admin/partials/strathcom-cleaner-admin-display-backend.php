@@ -1,15 +1,17 @@
 <?php
 /**
+ * .
  *
- * @link       https://github.com/oldmanobi
- * @since      1.0.0
+ * @link  https://github.com/oldmanobi
+ * @since 1.0.0
  *
- * @package    Strathcom_Cleaner
+ * @package Strathcom_Cleaner
  * @subpackage Strathcom_Cleaner/admin/partials
  */
+
 ?>
 
- <div id="back-end" class="wrap metabox-holder columns-2 ob_sc-metaboxes hidden">
+<div id="back-end" class="wrap metabox-holder columns-2 ob_sc-metaboxes hidden">
 
     <h2>Back End</h2>
 

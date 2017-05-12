@@ -1,0 +1,10 @@
+{
+  "name": "jf-grunt-pkg",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.4", 
+    "grunt-contrib-jshint": "latest", 
+    "jshint-stylish": "latest",
+    "load-grunt-tasks": "^3.5.2",
+  }
+}

@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: unerem
-Donate link: https://github.com/OWL-Labs
+Donate link: https://github.com/unerem
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 4.7.2

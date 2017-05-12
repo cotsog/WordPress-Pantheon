@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  *
  *
@@ -24,5 +24,7 @@ class Strathcom_Cleaner_i18n {
 		);
 
 	}
+
+
 
 }

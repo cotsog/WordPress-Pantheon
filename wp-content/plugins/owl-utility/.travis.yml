@@ -3,13 +3,17 @@ sudo: false
 language: php
 
 notifications:
+  email:
+    on_success: never
+    on_failure: change
 
 branches:
   only:
     - master
 
 php:
-  - 7.0
+  - 5.3
+  - 5.6
 
 env:
   - WP_VERSION=latest WP_MULTISITE=0
@@ -18,7 +22,7 @@ env:
 
 matrix:
   include:
-    - php: 7.0
+    - php: 5.3
       env: WP_VERSION=latest WP_MULTISITE=1
 
 before_script:
@@ -37,10 +41,3 @@ before_script:
 script:
   - phpcs --standard=phpcs.ruleset.xml $(find . -name '*.php')
   - phpunit
-
- after_success:
-
-  #- export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  #- git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  #- git push -q https://github.com/OWL-Labs/owl-utility.git --tags
-  #- ls -R
