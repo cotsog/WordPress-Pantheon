@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: smiBounce
+Plugin Name: Bounce
 Plugin URI: http://strathcom.com/
 Description: Bounce improves bounce rate to boost conversions and sales.
 Version: 1.6.3
@@ -23,11 +23,11 @@ add_option( WBOUNCE_VERSION_KEY, WBOUNCE_VERSION_NUM );
 
 
 if ( !defined( 'WBOUNCE_PLUGIN_NAME' ) ) {
-	define( 'WBOUNCE_PLUGIN_NAME', 'wBounce' );
+	define( 'WBOUNCE_PLUGIN_NAME', 'Bounce' );
 }
 
 if ( !defined( 'WBOUNCE_TD' ) ) {
-	define( 'WBOUNCE_TD', 'wbounce' ); // = text domain (used for translations)
+	define( 'WBOUNCE_TD', 'bounce' ); // = text domain (used for translations)
 }
 
 if ( !defined( 'WBOUNCE_FILE' ) ) {
