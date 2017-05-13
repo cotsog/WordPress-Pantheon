@@ -347,10 +347,6 @@ class Wbounce_Admin_Options {
 									<input name="<?php echo WBOUNCE_OPTION_KEY; ?>_demo_css" type="checkbox" value="1" <?php checked( '1', get_option( WBOUNCE_OPTION_KEY.'_demo_css' ) ); ?> /> <label><?php _e( 'If checked, the styles written for the exemplary template will be removed. This reduces the CSS file size, and makes your site a little bit faster. It also makes it easier to style the popup the way you want.', WBOUNCE_TD ); ?></label>
 										</td>
 									</tr>
-					        <tr valign="top">
-						        <th scope="row" style="color: red"><?php _e( 'MORE TO COME<br><span class="description thin">with the next updates</span>', WBOUNCE_TD ); ?></th>
-						        <td>
-						        </td>
 					        </tr>
 					    </tbody>
 				    </table>
@@ -427,18 +423,6 @@ class Wbounce_Admin_Options {
 									<p><?php _e( '*<i>document.url</i> = URL of the page where the event is triggered.', WBOUNCE_TD ); ?></p>
 								</td>
 							</tr>
-					        <tr valign="top">
-						        <th scope="row">
-						        	<span style="color: red"><?php _e( 'MORE TO COME<br><span class="description thin">with the next updates</span>', WBOUNCE_TD ); ?></span><br>
-							        <span class="description thin"><?php
-							        	printf( __( 'You can contribute <a href="%s" target="_blank">on Github</a>', WBOUNCE_TD ),
-							        		'//github.com/kevinweber/wbounce'
-							        	);
-							        ?></span>
-						        </th>
-						        <td>
-						        </td>
-					        </tr>
 					    </tbody>
 				    </table>
 
@@ -449,67 +433,9 @@ class Wbounce_Admin_Options {
 			    <?php submit_button(); ?>
 			</form>
 
-			<?php require_once( 'inc/signup.php' ); ?>
+			<?php // require_once( 'inc/signup.php' ); ?>
 
-		    <table class="form-table">
-		        <tr valign="top">
-		        <th scope="row" style="width:100px;"><a href="//kevinw.de/wb/" target="_blank"><img src="//www.gravatar.com/avatar/9d876cfd1fed468f71c84d26ca0e9e33?d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536&s=100" style="-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;"></a></th>
-		        <td style="width:200px;">
-		        	<p>
-			        	<?php
-				        	printf( __( '<a href="%s" target="_blank">Kevin Weber</a> &ndash; that&#39;s me.<br>I&#39;m the developer of this plugin. Love it!', WBOUNCE_TD ),
-				        		'//kevinw.de/wb'
-				        	);
-			        	?>
-			        </p>
-			    </td>
-		        <td>
-					<p>
-			        	<?php
-				        	printf( __( '<b>It&#39;s easy:</b> You increase sales thanks to my plugin. In exchange, you donate at least <a href="%1$s" title="Donate me" target="_blank">9,37€</a> so I can further develop it. And please, give this plugin a 5 star rating <a href="%2$s" title="Vote for Bounce" target="_blank">on WordPress.org</a>.', WBOUNCE_TD ),
-				        		'//kevinw.de/donate/Bounce/',
-				        		'//wordpress.org/support/view/plugin-reviews/wbounce?filter=5'
-				        	);
-			        	?>
-					</p>
-		        </td>
-		        <td style="width:300px;">
-					<p>
-						<b><?php esc_html_e( 'Personal tip: Must use plugins', WBOUNCE_TD ); ?></b>
-						<ol>
-							<li>
-					        	<?php
-						        	printf( __( '<a href="%s" title="Lazy Load for Videos" target="_blank">Lazy Load for Videos</a> (on my part)', WBOUNCE_TD ),
-						        		'//kevinw.de/wb-ll'
-						        	);
-					        	?>
-							</li>
-							<li>
-					        	<?php
-						        	printf( __( '<a href="%s" title="WordPress SEO by Yoast" target="_blank">WordPress SEO</a> (by Yoast)', WBOUNCE_TD ),
-						        		'//yoast.com/wordpress/plugins/seo/'
-						        	);
-					        	?>
-							</li>
-							<li>
-					        	<?php
-						        	printf( __( '<a href="%s" title="Inline Comments" target="_blank">Inline Comments</a> (on my part)', WBOUNCE_TD ),
-						        		'//kevinw.de/wb-ic'
-						        	);
-					        	?>
-							</li>
-							<li>
-					        	<?php
-						        	printf( __( '<a href="%s" title="Broken Link Checker" target="_blank">Broken Link Checker</a> (by Janis Elsts)', WBOUNCE_TD ),
-						        		'//wordpress.org/plugins/broken-link-checker/'
-						        	);
-					        	?>
-							</li>
-						</ol>
-					</p>
-		        </td>
-		        </tr>
-			</table>
+
 		</div>
 
 	<?php
