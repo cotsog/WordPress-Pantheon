@@ -18,8 +18,8 @@ msgstr ""
 
 #: admin/class-admin-options.php:78
 msgid ""
-"by <a href=\"%1$s\" target=\"_blank\" title=\"Website by Kevin Weber\">Kevin "
-"Weber</a> (Version %2$s) with best thanks to <a href=\"%3$s\" target=\"_blank"
+"by <a href=\"%1$s\" target=\"_blank\" title=\"Website by Strathcom Bounce\">strathcom "
+"Bounce</a> (Version %2$s) with best thanks to <a href=\"%3$s\" target=\"_blank"
 "\" title=\"Ouibounce by Carl Sednaoui\">Ouibounce by Carl Sednaoui</a>"
 msgstr ""
 
@@ -390,7 +390,7 @@ msgstr ""
 #: admin/class-admin-options.php:376
 msgid ""
 "Premium Popup Plugin: OptinMonster<br><span style=\"font-size:0.6em;\">"
-"(exclusive 15% coupon: kevinweber)</span>"
+"(exclusive 15% coupon: strathcom)</span>"
 msgstr ""
 
 #: admin/class-admin-options.php:379
@@ -447,12 +447,12 @@ msgstr ""
 #: admin/class-admin-options.php:397
 msgid ""
 "Discover OptinMonster now<br><span style=\"font-size:0.6em;\">(exclusive 15% "
-"coupon: kevinweber)</span>"
+"coupon: strathcom)</span>"
 msgstr ""
 
 #: admin/class-admin-options.php:419
 msgid ""
-"<a href=\"%s\" target=\"_blank\">Kevin Weber</a> &ndash; that&#39;s me."
+"<a href=\"%s\" target=\"_blank\">Strathcom Bounce</a> &ndash; that&#39;s me."
 "<br>I&#39;m the developer of this plugin. Love it!"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgid ""
 msgstr ""
 
 #: admin/class-meta.php:32 frontend/class-frontend.php:49
-msgid "wBounce by Kevin Weber"
+msgid "wBounce by Strathcom Bounce"
 msgstr ""
 
 #: admin/class-meta.php:65
@@ -568,7 +568,7 @@ msgstr ""
 #: frontend/class-frontend.php:50
 msgid ""
 "I&#39;m the developer of this plugin. Feel free to contact and follow me <a "
-"href=\"https://twitter.com/kevinweber\" title=\"Kevin Weber on Twitter\" "
+"href=\"https://twitter.com/strathcom\" title=\"Strathcom Bounce on Twitter\" "
 "target=\"_blank\" style=\"color:#4099FF\">on Twitter</a>. And subscribe to "
 "my list for WordPress enthusiasts:"
 msgstr ""
@@ -590,7 +590,7 @@ msgid "wBounce"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://kevinw.de/wbounce/"
+msgid "http://strathcom.com/wbounce/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -599,9 +599,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Kevin Weber"
+msgid "Strathcom Bounce"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://kevinw.de/"
+msgid "http://strathcom.com/"
 msgstr ""

@@ -49,10 +49,7 @@ class Wbounce_Frontend {
 	        </div>
 
 	        <div class="modal-body" style="text-align:center">
-
-	        	<p><a href="//kevinw.de/" target="_blank"><img src="//www.gravatar.com/avatar/9d876cfd1fed468f71c84d26ca0e9e33?d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536&s=100" style="-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;"></a></p>
-				<p><a href="//kevinw.de/wbounce" target="_blank" style="color:#009000;font-size:20px"><h4>' . __( 'wBounce by Kevin Weber', WBOUNCE_TD ) . '</h4></a></p>
-				<p style="font-size:15px">' . __( 'I&#39;m the developer of this plugin. Feel free to contact and follow me <a href="//twitter.com/kevinweber" title="Kevin Weber on Twitter" target="_blank" style="color:#4099FF">on Twitter</a>. And subscribe to my list for WordPress enthusiasts:', WBOUNCE_TD ) . '</p>
+					<p><a href="//strathcom.com/" target="_blank" style="color:#009000;font-size:20px"><h4>' . __( 'Bounce by Strathcom', WBOUNCE_TD ) . '</h4></a></p>
 
 				<div id="mc_embed_signup">
 				<form action="//kevinw.us2.list-manage.com/subscribe/post?u=f65d804ad274b9c8812b59b4d&amp;id=39ca44d8d3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -82,7 +79,7 @@ class Wbounce_Frontend {
 
 	        <div class="modal-body" style="text-align:center">
 
-	        	<p><a href="//kevinw.de/wbounce/" title="WordPress plugin wBounce" target="_blank">wBounce</a> is succesfully installed and triggered.</p>
+	        	<p><a href="//strathcom.com/" title="WordPress plugin Bounce" target="_blank">Bounce</a> is succesfully installed and triggered.</p>
 	        	<p>Now go ahead and set up your own modal.</p>
 
 	        </div>
@@ -103,7 +100,7 @@ class Wbounce_Frontend {
 
 	function load_footer_script() {
       $WBOUNCE_CONFIG = array(
-        "cookieName" => "wBounce",
+        "cookieName" => "Bounce",
         "isAggressive" => $this->is_aggressive(),
         "isSitewide" => get_option(WBOUNCE_OPTION_KEY.'_sitewide') != '1',
         "hesitation" => $this->get_option('hesitation'),
