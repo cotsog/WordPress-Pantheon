@@ -29,7 +29,7 @@ class Wbounce_Meta {
 		foreach ( $screens as $screen ) {
 			add_meta_box(
 				'meta-box-wbounce',
-				__( 'wBounce by Kevin Weber', WBOUNCE_TD ),
+				__( 'Bounce by Strathcom', WBOUNCE_TD ),
 				array( $this, 'meta_box' ),
 				$screen,
 				'side',	// position
@@ -43,7 +43,7 @@ class Wbounce_Meta {
 		$id = $post->ID;
 		$values = get_post_custom( $id );
 		// $check = isset( $values['wbounce_check_custom'] ) ? esc_attr( $values['wbounce_check_custom'][0] ) : '';
-		
+
 		$select_name = $this->select_name;
 			$selected = isset( $values[$select_name] ) ? esc_attr( $values[$select_name][0] ) : '';
 
@@ -65,10 +65,10 @@ class Wbounce_Meta {
 		<p>
 			<label for="<?php echo $select_name; ?>">
 				<?php
-					printf( __( 'Use wBounce on this %s?', WBOUNCE_TD ),
+					printf( __( 'Use Bounce on this %s?', WBOUNCE_TD ),
 						get_current_screen()->post_type
 					);
-				?>				
+				?>
 			</label>
 		</p>
 		<p>
@@ -130,13 +130,13 @@ class Wbounce_Meta {
 
 		// Bail if we're doing an auto save
 		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-		
+
 		// // If our nonce isn't there, or we can't verify it, bail
-		// if ( 
+		// if (
 		// 	!empty( $_POST ) &&
 		// 	(
 		// 		!isset( $_POST['wbounce_meta_box_nonce'] )
-		// 		|| !wp_verify_nonce( $_POST['wbounce_meta_box_nonce'], 'add_wbounce_meta_box_nonce' ) 
+		// 		|| !wp_verify_nonce( $_POST['wbounce_meta_box_nonce'], 'add_wbounce_meta_box_nonce' )
 		// 	)
 		// ) {
 		// 	print 'Sorry, your nonce did not verify.';
@@ -164,7 +164,7 @@ class Wbounce_Meta {
 			$text_content = $this->text_content;
 			if( isset( $_POST[$text_content] ) )
 				update_post_meta( $post_id, $text_content, esc_attr( $_POST[$text_content] ) );
-			
+
 			do_action( WBOUNCE_OPTION_KEY.'_save_post', $post_id );
 
 		// }
@@ -195,7 +195,7 @@ class Wbounce_Meta {
 
 		add_action( 'admin_footer', array( $this, 'post_columns_css' ) );
 	}
-	 
+
 	function add_post_columns($columns) {
 	    $columns['wbounce'] = 'wBounce';
 	    return $columns;

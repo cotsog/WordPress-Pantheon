@@ -595,8 +595,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"wBounce improves bounce rate to boost conversions and sales. The free "
-"alternative to Bounce Exchange for WordPress."
+"smiBounce improves bounce rate to boost conversions and sales."
 msgstr ""
 
 #. Author of the plugin/theme

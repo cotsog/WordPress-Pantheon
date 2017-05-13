@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: wBounce
-Plugin URI: http://kevinw.de/wbounce/
-Description: wBounce improves bounce rate to boost conversions and sales. The free alternative to Bounce Exchange for WordPress.
+Plugin Name: smiBounce
+Plugin URI: http://strathcom.com/
+Description: Bounce improves bounce rate to boost conversions and sales.
 Version: 1.6.3
-Author: Kevin Weber
-Author URI: http://kevinw.de/
+Author: Strathcom
+Author URI: http://strathcom.com/
 License: MIT
-Text Domain: wbounce
+Text Domain: bounce
 Domain Path: /languages
 */
 if ( !defined( 'WBOUNCE_OPTION_KEY' ) ) {

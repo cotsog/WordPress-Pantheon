@@ -1,30 +1,16 @@
-=== wBounce ===
-Contributors: kevinweber
-Donate link: http://kevinw.de/donate/wBounce/
+=== bounce ===
+Contributors: strathcom
+Donate link: http://strathcom.com
 License: MIT
 Tags: admin, newsletter, exit popup, exit popups, ab-testing, roi, conversion, conversion rate optimisation, free, plugin, wordpress, marketing, landing page
 Requires at least: 3.5
 Tested up to: 4.7.2
 Stable tag: 1.6.3
 
-wBounce improves bounce rate to boost conversions and sales. The free alternative to Bounce Exchange for WordPress.
+Bounce improves bounce rate to boost conversions and sales
 
 == Description ==
-wBounce is the free exit popup software for WordPress, evolved by [Kevin Weber](http://kevinw.de). This plugin bases on [Ouibounce]( http://carlsednaoui.github.io/ouibounce/) by Carl Sednaoui.
-
-Exit popups are not only "in vogue", they are provably increasing conversions and therefore boost marketing, signups and sales. wBounce displays an inline popup before the user leaves your site. ("Inline popup" means that this is NOT one of those out-dated, annoying popups windows.) Inline popups catch the visitor's attention even if they are in the process of leaving your site.
-
-wBounce is the free alternative to charged services like Bounce Exchange or OptinMonster that are often used for landing page optimisation. wBounce is lightweight and renounces unnecessary scripts. You decide which features will be developed and implemented next.
-
-One concern in everyone's interest: Make sure to provide VALUE when you use wBounce and don't spam your visitors.
-
-This plugin makes it extremely easy to implement exit popups. You don't have to manually "hack" your WordPress theme. Just activate and modify it via your admin backend. It works with WordPress Multisite so that you can define a wBounce template for each site in your network.
-
-Demo and more information on the developer's website: [kevinw.de/wbounce/](http://kevinw.de/wbounce/)
-
-You want to enhance this plugin? Please [contribute on Github](https://github.com/kevinweber/wbounce).
-
-
+Bounce improves bounce rate to boost conversions and sales
 = Features: =
 
 * Display inline popup before the user leaves the site
@@ -35,28 +21,28 @@ You want to enhance this plugin? Please [contribute on Github](https://github.co
 * Shortcodes from other plugins are also supported
 * Determine sensitivity, cookie expiration, hesitation, and more
 * Add custom CSS
-* Set default status: Define if wBounce should be fired on posts and/or pages by default. You can override the default setting on every post and page individually.
+* Set default status: Define if Bounce should be fired on posts and/or pages by default. You can override the default setting on every post and page individually.
 * Event tracking with Google Analytics
 
 
 == Installation ==
 
-1. Upload wBounce into your plugin directory (/wp-content/plugins/) and activate it through the 'Plugins' menu in WordPress.
+1. Upload bounce into your plugin directory (/wp-content/plugins/) and activate it through the 'Plugins' menu in WordPress.
 2. Configure the plugin via the admin backend and define your template. You can even insert shortcodes that are provided by your other plugins.
-3. Optionally: Sign up to the wBounce newsletter to get notified about major updates.
+3. Optionally: Sign up to the bounce newsletter to get notified about major updates.
 
-Important: wBounce does not collect and store e-mail addresses itself. Therefore, you can insert any HTML. For example, you can copy the form code that's provided by MailChimp (or any other newsletter service) and the signups will be stored using your newsletter service.
+Important: bounce does not collect and store e-mail addresses itself. Therefore, you can insert any HTML. For example, you can copy the form code that's provided by MailChimp (or any other newsletter service) and the signups will be stored using your newsletter service.
 
 
 == Frequently Asked Questions ==
 
-= Does wBounce work with MailChimp, aWeber, GetResponse? =
-Yes! You can use any form from every newsletter service since you can insert HTML code into the "wBounce content" text field. Simply copy the form code that's provided by MailChimp (or any other newsletter service) into the "wBounce content" text field.
+= Does bounce work with MailChimp, aWeber, GetResponse? =
+Yes! You can use any form from every newsletter service since you can insert HTML code into the "bounce content" text field. Simply copy the form code that's provided by MailChimp (or any other newsletter service) into the "bounce content" text field.
 
 Additionally, you can add CSS using the "Custom CSS" text field.
 
-= How to use MailPoet, SendPress Newsletters and other plugins with wBounce? =
-You can actually insert any shortcode that is provided by other plugins, such as GravityForms or SendPress Newsletters. For example, to use MailPoet with wBounce, simply insert the provided shortcode that contains the form's ID, as follows:
+= How to use MailPoet, SendPress Newsletters and other plugins with bounce? =
+You can actually insert any shortcode that is provided by other plugins, such as GravityForms or SendPress Newsletters. For example, to use MailPoet with bounce, simply insert the provided shortcode that contains the form's ID, as follows:
 `[wysija_form id="1"]`
 
 By the way, [MailPoet](https://wordpress.org/plugins/wysija-newsletters/) allows to set up autoresponders, so give it a try.
@@ -64,22 +50,22 @@ By the way, [MailPoet](https://wordpress.org/plugins/wysija-newsletters/) allows
 Another well-known newsletter plugin, [SendPress](https://wordpress.org/plugins/sendpress/), offers shortcodes that look like this:
 `[sp-form formid=18547]`
 
-Notice: If a plugin or service doesn't offer such a shortcode, you can still insert any HTML code. I’m pretty sure that every useful newsletter service offers at least a piece of HTML code that works with wBounce :-)
+Notice: If a plugin or service doesn't offer such a shortcode, you can still insert any HTML code. I’m pretty sure that every useful newsletter service offers at least a piece of HTML code that works with bounce :-)
 
-= wBounce does not fire, scripts are not loaded or jQuery is loaded too late. What's wrong? =
+= bounce does not fire, scripts are not loaded or jQuery is loaded too late. What's wrong? =
 Probably your theme does not implement the wp_footer() function in the appropriate position, if at all. Always have it just before the closing </body> tag of your theme. [#support](https://wordpress.org/support/topic/plugin-does-not-fire-the-popup?replies=3#post-6530865)
 
 = How to translate popups (using WPML)? =
 You must have installed WPML Translation Management. Then you can do the following in the menu:
 
 1) Go to WPML > Translation Management > Multilingual Content Setup > Edit translatable admin strings
-2) Context: admin_texts_plugin_wbounce-master > Translate
+2) Context: admin_texts_plugin_bounce-master > Translate
 
 As soon as you save, the popup will appear in the appropriate language.
 (Thanks to Jan Sass for providing this answer.)
 
-= How to use Jetpack's Subscriptions module with wBounce? =
-Use Jetpack's shortcode within the wBounce content field:
+= How to use Jetpack's Subscriptions module with bounce? =
+Use Jetpack's shortcode within the bounce content field:
 `[jetpack_subscription_form]`
 You can even extend the shortcode using modifiers as [explained by Jetpack](http://jetpack.me/support/subscriptions/).
 
@@ -111,11 +97,11 @@ You can even extend the shortcode using modifiers as [explained by Jetpack](http
 * Fix: 'hidden_outside' analytics event was triggered to often.
 
 = 1.6 =
-* New feature: Popup animations. You find them under your styling tab. Merged pull request from @rahilwazir on Github (https://github.com/kevinweber/wbounce/pull/10).
+* New feature: Popup animations. You find them under your styling tab. Merged pull request from @rahilwazir on Github (https://github.com/kevinweber/bounce/pull/10).
 * Allow shortcodes in "Template Total Override".
 
 = 1.5.1.5 =
-* Merged pull request from @dima-stefantsov on Github (https://github.com/kevinweber/wbounce/pull/7): wBounce can by default be disabled with post meta flag.
+* Merged pull request from @dima-stefantsov on Github (https://github.com/kevinweber/bounce/pull/7): bounce can by default be disabled with post meta flag.
 
 = 1.5.1.4 =
 * Fix: Cookie storage didn't work correctly when user has no Google Analytics script on his site but GA event tracking (in plugin settings) is enabled.
@@ -128,10 +114,10 @@ You can even extend the shortcode using modifiers as [explained by Jetpack](http
 
 = 1.5 =
 * HOT! New feature: Template engine to override templates on individual pages/posts. Introducing magic shortcodes.
-* Made the plugin translatable. Great thanks to @senlin (https://github.com/senlin) for his contributions via wBounce on Github (https://github.com/kevinweber/wbounce).
+* Made the plugin translatable. Great thanks to @senlin (https://github.com/senlin) for his contributions via bounce on Github (https://github.com/kevinweber/bounce).
 
 = 1.4.0.1 =
-* Improved CSS to hide scrollbars in some browsers. Note: To hide scrollbars in all browsers completely, use the following custom CSS: .wbounce-modal .wbounce-modal-sub { overflow: hidden; }
+* Improved CSS to hide scrollbars in some browsers. Note: To hide scrollbars in all browsers completely, use the following custom CSS: .bounce-modal .bounce-modal-sub { overflow: hidden; }
 
 = 1.4 =
 * New feature: Event tracking with Google Analytics.
@@ -161,31 +147,31 @@ You can even extend the shortcode using modifiers as [explained by Jetpack](http
 * Added version number to scripts.
 
 = 1.3 =
-* Renamed functions.php to wbounce.php. (This will cause your WordPress site to automatically deactivate wBounce. So you simply have to activate it again, that’s it.)
+* Renamed functions.php to bounce.php. (This will cause your WordPress site to automatically deactivate bounce. So you simply have to activate it again, that’s it.)
 * New feature: Self-acting fire (timer). Automatically trigger the popup after a certain time period.
 * New feature: Cookie domain.
 * New: The cookie is stored for the whole site (and not only for specific pages/posts).
 * New feature: Cookie per page. With this option enabled, every page/post gets its own cookie.
 * Fix: Added CSS "box-sizing: border-box".
-* Fix: Added CSS to make wBounce work with themes that use Bootstrap 3.
+* Fix: Added CSS to make bounce work with themes that use Bootstrap 3.
 
 = 1.2.1 =
 * Fixed broken post view.
 
 = 1.2 =
-* Improvement: Added support for shortcodes that are inserted into the "wBounce content" text area.
-* New feature: Hesitation. wBounce waits x milliseconds before showing the model when the user's cursor leaves the window.
+* Improvement: Added support for shortcodes that are inserted into the "bounce content" text area.
+* New feature: Hesitation. bounce waits x milliseconds before showing the model when the user's cursor leaves the window.
 * Improvement: Only load scripts and CSS when they are actually needed.
 * Improvement: Merged CSS from two files into one.
 * Fixed "unexpected T_PAAMAYIM_NEKUDOTAYIM".
 
 = 1.1.1 =
-* New feature: Deactivate wBounce for pages and posts individually ("wBounce status").
-* New feature: Define if wBounce should be fired on posts and/or pages by default.
-* New feature: The wBounce status can be seen in an additional column on the overview for posts and pages.
+* New feature: Deactivate bounce for pages and posts individually ("bounce status").
+* New feature: Define if bounce should be fired on posts and/or pages by default.
+* New feature: The bounce status can be seen in an additional column on the overview for posts and pages.
 * New feature: Sensitivity.
-* New feature: Cookie expiration. wBounce sets a cookie by default to prevent the modal from appearing more than once per user. You can add a cookie expiration (in days) to adjust the time period before the modal will appear again for a user.
-* wBounce is ready for WordPress 4.0.
+* New feature: Cookie expiration. bounce sets a cookie by default to prevent the modal from appearing more than once per user. You can add a cookie expiration (in days) to adjust the time period before the modal will appear again for a user.
+* bounce is ready for WordPress 4.0.
 
 = 1.0 =
 * Plugin goes public.
@@ -195,7 +181,7 @@ You can even extend the shortcode using modifiers as [explained by Jetpack](http
 == Upgrade Notice ==
 
 = 1.2.2 =
-* Renamed functions.php to wbounce.php. This will cause your WordPress site to automatically deactivate wBounce. So you simply have to activate it again, that’s it.
+* Renamed functions.php to bounce.php. This will cause your WordPress site to automatically deactivate bounce. So you simply have to activate it again, that’s it.
 
 = 1.0 =
 * Plugin goes public.
@@ -203,7 +189,7 @@ You can even extend the shortcode using modifiers as [explained by Jetpack](http
 
 == Screenshots ==
 
-1. Screenshot of a site that uses wBounce.
+1. Screenshot of a site that uses bounce.
 2. Admin panel tab "content".
 3. Admin panel tab "options".
 4. Meta box besides post editor (v1.1).
