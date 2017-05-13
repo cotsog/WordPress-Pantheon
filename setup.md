@@ -57,7 +57,7 @@ cd htdocs
 
 2. Config values.
 
-These are found in the `private` folder.
+These are found in the `Dev Scripts` folder.
   
 </body>
 </html>
