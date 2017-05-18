@@ -8,7 +8,7 @@
 <body>
 
 # otestsite
-For testing out WP workflow tools for private.
+For testing out WP workflow tools.
 [![Build Status](https://travis-ci.org/OWL-Labs/WordPress-Pantheon.svg?branch=master)](https://travis-ci.org/OWL-Labs/WordPress-Pantheon)
 
 <p style="text-align: center">
