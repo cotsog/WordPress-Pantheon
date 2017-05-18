@@ -49,9 +49,9 @@ git checkout master && git pull origin && git push pantheon
 1. Get otestsite git repo.
 
 ```
-cd ../www/otestsite
+cd [workspace]
 then
-git clone --recursive git@github.com:OWL-Labs/WordPress-Pantheon.git htdocs
+git clone --recursive git@github.com:OWL-Labs/WordPress-Pantheon.git otestsite/htdocs
 cd htdocs
 ```
 
