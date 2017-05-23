@@ -41,9 +41,10 @@ after_success:
     - |
         if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
             echo "build gulp.\n"
-            pwd
+            ls
             npm install gulp
             pwd
+            ls
             gulp
         fi
 
