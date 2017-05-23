@@ -38,8 +38,11 @@ script:
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 after_success:
-- export DEV_SCRIPT_PATH=dev-scripts
-- source $DEV_SCRIPT_PATH/builder.sh
+    - |
+        if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
+            echo "build gulp.\n"
+            gulp
+        fi
 
 
 
