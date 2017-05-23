@@ -1,0 +1,161 @@
+<meta charset="{{ site.charset }}">
+<title>
+	{%- if wp_title -%}
+		{{- wp_title }}
+	{%- else -%}
+		{{- site.name -}}
+	{%- endif -%}
+</title>
+<link rel="pingback" href="{{ site.pingback_url }}" />
+<meta name="description" content="{{ site.description }}">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+{% for style in ie_stylesheets %}
+	{{ macros.ie_stylesheet_tag( style ) }}
+{% endfor %}
+{% for style in stylesheets %}
+	{{ macros.stylesheet_tag( style ) }}
+{% endfor %}
+{% for style in async_stylesheets %}
+	{{ macros.async_stylesheet_tag( style ) }}
+{% endfor %}
+{% if default_vehicle_image_src %}
+	<style type="text/css">
+		.no-photo div { background-image: url( {{ default_vehicle_image_src }} ); }
+	</style>
+{% endif %}
+
+{% if post.get_field('shift_page_type') %}
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['ShiftAnalyticsObject'] = r; i[r] = i[r] || function () {
+						(i[r].q = i[r].q || []).push(arguments)
+					}, i[r].l = 1 * new Date(); a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//mbca-tagging-prod.azureedge.net/scripts/sd.js', 'sd');
+		sd('create', 'MBCA', '{{ dealer_oem_id }}', 'STRATHCOM');
+		sdDataLayer = {
+			pageType: '{{ post.get_field('shift_page_type') }}',
+			websiteTier: 'Tier 3',
+			pageBrand: 'Mercedes-Benz',
+			language: 'en',
+			dealerZipCode: '{{ dealer_location.postal }}',
+			dealerState: '{{ dealer_location.region }}',
+			trafficType: 'Typed/Bookmarked'
+		};
+		sd('send', 'pageview');
+	</script>
+
+	<script>
+		window.onload = function() {
+			var leadId = Date.now();
+
+			jQuery('.mercedes-incentives a').click(function(){
+				sdDataLayer = {
+					offerId: '',
+					offerName: '',
+					events: 'offerClick'
+				};
+				sd('send');
+			});
+
+			jQuery('#sales-tel').click(function(){
+				// Click-to-call event
+				sdDataLayer = {
+					clickToCallDepartment: 'Sales',
+					events: 'clickToCall'
+				};
+				sd('send');
+			});
+
+			jQuery('#service-tel').click(function(){
+				// Click-to-call event
+				sdDataLayer = {
+					clickToCallDepartment: 'Service',
+					events: 'clickToCall'
+				};
+				sd('send');
+			});
+
+			jQuery('#parts-tel').click(function(){
+				// Click-to-call event
+				sdDataLayer = {
+					clickToCallDepartment: 'Parts',
+					events: 'clickToCall'
+				};
+				sd('send');
+			});
+
+			jQuery('.dealer-contact').find('a[href*="tel"]').click(function(){
+				// Click-to-call event
+				sdDataLayer = {
+					clickToCallDepartment: 'Other',
+					events: 'clickToCall'
+				};
+				sd('send');
+			});
+
+			{% if post.get_field('shift_page_type') == 'Schedule Service' %}
+			jQuery('input[type="text"]').one('click', function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'Service',
+					events: 'formInitiation'
+				};
+				sd('send');
+			});
+			jQuery('input[type="submit"]').click(function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'Service',
+					events: 'formSubmission'
+				};
+				sd('send');
+			});
+			{% endif %}
+
+			{% if post.get_field('shift_page_type') == 'Contact Us' %}
+			jQuery('input[type="text"]').one('click', function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'General Contact',
+					events: 'formInitiation'
+				};
+				sd('send');
+			});
+			jQuery('input[type="submit"]').click(function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'General Contact',
+					events: 'formSubmission'
+				};
+				sd('send');
+			});
+			{% endif %}
+
+			{% if post.get_field('shift_page_type') == 'Custom Dealer Content' %}
+			jQuery('input[type="text"]').one('click', function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'Employment',
+					events: 'formInitiation'
+				};
+				sd('send');
+			});
+			jQuery('input[type="submit"]').click(function(){
+				sdDataLayer = {
+					leadId: leadId,
+					formType: 'Employment',
+					events: 'formSubmission'
+				};
+				sd('send');
+			});
+			{% endif %}
+		}
+	</script>
+{% endif %}
+
+{{ wp_head }}

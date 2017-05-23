@@ -1,0 +1,94 @@
+// ==========================================================================
+// Search results.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/modules/search-results";
+// Overrides and custom styling.
+// ==========================================================================
+
+.spec-compact {
+	font-size: 0.9rem;
+}
+
+.product-description {
+	h4 {
+		font-size: 1.5rem;
+	}
+
+	h5 {
+		font-size: 1rem;
+	}
+}
+
+.noUi-connect {
+	background: #333;
+}
+
+.single-inventory {
+	h1 {
+		color: #000;
+	}
+}
+
+.layout-srp {
+	.product-price {
+		strong {
+			&::after {
+				display: block;
+				content: "+ sales tax";
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.product-badges,
+	.certified-logo {
+
+		@include clearfix;
+		padding: 0 1rem;
+
+		img {
+			max-width: rem(90);
+		}
+	}
+
+	.product-badges {
+		div:nth-child(2) {
+			padding-top: 0.3rem;
+		}
+	}
+
+	.certified-logo {
+		display: block;
+	}
+}
+
+.fr-version {
+	.layout-srp {
+		.product-price {
+			strong {
+				&::after {
+					display: block;
+					content: "taxes de vente en sus";
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+// Temp styling.
+// =============================================================================
+
+.fr-version {
+	.breadcrumb {
+		display: none !important;
+	}
+}
+
+.fr-version {
+	.filter-stock-active-wrap {
+		display: none !important;
+	}
+}

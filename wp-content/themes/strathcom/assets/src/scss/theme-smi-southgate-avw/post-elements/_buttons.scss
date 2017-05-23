@@ -1,0 +1,57 @@
+// ==========================================================================
+// Buttons.
+// ==========================================================================
+
+.btn {
+	border-radius: 0;
+	padding: 0.75rem 1rem;
+	font-size: 1.1rem;
+
+	&.btn-ghost {
+		padding: 0.75rem 2.5rem;
+		letter-spacing: 1px;
+	}
+
+	&.btn-primary {
+		&::after {
+			padding-left: 2rem;
+		}
+	}
+}
+
+#querySearchForm,
+#quicksearchForm .quick-search-button,
+.btn-primary,
+.item-boxes a {
+	text-align: left;
+
+	&::after {
+		font-family: 'FontAwesome';
+		content: '\f101';
+		color: #cc243d;
+	}
+}
+
+.quick-search-button {
+	&::after {
+		float: right;
+	}
+}
+
+#vw {
+	a,
+	#querySearchForm,
+	#quicksearchForm .quick-search-button {
+		&.btn {
+			padding: 0.75rem 1.5rem;
+		}
+
+		&::after {
+			content: none;
+		}
+	}
+
+	.quick-search-button {
+		text-align: center;
+	}
+}

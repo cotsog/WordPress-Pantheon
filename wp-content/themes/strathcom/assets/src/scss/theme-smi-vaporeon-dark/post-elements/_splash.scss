@@ -1,0 +1,110 @@
+// ==========================================================================
+// Splash
+// ==========================================================================
+
+.splash {
+	background: #000;
+	background-size: cover;
+	background-position: top center;
+	height: auto;
+	padding: 2rem 0;
+
+	@include media-breakpoint-up(lg) {
+		height: rem(800);
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	&.splash-video { // no image on
+
+		@include media-breakpoint-up(lg) {
+			background-image: none !important;
+		}
+	}
+
+	.hero-content {
+		top: 15%;
+		position: relative;
+		padding: 0 7%;
+		z-index: 99;
+
+		@include media-breakpoint-up(sm) {
+			top: 10%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: 50%;
+		}
+
+		.btn {
+			padding: 0.5rem 3rem;
+		}
+	}
+
+	// if quick search is on, accommodate - only sm and under required.
+	&.quick-search-on {
+
+		@include media-breakpoint-down(sm) {
+			.hero-content {
+				top: 5%;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			.hero-content {
+				top: 40%;
+			}
+		}
+	}
+
+	.btn {
+		display: block;
+		width: 80%;
+		margin: 0.25rem 0 0.25rem 10%;
+
+		&::after {
+			display: none;
+		}
+
+		@include media-breakpoint-up(md) {
+			display: inline-block;
+			width: auto;
+			margin: 0.25rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin: 1rem 0.5rem;
+		}
+	}
+
+	&.quick-search-on {
+		#querySearchForm,
+		#quicksearchForm {
+			background: rgba(0, 0, 0, 0.7);
+			padding: 1.25rem;
+		}
+	}
+}
+
+.arrow {
+	display: none; // Hidden unless desktop
+
+	@include media-breakpoint-up(lg) {
+		background: url("../img/vaporeon-arrow-overlay.png") top center transparent repeat-x;
+		display: block;
+		width: 100%;
+		height: 145px;
+		position: absolute;
+		margin-top: -9rem;
+		font-size: 0.9rem;
+		text-align: center;
+
+		@media (min-height: 900px) {
+
+			@include media-breakpoint-up(xl) {
+				display: block; // Only show if height is more then 900px and xl up
+			}
+		}
+	}
+}
+

@@ -1,0 +1,29 @@
+// ==========================================================================
+// Site Footer
+// ==========================================================================
+// Import Mercedes Compliant Footer
+
+@import "../theme-smi-mercedes-dark/layouts/site-footer";
+// Modifications
+.site-footer {
+	color: #999;
+	background: $color-black;
+
+	h3 {
+		color: $color-white;
+	}
+
+	.strathcom-footer,
+	.footer-dealer-info {
+		a,
+		h5 {
+			color: #999;
+		}
+	}
+
+	.strathcom-footer {
+		a {
+			color: #fff;
+		}
+	}
+}

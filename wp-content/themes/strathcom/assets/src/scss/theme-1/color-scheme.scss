@@ -1,0 +1,442 @@
+// stylelint-disable color-no-invalid-hex
+// ==========================================================================
+// Theme 1 color scheme template.
+// ==========================================================================
+
+@import "config/variables-bootstrap";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+// Custom colors.
+// ==========================================================================
+// $body-color: #body-color;
+// $body-bg: #body-bg;
+$brand-primary: #26ced9; // en: 'Primary color', fr: 'Couleur primaire'
+$brand-primary-darker: #1ea5ae; // en: 'Primary color darker', fr: ''
+$brand-secondary: #0abfca; // en: 'Secondary color', fr: ''
+$brand-links-color: #26ced9; // en: 'Links color', fr: ''
+$brand-links-color-hover: #1ea5ae; // en: 'Links hover color', fr: ''
+$header-color: #fff; // en: 'Header text color', fr: ''
+$header-bg: #212325; // en: 'Header background color', fr: ''
+$footer-color: #848484; // en: 'Footer text color', fr: ''
+$footer-links-color: #1ea5ae; // en: 'Footer links color', fr: ''
+$footer-hover-color: #1ea5ae; // en: 'Footer links hover color', fr: ''
+$footer-bg: #fff; // en: 'Footer background color', fr: ''
+// bpc - Brand Primary Color (+ Darker) (+ Hover).
+// ==========================================================================
+._bpcolor {
+	color: $brand-primary;
+}
+
+._bscolor {
+	color: $brand-secondary;
+}
+
+._bpcolordark {
+	color: $brand-primary-darker;
+}
+// _bpb  - Brand Primary Background (+ Darker).
+// ==========================================================================
+._bpback {
+	background-color: $brand-primary;
+}
+
+._bsback {
+	background-color: $brand-secondary;
+}
+
+._bpbackddark {
+	background-color: $brand-primary-darker;
+}
+// Common Elements.
+// ==========================================================================
+
+a,
+.page-link {
+	color: $brand-links-color;
+
+	&:hover,
+	&:focus {
+		color: $brand-links-color-hover;
+	}
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+	color: $brand-links-color;
+}
+// _bpbackinv - Brand Primary Background Inverted (for inverted buttons).
+._bpbackinv {
+	color: $brand-links-color;
+	background-color: transparent;
+
+	&.active,
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $brand-links-color;
+	}
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit] {
+	border-color: $brand-primary;
+	background-color: $brand-primary;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-primary-darker;
+		background-color: $brand-primary-darker;
+	}
+}
+
+.gform_button,
+.application_button {
+	color: #fff;
+	border-color: $brand-primary;
+	background-color: $brand-primary;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		border-color: $brand-primary-darker;
+		background-color: $brand-primary-darker;
+	}
+}
+
+.custom-checkbox-list,
+.custom-radio-list {
+	input:checked + label {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+		color: #fff;
+	}
+}
+
+.rangeslider__fill {
+	background-color: $brand-primary;
+}
+
+.rangeslider__handle {
+	background-color: $brand-danger;
+}
+
+[class*="icon-"].icon-boxed {
+	&::before {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+
+	&:hover::before {
+		color: $brand-primary;
+		background-color: $body-bg;
+	}
+}
+
+%form-control-color {
+	&:focus {
+		border-color: $brand-primary-darker;
+	}
+}
+
+.form-control {
+
+	@extend %form-control-color;
+}
+
+.ginput_container {
+	> input:not([type=file]),
+	textarea,
+	select {
+
+		@extend %form-control-color;
+	}
+}
+
+.ginput_complex > span,
+.ginput_container_list {
+	input {
+
+		@extend %form-control-color;
+	}
+}
+
+.product-brochure .product-info dt {
+	color: $brand-primary;
+}
+
+.card-car {
+	&:hover,
+	&:focus {
+		h5 {
+			color: $brand-primary;
+		}
+	}
+}
+
+.site-header .scratchpad-toggle {
+	.count {
+		border-color: $header-bg;
+	}
+}
+// Contact bar.
+// ==========================================================================
+
+.contact-bar li a {
+	&:hover,
+	&:focus {
+		color: $brand-primary;
+	}
+}
+// Tabs.
+// ==========================================================================
+
+.tabs-nav {
+	border-bottom-color: $brand-primary-darker;
+
+	a:hover {
+		color: $brand-primary-darker;
+	}
+
+	a.active,
+	a.active:hover,
+	a.active:focus,
+	a:focus,
+	a:focus:hover {
+		color: #fff;
+		background-color: $brand-primary-darker;
+	}
+}
+// Pagination.
+// ==========================================================================
+
+.page-item.active .page-link {
+	&,
+	&:focus,
+	&:hover {
+		background-color: $brand-links-color;
+		border-color: $brand-links-color;
+	}
+}
+// Radios.
+// ==========================================================================
+
+.radio {
+	> input:checked ~ .indicator {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+
+	@include hover-focus {
+		.indicator {
+			background-color: $body-bg;
+			border-color: $gray-light;
+		}
+	}
+}
+
+.dropdown-menu::before {
+	border-bottom-color: $brand-primary;
+}
+// Site header.
+// ==========================================================================
+
+.site-header {
+	color: $header-color;
+	background-color: $header-bg;
+
+	a {
+		color: $header-color;
+
+		&:hover,
+		&:focus {
+			color: $brand-links-color;
+		}
+	}
+}
+// Navigation.
+// ==========================================================================
+
+.primary-menu {
+
+	@include media-breakpoint-up(lg) {
+		> li {
+			background-color: $header-bg;
+
+			&:hover > a,
+			> a:hover,
+			> a:focus {
+				color: $brand-links-color;
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+
+	@include media-breakpoint-up(lg) {
+		background-color: $header-bg;
+
+		> li {
+			> a {
+				color: #fff;
+			}
+
+			> a:hover,
+			> a:focus {
+				color: $brand-links-color;
+			}
+		}
+	}
+}
+
+.group-sidebar .widget_nav_menu {
+	.menu > li > a {
+		background-color: $brand-primary;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+	}
+
+	.sub-menu a {
+		&:hover,
+		&:focus {
+			background-color: $brand-primary-darker;
+		}
+	}
+}
+// Site footer.
+// ==========================================================================
+
+.site-footer {
+	color: $footer-color;
+	background-color: $footer-bg;
+
+	a {
+		color: $footer-color;
+
+		&:hover,
+		&:focus {
+			color: $footer-color;
+		}
+	}
+
+	h5 {
+		color: $footer-color;
+	}
+}
+
+.footer-widgets {
+	a {
+		color: $footer-links-color;
+
+		&:hover,
+		&:focus {
+			color: $footer-hover-color;
+		}
+	}
+}
+// Scratchpad.
+// ==========================================================================
+
+.scratchpad {
+	color: $header-color;
+	background-color: $header-bg;
+
+	a {
+		color: $header-color;
+
+		&:hover,
+		&:focus {
+			color: $brand-primary;
+		}
+	}
+
+	h5 {
+		color: $header-color;
+	}
+}
+// Splash.
+// ==========================================================================
+
+.splash .cta-box {
+	.btn {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #fff;
+			background-color: $brand-primary;
+			border-color: #fff;
+		}
+	}
+}
+
+.intro .cta-box .btn {
+	border-color: $brand-primary-darker;
+	background-color: $brand-primary-darker;
+}
+// Staff plugin.
+// ==========================================================================
+
+.staff-departments {
+	li:nth-child(2n + 2) a::before {
+		background-color: $brand-primary;
+	}
+}
+// Vehicle Incentives (SRP).
+// ==========================================================================
+
+.filter-payment {
+	output {
+		.value {
+			color: $brand-primary;
+		}
+	}
+}
+
+.incentive-list {
+
+	@include media-breakpoint-down(sm) {
+		[itemprop="offers"],
+		.finance strong,
+		.lease strong,
+		.cash-incentive strong {
+			color: $brand-primary;
+		}
+	}
+
+	[data-tables-mode="payments"] & [href="#payments"],
+	[data-tables-mode="rates"] & [href="#rates"] {
+		&,
+		&:hover {
+			color: #fff;
+			background-color: $brand-primary;
+			border-color: $brand-primary;
+		}
+	}
+}
+// Payments calculator plugin.
+// ==========================================================================
+
+.payment-calculator {
+	> h3 {
+		color: #fff;
+		background-color: $brand-primary;
+	}
+}
+
+.payment-summary {
+	.payment {
+		color: $brand-primary;
+	}
+}

@@ -1,0 +1,17 @@
+// ==========================================================================
+// Scratchpad (aka. My Garage).
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/modules/scratchpad";
+// Overrides and custom styling.
+// ==========================================================================
+
+.scratchpad header h3,
+.scratchpad-toggle {
+	.count {
+		font-family: $font-family-sans-serif-condensed;
+	}
+}
+

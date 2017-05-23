@@ -1,0 +1,186 @@
+// ==========================================================================
+// Site Header
+// ==========================================================================
+
+body {
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 8.25rem;
+	}
+}
+// Head
+.site-header {
+
+	@include drop-shadow(0, 0.5rem, 1rem, 0.2);
+
+	.site-branding {
+
+		@extend .col-xs-12;
+		@extend .col-lg-3;
+		@extend .text-xs-center;
+		padding: 0;
+
+		.text-logo {
+			padding: 0.5rem 1rem;
+			font-size: 1.25rem;
+			margin: 1rem 0;
+		}
+
+		.site-logo {
+			img {
+				margin: 0 auto;
+				max-height: 5.25rem;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 999;
+		padding: 1rem 0;
+
+		&.header-has-top-bar {
+			padding: 0.5rem 0 1rem;
+
+			.site-branding {
+				.text-logo {
+					margin: 0;
+				}
+
+				.site-logo {
+					img {
+						margin-top: -1rem;
+					}
+				}
+			}
+		}
+	}
+
+	.site-navigation {
+
+		@extend .col-xs-12;
+		@extend .col-lg-9;
+
+		@include media-breakpoint-up(lg) {
+			padding: 1rem 0 0;
+		}
+
+		.primary-menu {
+
+			@extend .pull-lg-right;
+		}
+
+		.scratchpad-toggle {
+
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+
+		button.btn-trigger-primary-menu {
+			color: $color-white;
+			text-indent: 0;
+			width: 8rem;
+			padding: 0.5rem 1rem;
+			text-align: left;
+
+			&::before {
+				left: 1rem;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			li.mega-menu {
+				> .dropdown-menu {
+					> li {
+						> a {
+							text-transform: uppercase;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.mobile-call,
+	.mobile-call-tracking a {
+
+		@extend .pull-xs-right;
+		@extend .text-xs-right;
+		position: relative;
+		margin-top: -2.5rem;
+		margin-right: 2rem;
+
+		&::before {
+			font-family: 'FontAwesome';
+			content: '\f095';
+			display: block;
+			float: right;
+			margin-left: 0.5rem;
+			font-size: 1rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}
+
+.search-icon { // Not available yet, keep here for future.
+	width: rem(60);
+	height: rem(35);
+	overflow: hidden;
+	text-align: center;
+	float: right;
+
+	span {
+		display: none;
+		position: absolute;
+		padding: 1rem;
+		margin-top: -5px;
+		background: #222;
+	}
+
+	&::before {
+		font-family: 'FontAwesome';
+		content: "\f002";
+		font-size: 1.25rem;
+	}
+
+	&:hover {
+		background: #222;
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.site-top-bar {
+	display: none;
+	font-size: 0.8rem;
+	text-align: right;
+	padding: 0 1rem;
+
+	.widget,
+	div,
+	.scratchpad-toggle {
+		display: inline-block;
+		margin: 0 0.15rem;
+	}
+
+	#float-nav {
+		text-align: left;
+	}
+
+	.count {
+		padding: 0.1rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+}

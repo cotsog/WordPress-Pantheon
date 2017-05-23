@@ -1,0 +1,358 @@
+// stylelint-disable color-no-invalid-hex
+// Mercedes Theme color scheme template
+
+@import "config/variables-bootstrap";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+// Custom colors
+// $body-color: #body-color;
+// $body-bg: #body-bg;
+$brand-primary: #333; // en: '', fr: ''
+$brand-secondary: #999; // en: '', fr: ''
+$brand-primary-darker: #1a1a1a; // en: '', fr: ''
+$header-color: #fff; // en: '', fr: ''
+$header-bg: #000001; // en: '', fr: ''
+$footer-color: #999; // en: '', fr: ''
+$footer-primary: #fff; // en: '', fr: ''
+$footer-bg: #000; // en: '', fr: ''
+// bpc - Brand Primary Color (+ Darker) (+ Hover)
+._bpcolor {
+	color: $brand-primary;
+}
+
+._bscolor {
+	color: $brand-secondary;
+}
+
+._bpcolordark {
+	color: $brand-primary-darker;
+}
+// _bpb  - Brand Primary Background (+ Darker)
+._bpback {
+	background-color: $brand-primary;
+}
+
+._bsback {
+	background-color: $brand-secondary;
+}
+
+._bpbackddark {
+	background-color: $brand-primary-darker;
+}
+
+._bgradient {
+	background-color: $header-bg;
+	background-image: linear-gradient(to bottom, $header-bg 0, #000 31%, #2e2e2e 99%);
+
+	> br {
+		display: none;
+	}
+}
+// Common Elements
+a,
+.page-link {
+	color: $brand-primary;
+
+	&:hover,
+	&:focus {
+		color: $brand-primary-darker;
+	}
+}
+
+.btn-primary,
+.gform_button {
+	border-color: $brand-primary;
+	background-color: $brand-primary;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-primary-darker;
+		background-color: $brand-primary-darker;
+	}
+}
+
+[class*="icon-"].icon-boxed {
+	&::before {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+
+	&:hover::before {
+		color: $brand-primary;
+		background-color: $body-bg;
+	}
+}
+
+%form-control-color {
+	&:focus {
+		border-color: $brand-primary-darker;
+	}
+}
+
+.form-control {
+
+	@extend %form-control-color;
+}
+
+.ginput_container {
+	> input:not([type=file]),
+	textarea,
+	select {
+
+		@extend %form-control-color;
+	}
+}
+
+.ginput_complex > span,
+.ginput_container_list {
+	input {
+
+		@extend %form-control-color;
+	}
+}
+
+.product-brochure .product-info dt {
+	color: $brand-primary;
+}
+
+.card-car {
+	&:hover,
+	&:focus {
+		h5 {
+			color: $brand-primary;
+		}
+	}
+}
+
+.site-header .scratchpad-toggle {
+	.count {
+		border-color: $header-bg;
+	}
+}
+// Tabs
+.tabs-nav {
+	border-bottom-color: $brand-primary-darker;
+
+	a:hover {
+		color: $brand-primary-darker;
+	}
+
+	a.active,
+	a.active:hover,
+	a.active:focus,
+	a:focus,
+	a:focus:hover {
+		color: #fff;
+		background-color: $brand-primary-darker;
+	}
+}
+// Pagination
+.page-item.active .page-link {
+	&,
+	&:focus,
+	&:hover {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+}
+// Radios
+.radio {
+	> input:checked ~ .indicator {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+
+	@include hover-focus {
+		.indicator {
+			background-color: $body-bg;
+			border-color: $gray-light;
+		}
+	}
+}
+
+.dropdown-menu::before {
+	border-bottom-color: $brand-primary;
+}
+// Header
+.site-header {
+	color: $header-color;
+	background-color: $header-bg;
+
+	a {
+		color: $header-color;
+
+		&:hover,
+		&:focus {
+			color: $brand-secondary;
+		}
+	}
+}
+// Contact bar
+.contact-bar {
+	color: $brand-secondary;
+
+	strong {
+		color: $header-color;
+	}
+}
+// Navigation
+.primary-menu {
+
+	@include media-breakpoint-up(lg) {
+		> li {
+			background-color: $header-bg;
+
+			&:hover > a,
+			> a:hover,
+			> a:focus {
+				color: $brand-secondary;
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+
+	@include media-breakpoint-up(lg) {
+		background-color: $brand-primary;
+
+		> li {
+			> a {
+				color: #fff;
+			}
+
+			> a:hover,
+			> a:focus {
+				color: $brand-secondary;
+			}
+		}
+	}
+}
+
+.group-sidebar .widget_nav_menu {
+	.menu > li > a {
+		background-color: $brand-primary;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+	}
+
+	.sub-menu a {
+		&:hover,
+		&:focus {
+			background-color: $brand-primary-darker;
+		}
+	}
+}
+// Footer
+.site-footer {
+	color: $footer-color;
+	background-color: $footer-bg;
+
+	a {
+		color: $footer-color;
+
+		&:hover,
+		&:focus {
+			color: $footer-color;
+		}
+	}
+
+	h5 {
+		color: $footer-primary;
+	}
+}
+
+.footer-widgets {
+	a {
+		color: $footer-primary;
+
+		&:hover,
+		&:focus {
+			color: $footer-color;
+		}
+	}
+}
+// Scratchpad
+.scratchpad {
+	color: $header-color;
+	background-color: $header-color;
+
+	a {
+		color: $header-color;
+
+		&:hover,
+		&:focus {
+			color: $brand-primary;
+		}
+	}
+
+	h5 {
+		color: $header-color;
+	}
+}
+// Banner wide
+.banner-wide {
+	color: #fff;
+	background-color: $brand-primary;
+
+	.btn {
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: #fff;
+		}
+	}
+}
+
+.splash .cta-box {
+	.btn {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #fff;
+			background-color: $brand-primary;
+			border-color: #fff;
+		}
+	}
+}
+
+.intro .cta-box .btn {
+	border-color: $brand-primary-darker;
+	background-color: $brand-primary-darker;
+}
+
+.color-block.grey {
+	.btn-primary {
+		background-color: #666;
+
+		&:hover,
+		&:focus {
+			background-color: $gray;
+			border-color: $gray;
+		}
+	}
+}
+// Carousel
+.carousel-direction-nav a {
+	color: $brand-primary;
+
+	&:hover,
+	&:focus {
+		color: $brand-secondary;
+	}
+
+	&::before {
+		background-color: $header-bg;
+	}
+}

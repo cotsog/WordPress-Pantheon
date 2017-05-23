@@ -1,0 +1,598 @@
+._bpcolor {
+  color: #c51633;
+}
+
+._bscolor {
+  color: #232323;
+}
+
+._bpcolordark {
+  color: #971127;
+}
+
+._bpback {
+  background-color: #c51633;
+}
+
+._bsback {
+  background-color: #232323;
+}
+
+._bpbackddark {
+  background-color: #971127;
+}
+
+a,
+.page-link {
+  color: #c51633;
+}
+
+a:hover,
+a:focus,
+.page-link:hover,
+.page-link:focus {
+  color: #1a1a1d;
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+  color: #c51633;
+}
+
+._bpbackinv {
+  color: #c51633;
+  background-color: transparent;
+}
+
+._bpbackinv.active,
+._bpbackinv:hover,
+._bpbackinv:focus {
+  color: #fff;
+  background-color: #c51633;
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+.application input.button.application_button,
+.quick-search-button {
+  border-color: #c51633;
+  background-color: #c51633;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover:focus,
+.btn-primary:hover:active,
+.btn-primary:focus:active,
+.gform_button:hover,
+.gform_button:focus,
+.gform_button:active,
+.gform_button:hover:focus,
+.gform_button:hover:active,
+.gform_button:focus:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus:active,
+.application input.button.application_button:hover,
+.application input.button.application_button:focus,
+.application input.button.application_button:active,
+.application input.button.application_button:hover:focus,
+.application input.button.application_button:hover:active,
+.application input.button.application_button:focus:active,
+.quick-search-button:hover,
+.quick-search-button:focus,
+.quick-search-button:active,
+.quick-search-button:hover:focus,
+.quick-search-button:hover:active,
+.quick-search-button:focus:active {
+  border-color: #971127;
+  background-color: #971127;
+}
+
+.btn-secondary {
+  border-color: #232323;
+  background-color: #232323;
+  color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:hover:focus,
+.btn-secondary:hover:active,
+.btn-secondary:focus:active {
+  border-color: #0a0a0a;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+.btn-info {
+  border-color: #1a1a1d;
+  background-color: #1a1a1d;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info:hover:focus,
+.btn-info:hover:active,
+.btn-info:focus:active {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+
+#kia .btn-ghost,
+.btn-ghost {
+  color: #fff;
+}
+
+#kia .btn-ghost:hover,
+.btn-ghost:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.gform_button,
+.application_button {
+  color: #fff;
+  border-color: #c51633;
+  background-color: #c51633;
+}
+
+.gform_button:hover,
+.gform_button:focus,
+.application_button:hover,
+.application_button:focus {
+  color: #fff;
+  border-color: #971127;
+  background-color: #971127;
+}
+
+.search-results .special-deal {
+  background-color: #c51633;
+}
+
+[data-trigger="price-tooltip"].savings-price {
+  color: #232323;
+  border-color: #232323;
+}
+
+.filter-stock-type a:hover {
+  color: #232323;
+}
+
+.search-results > li:hover {
+  background: #eee;
+}
+
+.product-gallery .image-count {
+  background-color: #c51633;
+}
+
+.product-gallery .image-count span {
+  background-color: #971127;
+}
+
+.layout-srp .filters dt {
+  color: #1a1a1d;
+}
+
+.layout-srp .filters dd a {
+  color: #818e92;
+}
+
+.layout-srp .filters dd a:hover {
+  background-color: transparent;
+  color: #c51633;
+}
+
+.tabs-nav {
+  border-bottom-color: #971127;
+}
+
+.tabs-nav a:hover {
+  color: #971127;
+}
+
+.tabs-nav a.active,
+.tabs-nav a.active:hover,
+.tabs-nav a.active:focus,
+.tabs-nav a:focus,
+.tabs-nav a:focus:hover {
+  color: #fff;
+  background-color: #971127;
+}
+
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  background-color: #c51633;
+  border-color: #c51633;
+}
+
+.site-header {
+  color: #818e92;
+  background-color: #fff;
+}
+
+.site-header a {
+  color: #c51633;
+}
+
+.site-header a .text-logo {
+  color: #1a1a1d;
+}
+
+.site-header a .text-logo:hover,
+.site-header a .text-logo:focus {
+  color: #1a1a1d;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  color: #c51633;
+}
+
+.site-header .standard-site-name {
+  color: #1a1a1d;
+}
+
+.site-header .site-top-bar a:hover,
+.site-header .site-top-bar a:focus {
+  color: #1a1a1d;
+}
+
+.site-header.hyundai-header .top-social .widget_strathcom_social_widget li a::before {
+  color: #c51633;
+}
+
+.site-header.hyundai-header .top-social .widget_strathcom_social_widget li a::before:hover,
+.site-header.hyundai-header .top-social .widget_strathcom_social_widget li a::before:focus {
+  color: #1a1a1d;
+}
+
+.site-primary-navigation {
+  background-color: #232323;
+}
+
+.primary-menu._bpback {
+  background: #c51633;
+}
+
+@media (min-width: 992px) {
+  .primary-menu._bpback {
+    background: transparent;
+  }
+}
+
+.primary-menu > li > a {
+  color: #fff;
+}
+
+.primary-menu > li > a:hover {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .primary-menu > li > a:hover {
+    color: #c51633;
+  }
+}
+
+.primary-menu > li .dropdown-menu {
+  background: #232323;
+}
+
+@media (max-width: 991px) {
+  .primary-menu > li .dropdown-menu li {
+    background: #c51633;
+  }
+}
+
+.primary-menu > li .dropdown-menu a {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .primary-menu > li .dropdown-menu .dropdown-menu > li {
+    background: #971127;
+  }
+}
+
+.primary-menu > li.mega-menu > .dropdown-menu {
+  background: #232323;
+  border-top-color: #c51633;
+  border: 0;
+}
+
+.primary-menu > li.mega-menu > .dropdown-menu a {
+  color: #fff !important;
+}
+
+.primary-menu > li.mega-menu > .dropdown-menu a:hover {
+  background: black;
+}
+
+.primary-menu .dropdown-trigger::before {
+  color: #fff;
+}
+
+.primary-menu .scratchpad-toggle a,
+.primary-menu .scratchpad-toggle .count {
+  color: #fff;
+}
+
+.primary-menu .scratchpad-toggle a:hover,
+.primary-menu .scratchpad-toggle .count:hover {
+  color: #fff;
+}
+
+.dropdown-trigger {
+  background-color: #000;
+}
+
+.map-flag {
+  background-color: #c51633;
+}
+
+.map-flag a {
+  color: #fff;
+}
+
+.map-flag a:hover,
+.map-flag a:focus {
+  color: #1a1a1d;
+}
+
+.site-footer {
+  color: #818e92;
+  background-color: #1a1a1d;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #c51633;
+}
+
+.site-footer h5 {
+  color: #c51633;
+}
+
+.site-footer .footer-info a {
+  color: #818e92;
+}
+
+.footer-social li a {
+  color: #fff;
+}
+
+.footer-social li a:hover,
+.footer-social li a:focus {
+  color: #c51633;
+}
+
+.scratchpad {
+  color: #232323;
+  background-color: #fff;
+}
+
+.scratchpad a {
+  color: #232323;
+}
+
+.scratchpad a:hover,
+.scratchpad a:focus {
+  color: #c51633;
+}
+
+.scratchpad a.close-btn:hover {
+  background-color: #c51633;
+}
+
+.scratchpad h5 {
+  color: #c51633;
+}
+
+.scratchpad ul .remove:hover,
+.scratchpad ul .view:hover {
+  background-color: #c51633;
+}
+
+.site-header .scratchpad-toggle a {
+  color: #c51633;
+}
+
+.site-header .scratchpad-toggle .count {
+  background-color: #c51633;
+  color: #fff;
+}
+
+.site-header .scratchpad-toggle:hover .count,
+.site-header .scratchpad-toggle:focus .count {
+  background-color: #232323;
+}
+
+.staff-departments li a {
+  background-color: #c51633;
+  border-color: #c51633;
+}
+
+.staff-departments li a:hover,
+.staff-departments li a:focus,
+.staff-departments li a:active,
+.staff-departments li a:hover:focus,
+.staff-departments li a:hover:active,
+.staff-departments li a:focus:active {
+  background-color: #971127;
+  border-color: #971127;
+}
+
+.staff-member > figure > a span {
+  background-color: #c51633;
+}
+
+.entry-content .single_job_listing .meta .jop-posting,
+.entry-content .single_job_listing .meta .full-time,
+.entry-content .single_job_listing .meta .part-time,
+.entry-content .single_job_listing .meta .temporary,
+.entry-content .single_job_listing .meta .internship,
+.entry-content .single_job_listing .meta .freelance {
+  background-color: #c51633;
+}
+
+.carousel .btn {
+  background-color: #c51633;
+  border-color: #c51633;
+}
+
+.carousel .btn:hover,
+.carousel .btn:focus,
+.carousel .btn:active,
+.carousel .btn:hover:focus,
+.carousel .btn:hover:active,
+.carousel .btn:focus:active {
+  background-color: #971127;
+  border-color: #971127;
+}
+
+.black-container {
+  background: #111;
+  color: #fff;
+}
+
+#float-nav a {
+  background-color: #c51633;
+}
+
+#float-nav a:hover {
+  background-color: #1a1a1d;
+}
+
+.layout-vdp-twenty-seventeen .vdp-dealer-info .phone-number {
+  background: #c51633;
+}
+
+.srp-vi-filters .filter-payment output .value,
+.srp-vi-results .actions a:hover,
+.srp-vi-results .details [data-trigger="price-tooltip"] {
+  color: #c51633;
+}
+
+.srp-vi-results .details,
+.custom-checkbox-list label,
+.custom-radio-list label {
+  background: #c51633;
+  border-color: #c51633;
+  color: #fff !important;
+}
+
+.srp-vi-results .details::after,
+.custom-checkbox-list label::after,
+.custom-radio-list label::after {
+  display: none;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus {
+  background: #971127;
+  border-color: #971127;
+  color: #fff;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus,
+.srp-vi-results header .table-actions a.active {
+  background: #971127;
+  border-color: #971127;
+  color: #fff;
+}
+
+.filter-options .checkbox-list input:checked + label,
+.filter-years .radio-list input:checked + label,
+.custom-radio-list input:checked + label {
+  border-color: #971127;
+  background: #971127;
+  color: #fff;
+}
+
+.details h5 {
+  color: #fff;
+}
+
+.details td {
+  color: #000;
+}
+
+#hyundai .btn-primary {
+  background: #084d8b;
+  border-color: #084d8b;
+}
+
+#hyundai .btn-primary:hover,
+#hyundai .btn-primary:focus {
+  background: #05325b;
+  border-color: #084d8b;
+}
+
+#hyundai .srp-vi-filters .filter-payment output .value,
+#hyundai .srp-vi-results .actions a:hover,
+#hyundai .srp-vi-results .details [data-trigger="price-tooltip"] {
+  color: #084d8b;
+}
+
+#hyundai .srp-vi-results .details,
+#hyundai .custom-checkbox-list label,
+#hyundai .custom-radio-list label {
+  background: #084d8b;
+  border-color: #084d8b;
+  color: #fff !important;
+}
+
+#hyundai .srp-vi-results .details::after,
+#hyundai .custom-checkbox-list label::after,
+#hyundai .custom-radio-list label::after {
+  display: none;
+}
+
+#hyundai .custom-checkbox-list label:hover,
+#hyundai .custom-checkbox-list label:focus,
+#hyundai .custom-radio-list label:hover,
+#hyundai .custom-radio-list label:focus {
+  background: #05325b;
+  border-color: #05325b;
+  color: #fff;
+}
+
+#hyundai .custom-checkbox-list label:hover,
+#hyundai .custom-checkbox-list label:focus,
+#hyundai .custom-radio-list label:hover,
+#hyundai .custom-radio-list label:focus,
+#hyundai .srp-vi-results header .table-actions a.active {
+  background: #05325b;
+  border-color: #05325b;
+  color: #fff;
+}
+
+#hyundai .filter-options .checkbox-list input:checked + label,
+#hyundai .filter-years .radio-list input:checked + label,
+#hyundai .custom-radio-list input:checked + label {
+  border-color: #05325b;
+  background: #05325b;
+  color: #fff;
+}

@@ -1,0 +1,14 @@
+{% if template not in [ 'grid', 'list', 'single' ] %}
+	{% set template = 'grid' %}
+{% endif %}
+
+<div class="staff-wrapper staff-{{ template }}">
+	{% for post in posts %}
+		<div class="staff-card">
+			{% include 'components/content-staff.twig' with {
+					is_bio: false
+				}
+			%}
+		</div>
+	{% endfor %}
+</div>

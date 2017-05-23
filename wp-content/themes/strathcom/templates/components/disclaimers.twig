@@ -1,0 +1,6 @@
+{% if disclaimers %}
+	<div class="disclaimer">
+		{{ disclaimers.network ? disclaimers.network : '' }}
+		{{ disclaimers.custom ? disclaimers.custom : '' }}
+	</div>
+{% endif %}

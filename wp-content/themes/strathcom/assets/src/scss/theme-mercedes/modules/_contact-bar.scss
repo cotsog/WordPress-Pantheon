@@ -1,0 +1,21 @@
+// Contact bar
+
+.contact-bar {
+
+	@extend .container;
+
+	> p {
+
+		@extend .col-xs-12;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: $spacer 0 0;
+		text-align: right;
+		font-size: 105%;
+		font-weight: 300;
+
+		strong {
+			font-weight: 300;
+		}
+	}
+}

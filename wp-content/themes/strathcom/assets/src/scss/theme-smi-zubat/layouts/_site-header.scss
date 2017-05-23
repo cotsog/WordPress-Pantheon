@@ -1,0 +1,151 @@
+// ==========================================================================
+// Site Header
+// ==========================================================================
+// Head
+.site-header {
+
+	@include drop-shadow(0, 0.5rem, 1rem, 0.2);
+
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 999;
+	}
+
+	.container-fluid,
+	.site-branding .site-logo,
+	.primary-menu,
+	.head-right {
+		padding: 0;
+	}
+
+	.site-branding {
+
+		@extend .col-xs-12;
+		@extend .col-lg-3;
+		@extend .text-xs-center;
+		padding: rem(5);
+		height: rem(95);
+
+		.site-logo {
+			img {
+				margin: 0 auto;
+				max-height: rem(85);
+			}
+		}
+
+		.text-logo {
+
+			@extend %condensed;
+			padding: 1rem 0;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+
+			@include media-breakpoint-up(lg) {
+				padding: 2rem 0;
+				font-size: 1rem;
+			}
+
+			@include media-breakpoint-up(xl) {
+				padding: 1rem 0;
+				font-size: 1.5rem;
+			}
+
+			@media (min-width: 1400px) {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.head-right {
+
+		@extend .col-xs-12;
+		@extend .col-lg-9;
+	}
+
+	.site-navigation {
+		.scratchpad-toggle {
+
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+
+		button.btn-trigger-primary-menu {
+			color: $color-white;
+			text-indent: 0;
+			width: 8rem;
+			padding: 0.5rem 1rem;
+			text-align: left;
+
+			&::before {
+				left: 1rem;
+			}
+		}
+	}
+
+	.mobile-call,
+	.mobile-call-tracking a {
+
+		@extend .pull-xs-right;
+		@extend .text-xs-right;
+		position: relative;
+		margin-top: -2.5rem;
+		margin-right: 2rem;
+		color: $color-white;
+
+		&:hover {
+			color: $color-white;
+		}
+
+		&::before {
+			font-family: 'FontAwesome';
+			content: '\f095';
+			display: block;
+			float: right;
+			margin-left: 0.5rem;
+			color: $color-white;
+			font-size: 1rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}
+
+.site-top-bar {
+	display: none;
+	font-size: 0.8rem;
+	text-align: right;
+
+	.widget,
+	div,
+	.scratchpad-toggle {
+		display: inline-block;
+		padding: 0 0.25rem;
+	}
+
+	#float-nav {
+		text-align: left;
+	}
+
+	.count {
+		padding: 0 1rem 0 0;
+	}
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+}
+
+.scratchpad {
+	header {
+		h3 {
+			text-transform: uppercase;
+			padding-left: 1rem;
+		}
+	}
+}
+

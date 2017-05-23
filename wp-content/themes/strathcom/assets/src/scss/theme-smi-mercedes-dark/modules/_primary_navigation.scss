@@ -1,0 +1,231 @@
+// ==========================================================================
+// Site primary navigation.
+// ==========================================================================
+// Primary menu-item
+// ==========================================================================
+
+.primary-menu {
+
+	@include clearfix;
+	@include reset-list;
+	position: absolute;
+	right: 0;
+	z-index: $zindex-navbar;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity $transition-fast;
+
+	&.open {
+		height: auto;
+		overflow: visible;
+		opacity: 1;
+	}
+
+	@media (min-width: 1300px) {
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: auto;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		margin: 0 #{ - $spacer / 2};
+		padding: #{$spacer / 2} 0;
+		opacity: 1;
+		box-shadow: none;
+		transition: none;
+
+		body & > li {
+			background-color: transparent;
+
+			> a {
+				background-color: transparent;
+			}
+		}
+
+		body & {
+			background-color: transparent;
+
+			> li {
+				position: relative;
+				float: left;
+
+				> a {
+					padding: $spacer / 2;
+					background-color: transparent;
+					border: none;
+					transition: color $transition-fast;
+
+					@include hover-focus {
+						background-color: transparent;
+						border: none;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		position: relative;
+		display: block;
+		padding: #{$spacer / 2} $btn-padding-x;
+		transition: color $transition-fast, background-color $transition-fast;
+
+		@include hover-focus {
+			text-decoration: none;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.dropdown-trigger {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: #{$spacer / 2} 0;
+		width: $spacer * 2.5;
+		height: auto;
+		max-height: 100%;
+		background-color: rgba(255, 255, 255, .3);
+		transition: background-color $transition-fast;
+		border: none;
+
+		&::before {
+
+			@include fa-icon();
+			content: $fa-var-caret-down;
+			transform: scale(1.25);
+			transition: transform $transition-fast;
+		}
+
+		&.active::before {
+			transform: scale(1.25) rotate(-180deg);
+		}
+
+		@include hover-focus {
+			background-color: rgba(255, 255, 255, .4);
+		}
+
+		@media (min-width: 1300px) {
+			display: none;
+		}
+	}
+
+	> li {
+		position: relative;
+
+		> a {
+
+			@media (min-width: 1300px) {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+// Dropdown menu
+// ==========================================================================
+
+.dropdown-menu {
+
+	@include reset-list;
+	display: none;
+	font-size: $font-size-sm;
+	z-index: 9;
+
+	&.open {
+		display: block;
+	}
+
+	li > a {
+		display: block;
+		padding: #{$spacer / 3} #{$btn-padding-x * 2};
+		background-color: rgba(0, 0, 0, 0.2);
+		transition: background-color $transition-fast;
+		font-size: 1.1rem;
+
+		@include hover-focus {
+			text-decoration: none;
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+	}
+
+	@media (min-width: 1300px) {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 18rem;
+		height: 0;
+		display: block;
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity $transition-fast;
+
+		li > a {
+			padding-left: $btn-padding-x;
+			padding-right: $btn-padding-x;
+			background-color: transparent;
+		}
+
+		li:hover > & {
+			height: auto;
+			padding-top: $spacer / 2;
+			opacity: 1;
+			overflow: visible;
+		}
+	}
+}
+// Mobile menu trigger
+// ==========================================================================
+
+.btn-trigger-primary-menu {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 3rem;
+	height: 3rem;
+	padding: 0.5rem;
+	text-indent: 999px;
+	background-color: transparent;
+	border: none;
+
+	@media (min-width: 1300px) {
+		display: none;
+	}
+
+	&::before {
+
+		@include fa-icon();
+		$hamburger-menu-icon-size: 24px !default;
+		content: $fa-var-bars;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		margin-top: #{ - $hamburger-menu-icon-size / 2};
+		font-size: $hamburger-menu-icon-size;
+		text-indent: 0;
+		text-align: center;
+	}
+}
+// Scratchpad Mobile
+// ==========================================================================
+
+div.scratchpad-toggle { // Outside li
+
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+}
+
+li.scratchpad-toggle {
+	a::before {
+		display: none;
+	}
+
+	@include media-breakpoint-up(md) {
+		a::before {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+// ==========================================================================
+// Splash block.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../../common/post-elements/splash";
+// Overrides and custom styling.
+// ==========================================================================
+
+.splash {
+	.cta-box {
+		.btn {
+			font-family: $font-family-sans-serif-condensed;
+			font-weight: 300;
+			text-transform: uppercase;
+		}
+
+		p {
+
+			@extend %serif;
+			font-size: $font-size-sm;
+		}
+	}
+}

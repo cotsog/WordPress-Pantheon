@@ -1,0 +1,90 @@
+// ==========================================================================
+// Content blocks styling.
+// ==========================================================================
+// Import common styles for all content blocks.
+// ==========================================================================
+// Instead of importing all content blocks at once, only the ones that are
+// needed in the theme can be imported, like:
+//
+// @import "../../common/content-blocks/color-block";
+// @import "../../common/content-blocks/container-slant";
+// ...
+
+@import "../../common/content-blocks/all";
+// Overrides and custom styling.
+// ==========================================================================
+
+.colorblock-section {
+	.inner {
+
+		@extend .container;
+	}
+}
+
+.content-sidebar,
+.layout-default {
+	padding-top: 1rem;
+}
+
+.full-column-layout,
+.half-column-layout,
+.three-column-layout,
+.four-column-layout {
+	padding: 2.5rem 0;
+}
+// Fluid Bxoes
+
+.fluid-boxes {
+	.fluid-left-col,
+	.fluid-right-col {
+		.inner {
+
+			@include media-breakpoint-up(xl) {
+				padding: 5rem;
+			}
+		}
+	}
+}
+// Sidebar Nav
+
+#float-nav {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	top: 40%;
+	width: rem(250);
+	right: rem(-175);
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		right: -0.7rem;
+		padding: rem(15);
+		margin-bottom: 0.2rem;
+		background: $color-black;
+		color: $color-white;
+		font-size: 0.9em;
+		transition: 1s, ease-out;
+
+		i {
+			font-size: 1.25rem;
+			padding: 2% 10% 2% 5%;
+		}
+
+		&:hover {
+			right: rem(150);
+			transition: 1s, ease-out;
+			text-decoration: none;
+		}
+	}
+}
+// Carousel
+.home {
+	.carousel-viewport {
+		padding: 0 2%;
+	}
+}

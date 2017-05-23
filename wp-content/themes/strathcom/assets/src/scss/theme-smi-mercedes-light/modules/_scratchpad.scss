@@ -1,0 +1,38 @@
+// ==========================================================================
+// Scratchpad
+// ==========================================================================
+
+.scratchpad {
+	background: $body-bg;
+
+	a.close-btn {
+		background: $body-bg;
+		color: $color-black;
+		border-left: none;
+
+		@include hover-focus {
+			color: $color-blue !important;
+			background: $body-bg !important; // Fix importants later, don't have time right now
+		}
+	}
+
+	header {
+		h3 {
+			font-size: 1.8rem;
+			margin-left: 1rem;
+
+			&::before {
+				display: none;
+			}
+
+			.count {
+				background-color: $brand-primary;
+			}
+		}
+	}
+}
+
+.scratchpad-overlay {
+	background-color: $body-bg;
+}
+

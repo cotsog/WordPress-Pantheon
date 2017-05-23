@@ -1,0 +1,45 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% block content %}
+	<div class="footer-dealer-info" itemscope itemtype="http://schema.org/AutoDealer">
+
+		<span class="dealer-description">
+			<h5 itemprop="name">{{ site.title | e }}</h5>
+			{% if (site.description) -%}
+				<p itemprop="description">{{ site.description | e }}</p>
+			{% endif %}
+		</span>
+
+		<span class="dealer-contact">
+			<span itemprop="telephone">
+				<span class="title">Call us at </span><a href="tel:{{ phone_number|replace(' ', '-') }}">{{ phone_number }}</a>
+			</span>
+		</span>
+
+		<span class="dealer-address">
+			<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				<span class="title">Located at</span>
+				{% if (street) -%}
+					<span itemprop="streetAddress">{{ street | e }}</span>
+				{%- endif %}
+				{% if (locality) -%}
+					<span itemprop="addressLocality">{{ locality | e }}</span>,
+				{%- endif %}
+				{% if (region) -%}
+					<span itemprop="addressRegion">{{ region | e }}</span>
+				{%- endif %}
+				{% if (postal) -%}
+					<span itemprop="postalCode">{{ postal | e }}</span>
+				{%- endif %}
+			</address>
+
+			{% if latitude and longitude -%}
+				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+					<meta itemprop="latitude" content="{{ latitude | e( 'html_attr' ) }}">
+					<meta itemprop="longitude" content="{{ longitude | e( 'html_attr' ) }}">
+				</span>
+			{%- endif %}
+		</span>
+
+	</div>
+{% endblock %}

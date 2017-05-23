@@ -1,0 +1,30 @@
+<?php
+function strathcom_get_color_scheme() {
+	return array(
+		array( 'name' => 'body-color', 'default' => '#333', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'body-bg', 'default' => '#fff', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-white', 'default' => '#fff', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-black', 'default' => '#000', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-primary', 'default' => '#000', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-secondary', 'default' => '#cc243d', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-tertiary', 'default' => '#434c53', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-primary-darker', 'default' => '#000', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-secondary-darker', 'default' => '#a11c30', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-tertiary-darker', 'default' => '#2c3237', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-links-color', 'default' => '$brand-primary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-links-color-hover', 'default' => '$brand-secondary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-color', 'default' => '$color-black', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-bg', 'default' => '$color-white', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-links-color', 'default' => '$color-black', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-color', 'default' => '$color-white', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-links-color', 'default' => '$color-white', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-hover-color', 'default' => '$brand-secondary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-bg', 'default' => '$brand-tertiary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-color', 'default' => '$color-white', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-links-color', 'default' => '$brand-primary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-bg', 'default' => '$brand-tertiary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-primary', 'default' => '#fff', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'vw-primary', 'default' => '#00baea', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'vw-secondary', 'default' => '#0084d8', 'label_en' => '', 'label_fr' => '' ),
+	);
+}

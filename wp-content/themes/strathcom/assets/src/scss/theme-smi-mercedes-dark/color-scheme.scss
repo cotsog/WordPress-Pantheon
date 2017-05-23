@@ -1,0 +1,386 @@
+// stylelint-disable color-no-invalid-hex
+
+// ==========================================================================
+// Color scheme template.
+// ==========================================================================
+
+@import "config/variables-bootstrap";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Custom colors.
+// ==========================================================================
+$color-white: #fefefe; // en: '', fr: ''
+$body-color: #999; // en: '', fr: ''
+$body-bg: #0b0b0c; // en: '', fr: ''
+$brand-primary: #666; // en: '', fr: ''
+$brand-primary-darker: #4d4d4d; // en: '', fr: ''
+$brand-secondary: #00adef; // en: '', fr: ''
+$brand-secondary-darker: #23c2ff; // en: '', fr: ''
+$brand-links-color: $brand-primary; // en: '', fr: ''
+$brand-links-color-hover: $brand-secondary; // en: '', fr: ''
+$scratchpad-color: $body-color; // en: '', fr: ''
+$scratchpad-links-color: $brand-primary; // en: '', fr: ''
+$scratchpad-bg: $body-bg; // en: '', fr: ''
+$scratchpad-primary: $brand-primary; // en: '', fr: ''
+
+// Body
+// ==========================================================================
+
+body {
+	background: $body-bg;
+	color: $body-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: $color-white;
+}
+
+// _bpb  - Brand Primary Background (+ Darker).
+// ==========================================================================
+._bpback {
+	background-color: $brand-primary;
+}
+
+._bsback {
+	background-color: $brand-secondary;
+}
+
+._bpbackddark {
+	background-color: $brand-primary-darker;
+}
+
+// Common Elements.
+// ==========================================================================
+
+a,
+.page-link {
+	color: $brand-links-color;
+
+	&:hover,
+	&:focus {
+		color: $brand-links-color-hover;
+	}
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+	color: $brand-links-color;
+}
+
+// _bpbackinv - Brand Primary Background Inverted (for inverted buttons).
+._bpbackinv {
+	color: $brand-links-color;
+	background-color: transparent;
+
+	&.active,
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: $brand-links-color;
+	}
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+.application input.button.application_button,
+.staff-departments li a,
+.staff-member .photo a:hover span,
+.quick-search-button {
+	border-color: $brand-primary;
+	background-color: $brand-primary;
+	color: $color-white;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-primary-darker;
+		background-color: $brand-primary-darker;
+		color: $color-white;
+	}
+}
+
+.application input.button.application_button,
+.staff-departments li a span {
+	transition: none;
+}
+
+.btn-secondary {
+	border-color: $brand-secondary;
+	background-color: $brand-secondary;
+	color: $color-white;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-secondary-darker;
+		background-color: $brand-secondary-darker;
+		color: $color-white;
+	}
+}
+
+// SRP/VDP.
+// ==========================================================================
+
+.single-inventory {
+	background: #fff;
+
+	.group-content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			color: #222;
+		}
+	}
+}
+
+.search-results {
+	.special-deal {
+		background-color: $brand-primary;
+	}
+}
+
+[data-trigger="price-tooltip"].savings-price {
+	color: $brand-secondary;
+	border-color: $brand-secondary;
+}
+
+.filter-stock-type a:hover {
+	color: $brand-secondary;
+}
+
+.search-results > li:hover {
+	background: #eee;
+}
+
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+	background-color: $brand-primary;
+	border-color: $brand-primary;
+}
+
+.product-gallery {
+	.image-count {
+		background-color: $brand-primary;
+
+		span {
+			background-color: $brand-primary-darker;
+		}
+	}
+}
+
+// Tabs.
+// ==========================================================================
+
+.tabs-nav {
+	border-bottom-color: $brand-primary;
+
+	a:hover {
+		color: $brand-secondary;
+	}
+
+	a.active,
+	a.active:hover,
+	a.active:focus,
+	a:focus,
+	a:focus:hover {
+		color: #fff;
+		background-color: $brand-primary;
+	}
+}
+
+// Pagination.
+// ==========================================================================
+
+.page-item.active .page-link {
+	&,
+	&:focus,
+	&:hover {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+}
+
+// Filters.
+// ==========================================================================
+
+.layout-srp {
+	.filter-actions,
+	.filters {
+		background-color: #222;
+	}
+
+	.filters {
+		dt {
+			color: $color-white;
+		}
+
+		dd {
+			a {
+				color: #ccc;
+
+				&:hover {
+					background-color: transparent;
+					color: $brand-secondary;
+				}
+			}
+		}
+	}
+}
+
+// Radios.
+// ==========================================================================
+
+// .radio {
+// 	> input:checked ~ .indicator {
+// 		background-color: $brand-primary;
+// 		border-color: $brand-primary;
+// 	}
+
+// 	@include hover-focus {
+// 		.indicator {
+// 			background-color: $body-bg;
+// 			border-color: $gray-light;
+// 		}
+// 	}
+// }
+
+// .dropdown-menu::before {
+// 	border-bottom-color: $brand-primary;
+// }
+
+// Scratchpad.
+// ==========================================================================
+
+#scratchpad {
+	h3 {
+		color: $color-white;
+	}
+}
+
+.scratchpad {
+	color: $scratchpad-color;
+	background-color: $scratchpad-bg;
+
+	a {
+		color: $scratchpad-color;
+
+		&:hover,
+		&:focus {
+			color: $scratchpad-links-color;
+		}
+	}
+
+	h5 {
+		color: $scratchpad-primary;
+	}
+
+	ul {
+		.remove,
+		.view {
+			&:hover {
+				background-color: #222;
+			}
+		}
+	}
+}
+
+// Calc.
+// ==========================================================================
+
+.payment-calculator {
+	h1,
+	h2,
+	h3,
+	label,
+	span.payments,
+	p,
+	input,
+	select {
+		color: #222 !important;
+	}
+}
+
+// Incentives Page.
+// ==========================================================================
+
+.srp-vi-filters .filter-payment output .value,
+.srp-vi-results .actions a:hover,
+.srp-vi-results .details [data-trigger="price-tooltip"] {
+	color: $brand-primary;
+}
+
+.srp-vi-results .details,
+.custom-checkbox-list label,
+.custom-radio-list label {
+	background: $brand-primary;
+	border-color: $brand-primary;
+	color: $color-white !important;
+
+	&::after {
+		display: none;
+	}
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus {
+	background: $brand-primary-darker;
+	border-color: $brand-primary-darker;
+	color: $color-white;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus,
+.srp-vi-results header .table-actions a.active {
+	background: $brand-primary-darker;
+	border-color: $brand-primary-darker;
+	color: $color-white;
+}
+
+.filter-options .checkbox-list,
+.filter-years .radio-list,
+.custom-radio-list {
+	input:checked {
+		+ label {
+			border-color: $brand-primary-darker;
+			background: $brand-primary-darker;
+			color: $color-white;
+		}
+	}
+}
+
+.srp-vi-results .description h4 {
+	color: #000;
+}
+
+.page-template-template-incentives-search-php,
+.page-template-template-personalized-payments {
+	background: #f7f7f7;
+
+	.group {
+		p,
+		h3,
+		h4 {
+			color: $gray;
+		}
+	}
+}

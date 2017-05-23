@@ -1,0 +1,248 @@
+// ==========================================================================
+// Site header layout.
+// ==========================================================================
+
+.site-header {
+	position: relative;
+	min-width: 320px;
+	height: $header-mobile-height;
+	margin-bottom: $header-margin-bottom;
+	box-shadow: 0 0.5rem 0.5rem rgba(#000, .1);
+	transition: height $transition-slow, background-color $transition-slow, box-shadow $transition-slow;
+
+	@include media-breakpoint-up(md) {
+		height: $header-height;
+	}
+
+	& + .site-top-bar {
+		margin-top: -$header-margin-bottom;
+	}
+
+	.expanded-header & {
+		position: absolute;
+		width: 100%;
+		height: $header-expanded-height-mobile;
+		background-color: transparent;
+		box-shadow: none;
+
+		@include media-breakpoint-up(lg) {
+			height: $header-expanded-height;
+		}
+	}
+
+	> .container {
+		height: 100%;
+	}
+}
+// Large screens layout.
+// ==========================================================================
+
+@include media-breakpoint-up(lg) {
+	.sticky-header {
+		.site-header {
+			position: fixed;
+			z-index: $zindex-navbar-sticky;
+			width: 100%;
+			height: $header-height;
+		}
+
+		.site-header + .site-content {
+			padding-top: $header-height + $header-margin-bottom;
+		}
+
+		.site-header + .site-top-bar {
+			padding: $header-height 0 $header-margin-bottom;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 0;
+				padding-bottom: 0;
+			}
+		}
+
+		.site-content.layout-full-width {
+			padding-top: 0;
+		}
+
+		&.expanded-header {
+			.site-header {
+				height: $header-expanded-height;
+			}
+
+			.site-header + .site-top-bar {
+				padding-top: 0;
+			}
+		}
+	}
+}
+// Site branding.
+// ==========================================================================
+
+.site-branding {
+	float: left;
+	width: 50%;
+	height: 100%;
+	margin: 0 auto;
+
+	@include media-breakpoint-up(md) {
+		width: 1 / 3 * 100%;
+	}
+
+	@include media-breakpoint-up(lg) {
+		width: 25%;
+	}
+}
+// Site navigation.
+// ==========================================================================
+
+.site-navigation {
+
+	@include clearfix;
+	width: auto;
+	height: 100%;
+	margin: 0 auto;
+
+	.site-primary-navigation {
+
+		@extend .clearfix;
+		height: 100%;
+		float: right;
+
+		.expanded-header & {
+			padding-top: ($header-expanded-height-mobile - $header-mobile-height) / 2;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 0;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			margin-left: $spacer * 2;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-left: 0;
+		}
+	}
+
+	.btn-call-us {
+
+		@extend .hidden-md-up;
+		margin-top: 0;
+	}
+
+	.primary-menu {
+
+		@include media-breakpoint-up(lg) {
+			float: right;
+			margin-top: 0;
+		}
+	}
+
+	.btn-trigger-primary-menu {
+
+		@extend .hidden-lg-up;
+		float: left;
+		width: $header-mobile-height;
+		height: $header-mobile-height;
+		margin-right: -$grid-gutter-width / 2;
+		border-left: $hr-border-width solid rgba(#fff, .2);
+
+		.expanded-header & {
+			border-left: none;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: $header-height;
+			height: $header-height;
+		}
+	}
+}
+// Scratchpad toggle.
+// ==========================================================================
+
+.scratchpad-toggle {
+	transition: opacity $transition-slow;
+
+	.label {
+		display: none;
+	}
+
+	// Desktop toggle (as a primary menu item)
+	.primary-menu > & {
+
+		@extend .hidden-md-down;
+		width: $header-height;
+		height: $header-height;
+
+		> a {
+			padding-top: $header-height / 6;
+		}
+	}
+
+	// Mobile toggle (as a separate toggle in the header)
+	.site-primary-navigation > & {
+
+		@extend .hidden-lg-up;
+		float: left;
+		width: auto;
+		height: $header-mobile-height;
+		padding: #{$header-mobile-height / 10} .75rem 0;
+		border-left: $hr-border-width solid rgba(#fff, .2);
+
+		.expanded-header & {
+			border-left: none;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: $header-height;
+			height: $header-height;
+			padding-top: #{$header-height / 5};
+		}
+	}
+}
+
+.site-top-contact-bar {
+	.contact-bar {
+
+		@extend .hidden-sm-down;
+		float: right;
+	}
+}
+// Flexbox layout.
+// ==========================================================================
+
+@include media-breakpoint-up(lg) {
+	.flex {
+		.site-header {
+			> .container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.site-branding {
+				flex-basis: 25%;
+				width: auto;
+			}
+
+			.site-navigation {
+				flex-basis: 75%;
+				align-self: flex-end;
+				margin: 0;
+			}
+
+			.site-primary-navigation {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.primary-menu {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+	}
+}

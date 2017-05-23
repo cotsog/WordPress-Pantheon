@@ -1,0 +1,211 @@
+// ==========================================================================
+// Homepage.
+// ==========================================================================
+// Home Specific
+
+.black-container {
+	background-color: $body-bg;
+}
+
+.home {
+	.half-column-layout {
+		padding: 3rem 0;
+		color: #666;
+
+		@include media-breakpoint-up(lg) {
+			padding: 4.5rem 0;
+		}
+
+		h1,
+		h2,
+		h3 {
+
+			@extend .text-xs-center;
+			color: $body-bg;
+		}
+
+		h3 {
+
+			@extend %regular;
+			font-size: 1.1rem;
+			margin: 2rem 0;
+		}
+
+		.container-optional {
+
+			@extend .container;
+			padding-top: 2.5rem;
+			padding-bottom: 2.5rem;
+		}
+	}
+}
+// Certified Section
+
+.certified-container {
+	background: $body-bg;
+	position: relative;
+	z-index: 99;
+	padding: 0 5%;
+	margin-bottom: -2.5rem;
+
+	h2 {
+		max-width: 80%;
+	}
+
+	p {
+		max-width: 40rem;
+	}
+
+	@include media-breakpoint-up(md) {
+		padding: 3rem 2.5% 0;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 0 2.5%;
+	}
+
+	.btn {
+		margin-top: 0.5em;
+	}
+}
+// Discover Block (Faded Image w/ Square)
+
+.discover-container {
+	background: url("../img/theme-mercedes-a/secondary-bg.jpg") top center transparent no-repeat;
+	min-height: 380px;
+	margin: 2.5rem 0;
+
+	.discover {
+
+		@extend .text-xs-center;
+		position: relative;
+		top: 15rem;
+		z-index: 99;
+
+		hr {
+			width: 80px;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		background-size: 180%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		min-height: 550px;
+
+		.discover {
+			top: 25rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		min-height: 650px;
+
+		.discover {
+			background: url("../img/theme-mercedes-a/square.png") top center no-repeat;
+			min-width: 400px;
+			min-height: 265px;
+			top: 23rem;
+			padding-top: 4rem;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 830px;
+
+		.discover {
+			top: 31.5rem;
+		}
+	}
+}
+// Slant Section @ Bottom
+
+.slant-container {
+	background: url("../img/theme-mercedes-a/slanted-bg.png") bottom center transparent no-repeat;
+	max-width: 1800px;
+	min-height: 500px;
+
+	h2 {
+		font-size: 2em;
+	}
+
+	.btn-primary {
+		display: block;
+		margin: 0.5rem 0;
+		text-align: left;
+	}
+
+	.slant {
+		padding: 1rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		background-size: 180%;
+	}
+
+	@include media-breakpoint-up(sm) {
+		min-height: 600px;
+	}
+
+	@include media-breakpoint-up(md) {
+		min-height: 675px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 730px;
+		margin-top: -8rem;
+
+		.slant {
+			width: 38%;
+			float: right;
+			margin-top: 5rem;
+
+			h2,
+			h3,
+			h5 {
+				color: $body-bg;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		min-height: 885px;
+		margin: -15rem auto 0;
+
+		.slant {
+			width: 28%;
+			margin: 14rem 3.5rem 0;
+
+			h2,
+			h3,
+			h5 {
+				color: $body-bg;
+			}
+		}
+	}
+}
+// Colorblock Section (Service)
+
+.colorblock-section {
+	&.service {
+		padding: 4rem 5%;
+
+		h5 {
+			margin: 1.5rem 0 2rem;
+		}
+
+		@include media-breakpoint-up(md) {
+			padding: 7.5rem 5%;
+		}
+	}
+}
+
+.mercedes-incentives {
+	display: none;
+
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
+}

@@ -1,0 +1,34 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% block content %}
+	<section class="color-block grey">
+		<div class="container">
+			<div class="intro">
+				<div class="content">
+					{% if title or subtitle %}
+						<h2>{{ title | e }}
+							{% if subtitle -%}
+								<small>{{ subtitle | e }}</small>
+							{%- endif -%}
+						</h2>
+					{% endif %}
+					{{ macros.description_block( description, description_style ) }}
+					{% if desktop_buttons -%}
+						<p>
+							{%- for btn in desktop_buttons -%}
+								{{ macros.button( btn, btn.class ) }}
+							{% endfor -%}
+						</p>
+					{%- endif %}
+				</div>
+				{% if secondary_buttons -%}
+					<div class="cta-box">
+						{%- for btn in secondary_buttons -%}
+							{{ macros.button( btn, btn.class ) }}
+						{% endfor -%}
+					</div>
+				{%- endif %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

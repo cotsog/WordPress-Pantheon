@@ -1,0 +1,935 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {% if structured_data %}
+        <script type="application/ld+json">
+			{{ structured_data }}
+        </script>
+    {% endif %}
+{% endblock %}
+
+{% set page_layout = 'vdp-twenty-seventeen' %}
+
+{% block top_bar %}
+    {% include 'components/featured-image.twig' with { classname: 'featured-image' } %}
+    {% include 'components/top-bar.twig' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'components/content-inventory.twig' %}
+
+    {% set titleTrim = vehicle.trim.variation ? ' ' ~ vehicle.trim.variation : '' %}
+    {% set titleRegion = vehicle.dealer_province_name ? ', ' ~ vehicle.dealer_province_name : '' %}
+    {% set pageTitle = vehicle.year ~ ' ' ~ vehicle.make ~ ' ' ~ vehicle.model ~ ' ' ~ text.for_sale_in ~ ' ' ~ vehicle.dealer_city ~ titleRegion %}
+
+    <main class="product-brochure" data-product-id="{{ vehicle.id | e( 'html_attr' ) }}">
+        <div class="container">
+            <section class="title-block">
+                <div class="row">
+                    <div class="vdp-breadcrumbs">
+                        <ul>
+                            {% if vehicle.stock_type %}
+                                {% if vehicle.stock_type == 'new' %}
+                                    {% set stock_type = stock_type_new %}
+                                {% else %}
+                                    {% set stock_type = stock_type_used %}
+                                {% endif %}
+                                <li>
+                                    <strong><a href="{{ vehicle.breadcrumb_type }}">{{ vehicle.stock_type | upper | e( 'html' ) }}
+                                    </strong></a>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.make %}
+                                <li><a href="{{ vehicle.breadcrumb_make }}">{{ vehicle.make | e( 'html' ) }}</a></li>
+                            {% endif %}
+                            {% if vehicle.model %}
+                                <li>
+                                    <a href="{{ vehicle.breadcrumb_model }}">{{ vehicle.model | e( 'html' ) | replace({'&amp;':'&'}) }}</a>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.year %}
+                                <li><a href="{{ vehicle.breadcrumb_year }}">{{ vehicle.year | e( 'html' ) }}</a></li>
+                            {% endif %}
+                        </ul>
+
+                        {% if "in stock" == vehicle.stock_status %}
+                            <span class="in-stock-indicator hidden-xs-up">
+ 					{% if vehicle.number_in_stock %}<!-- @todo number in stock -->
+						# {{ text.v_in_stock }}
+                                {% else %}
+                                    {{ text.in_stock }}
+                                {% endif %}
+					</span>
+                        {% else %}
+                            <span class="in-stock-indicator -inactive">{{ text.out_of_stock }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="vdp-share">
+                        <a href="mailto:?subject={{ pageTitle }}&body={{ text.share_body }}: {{ vehicle.vehicle_url }}">{{ text.share }}
+                            <i class="icon-envelope-o"></i></a>
+                        <a class="_print">{{ text.print }} <i class="icon-print"></i></a>
+                    </div>
+                </div>
+                <div class="row{% if vehicle.carproof.hasCarproof %} has-carproof{% elseif vehicle.certification %} has-certified{% endif %}">
+                    <div class="vdp-heading">
+                        <a href="#Back" class="back" onclick="history.go(-1);">Back to Search
+                            <i class="icon-search"></i></a>
+                        {{ block( 'product_description_content' ) }}
+                        <h2 itemprop="name">{{ vehicle.year | e( 'html' ) }} {{ vehicle.make | e( 'html' ) }} {{ vehicle.model | e( 'html' ) | replace({'&amp;':'&'}) }}
+                            <span class="trim">{{ vehicle.trim.description }}</span></h2>
+                    </div>
+
+                    <div class="carproof-certified">
+                        {% if vehicle.carproof.hasCarproof %}
+                            <div class="carproof-block">
+                                {% block carproof_logo %}
+                                    {% include 'components/carproof-badges.twig' %}
+                                    <!-- NEED LOGIC: If logo include logo, if badge include badges -->
+                                    {% include 'components/carproof-logo-twenty-seventeen.twig' %}
+                                {% endblock %}
+                            </div>
+                        {% endif %}
+                        {% if vehicle.certification %}
+                            <div class="certified-block">
+                                <img src="{{ vehicle.certification.icon }}" alt="{{ vehicle.make }} Certified"/>
+                            </div>
+                        {% endif %}
+                    </div> <!-- /.carproof-desktop -->
+                </div>
+            </section> <!-- /.title-block -->
+
+            <div class="vdp-top-block">
+                <section class="vdp-gallery">
+                    {% if vehicle.form_video_picture_first == 'video_first' %}
+                        {% if vehicle.photos or vehicle.videos %}
+                            <figure class="product-gallery" data-toggle="tabs">
+                                <div class="tabs-content">
+                                    {% if vehicle.videos %}
+                                        <div id="vehicle-videos" class="tab-pane" role="tabpanel"
+                                             data-toggle="product-carousel">
+                                            <div class="image-slider carousel">
+                                                <ul class="slides">
+                                                    {% for vehicle_video_url in vehicle.videos %}
+                                                        <li>
+                                                            <div class="iframe-embed">
+                                                                <iframe src="{{ vehicle_video_url }}" allowfullscreen=""
+                                                                        frameborder="0"></iframe>
+                                                            </div>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if vehicle.photos %}
+                                        <div id="vehicle-images" class="tab-pane active" role="tabpanel"
+                                             data-toggle="product-carousel">
+                                            <div class="image-slider carousel">
+                                                <ul class="slides" data-lightbox>
+                                                    {% for photoUrl in vehicle.photos %}
+                                                        <li>
+                                                            <a href="{{ photoUrl }}">
+                                                                <img itemprop="image"
+                                                                     src="{{ photoUrl | apply_filters('photon_url') }}"
+                                                                     width="526" height="394"
+                                                                     alt="{{ pageTitle | e( 'html' ) }}">
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <div class="image-carousel carousel" data-item-width="120">
+                                                <ul class="slides">
+                                                    {% for photoUrl in vehicle.photos %}
+                                                        <li>
+                                                            <a href="#slide-{{ loop.index }}">
+                                                                <img itemprop="image"
+                                                                     src="{{ photoUrl | apply_filters('photon_url') }}"
+                                                                     width="120" height="90"
+                                                                     alt="{{ pageTitle | e( 'html' ) }}">
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="image-count tabs-nav" role="tablist">
+                                    {% if vehicle.videos %}
+                                        <a href="#vehicle-videos" class="videos-count">
+                                            {{ vehicle.videos|length }}
+                                            {% if vehicle.videos == 1 %}
+                                                {{ text.video|e( 'html' ) }}
+                                            {% else %}
+                                                {{ text.videos|e( 'html' ) }}
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                                    {% if vehicle.photos %}
+                                        <a href="#vehicle-images" class="photos-count _bpback">
+                                            {{ vehicle.photos|length }}
+                                            {% if vehicle.photos == 1 %}
+                                                {{ text.photo|e( 'html' ) }}
+                                            {% else %}
+                                                {{ text.photos|e( 'html' ) }}
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </figure>
+                        {% endif %}
+                    {% elseif vehicle.form_video_picture_first == 'picture_first' %}
+                        {% if vehicle.photos or vehicle.videos %}
+                            <figure class="product-gallery" data-toggle="tabs">
+                                <div class="tabs-content">
+                                    {% if vehicle.photos %}
+                                        <div id="vehicle-images" class="tab-pane active" role="tabpanel"
+                                             data-toggle="product-carousel">
+                                            <div class="image-slider carousel">
+                                                <ul class="slides" data-lightbox>
+                                                    {% for photoUrl in vehicle.photos %}
+                                                        <li>
+                                                            <a href="{{ photoUrl }}">
+                                                                <img itemprop="image"
+                                                                     src="{{ photoUrl | apply_filters('photon_url') }}"
+                                                                     width="526" height="394"
+                                                                     alt="{{ pageTitle | e( 'html' ) }}">
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                            <div class="image-carousel carousel" data-item-width="120">
+                                                <ul class="slides">
+                                                    {% for photoUrl in vehicle.photos %}
+                                                        <li>
+                                                            <a href="#slide-{{ loop.index }}">
+                                                                <img itemprop="image"
+                                                                     src="{{ photoUrl | apply_filters('photon_url') }}"
+                                                                     width="120" height="90"
+                                                                     alt="{{ pageTitle | e( 'html' ) }}">
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if vehicle.videos %}
+                                        <div id="vehicle-videos" class="tab-pane" role="tabpanel"
+                                             data-toggle="product-carousel">
+                                            <div class="image-slider carousel">
+                                                <ul class="slides">
+                                                    {% for vehicle_video_url in vehicle.videos %}
+                                                        <li>
+                                                            <div class="iframe-embed">
+                                                                <iframe src="{{ vehicle_video_url }}" allowfullscreen=""
+                                                                        frameborder="0"></iframe>
+                                                            </div>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="image-count tabs-nav" role="tablist">
+                                    {% if vehicle.photos %}
+                                        <a href="#vehicle-images" class="photos-count _bpback">
+                                            {{ vehicle.photos|length }}
+                                            {% if vehicle.photos == 1 %}
+                                                {{ text.photo|e( 'html' ) }}
+                                            {% else %}
+                                                {{ text.photos|e( 'html' ) }}
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                                    {% if vehicle.videos %}
+                                        <a href="#vehicle-videos" class="videos-count">
+                                            {{ vehicle.videos|length }}
+                                            {% if vehicle.videos == 1 %}
+                                                {{ text.video|e( 'html' ) }}
+                                            {% else %}
+                                                {{ text.videos|e( 'html' ) }}
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </figure>
+                        {% endif %}
+                    {% endif %}
+                </section> <!-- /.vdp-gallery -->
+
+                <section class="pricing-table">
+                    <div class="inner" id="sticky">
+                        <div class="box">
+                            <ul>
+                                {% if vehicle.pricingData.current < vehicle.pricingData.regular and vehicle.on_special %}
+
+                                    {% set savings = vehicle.pricingData.regular - vehicle.pricingData.current %}
+
+                                    <li>
+                                        {% if 'fr' in site.language %}
+                                            <span>Était<small>Total des rabai</small></span>
+                                        {% else %}
+                                            <span>Was<small>Total Discounts</small></span>
+                                        {% endif %}
+
+                                        <span class="msrp _bpcolor">${{ vehicle.pricingData.regular | number_format | e( 'html' ) }}
+                                            <b>-${{ savings | number_format | e( 'html' ) }}</b></span>
+                                        {#
+                                        <span>MSRP<small>Total Discounts</small></span>
+                                        <span class="msrp">$62,000<b>-$10,000</b></span>
+                                        #}
+                                    </li>
+                                {% endif %}
+                                <span class="hidden-xs-up" itemprop="priceCurrency"
+                                      content="{{ vehicle.pricingData.currencyCode }}"></span>
+                                <li {% if vehicle.pricingData.regular == 0 %}class="price-full"{% endif %}>
+                                <span class="price-title">
+                                    {% if vehicle.pricingData.regular != 0 %}
+                                        {% if pricing.custom_price_title %}
+                                            {{ pricing.custom_price_title }}
+                                        {% else %}
+                                            {% if 'fr' in site.language %}
+                                                Notre Prix
+                                            {% else %}
+                                                Our Price
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+
+                                    {#
+                                    <a data-toggle="collapse" href="#priceBreakdown" aria-expanded="false" aria-controls="priceBreakdown">Learn More <i class="icon-angle-right"></i></a>
+                                    <div class="collapse" id="priceBreakdown">
+                                        Price Breakdown<br/>
+                                        Price Breakdown<br/>
+                                        Price Breakdown<br/>
+                                    </div>
+                                    #}
+                                    </span>
+                                    <span class="price" itemprop="price">
+                                        {% if vehicle.pricingData.current < vehicle.pricingData.regular and vehicle.on_special %}
+                                            ${{ vehicle.pricingData.current | number_format | e( 'html' ) }}<sup>*</sup>
+                                        {% else %}
+                                            {% if vehicle.pricingData.regular == 0 %}
+                                                {{ vehicle.no_price_text }}
+                                            {% else %}
+                                                ${{ vehicle.pricingData.regular | number_format | e( 'html' ) }}<sup>*</sup>
+                                            {% endif %}
+                                        {% endif %}
+                                        <small>
+                                    {% if pricing.custom_price_tax %}
+                                        {{ pricing.custom_price_tax }}
+                                    {% else %}
+                                        {% if language_toggle %}
+                                            + tax and licensing
+                                        {% else %}
+                                            +taxes et frais administratifs
+                                        {% endif %}
+                                    {% endif %}
+                                </small>
+                            </span>
+                                </li>
+
+                                {% if incentives.finance.frequency and 'used' != vehicle.stock_type %}
+                                    <li>
+                                <span>
+                                    {{ incentives.finance.frequency }} Payment
+                                    {#
+                                    <a data-toggle="collapse" href="#paymentDetails" aria-expanded="false" aria-controls="paymentDetails">Payment Details <i class="icon-angle-right"></i></a>
+                                    <div class="collapse" id="paymentDetails">
+                                    {{ incentives.finance.cheapest.rate }}<br/>
+                                    {{ incentives.finance.cheapest.term }}
+                                    </div>
+                                    #}
+                                </span>
+                                        <span class="biweekly">
+										${{ incentives.finance.cheapest.payment | round }}<sup>*</sup>
+										<a class="incentives-learn-more" href="#currentIncentives"><small>View All Promotions <i
+                                                        class="icon-angle-right"></i></small></a>
+                                    </span>
+                                    </li>
+                                {% endif %}
+
+                                {% if silent_salesman.stock.message != '' %}
+                                    <li class="inventory-indicator {{ silent_salesman.stock.type | e( 'html_attr' ) }}-inventory">{{ silent_salesman.stock.message | e( 'wp_kses_post' ) }}</li>
+                                {% endif %}
+                            </ul>
+
+                            {% if silent_salesman.views.message != '' %}
+                                <div class="inventory-ribbon"> {#data-trigger="dismiss" {% if silent_salesman.views.placement == 'hide' %}data-dismiss-after="{{ silent_salesman.views.delay }}"{% endif %}>#}
+                                    <span>
+                                            <i class="icon-caret-square-o-right"></i>
+                                        {{ silent_salesman.views.message | e( 'wp_kses_post' ) }}
+                                        </span>
+                                </div>
+                            {% endif %}
+
+                            <div class="silent-salesman-lead">
+                                {% if silent_salesman.leads.message != '' %}
+                                    <div class="product-leads">
+                                        {{ silent_salesman.leads.message | e( 'wp_kses_post' ) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="vdp-cta-block">
+                            {% if vehicle.form_tiv_button_title and vehicle.form_tiv %}
+                                <a id="accordion_one_button" href="#accordion_one"
+                                   class="btn {{ vehicle.form_tiv_button_class | default('btn-primary') }}">{{ vehicle.form_tiv_button_title }}</a>
+                            {% elseif vehicle.form_tiv %}
+                                <a id="accordion_one_button" href="#accordion_one"
+                                   class="btn {{ vehicle.form_tiv_button_class | default('btn-primary') }}">Trade-in
+                                    Information</a>
+                            {% endif %}
+
+                            {% if vehicle.form_contact_button_title and vehicle.form_contact %}
+                                <a id="accordion_two_button" href="#accordion_two"
+                                   class="btn {{ vehicle.form_contact_button_class | default('btn-secondary') }} ">{{ vehicle.form_contact_button_title }}</a>
+                            {% elseif vehicle.form_contact %}
+                                <a id="accordion_two_button" href="#accordion_two"
+                                   class="btn {{ vehicle.form_contact_button_class | default('btn-secondary') }} ">Contact</a>
+                            {% endif %}
+
+                            {% if pricing.cta_one.url and pricing.cta_one.title %}
+                                <a href="{{ pricing.cta_one.url }}"
+                                   class="btn btn-secondary btn-dealer">{{ pricing.cta_one.title }}</a>
+                            {% endif %}
+
+                            {% if pricing.cta_two.url and pricing.cta_two.title %}
+                                <a href="{{ pricing.cta_two.url }}"
+                                   class="btn btn-secondary btn-dealer">{{ pricing.cta_two.title }}</a>
+                            {% endif %}
+
+                        </div> <!-- /.cta-block -->
+                        {% if vehicle.form_vdp_code_snippet %}
+                            <div class="vdp-extras-block">
+                                {{ vehicle.form_vdp_code_snippet|raw }}
+                            </div> <!-- /.extras-block -->
+                        {% endif %}
+
+                        <section class="vdp-dealer-info">
+                            <div class="row">
+                                <h6>{{ vehicle.dealer_name | e( 'html' ) }}</h6>
+                                <div class="dealer-left">
+                                    <p>{{ dealer_location.street | e }}<br/>
+                                        {{ dealer_location.locality | e }}
+                                        , {{ dealer_location.region | e }} {{ dealer_location.postal | e }}</p>
+                                </div>
+                                <div class="dealer-right">
+                                    <a href="/contact">Get Directions <i class="icon-angle-right"></i></a>
+                                    <a href="tel:{{ vehicle.dealer_phone_href ? vehicle.dealer_phone_href }}"
+                                       class="phone-number _bpback">{{ phone_number }}
+                                        <strong>{{ dealer.contact.phone | e( 'html' ) }}</strong></a>
+                                </div>
+                            </div>
+                        </section> <!-- /.info-mobile -->
+                    </div>
+                </section> <!-- /.pricing-table -->
+            </div>
+
+            <div class="vdp-left-column-row">
+                <section class="vdp-left-column">
+                    <section class="specs-table">
+                        <ul>
+                            {% if vehicle.exterior_color %}
+                                <li>{{ text.exterior_colour }}
+                                    <strong>{{ vehicle.exterior_color | e( 'html' ) }}</strong>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.interior_color %}
+                                <li>{{ text.interior_colour }}
+                                    <strong>{{ vehicle.interior_color | e( 'html' ) }}</strong>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.engine.cylinders %}
+                                <li>{{ text.engine }}
+                                    <strong>{{ vehicle.engine.litres | number_format(1, '.', ',') | e('html') }}
+                                        L {{ vehicle.engine.config_name | e( 'html' ) }}</strong></li>
+                            {% endif %}
+                            {% if vehicle.transmission %}
+                                <li>{{ text.transmission }} <strong>{{ vehicle.transmission | e( 'html' ) }}</strong>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.odometer_value %}
+                                <li>{{ text.odometer }} <strong>{{ vehicle.odometer_value | e( 'html' ) }} kms</strong>
+                                </li>
+                            {% endif %}
+                            {% if vehicle.stock_number %}
+                                <li>{{ text.stock_number }} <strong>{{ vehicle.stock_number | e( 'html' ) }}</strong>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </section> <!-- /.specs-table -->
+
+                    <section class="carproof-certified-mobile">
+                        {% block carproof_logo_mobile %}
+                            <div class="carproof-block">
+                                {% include 'components/carproof-badges.twig' %}
+                                <!-- NEED LOGIC: If logo include logo, if badge include badges -->
+                                {% include 'components/carproof-logo-twenty-seventeen.twig' %}
+                            </div>
+                        {% endblock %}
+                        {% if vehicle.certification %}
+                            <div class="certified-block">
+                                <img src="{{ vehicle.certification.icon }}" alt="{{ vehicle.make }} Certified"/>
+                            </div>
+                        {% endif %}
+                    </section> <!-- /.carproof-mobile -->
+
+                    <section class="vdp-accordion-section">
+                        {% if 'fr' in site.language %}
+                            <h6>Infos véhicule</h6>
+                        {% else %}
+                            <h6>Vehicle Details</h6>
+                        {% endif %}
+                        <ul>
+                            {% if vehicle.description is not empty %}
+                                <li>
+                                    <a data-toggle="collapse" href="#vehicleOverview" aria-expanded="true"
+                                       aria-controls="vehicleOverview">
+                                        {% if 'fr' in site.language %}
+                                            Apreçu
+                                        {% else %}
+                                            Overview
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li id="vehicleOverview" class="collapse in" role="tabpanel"
+                                    aria-labelledby="vehicleOverview">
+                                    <div class="card-block">
+                                        <h1>{{ pageTitle }}</h1>
+                                        <p>{{ vehicle.description }}</p>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if vehicle.specifications is not empty %}
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#Specifications" aria-expanded="true"
+                                       aria-controls="Specifications">
+                                        {% if 'fr' in site.language %}
+                                            Spécifications
+                                        {% else %}
+                                            Specifications
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li id="Specifications" class="collapse" role="tabpanel"
+                                    aria-labelledby="Specifications">
+                                    <div class="card-block">
+                                        {% for title, specs in vehicle.specifications %}
+                                            {% set attr = 'specs-' ~ title | lower | replace({" ": "-"}) | escape( 'html_attr' ) %}
+                                            <a role="tab" data-toggle="collapse" href="#{{ attr }}"
+                                               class="collapsed">{{ title }}</a>
+                                            <div role="tabpanel" class="collapse" id="{{ attr }}">
+                                                <dl class="spec-list">
+                                                    {% for key, value in specs %}
+                                                        <dt>{{ key }}</dt>
+                                                        <dd>{{ value }}</dd>
+                                                    {% endfor %}
+                                                </dl>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if vehicle.form_tiv %}
+                                <li id="accordion_one_button">
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_one" aria-expanded="true" aria-controls="accordion_one">
+                                        {% if vehicle.form_tiv_title %}
+                                            {{ vehicle.form_tiv_title }}
+                                        {% else %}
+                                            Trade In Vehicle
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li id="accordion_one" class="collapse" role="tabpanel" aria-labelledby="accordion_one">
+                                    <div class="card-block">
+                                        {% set form_shortcode = '[gravityform id=' ~ vehicle.form_tiv ~ ' title=false ajax=true]' %}
+                                        <div class="tab-pane hidden-print" id="accordion_one_form" role="tabpanel">
+                                            {{ form_shortcode | shortcodes }}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if vehicle.form_contact %}
+                                <li id="accordion_two_button">
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_two" aria-expanded="true" aria-controls="accordion_two">
+                                        {% if vehicle.form_contact_title %}
+                                            {{ vehicle.form_contact_title }}
+                                        {% else %}
+                                            Contact
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li id="accordion_two" class="collapse" role="tabpanel" aria-labelledby="accordion_two">
+                                    <div class="card-block">
+
+                                        {% set form_shortcode = '[gravityform id=' ~ vehicle.form_contact ~ ' title=false ajax=true]' %}
+
+                                        <div class="tab-pane hidden-print" id="accordion_two_form" role="tabpanel">
+                                            {{ form_shortcode | shortcodes }}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if incentives is not empty and 'used' != vehicle.stock_type %}
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#currentIncentives" aria-expanded="true" aria-controls="currentIncentives">
+                                        Current Incentives
+                                    </a>
+                                </li>
+                                <li id="currentIncentives" class="collapse" role="tabpanel"
+                                    aria-labelledby="currentIncentives">
+                                    <div class="card-block">
+                                        {% for type, incentive in incentives %}
+                                            {% if 'cash' == type %}
+                                                {% if incentive.rebate_post_tax != 'None' or incentive.rebate_pre_tax != 'None' %}
+                                                    <h4>{{ text.incentive_cash_heading }}</h4>
+                                                {% endif %}
+                                            {% elseif 'finance' == type %}
+                                                <h4>{{ text.incentive_finance_heading }}</h4>
+                                            {% elseif 'lease' == type %}
+                                                <h4>{{ text.incentive_lease_heading }}</h4>
+                                            {% endif %}
+
+                                            {% if 'cash' == type %}
+                                                {% if incentive.rebate_post_tax is not empty or incentive.rebate_pre_tax is not empty %}
+
+                                                {% endif %}
+                                            {% endif %}
+
+                                            {% if incentive.rebate_post_tax is not empty or incentive.rebate_pre_tax is not empty %}
+                                                <table class="costs">
+                                                    <thead>
+                                                    {% if incentive.rebate_pre_tax is not empty and incentive.rebate_pre_tax != 'None' %}
+                                                        <tr>
+                                                            <td>{{ text.rebate_pre_tax }}</td>
+                                                            <td>
+                                                                <strong>${{- incentive.rebate_pre_tax -}}</strong>
+                                                            </td>
+                                                        </tr>
+                                                    {% endif %}
+
+                                                    {% if incentive.rebate_post_tax is not empty and incentive.rebate_post_tax != 'None' %}
+                                                        <tr>
+                                                            <td>{{ text.rebate_post_tax }}</td>
+                                                            <td>
+                                                                <strong>${{- incentive.rebate_post_tax -}}
+                                                                </strong>
+                                                            </td>
+                                                        </tr>
+                                                    {% endif %}
+                                                    </thead>
+                                                </table>
+                                            {% endif %}
+
+                                            {% if incentive.frequency is not empty and incentive.calculate_terms is not empty %}
+                                                <table class="costs">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>{{ text.term_heading }}</th>
+                                                        <th>{{ text.rate_heading }}</th>
+                                                        <th>{{ text.payment_heading }} ({{ incentive.frequency }}) <sup>*</sup>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for term in incentive.calculate_terms %}
+                                                        <tr>
+                                                            <td>{{ term.term }}</td>
+                                                            <td>{{ term.rate }}%</td>
+                                                            <td>
+                                                                <strong>${{ term.payment }}</strong>
+                                                                <span class="borrowing-cost"
+                                                                      data-trigger="price-tooltip">
+													<span class="price-breakdown tooltip">
+														<strong>{{ text.stock }}#{{ vehicle.stock_number }}</strong>
+														<br>{{ incentive.frequency }} {{ text.payments_tooltip }}
+                                                        ${{ term.cost_of_credit }}
+													</span>
+												</span>
+                                                            </td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if vehicle.carproof.hasCarproof and vehicle.form_carproof_type == 'form' %}
+                                <li id="accordion_carproof_button">
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_carproof" aria-expanded="true" aria-controls="accordion_carproof">
+                                        Car Proof
+                                    </a>
+                                </li>
+                                <li id="accordion_carproof" class="collapse" role="tabpanel"
+                                    aria-labelledby="accordion_carproof">
+                                    <div class="card-block">
+                                        {% set form_shortcode = '[gravityform id=' ~ vehicle.form_carproof ~ ' title=false ajax=true]' %}
+                                        <div class="tab-pane hidden-print" id="carproof-form" role="tabpanel">
+                                            {{ form_shortcode | shortcodes }}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+
+                            {% if accordions.accordion_one.title and accordions.accordion_one.content %}
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_custom_one" aria-expanded="true" aria-controls="accordion_custom_one">
+                                        {{ accordions.accordion_one.title }}
+                                    </a>
+                                </li>
+                                <li id="accordion_custom_one" class="collapse" role="tabpanel"
+                                    aria-labelledby="accordion_custom_one">
+                                    <div class="card-block">
+                                        {{ accordions.accordion_one.content }}
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if accordions.accordion_two.title and accordions.accordion_two.content %}
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_custom_two" aria-expanded="true" aria-controls="accordion_custom_two">
+                                        {{ accordions.accordion_two.title }}
+                                    </a>
+                                </li>
+                                <li id="accordion_custom_two" class="collapse" role="tabpanel"
+                                    aria-labelledby="accordion_custom_two">
+                                    <div class="card-block">
+                                        {{ accordions.accordion_two.content }}
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                            {% if accordions.accordion_three.title and accordions.accordion_three.content %}
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#accordion_custom_three" aria-expanded="true" aria-controls="accordion_custom_three">
+                                        {{ accordions.accordion_three.title }}
+                                    </a>
+                                </li>
+                                <li id="accordion_custom_three" class="collapse" role="tabpanel"
+                                    aria-labelledby="accordion_custom_three">
+                                    <div class="card-block">
+                                        {{ accordions.accordion_three.content }}
+                                    </div>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </section> <!-- /.vdp-accord -->
+                </section>
+            </div> <!-- here -->
+        </div> <!-- /.container -->
+    </main>
+
+    <div id="sticky-stop"></div>
+
+    {% block similar %}
+        {% include 'components/similar-products-twenty-seventeen.twig' %}
+    {% endblock %}
+
+    <div id="stop-sidebar"></div>
+
+    {% if disclaimers.network or disclaimers.dealership or disclaimers.custom %}
+        <div class="vdp-disclaimer">
+            <div class="container">
+                <p>
+                    {% if disclaimers.custom %}
+                        {{ disclaimers.custom }}
+                    {% else %}
+                        {{ disclaimers.network }}
+                        {{ disclaimers.dealership }}
+                    {% endif %}
+                </p>
+            </div>
+        </div> <!-- /.disclaimer -->
+    {% endif %}
+
+{% endblock %}
+
+{% block footer_script %}
+    <script type='application/ld+json'>
+	{
+		"@context":"http://schema.org",
+		"@type": "Vehicle",
+		{% for photoUrl in vehicle.photos %}
+		"image": "{{ photoUrl }}",
+		{% endfor %}
+		"itemCondition":" {{ vehicle.stock_type | e( 'html' ) }}",
+		"name": "{{ vehicle.year | e( 'html' ) }} {{ vehicle.make | e( 'html' ) }}
+		 {{ vehicle.model | e( 'html' ) | replace({'&amp;':'&'}) }}",
+		"model": "{{ vehicle.model | e( 'html' ) | replace({'&amp;':'&'}) }}",
+		"vehicleConfiguration": "{{ vehicle.schema_trim | e( 'html' ) }}",
+		"disambiguatingDescription": "{{ post.title | replace( text_replace ) | e( 'html' ) }}",
+		"description": "{{ vehicle.schema_description | e( 'html' ) }}",
+		{% if vehicle.exterior_color %}
+		"color": "{{ vehicle.exterior_color | e( 'html' ) }}",
+		{% endif %}
+		{% if vehicle.interior_color %}
+		"vehicleInteriorColor": "{{ vehicle.interior_color | e( 'html' ) }}",
+		{% endif %}
+		{% if vehicle.transmission %}
+		"vehicleTransmission": "{{ vehicle.transmission | e( 'html' ) }}",
+		{% endif %}
+		{% if vehicle.stock_number %}
+		"sku": "{{ vehicle.stock_number | e( 'html' ) }}",
+		{% endif %}
+		"fuelType": "{{ vehicle.specifications['Fuel Economy']['Recommended fuel'] | e( 'html' ) }}",
+		"fuelConsumption": "Highway (L/100 km): {{ vehicle.specifications['Fuel Economy']['Fuel economy - highway (L/100 km)'] | e( 'html' ) }}\n
+							City (L/100 km): {{ vehicle.specifications['Fuel Economy']['Fuel economy - city (L/100 km)'] | e( 'html' ) }}\n
+							Combined (L/100 km): {{ vehicle.specifications['Fuel Economy']['Fuel economy - combined (L/100 km)'] | e( 'html' ) }}",
+		{% if vehicle.odometer_value %}
+		"mileageFromOdometer": "{{ vehicle.odometer_value | e( 'html' ) }}",
+		{% endif %}
+		"numberOfDoors": "{{ vehicle.doors | e( 'html' ) }}",
+		"vehicleEngine": "{{ vehicle.engine.config_name | e( 'html' ) }}",
+		"vehicleIdentificationNumber": "{{ vehicle.identifiers.vin | e( 'html' ) }}",
+		"vehicleSeatingCapacity": "{{ vehicle.specifications['Capacity']['Seating capacity'] | e( 'html' ) }}",
+		"offers":{
+			"@type": "Offer",
+			"priceCurrency": "CAD",
+			"price": "{% if vehicle.pricingData.current < vehicle.pricingData.regular and vehicle.on_special %}
+        {{ vehicle.pricingData.current | e( 'html' ) }}
+    {% else %}
+        {% if vehicle.pricingData.regular == 0 %}
+        {{ vehicle.no_price_text }}
+    {% else %}
+    {{ vehicle.pricingData.regular | e( 'html' ) }}
+        {% endif %}
+        {% endif %}"
+		}
+	}
+    </script>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $('#accordion_one_button').on('click', function (event) {
+                $('#accordion_one').collapse('toggle');
+            });
+
+            $('#accordion_one').on('shown.bs.collapse', function () {
+                $('html, body').animate({
+                    scrollTop: $('#accordion_one').offset().top - 200,
+                }, 250);
+            });
+
+            $('#accordion_two_button').on('click', function (event) {
+                $('#accordion_two').collapse('toggle');
+            });
+
+            $('#accordion_two').on('shown.bs.collapse', function () {
+                $('html, body').animate({
+                    scrollTop: $('#accordion_two').offset().top - 200,
+                }, 250);
+            });
+
+            $('#accordion_carproof_button').on('click', function (event) {
+                $('#accordion_carproof').collapse('toggle');
+            });
+
+            $('#accordion_carproof').on('shown.bs.collapse', function () {
+                $('html, body').animate({
+                    scrollTop: $('#accordion_carproof').offset().top - 200,
+                }, 250);
+            });
+
+            // Scroll to incentives on click (learn more in sticky-price)
+            $('.incentives-learn-more').click(function (e) {
+                e.preventDefault();
+                $('#currentIncentives').collapse('show');
+
+                $('html, body').animate({
+                    scrollTop: $('#currentIncentives').offset().top - 50,
+                }, 250);
+            })
+        });
+
+    </script>
+
+    <!-- Sticky Sidebar -->
+    <style>
+        @media (min-width: 991px) {
+            header.site-header {
+                position: absolute;
+            }
+        }
+    </style>
+
+    <script>
+        $(function () {
+            if ($(window).width() > 991) {
+                if ($('#sticky').length) {
+
+                    var el = $('#sticky');
+                    var stickyTop = $('#sticky').offset().top;
+                    var stickyHeight = $('#sticky').height();
+
+                    $(window).scroll(function () {
+                        var limit = $('#sticky-stop').offset().top - stickyHeight - 30;
+
+                        var windowTop = $(window).scrollTop();
+
+                        if (stickyTop < windowTop) {
+                            el.css({position: 'fixed', top: 20});
+                        }
+                        else {
+                            el.css('position', 'static');
+                        }
+
+                        if (limit < windowTop) {
+                            var diff = limit - windowTop;
+                            el.css({top: diff});
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+    {# Get the photo URL and Price for the script below #}
+    {% if vehicle.photos|length > 0 %}
+        {% set dynx_photo_url = vehicle.photos[0] %}
+    {% else %}
+        // Ugly, but seems to be the best way to get the protocol in there.
+        {% set dynx_photo_url = document.location.protocol ~ "//" ~ document.location.host ~ "/wp-content/themes/strathcom/assets/dist/img/photo-coming-soon.jpg" %}
+    {% endif %}
+    {% if vehicle.pricingData.current < vehicle.pricingData.regular and vehicle.on_special %}
+        {% set dynx_price = vehicle.pricingData.current %}
+        {% set dynx_price = vehicle.pricingData.current %}
+    {% else %}
+        {% if vehicle.pricingData.regular == 0 %}
+            {% set dynx_price = vehicle.no_price_text %}
+        {% else %}
+            {% set dynx_price = vehicle.pricingData.regular %}
+        {% endif %}
+    {% endif %}
+    <script type="text/javascript">
+        var google_tag_params = {
+            dynx_itemid: '{{ vehicle.identifiers.autodata }}',
+            dynx_itemid2: '{{ vehicle.year }}',
+            dynx_itemtitle: '{{ vehicle.make | e( 'html' ) }}',
+            dynx_itemsubtitle: '{{ vehicle.model | e( 'html' ) | replace({'&amp;':'&'}) }}',
+            dynx_itemcategory: '{{ vehicle.stock_type }}',
+            dynx_itemdescription: '{{ vehicle.trim.description }}',
+            dynx_price: '{{ dynx_price }}',
+            dynx_finalurl: '{{ vehicle.vehicle_url }}',
+            dynx_imageurl: '{{ dynx_photo_url }}',
+        };
+    </script>
+    {% if vehicle.marketIntel %}
+        {{  include('components/vdp-mixpanel.twig') }}
+        <script src="{{function('bloginfo','template_directory')}}/assets/src/js/mixpanel/vdp-mixpanel.js"></script>
+    {% endif %}
+{% endblock %}
+

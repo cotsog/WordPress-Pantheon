@@ -1,0 +1,37 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% set title_type = title_type | default('h2') %}
+
+{% block content %}
+	<section class="content-sidebar content-{% if content_position | default('left') == 'right' %}right{% else %}left{% endif %} {{ custom_class}}">
+		<div class="row">
+			{% if title %}
+				<div class="full-col">
+					<{{ title_type }}>{{ title | e }}</{{ title_type }}>
+				</div>
+			{% endif %}
+			<div class="content-left-col">
+				{% if content_position | default('left') == 'left' %}
+					{{ description | urldecode | apply_filters('the_content') }}
+					{{ macros.figure_block( content_image_src, title ) }}
+				{% else %}
+					{% for btn in buttons %}
+						{{ macros.button( btn, btn.class ) }}
+					{% endfor %}
+					{{ description_sidebar | urldecode | apply_filters('the_content') }}
+				{% endif %}
+			</div>
+			<div class="content-right-col">
+				{% if content_position | default('left') == 'left' %}
+					{% for btn in buttons %}
+						{{ macros.button( btn, btn.class ) }}
+					{% endfor %}
+					{{ description_sidebar | urldecode | apply_filters('the_content') }}
+				{% else %}
+					{{ description | urldecode | apply_filters('the_content') }}
+					{{ macros.figure_block( content_image_src, title ) }}
+				{% endif %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

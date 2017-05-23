@@ -1,0 +1,21 @@
+// ==========================================================================
+// Site Header
+// ==========================================================================
+// Import Mercedes Complaint Header
+
+@import "../theme-smi-mercedes-dark/layouts/site-header";
+
+body {
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 11.5rem;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 9.9rem;
+	}
+}
+// Modifications
+.top-bar {
+	color: #999;
+}

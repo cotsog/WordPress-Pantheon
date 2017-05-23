@@ -1,0 +1,41 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% set title_type = title_type | default('h2') %}
+
+{% block content %}
+	<section class="four-column-layout {{ custom_class }}" style="{{ macros.background_hex_value( background_hex_value ) }}">
+		<div class="container-optional">
+			<div class="four-column">
+				{% if title or subtitle %}
+					<div class="full-col">
+						<{{ title_type }}>{{ title | e }}</{{ title_type }}>
+
+						{% if subtitle -%}
+							{{ subtitle | apply_filters('the_content') }}
+						{%- endif -%}
+					</div>
+				{% endif %}
+				{% if content_one %}
+					<div class="col">
+							{{ content_one | urldecode | apply_filters('the_content') }}
+					</div>
+				{% endif %}
+				{% if content_one %}
+					<div class="col">
+							{{ content_two | urldecode | apply_filters('the_content') }}
+					</div>
+				{% endif %}
+				{% if content_one %}
+					<div class="col">
+							{{ content_three | urldecode | apply_filters('the_content') }}
+					</div>
+				{% endif %}
+				{% if content_one %}
+					<div class="col">
+							{{ content_four | urldecode | apply_filters('the_content') }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,2 @@
+#!/bin/sh
+cp bower_components/nouislider/distribute/nouislider.min.css bower_components/nouislider/distribute/nouislider.scss

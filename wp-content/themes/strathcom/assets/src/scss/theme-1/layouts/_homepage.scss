@@ -1,0 +1,40 @@
+// ==========================================================================
+// Homepage layout.
+// ==========================================================================
+
+.home {
+	.page-wrapper {
+		padding-top: 0;
+
+		&.sticky-header .site-header {
+
+			@include media-breakpoint-down(md) {
+				position: absolute;
+				height: $header-expanded-height-mobile;
+				width: 100%;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.img-overlay > .toyota-oil-filter {
+	top: rem(90);
+
+	@include media-breakpoint-up(xl) {
+		top: rem(40);
+	}
+}
+
+section.home-content {
+
+	@include media-breakpoint-up(lg) {
+		header {
+			margin-bottom: rem(40);
+
+			> h1 {
+				margin: rem(50) 0;
+			}
+		}
+	}
+}

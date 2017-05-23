@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="group">
+		<div class="group-content">
+			{% if term_id %}
+				{% if title -%}
+					<h2>{{ title }}</h2>
+				{%- endif %}
+				{% set staff_tax_shortcode = "[staff-directory cat='" ~ term_id ~ "']" %}
+				{{ staff_tax_shortcode|shortcodes }}
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

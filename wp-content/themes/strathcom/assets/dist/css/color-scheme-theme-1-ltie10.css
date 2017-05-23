@@ -1,0 +1,342 @@
+._bpcolor {
+  color: #26ced9;
+}
+
+._bscolor {
+  color: #0abfca;
+}
+
+._bpcolordark {
+  color: #1ea5ae;
+}
+
+._bpback {
+  background-color: #26ced9;
+}
+
+._bsback {
+  background-color: #0abfca;
+}
+
+._bpbackddark {
+  background-color: #1ea5ae;
+}
+
+a,
+.page-link {
+  color: #26ced9;
+}
+
+a:hover,
+a:focus,
+.page-link:hover,
+.page-link:focus {
+  color: #1ea5ae;
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+  color: #26ced9;
+}
+
+._bpbackinv {
+  color: #26ced9;
+  background-color: transparent;
+}
+
+._bpbackinv.active,
+._bpbackinv:hover,
+._bpbackinv:focus {
+  color: #fff;
+  background-color: #26ced9;
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit] {
+  border-color: #26ced9;
+  background-color: #26ced9;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover:focus,
+.btn-primary:hover:active,
+.btn-primary:focus:active,
+.gform_button:hover,
+.gform_button:focus,
+.gform_button:active,
+.gform_button:hover:focus,
+.gform_button:hover:active,
+.gform_button:focus:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus:active {
+  border-color: #1ea5ae;
+  background-color: #1ea5ae;
+}
+
+.gform_button,
+.application_button {
+  color: #fff;
+  border-color: #26ced9;
+  background-color: #26ced9;
+}
+
+.gform_button:hover,
+.gform_button:focus,
+.application_button:hover,
+.application_button:focus {
+  color: #fff;
+  border-color: #1ea5ae;
+  background-color: #1ea5ae;
+}
+
+.custom-checkbox-list input:checked + label,
+.custom-radio-list input:checked + label {
+  background-color: #26ced9;
+  border-color: #26ced9;
+  color: #fff;
+}
+
+.rangeslider__fill {
+  background-color: #26ced9;
+}
+
+.rangeslider__handle {
+  background-color: #d9534f;
+}
+
+[class*="icon-"].icon-boxed::before {
+  background-color: #26ced9;
+  border-color: #26ced9;
+}
+
+[class*="icon-"].icon-boxed:hover::before {
+  color: #26ced9;
+  background-color: #fff;
+}
+
+.form-control:focus,
+.ginput_container > input:focus:not([type=file]),
+.ginput_container textarea:focus,
+.ginput_container select:focus,
+.ginput_complex > span input:focus,
+.ginput_container_list input:focus {
+  border-color: #1ea5ae;
+}
+
+.product-brochure .product-info dt {
+  color: #26ced9;
+}
+
+.card-car:hover h5,
+.card-car:focus h5 {
+  color: #26ced9;
+}
+
+.site-header .scratchpad-toggle .count {
+  border-color: #212325;
+}
+
+.contact-bar li a:hover,
+.contact-bar li a:focus {
+  color: #26ced9;
+}
+
+.tabs-nav {
+  border-bottom-color: #1ea5ae;
+}
+
+.tabs-nav a:hover {
+  color: #1ea5ae;
+}
+
+.tabs-nav a.active,
+.tabs-nav a.active:hover,
+.tabs-nav a.active:focus,
+.tabs-nav a:focus,
+.tabs-nav a:focus:hover {
+  color: #fff;
+  background-color: #1ea5ae;
+}
+
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  background-color: #26ced9;
+  border-color: #26ced9;
+}
+
+.radio > input:checked ~ .indicator {
+  background-color: #26ced9;
+  border-color: #26ced9;
+}
+
+.radio:focus .indicator,
+.radio:hover .indicator {
+  background-color: #fff;
+  border-color: #848484;
+}
+
+.dropdown-menu::before {
+  border-bottom-color: #26ced9;
+}
+
+.site-header {
+  color: #fff;
+  background-color: #212325;
+}
+
+.site-header a {
+  color: #fff;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  color: #26ced9;
+}
+
+@media (min-width: 992px) {
+  .primary-menu > li {
+    background-color: #212325;
+  }
+
+  .primary-menu > li:hover > a,
+  .primary-menu > li > a:hover,
+  .primary-menu > li > a:focus {
+    color: #26ced9;
+  }
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu {
+    background-color: #212325;
+  }
+
+  .dropdown-menu > li > a {
+    color: #fff;
+  }
+
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
+    color: #26ced9;
+  }
+}
+
+.group-sidebar .widget_nav_menu .menu > li > a {
+  background-color: #26ced9;
+}
+
+.group-sidebar .widget_nav_menu .menu > li > a:hover,
+.group-sidebar .widget_nav_menu .menu > li > a:focus {
+  background-color: transparent;
+}
+
+.group-sidebar .widget_nav_menu .sub-menu a:hover,
+.group-sidebar .widget_nav_menu .sub-menu a:focus {
+  background-color: #1ea5ae;
+}
+
+.site-footer {
+  color: #848484;
+  background-color: #fff;
+}
+
+.site-footer a {
+  color: #848484;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #848484;
+}
+
+.site-footer h5 {
+  color: #848484;
+}
+
+.footer-widgets a {
+  color: #1ea5ae;
+}
+
+.footer-widgets a:hover,
+.footer-widgets a:focus {
+  color: #1ea5ae;
+}
+
+.scratchpad {
+  color: #fff;
+  background-color: #212325;
+}
+
+.scratchpad a {
+  color: #fff;
+}
+
+.scratchpad a:hover,
+.scratchpad a:focus {
+  color: #26ced9;
+}
+
+.scratchpad h5 {
+  color: #fff;
+}
+
+.splash .cta-box .btn {
+  color: #fff;
+  border-color: #fff;
+}
+
+.splash .cta-box .btn:hover,
+.splash .cta-box .btn:focus,
+.splash .cta-box .btn:active {
+  color: #fff;
+  background-color: #26ced9;
+  border-color: #fff;
+}
+
+.intro .cta-box .btn {
+  border-color: #1ea5ae;
+  background-color: #1ea5ae;
+}
+
+.staff-departments li:nth-child(2n + 2) a::before {
+  background-color: #26ced9;
+}
+
+.filter-payment output .value {
+  color: #26ced9;
+}
+
+@media (max-width: 767px) {
+  .incentive-list [itemprop="offers"],
+  .incentive-list .finance strong,
+  .incentive-list .lease strong,
+  .incentive-list .cash-incentive strong {
+    color: #26ced9;
+  }
+}
+
+[data-tables-mode="payments"] .incentive-list [href="#payments"],
+[data-tables-mode="payments"] .incentive-list [href="#payments"]:hover,
+[data-tables-mode="rates"] .incentive-list [href="#rates"],
+[data-tables-mode="rates"] .incentive-list [href="#rates"]:hover {
+  color: #fff;
+  background-color: #26ced9;
+  border-color: #26ced9;
+}
+
+.payment-calculator > h3 {
+  color: #fff;
+  background-color: #26ced9;
+}
+
+.payment-summary .payment {
+  color: #26ced9;
+}

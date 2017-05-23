@@ -1,0 +1,14 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% block content %}
+	{# Background image or video poster #}
+	{% set classname = 'splash' %}
+	{% set title_type = title_type | default('h2') %}
+
+	{% if border != 'no' %}
+		{% set border %}
+			frameborder="no"
+		{% endset %}
+	{% endif %}
+<iframe src="{{ source }}" name="{{ name }}" id="{{ id }}" class="{{ class }}" width="{{ width }}" height="{{ height }}" scrolling="{{ scrolling }}" {{ border }} style="{{ style }}"></iframe>
+{% endblock %}

@@ -1,0 +1,36 @@
+// ==========================================================================
+// Site Navigation
+// ==========================================================================
+
+.primary-menu {
+	> li {
+		> a {
+
+			@extend %regular;
+			text-transform: uppercase;
+			font-size: 0.85rem;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		li.mega-menu {
+			> .dropdown-menu {
+				> li {
+					> a {
+						text-transform: uppercase;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+	li {
+		> a {
+			font-size: 0.85rem;
+		}
+	}
+}
+

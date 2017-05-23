@@ -1,0 +1,23 @@
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="row">
+			{% if footer_widgets | trim %}
+				<div class="footer-widgets">
+					{{ footer_widgets|replace( text_replace ) }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</footer>
+
+{% if 'Hyundai' in site.description %}
+	<div class="hyundai-footer">
+		The Hyundai name, logo, product names, feature names, images and slogans are trademarks owned by Hyundai Auto Canada Corp.
+	</div>
+{% endif %}
+
+{% if 'Kia' in site.description %}
+<div class="tiger-nose">
+	<a href="http://kia.ca" target="_blank"><img src="{{function('bloginfo','template_directory')}}/assets/src/img/kia-tiger-nose.png" alt="Kia Canada"></a>
+</div>
+{% endif %}

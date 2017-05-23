@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block top_bar %}
+	{% include 'components/top-bar.twig' %}
+{% endblock %}
+
+{% block featured_image %}
+	{% include 'components/featured-image.twig' with { classname: 'featured-image' } %}
+{% endblock %}
+
+{% block content %}
+	<div class="group">
+		{% include 'components/content-page.twig' %}
+		{% if page_layout in [ 'sidebar-left', 'sidebar-right' ] %}
+			{% include 'components/sidebar.twig' %}
+		{% endif %}
+	</div>
+{% endblock %}

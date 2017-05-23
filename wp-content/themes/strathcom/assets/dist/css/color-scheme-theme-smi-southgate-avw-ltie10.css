@@ -1,0 +1,664 @@
+body,
+.main-container {
+  background: #fff;
+  color: #333;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+.main-container h1,
+.main-container h2,
+.main-container h3,
+.main-container h4 {
+  color: #000;
+}
+
+body h1 b,
+body h1 strong,
+body h2 b,
+body h2 strong,
+body h3 b,
+body h3 strong,
+body h4 b,
+body h4 strong,
+.main-container h1 b,
+.main-container h1 strong,
+.main-container h2 b,
+.main-container h2 strong,
+.main-container h3 b,
+.main-container h3 strong,
+.main-container h4 b,
+.main-container h4 strong {
+  color: #000;
+}
+
+body h5,
+body h6,
+.main-container h5,
+.main-container h6 {
+  color: #333;
+}
+
+body .color-light h1,
+body .color-light h2,
+body .color-light h3,
+body .color-light h4,
+body .color-light h5,
+body .color-light p,
+body .has-background-img h1,
+body .has-background-img h2,
+body .has-background-img h3,
+body .has-background-img h4,
+body .has-background-img h5,
+body .has-background-img p,
+.main-container .color-light h1,
+.main-container .color-light h2,
+.main-container .color-light h3,
+.main-container .color-light h4,
+.main-container .color-light h5,
+.main-container .color-light p,
+.main-container .has-background-img h1,
+.main-container .has-background-img h2,
+.main-container .has-background-img h3,
+.main-container .has-background-img h4,
+.main-container .has-background-img h5,
+.main-container .has-background-img p {
+  color: #fff;
+}
+
+body .splash p,
+body .splash h2,
+body .splash h3,
+body .splash h5,
+.main-container .splash p,
+.main-container .splash h2,
+.main-container .splash h3,
+.main-container .splash h5 {
+  color: #fff;
+}
+
+._bpcolor {
+  color: #000;
+}
+
+._bscolor {
+  color: #cc243d;
+}
+
+._bpcolordark {
+  color: #444;
+}
+
+._bpback {
+  background-color: #000;
+}
+
+._bsback {
+  background-color: #cc243d;
+}
+
+._bpbackddark {
+  background-color: #444;
+}
+
+a,
+.page-link {
+  color: #000;
+}
+
+a:hover,
+a:focus,
+.page-link:hover,
+.page-link:focus {
+  color: #cc243d;
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+.application_button,
+span.btn,
+.quick-search-button {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover:focus,
+.btn-primary:hover:active,
+.btn-primary:focus:active,
+.gform_button:hover,
+.gform_button:focus,
+.gform_button:active,
+.gform_button:hover:focus,
+.gform_button:hover:active,
+.gform_button:focus:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus:active,
+.application_button:hover,
+.application_button:focus,
+.application_button:active,
+.application_button:hover:focus,
+.application_button:hover:active,
+.application_button:focus:active,
+span.btn:hover,
+span.btn:focus,
+span.btn:active,
+span.btn:hover:focus,
+span.btn:hover:active,
+span.btn:focus:active,
+.quick-search-button:hover,
+.quick-search-button:focus,
+.quick-search-button:active,
+.quick-search-button:hover:focus,
+.quick-search-button:hover:active,
+.quick-search-button:focus:active {
+  border-color: #434c53;
+  background-color: #434c53;
+  color: #fff;
+}
+
+.quick-search-button:hover,
+.quick-search-button:focus,
+.quick-search-button:active,
+.quick-search-button:hover:focus,
+.quick-search-button:hover:active,
+.quick-search-button:focus:active {
+  background: #fff;
+  color: #000;
+}
+
+.btn-secondary {
+  border-color: #cc243d;
+  background-color: #cc243d;
+  color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:hover:focus,
+.btn-secondary:hover:active,
+.btn-secondary:focus:active {
+  border-color: #a11c30;
+  background-color: #a11c30;
+  color: #fff;
+}
+
+a.btn.btn-ghost:hover,
+a.btn.btn-ghost:focus {
+  border-color: #fff;
+  background: #cc243d;
+  color: #fff;
+}
+
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+.site-header {
+  background: #fff;
+  color: #000;
+}
+
+.site-header a {
+  color: #000;
+}
+
+.site-header a:hover,
+.site-header a:focus {
+  color: #cc243d;
+}
+
+.site-header .text-logo {
+  color: #000;
+}
+
+body .primary-menu._bpback {
+  background: #000;
+}
+
+@media (min-width: 992px) {
+  body .primary-menu._bpback {
+    background: transparent;
+  }
+}
+
+body .primary-menu > li > a {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  body .primary-menu > li > a {
+    color: #000;
+  }
+}
+
+body .primary-menu > li > a:hover,
+body .primary-menu > li > a:focus {
+  background: #cc243d;
+  color: #fff;
+}
+
+body .primary-menu button.dropdown-trigger {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown-menu > li > a {
+  background-color: #cc243d;
+  color: #fff !important;
+}
+
+@media (min-width: 992px) {
+  .dropdown-menu > li > a {
+    background-color: #434c53;
+    color: #fff;
+  }
+
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
+    background-color: #2c3237;
+    color: #fff;
+  }
+}
+
+.btn-trigger-primary-menu {
+  color: #fff;
+  background-color: #cc243d;
+}
+
+.scratchpad-toggle a {
+  color: #fff;
+  background: #000;
+}
+
+.scratchpad-toggle a .count {
+  background: #000;
+  color: #fff;
+}
+
+.scratchpad-toggle a:hover {
+  color: #fff;
+}
+
+.scratchpad-toggle a:hover .count {
+  background: #cc243d;
+  color: #fff;
+}
+
+.site-footer {
+  color: #fff;
+  background-color: #434c53;
+}
+
+.site-footer p,
+.site-footer h5 {
+  color: #fff;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #cc243d;
+}
+
+.site-footer .widget_strathcom_social_widget {
+  color: #fff;
+}
+
+.site-footer .widget_strathcom_social_widget a {
+  color: #fff;
+}
+
+.scratchpad {
+  color: #fff;
+  background-color: #434c53;
+}
+
+.scratchpad header h3 {
+  color: #fff;
+}
+
+.scratchpad header h3 .count {
+  border-color: transparent;
+  color: #fff;
+  background: #cc243d;
+}
+
+.scratchpad a {
+  color: #fff;
+}
+
+.scratchpad a:hover,
+.scratchpad a:focus {
+  color: #000;
+}
+
+.scratchpad h5 {
+  color: #fff;
+}
+
+.scratchpad ul .remove:hover,
+.scratchpad ul .view:hover {
+  background-color: #fff;
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+  color: #000;
+}
+
+.search-results .special-deal {
+  background: #434c53;
+}
+
+.search-results .savings-price {
+  color: #434c53;
+  border-color: #434c53;
+}
+
+._bpbackinv {
+  color: #000;
+  background-color: transparent;
+}
+
+._bpbackinv.active,
+._bpbackinv:hover,
+._bpbackinv:focus {
+  color: #fff;
+  background-color: #000;
+}
+
+.staff-departments li a {
+  background-color: #000;
+  border-color: #000;
+}
+
+.staff-departments li a:hover,
+.staff-departments li a:focus,
+.staff-departments li a:active,
+.staff-departments li a:hover:focus,
+.staff-departments li a:hover:active,
+.staff-departments li a:focus:active {
+  background-color: #444;
+  border-color: #444;
+}
+
+.staff-member > figure > a span {
+  background-color: #000;
+}
+
+.entry-content .single_job_listing .meta .job-posting,
+.entry-content .single_job_listing .meta .full-time,
+.entry-content .single_job_listing .meta .part-time,
+.entry-content .single_job_listing .meta .temporary,
+.entry-content .single_job_listing .meta .internship,
+.entry-content .single_job_listing .meta .freelance {
+  background-color: #000;
+}
+
+#float-nav a {
+  background-color: #434c53;
+  color: #fff;
+}
+
+#float-nav a:hover,
+#float-nav a:focus {
+  background-color: #000;
+  color: #fff;
+}
+
+.map-flag {
+  background-color: #2c3237;
+  color: #fff;
+}
+
+.map-flag h2,
+.map-flag h3 {
+  color: #fff;
+}
+
+#vw .site-header i {
+  color: #00baea;
+}
+
+#vw ._bscolor {
+  color: #0084d8;
+}
+
+#vw ._bsback {
+  background-color: #0084d8;
+}
+
+#vw a:hover,
+#vw a:focus,
+#vw .page-link:hover,
+#vw .page-link:focus {
+  color: #0084d8;
+}
+
+#vw h1 i,
+#vw h2 i,
+#vw h3 i,
+#vw h4 i {
+  color: #00baea;
+  font-style: normal;
+}
+
+#vw .btn-primary,
+#vw .gform_button,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+#vw .application_button,
+#vw span.btn,
+#vw .quick-search-button {
+  border-color: #00baea;
+  background-color: #00baea;
+  color: #fff;
+}
+
+#vw .btn-primary:hover,
+#vw .btn-primary:focus,
+#vw .btn-primary:active,
+#vw .btn-primary:hover:focus,
+#vw .btn-primary:hover:active,
+#vw .btn-primary:focus:active,
+#vw .gform_button:hover,
+#vw .gform_button:focus,
+#vw .gform_button:active,
+#vw .gform_button:hover:focus,
+#vw .gform_button:hover:active,
+#vw .gform_button:focus:active,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:active,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:focus,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:active,
+#vw .cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus:active,
+#vw .application_button:hover,
+#vw .application_button:focus,
+#vw .application_button:active,
+#vw .application_button:hover:focus,
+#vw .application_button:hover:active,
+#vw .application_button:focus:active,
+#vw span.btn:hover,
+#vw span.btn:focus,
+#vw span.btn:active,
+#vw span.btn:hover:focus,
+#vw span.btn:hover:active,
+#vw span.btn:focus:active,
+#vw .quick-search-button:hover,
+#vw .quick-search-button:focus,
+#vw .quick-search-button:active,
+#vw .quick-search-button:hover:focus,
+#vw .quick-search-button:hover:active,
+#vw .quick-search-button:focus:active {
+  border-color: #0084d8;
+  background-color: #0084d8;
+  color: #fff;
+}
+
+#vw .btn-secondary {
+  border-color: #0084d8;
+  background-color: #0084d8;
+  color: #fff;
+}
+
+#vw .btn-secondary:hover,
+#vw .btn-secondary:focus,
+#vw .btn-secondary:active,
+#vw .btn-secondary:hover:focus,
+#vw .btn-secondary:hover:active,
+#vw .btn-secondary:focus:active {
+  border-color: #434c53;
+  background-color: #434c53;
+  color: #fff;
+}
+
+#vw .btn-info {
+  border-color: #fff;
+  background-color: #fff;
+  color: #00baea;
+}
+
+#vw .btn-info:hover,
+#vw .btn-info:focus,
+#vw .btn-info:active,
+#vw .btn-info:hover:focus,
+#vw .btn-info:hover:active,
+#vw .btn-info:focus:active {
+  border-color: #0084d8;
+  background-color: #0084d8;
+  color: #fff;
+}
+
+#vw a.btn.btn-ghost:hover,
+#vw a.btn.btn-ghost:focus {
+  border-color: #fff;
+  background: #0084d8;
+  color: #fff;
+}
+
+#vw .site-header a:hover,
+#vw .site-header a:focus {
+  color: #0084d8;
+}
+
+#vw .primary-menu > li > a {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  #vw .primary-menu > li > a {
+    color: #000;
+  }
+}
+
+#vw .primary-menu > li > a:hover,
+#vw .primary-menu > li > a:focus {
+  background: #0084d8 !important;
+  color: #fff;
+}
+
+#vw .primary-menu button.dropdown-trigger {
+  background-color: #000;
+}
+
+#vw .dropdown-menu > li > a {
+  background-color: #0084d8;
+  color: #fff !important;
+}
+
+#vw .btn-trigger-primary-menu {
+  color: #fff;
+  background-color: #00baea;
+}
+
+#vw .container-slant.blue-slant.content-left > .block:nth-child(2),
+#vw .container-slant.blue-slant > .block > figure {
+  background-color: #00baea;
+}
+
+#vw .container-slant.blue-slant.content-left > .block:nth-child(2)::before {
+  border-right-color: #00baea;
+}
+
+#vw #float-nav a {
+  background-color: #0084d8;
+  color: #fff;
+}
+
+#vw #float-nav a i {
+  color: #fff;
+}
+
+#vw .site-footer {
+  background-color: #0084d8;
+}
+
+#vw .site-footer a:hover {
+  color: #000;
+}
+
+.srp-vi-filters .filter-payment output .value,
+.srp-vi-results .actions a:hover,
+.srp-vi-results .details [data-trigger="price-tooltip"] {
+  color: #000;
+}
+
+.srp-vi-results .details,
+.custom-checkbox-list label,
+.custom-radio-list label {
+  background: #000;
+  border-color: #000;
+  color: #fff !important;
+}
+
+.srp-vi-results .details::after,
+.custom-checkbox-list label::after,
+.custom-radio-list label::after {
+  display: none;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus {
+  background: #444;
+  border-color: #444;
+  color: #fff;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus,
+.srp-vi-results header .table-actions a.active {
+  background: #444;
+  border-color: #444;
+  color: #fff;
+}
+
+.filter-options .checkbox-list input:checked + label,
+.filter-years .radio-list input:checked + label,
+.custom-radio-list input:checked + label {
+  border-color: #444;
+  background: #444;
+  color: #fff;
+}

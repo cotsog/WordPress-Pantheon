@@ -1,0 +1,15 @@
+{%- if block( 'social_links')|trim %}
+	<ul class="social-links">
+		{% block social_links %}
+			{% for key, attr in post.custom if key starts with 'social_' %}
+				{% set social_slug = key|replace( { 'social_': '', '_url': '' } ) %}
+				{% set social_url = attr %}
+				{% if social_url %}
+					<li>
+						<a href="{{ social_url }}" class="icon-{{ social_slug }}" target="_blank" title="{{ social_name|e( 'html_attr' ) }}">{{ social_name }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		{% endblock %}
+	</ul>
+{% endif %}

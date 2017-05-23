@@ -1,0 +1,5 @@
+{% if vehicle.pricing_branding.image and vehicle.on_special %}
+	<div class="branding-block branding-image-{{ position|e( 'html_attr' ) }}">
+		<img src="{{ vehicle.pricing_branding.image | apply_filters('photon_url') }}" class="branding-image"/>
+	</div>
+{% endif %}

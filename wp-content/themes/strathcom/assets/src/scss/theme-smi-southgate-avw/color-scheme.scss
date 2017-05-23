@@ -1,0 +1,697 @@
+
+// ==========================================================================
+// Color scheme template.
+// ==========================================================================
+
+@import "config/variables-bootstrap";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+// Custom colors.
+// ==========================================================================
+$body-color: #333; // en: '', fr: ''
+$body-bg: #fff; // en: '', fr: ''
+$color-white: #fff; // en: '', fr: ''
+$color-black: #000; // en: '', fr: ''
+$brand-primary: #000; // en: '', fr: ''
+$brand-secondary: #cc243d; // en: '', fr: ''
+$brand-tertiary: #434c53; // en: '', fr: ''
+$brand-primary-darker: #000; // en: '', fr: ''
+$brand-secondary-darker: #a11c30; // en: '', fr: ''
+$brand-tertiary-darker: #2c3237; // en: '', fr: ''
+$brand-links-color: $brand-primary; // en: '', fr: ''
+$brand-links-color-hover: $brand-secondary; // en: '', fr: ''
+$header-color: $color-black; // en: '', fr: ''
+$header-bg: $color-white; // en: '', fr: ''
+$header-links-color: $color-black; // en: '', fr: ''
+$footer-color: $color-white; // en: '', fr: ''
+$footer-links-color: $color-white; // en: '', fr: ''
+$footer-hover-color: $brand-secondary; // en: '', fr: ''
+$footer-bg: $brand-tertiary; // en: '', fr: ''
+$scratchpad-color: $color-white; // en: '', fr: ''
+$scratchpad-links-color: $brand-primary; // en: '', fr: ''
+$scratchpad-bg: $brand-tertiary; // en: '', fr: ''
+$scratchpad-primary: #fff; // en: '', fr: ''
+// VW
+$vw-primary: #00baea; // en: '', fr: ''
+$vw-secondary: #0084d8; // en: '', fr: ''
+// Body.
+// ==========================================================================
+
+body,
+.main-container {
+	background: $body-bg;
+	color: $body-color;
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		color: $color-black;
+
+		b,
+		strong {
+			color: $brand-primary;
+		}
+	}
+
+	h5,
+	h6 {
+		color: $body-color;
+	}
+
+	.color-light,
+	.has-background-img {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p {
+			color: $color-white;
+		}
+	}
+
+	.splash {
+		& p,
+		h2,
+		h3,
+		h5 {
+			color: $color-white;
+		}
+	}
+}
+// bpc - Brand Primary Color (+ Darker) (+ Hover).
+// ==========================================================================
+._bpcolor {
+	color: $brand-primary;
+}
+
+._bscolor {
+	color: $brand-secondary;
+}
+
+._bpcolordark {
+	color: #444;
+}
+// _bpb  - Brand Primary Background (+ Darker).
+// ==========================================================================
+._bpback {
+	background-color: $brand-primary;
+}
+
+._bsback {
+	background-color: $brand-secondary;
+}
+
+._bpbackddark {
+	background-color: #444;
+}
+// Common Elements.
+// ==========================================================================
+
+a,
+.page-link {
+	color: $brand-links-color;
+
+	&:hover,
+	&:focus {
+		color: $brand-links-color-hover;
+	}
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+.application_button,
+span.btn,
+.quick-search-button {
+	border-color: $brand-primary;
+	background-color: $brand-primary;
+	color: $color-white;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-tertiary;
+		background-color: $brand-tertiary;
+		color: $color-white;
+	}
+}
+
+.quick-search-button {
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		background: #fff;
+		color: #000;
+	}
+}
+
+.btn-secondary {
+	border-color: $brand-secondary;
+	background-color: $brand-secondary;
+	color: $color-white;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:hover:focus,
+	&:hover:active,
+	&:focus:active {
+		border-color: $brand-secondary-darker;
+		background-color: $brand-secondary-darker;
+		color: $color-white;
+	}
+}
+
+a.btn.btn-ghost {
+	&:hover,
+	&:focus {
+		border-color: $color-white;
+		background: $brand-secondary;
+		color: $color-white;
+	}
+}
+// Pagination.
+// ==========================================================================
+
+.page-item.active .page-link {
+	&,
+	&:focus,
+	&:hover {
+		background-color: $brand-links-color;
+		border-color: $brand-links-color;
+	}
+}
+// Site header.
+// ==========================================================================
+
+.site-header {
+	background: $header-bg;
+	color: $color-black;
+
+	a {
+		color: $header-links-color;
+
+		&:hover,
+		&:focus {
+			color: $brand-secondary;
+		}
+	}
+
+	.text-logo {
+		color: $color-black;
+	}
+}
+
+// Navigation.
+// ==========================================================================
+
+body .primary-menu {
+	&._bpback {
+		background: $brand-primary;
+
+		@include media-breakpoint-up(lg) {
+			background: transparent;
+		}
+	}
+
+	> li > a {
+		color: $color-white;
+
+		@include media-breakpoint-up(lg) {
+			color: $header-links-color;
+		}
+
+		&:hover,
+		&:focus {
+			background: $brand-secondary;
+			color: $color-white;
+		}
+	}
+
+	button.dropdown-trigger {
+		background-color: $brand-primary;
+		color: $color-white;
+	}
+}
+
+.dropdown-menu {
+	> li > a {
+		background-color: $brand-secondary;
+		color: $color-white !important;
+	}
+
+	@include media-breakpoint-up(lg) {
+		> li {
+			> a {
+				background-color: $brand-tertiary;
+				color: $color-white;
+			}
+
+			> a:hover,
+			> a:focus {
+				background-color: $brand-tertiary-darker;
+				color: $color-white;
+			}
+		}
+	}
+}
+
+.btn-trigger-primary-menu {
+	color: $color-white;
+	background-color: $brand-secondary;
+}
+
+.scratchpad-toggle {
+	a {
+		color: $color-white;
+		background: $brand-primary;
+
+		.count {
+			background: $brand-primary;
+			color: $color-white;
+		}
+
+		&:hover {
+			color: $color-white;
+
+			.count {
+				background: $brand-secondary;
+				color: $color-white;
+			}
+		}
+	}
+}
+// Site footer.
+// ==========================================================================
+
+.site-footer {
+	color: $footer-color;
+	background-color: $footer-bg;
+
+	& p,
+	h5 {
+		color: $footer-color;
+	}
+
+	a {
+		color: $footer-links-color;
+
+		&:hover,
+		&:focus {
+			color: $footer-hover-color;
+		}
+	}
+
+	.widget_strathcom_social_widget {
+		color: $color-white;
+
+		a {
+			color: $color-white;
+		}
+	}
+}
+// Scratchpad.
+// ==========================================================================
+
+.scratchpad {
+	color: $scratchpad-color;
+	background-color: $scratchpad-bg;
+
+	header {
+		h3 {
+			color: $color-white;
+
+			.count {
+				border-color: transparent;
+				color: $color-white;
+				background: $brand-secondary;
+			}
+		}
+	}
+
+	a {
+		color: $scratchpad-color;
+
+		&:hover,
+		&:focus {
+			color: $scratchpad-links-color;
+		}
+	}
+
+	h5 {
+		color: $scratchpad-primary;
+	}
+
+	ul {
+		.remove,
+		.view {
+			&:hover {
+				background-color: $scratchpad-primary;
+			}
+		}
+	}
+}
+// SRP/VDP.
+// ==========================================================================
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+	color: $brand-links-color;
+}
+
+.search-results {
+	.special-deal {
+		background: $brand-tertiary;
+	}
+
+	.savings-price {
+		color: $brand-tertiary;
+		border-color: $brand-tertiary;
+	}
+}
+
+._bpbackinv {
+	color: $brand-links-color;
+	background-color: transparent;
+
+	&.active,
+	&:hover,
+	&:focus {
+		color: $color-white;
+		background-color: $brand-links-color;
+	}
+}
+// Staff plugin.
+// ==========================================================================
+
+.staff-departments {
+	li {
+		a {
+			background-color: $brand-primary;
+			border-color: $brand-primary;
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:hover:focus,
+			&:hover:active,
+			&:focus:active {
+				background-color: #444;
+				border-color: #444;
+			}
+		}
+	}
+}
+
+.staff-member {
+	> figure {
+		> a {
+			span {
+				background-color: $brand-primary;
+			}
+		}
+	}
+}
+// Job plugin.
+// ==========================================================================
+
+.entry-content {
+	.single_job_listing {
+		.meta {
+			.job-posting,
+			.full-time,
+			.part-time,
+			.temporary,
+			.internship,
+			.freelance {
+				background-color: $brand-primary;
+			}
+		}
+	}
+}
+// Sidebar Nav.
+// ==========================================================================
+
+#float-nav {
+	a {
+		background-color: $brand-tertiary;
+		color: $color-white;
+
+		&:hover,
+		&:focus {
+			background-color: $brand-primary;
+			color: $color-white;
+		}
+	}
+}
+// Map.
+// ==========================================================================
+
+.map-flag {
+	background-color: $brand-tertiary-darker;
+	color: $color-white;
+
+	h2,
+	h3 {
+		color: $color-white;
+	}
+}
+// ====================================================================================================================================================
+// VW
+// ====================================================================================================================================================
+
+#vw {
+	.site-header {
+		i {
+			color: $vw-primary;
+		}
+	}
+
+	._bscolor {
+		color: $vw-secondary;
+	}
+
+	._bsback {
+		background-color: $vw-secondary;
+	}
+
+	a,
+	.page-link {
+		&:hover,
+		&:focus {
+			color: $vw-secondary;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		i {
+			color: $vw-primary;
+			font-style: normal;
+		}
+	}
+
+	.btn-primary,
+	.gform_button,
+	.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+	.application_button,
+	span.btn,
+	.quick-search-button {
+		border-color: $vw-primary;
+		background-color: $vw-primary;
+		color: $color-white;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: $vw-secondary;
+			background-color: $vw-secondary;
+			color: $color-white;
+		}
+	}
+
+	.btn-secondary {
+		border-color: $vw-secondary;
+		background-color: $vw-secondary;
+		color: $color-white;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: $brand-tertiary;
+			background-color: $brand-tertiary;
+			color: $color-white;
+		}
+	}
+
+	.btn-info {
+		border-color: #fff;
+		background-color: #fff;
+		color: $vw-primary;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: $vw-secondary;
+			background-color: $vw-secondary;
+			color: $color-white;
+		}
+	}
+
+	a.btn.btn-ghost {
+		&:hover,
+		&:focus {
+			border-color: $color-white;
+			background: $vw-secondary;
+			color: $color-white;
+		}
+	}
+
+
+	// Site header.
+	// ==========================================================================
+
+	.site-header {
+		a {
+			&:hover,
+			&:focus {
+				color: $vw-secondary;
+			}
+		}
+	}
+
+	.primary-menu {
+		> li > a {
+			color: $color-white;
+
+			@include media-breakpoint-up(lg) {
+				color: $header-links-color;
+			}
+
+			&:hover,
+			&:focus {
+				background: $vw-secondary !important;
+				color: $color-white;
+			}
+		}
+
+		button.dropdown-trigger {
+			background-color: $brand-primary;
+		}
+	}
+
+	.dropdown-menu {
+		> li > a {
+			background-color: $vw-secondary;
+			color: $color-white !important;
+		}
+	}
+
+	.btn-trigger-primary-menu {
+		color: $color-white;
+		background-color: $vw-primary;
+	}
+
+	// Blue Slant
+
+	.container-slant.blue-slant.content-left > .block:nth-child(2),
+	.container-slant.blue-slant > .block > figure {
+		background-color: $vw-primary;
+	}
+
+	.container-slant.blue-slant.content-left > .block:nth-child(2)::before {
+		border-right-color: $vw-primary;
+	}
+
+	#float-nav {
+		a {
+			background-color: $vw-secondary;
+			color: $color-white;
+
+			i {
+				color: $color-white;
+			}
+		}
+	}
+
+	.site-footer {
+		background-color: $vw-secondary;
+
+		a {
+			&:hover {
+				color: $color-black;
+			}
+		}
+	}
+}
+// Incentives Page.
+// ==========================================================================
+
+.srp-vi-filters .filter-payment output .value,
+.srp-vi-results .actions a:hover,
+.srp-vi-results .details [data-trigger="price-tooltip"] {
+	color: $brand-primary;
+}
+
+.srp-vi-results .details,
+.custom-checkbox-list label,
+.custom-radio-list label {
+	background: $brand-primary;
+	border-color: $brand-primary;
+	color: $color-white !important;
+
+	&::after {
+		display: none;
+	}
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus {
+	background: #444;
+	border-color: #444;
+	color: $color-white;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus,
+.srp-vi-results header .table-actions a.active {
+	background: #444;
+	border-color: #444;
+	color: $color-white;
+}
+
+.filter-options .checkbox-list,
+.filter-years .radio-list,
+.custom-radio-list {
+	input:checked {
+		+ label {
+			border-color: #444;
+			background: #444;
+			color: $color-white;
+		}
+	}
+}

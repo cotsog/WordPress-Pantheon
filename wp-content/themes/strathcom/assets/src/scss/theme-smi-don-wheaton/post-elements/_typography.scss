@@ -1,0 +1,67 @@
+// ==========================================================================
+// Typography.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/post-elements/typography";
+// Overrides and custom styling.
+// ==========================================================================
+
+%heading {
+	font-family: $font-family-monospace;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: rem(1.25);
+}
+
+h1,
+h2,
+h3 {
+	span,
+	b {
+
+		@extend %heading;
+		font-size: 1.25rem;
+		display: block;
+		margin-bottom: 0.75rem;
+	}
+}
+
+h1 span {
+	margin-bottom: 2rem;
+}
+
+h4,
+h5 {
+
+	@extend %heading;
+}
+
+h1 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 3rem;
+	}
+}
+
+h2 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2.75rem;
+	}
+}
+
+h3 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2.5rem;
+	}
+}
+
+h4 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 1.35rem;
+	}
+}

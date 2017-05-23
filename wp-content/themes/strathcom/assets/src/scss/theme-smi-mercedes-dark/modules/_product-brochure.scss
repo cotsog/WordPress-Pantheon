@@ -1,0 +1,99 @@
+// ==========================================================================
+// Product Brochure.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/modules/product-brochure";
+// Overrides and custom styling.
+// ==========================================================================
+
+.layout-vdp-twenty-seventeen {
+	color: #444;
+
+	.pricing-table ul li span.price {
+		color: black;
+	}
+}
+
+.vdp-heading h2 {
+
+	@extend %serif;
+	color: black;
+	font-size: 3rem;
+
+	span {
+
+		@extend %regular;
+		color: #444;
+	}
+}
+
+strike {
+	text-decoration: none;
+}
+
+.savings-price {
+	color: black;
+	border-color: black;
+}
+
+.vdp-cta-block {
+	a {
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.inventory-indicator {
+	color: $brand-secondary !important; // they ain't like no green
+}
+
+.inventory-ribbon {
+	background: #333;
+
+	span::before {
+		border-color: #000 transparent transparent;
+	}
+
+	span::after {
+		border-color: transparent transparent transparent #000;
+	}
+}
+
+.layout-vdp-twenty-seventeen .pricing-table .box {
+	color: black;
+}
+
+.layout-vdp-twenty-seventeen .pricing-table ul > li span.price small,
+.specs-table {
+	color: #444;
+}
+
+.layout-vdp-twenty-seventeen .vdp-accordion-section ul li a {
+	background: #eee;
+	color: #444;
+	border-bottom-color: #ddd;
+
+	&:hover {
+		color: #fff;
+	}
+}
+// Hide filters mobile.
+// ==========================================================================
+.filter-stock-active-wrap {
+	display: none;
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+}
+
+.hidden-fr {
+	display: none;
+}
+
+.vdp-share {
+	width: 100% !important;
+}

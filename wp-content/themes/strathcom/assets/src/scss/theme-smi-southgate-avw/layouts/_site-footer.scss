@@ -1,0 +1,53 @@
+// // ==========================================================================
+// // Site Footer
+// // ==========================================================================
+
+.site-footer {
+
+	@include clearfix();
+	padding: 5rem 0;
+	font-size: 0.9rem;
+
+	.footer-container {
+
+		@extend .container;
+	}
+
+	.block-dealer-info {
+
+		@extend .col-xs-12;
+		@extend .col-lg-4;
+	}
+
+	.copyright {
+
+		@extend .col-xs-12;
+		@extend .text-center;
+	}
+
+	.widget_strathcom_social_widget {
+
+		@extend .col-xs-12;
+		@extend .text-center;
+		padding: 2rem;
+
+		a {
+			font-size: 2.5rem;
+			padding: 0 1rem;
+		}
+	}
+
+	.menu-footer-col-one-container,
+	.menu-footer-col-two-container,
+	.menu-footer-col-three-container,
+	.menu-footer-col-four-container {
+
+		@extend .col-xs-6;
+		@extend .col-lg-2;
+
+		ul {
+
+			@extend .list-unstyled;
+		}
+	}
+}

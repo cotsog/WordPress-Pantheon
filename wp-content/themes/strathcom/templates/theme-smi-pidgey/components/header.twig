@@ -1,0 +1,18 @@
+<header class="site-header">
+	<div class="inner">
+		{% include 'components/logo.twig' %}
+
+		<div class="dealer-details">
+			{% if block( 'top_bar' )|trim %}
+				<div class="site-top-bar">
+					{% block top_bar %}
+						{% include 'components/top-bar.twig' %}
+					{% endblock %}
+				</div>
+			{% endif %}
+		</div>
+		
+	</div>
+
+	{% include 'components/nav-primary.twig' %}
+</header>

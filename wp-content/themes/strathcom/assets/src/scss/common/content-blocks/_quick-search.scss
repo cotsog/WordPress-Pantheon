@@ -1,0 +1,281 @@
+// ==========================================================================
+// Quick Search Shortcode.
+// ==========================================================================
+
+.quick-search-shortcode {
+	padding: 1.5rem 0;
+
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin-bottom: 0;
+		padding: 0.4rem 0;
+	}
+
+	.title-col {
+
+		@extend .col-xs-12;
+		@extend .text-xs-center;
+		padding-bottom: 1rem;
+	}
+
+	// Title is left.
+	&.title-left {
+		.title-col {
+
+			@extend .col-xs-12;
+			@extend .col-lg-3;
+			padding-bottom: 0;
+		}
+
+		#querySearchForm,
+		#quicksearchForm {
+
+			@extend .col-xs-12;
+			@extend .col-lg-9;
+
+			&.no-type {
+				.year-col {
+					margin-left: 0;
+				}
+
+				.year-col,
+				.make-col,
+				.model-col,
+				.button-col {
+
+					@extend .col-md-6;
+					@extend .col-lg-3;
+				}
+			}
+		}
+
+		// If it's the keyword search, change grid.
+		&.keyword-search-on {
+			.title-col {
+
+				@extend .col-lg-4;
+			}
+
+			#querySearchForm,
+			#quicksearchForm {
+
+				@extend .col-lg-8;
+
+				.the-input {
+
+					@extend .col-lg-8;
+					margin-left: 0;
+				}
+
+				.button-col {
+
+					@extend .col-lg-4;
+				}
+			}
+		}
+	}
+}
+
+// ==========================================================================
+// Shortcode + Splash.
+// ==========================================================================
+
+#querySearchForm,
+#quicksearchForm {
+	.type-col {
+
+		@extend .col-md-6;
+		@extend .col-lg-2;
+	}
+
+	.year-col {
+
+		@extend .col-md-6;
+		@extend .col-lg-2;
+	}
+
+	.make-col {
+
+		@extend .col-md-6;
+		@extend .col-lg-3;
+	}
+
+	.model-col {
+
+		@extend .col-md-6;
+		@extend .col-lg-3;
+	}
+
+	.button-col {
+
+		@extend .col-md-12;
+		@extend .col-lg-2;
+	}
+
+	select {
+
+		@include rounded(5px);
+		padding: 0.75rem 1rem;
+		font-size: 1.1rem;
+		margin: 0 0 0.5rem;
+
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+		}
+	}
+
+	.quick-search-button {
+		padding: 0.25rem 1rem;
+		display: block;
+		width: 100%;
+		min-height: 3rem;
+		border: 0;
+		margin: 0;
+
+		&::after {
+			content: none;
+		}
+	}
+
+	// Keyword Search
+	&.keyword-search-form {
+		padding: 1rem 0;
+
+		@include media-breakpoint-up(lg) {
+			padding: 0;
+		}
+
+		.the-input {
+
+			@extend .col-lg-6;
+			@extend .col-lg-offset-2;
+
+			input {
+				padding: 0.65rem;
+				font-size: 1.25rem;
+				width: 100%;
+			}
+		}
+
+		.button-col {
+
+			@extend .col-lg-2;
+		}
+	}
+
+	// Offset if no type.
+	&.no-type {
+		.type-col {
+			display: none;
+		}
+
+		.year-col {
+
+			@extend .col-lg-offset-1;
+		}
+
+		.model-col {
+
+			@extend .col-md-12;
+			@extend .col-lg-3;
+		}
+	}
+}
+
+// If splash only.
+.splash {
+	#querySearchForm,
+	#quicksearchForm {
+		padding-bottom: 1.5rem;
+
+		.quick-search-button {
+
+			@include drop-shadow(0, 5px, 5px, 0.2);
+			font-size: 1.25rem;
+		}
+
+		&.keyword-search-form {
+			.the-input {
+
+				@extend .col-lg-offset-2;
+			}
+		}
+	}
+}
+
+// ==========================================================================
+// BOTH Search Forms.
+// ==========================================================================
+
+#querySearchForm,
+#quicksearchForm {
+	&.both-keyword-search-form {
+
+		@extend .col-lg-4;
+		padding: 0;
+
+		.the-input {
+
+			@extend .col-xs-10;
+			@extend .col-lg-9;
+			padding-right: 0;
+
+			input {
+				padding: .8rem;
+			}
+		}
+
+		.button-col {
+
+			@extend .col-xs-2;
+			padding-left: 0;
+		}
+	}
+
+	&.both-quick-search-form {
+
+		@extend .col-lg-7;
+		padding: 0;
+
+		.type-col,
+		.year-col,
+		.make-col,
+		.model-col {
+
+			@extend .col-xs-6;
+			padding-top: .5rem;
+			padding-bottom: .5rem;
+
+			@include media-breakpoint-up(lg) {
+				width: 20.5%;
+				padding: 0 .25rem;
+			}
+		}
+
+		.button-col {
+
+			@extend .col-lg-2;
+			padding-top: .5rem;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.or-class {
+
+	@extend .col-lg-1;
+	@extend .text-xs-center;
+	@extend .text-lg-left;
+	padding: 1rem 0;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: .5rem;
+		padding-left: .75rem;
+	}
+}

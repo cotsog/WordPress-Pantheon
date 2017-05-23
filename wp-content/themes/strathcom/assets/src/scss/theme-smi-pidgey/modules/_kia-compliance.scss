@@ -1,0 +1,761 @@
+// ==========================================================================
+// Kia Compliance
+// ==========================================================================
+
+#kia {
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 12.4rem;
+	}
+	font-family: "KiaFont", "Tahoma", sans-serif;
+
+	b {
+		font-family: "KiaFontBold", "Tahoma", sans-serif;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		font-family: "KiaFont", "Tahoma", sans-serif;
+	}
+
+	h1 {
+		font-size: rem(25);
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-size: rem(20);
+	}
+
+	h3 {
+		font-size: rem(18);
+	}
+
+	h4 {
+		font-size: rem(16);
+	}
+
+	h5 {
+		text-transform: none;
+	}
+
+	.body-search {
+		a {
+			text-transform: none;
+		}
+	}
+
+	.site-header {
+		.mobile-call {
+			color: #000;
+
+			&::before {
+				color: #000;
+			}
+		}
+	}
+
+	.kia-logo {
+
+		@extend .col-xs-4;
+		@extend .col-md-3;
+		padding: 1.2rem 0;
+	}
+
+	.dealer-details {
+
+		@extend .col-xs-8;
+		@extend .col-md-9;
+		@extend .text-sm-right;
+		display: block;
+		padding: 1rem 0 0;
+
+		.site-branding {
+			width: 100%;
+			padding: 0;
+
+			.site-logo,
+			.text-logo {
+
+				@extend .text-xs-right;
+				font-size: 1rem;
+				padding: 0.55rem 1rem 0 0;
+
+				.logo {
+					float: right;
+				}
+
+				@include media-breakpoint-up(sm) {
+					font-size: 1.5rem;
+					padding: 0.75rem 1rem 0 0;
+				}
+
+				@include media-breakpoint-up(lg) {
+					font-size: 1.7rem;
+					padding: 0;
+				}
+			}
+		}
+
+		.address-info {
+			display: none;
+			font-size: 0.9rem;
+
+			@include media-breakpoint-up(lg) {
+				display: block;
+
+				.scratchpad-toggle {
+					display: block;
+					position: fixed;
+					top: 0.25rem;
+					right: 1rem;
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+
+	.site-footer {
+		padding-bottom: 5rem;
+	}
+
+	.tiger-nose {
+		background: #fff;
+		height: rem(30);
+		width: 100%;
+
+		img {
+			float: right;
+			position: relative;
+			top: rem(-30);
+		}
+	}
+
+	.btn {
+		text-transform: none;
+	}
+
+	a.phone-number {
+		color: #fff;
+	}
+}
+
+// Color scheme overwrite.
+// ==========================================================================
+#kia {
+	$brand-kia: #bb162b;
+	color: #7e8083;
+
+	p,
+	h5 {
+		color: #7e8083;
+	}
+
+	a,
+	.page-link {
+		color: $brand-kia;
+
+		&:hover,
+		&:focus {
+			color: darken($brand-kia, 10%);
+		}
+	}
+
+	.filter-stock-type a.state-active,
+	.filter-stock-type a:hover,
+	.filter-stock-type:hover a.state-active:hover {
+		color: $brand-kia;
+	}
+
+	// _bpbackinv - Brand Primary Background Inverted (for inverted buttons).
+	._bpbackinv {
+		color: $brand-kia;
+		background-color: transparent;
+
+		&.active,
+		&:hover,
+		&:focus {
+			color: #fff;
+			background-color: $brand-kia;
+		}
+	}
+
+	.btn-primary,
+	.gform_button,
+	.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+	.application input.button.application_button {
+		border-color: $brand-kia;
+		background-color: $brand-kia;
+		color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: darken($brand-kia, 10%);
+			background-color: darken($brand-kia, 10%);
+			color: #fff;
+		}
+	}
+
+	.btn-secondary {
+		border-color: #58595b;
+		background-color: #58595b;
+		color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: #222;
+			background-color: #222;
+			color: #fff;
+		}
+	}
+
+	.btn-info {
+		border-color: #222;
+		background-color: #222;
+		color: #fff;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:hover:focus,
+		&:hover:active,
+		&:focus:active {
+			border-color: #111;
+			background-color: #111;
+			color: #fff;
+		}
+	}
+
+	.gform_button,
+	.application_button {
+		color: #fff;
+		border-color: $brand-kia;
+		background-color: $brand-kia;
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			border-color: darken($brand-kia, 10%);
+			background-color: darken($brand-kia, 10%);
+		}
+	}
+
+	// SRP/VDP.
+	// ==========================================================================
+
+	.search-results {
+		.special-deal {
+			background-color: $brand-kia;
+		}
+	}
+
+	[data-trigger="price-tooltip"].savings-price {
+		color: #7e8083;
+		border-color: #7e8083;
+	}
+
+	.filter-stock-type a:hover {
+		color: #58595b;
+	}
+
+	.search-results > li:hover {
+		background: #eee;
+	}
+
+	.product-gallery {
+		.image-count {
+			background-color: $brand-kia;
+
+			span {
+				background-color: darken($brand-kia, 10%);
+			}
+		}
+	}
+
+	// SRP Filters.
+	// ==========================================================================
+
+	.layout-srp {
+		.filters {
+			dt {
+				color: #222;
+			}
+
+			dd {
+				a {
+					color: $body-color;
+
+					&:hover {
+						background-color: transparent;
+						color: $brand-kia;
+					}
+				}
+			}
+		}
+	}
+
+	// Tabs.
+	// ==========================================================================
+
+	.tabs-nav {
+		border-bottom-color: darken($brand-kia, 10%);
+
+		a:hover {
+			color: darken($brand-kia, 10%);
+		}
+
+		a.active,
+		a.active:hover,
+		a.active:focus,
+		a:focus,
+		a:focus:hover {
+			color: #fff;
+			background-color: darken($brand-kia, 10%);
+		}
+	}
+
+	// Pagination.
+	// ==========================================================================
+
+	.page-item.active .page-link {
+		&,
+		&:focus,
+		&:hover {
+			background-color: $brand-kia;
+			border-color: $brand-kia;
+		}
+	}
+
+	// Site header.
+	// ==========================================================================
+
+	.site-header {
+		color: #58595b;
+		background-color: #fff;
+
+		a {
+			color: $brand-kia;
+
+			.text-logo {
+				color: #58595b;
+
+				&:hover,
+				&:focus {
+					color: #58595b;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				color: #58595b;
+			}
+		}
+
+		.standard-site-name {
+			color: #58595b;
+		}
+
+		.site-top-bar {
+			li {
+				a {
+					color: $brand-kia;
+
+					&:hover,
+					&:focus {
+						color: #58595b;
+					}
+				}
+			}
+		}
+	}
+
+	// Navigation.
+	// ==========================================================================
+
+	.site-primary-navigation {
+		background-color: #fff;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.primary-menu {
+		&._bpback {
+			background: #fff;
+		}
+
+		> li {
+			> a {
+				color: $color-black;
+
+				&:hover {
+					color: $brand-kia;
+				}
+
+				@include media-breakpoint-up(lg) {
+					&:hover {
+						color: $brand-kia;
+					}
+				}
+			}
+
+			// DD Menu
+			.dropdown-menu {
+				background: #fff;
+				border: 1px solid #ddd;
+				border-radius: .25rem;
+
+				li { // lvl 1
+
+					@include media-breakpoint-down(md) {
+						background: #fff;
+					}
+				}
+
+				a {
+					color: $color-black;
+
+					&:hover {
+						background: transparent;
+						color: $brand-kia;
+					}
+				}
+
+				.dropdown-menu {
+					> li { // lvl 2
+
+						@include media-breakpoint-down(md) {
+							background: #eee;
+						}
+					}
+				}
+			}
+
+			// Mega Menu Color & Border
+			&.mega-menu {
+				> .dropdown-menu {
+					background: #fff;
+					border: 0;
+
+					.dropdown-menu {
+						border: 0;
+					}
+
+					a {
+						color: #000 !important;
+
+						&:hover {
+							background: transparent;
+						}
+					}
+				}
+			}
+		}
+
+		// Arrow (MOBILE)
+		.dropdown-trigger::before {
+			color: $color-white;
+		}
+
+		// Scratchpad (MOBILE)
+		.scratchpad-toggle {
+			a,
+			.count {
+				color: $color-white;
+
+				&:hover {
+					color: $color-white;
+				}
+			}
+		}
+	}
+
+	.site-header .site-primary-navigation button.btn-trigger-primary-menu {
+		color: $color-black;
+	}
+
+	// Map.
+	// ==========================================================================
+
+	.map-flag {
+		background-color: $brand-kia;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				color: #222;
+			}
+		}
+	}
+
+	// Site footer.
+	// ==========================================================================
+
+	.site-footer {
+		color: #58595b;
+		background-color: #eee;
+
+		a,
+		.footer-info a {
+			color: #58595b;
+
+			&:hover,
+			&:focus {
+				color: $brand-kia;
+			}
+		}
+	}
+
+	.footer-social {
+		li {
+			a {
+				margin: 0;
+
+				&::before {
+					color: #fff;
+					background: #58595b;
+					width: rem(40);
+					height: rem(40);
+					padding: 0.55rem 0.25rem;
+					text-align: center;
+					margin: 0;
+
+					&:hover,
+					&:focus {
+						color: $brand-kia;
+					}
+				}
+			}
+		}
+	}
+
+	// Scratchpad.
+	// ==========================================================================
+
+	.scratchpad {
+		color: #58595b;
+		background-color: #fff;
+
+		li,
+		a {
+			border-color: #ddd;
+		}
+
+		a {
+			color: $brand-kia;
+
+			&:hover,
+			&:focus {
+				color: $brand-kia;
+			}
+
+			&.close-btn {
+				&:hover {
+					background-color: $brand-kia;
+				}
+			}
+		}
+
+		h5 {
+			color: $brand-kia;
+		}
+
+		ul {
+			.remove,
+			.view {
+				&:hover {
+					background-color: $brand-kia;
+					color: #fff;
+				}
+			}
+		}
+
+		a.close-btn {
+			&:hover {
+				&::before {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.site-header {
+		.scratchpad-toggle {
+			a {
+				color: $brand-kia;
+			}
+		}
+
+		.scratchpad-toggle {
+			.count {
+				background-color: $brand-kia;
+				color: #fff;
+			}
+
+			&:hover,
+			&:focus {
+				.count {
+					background-color: #58595b;
+				}
+			}
+		}
+	}
+
+	// Staff plugin.
+	// ==========================================================================
+
+	.staff-departments {
+		li {
+			a {
+				background-color: $brand-kia;
+				border-color: $brand-kia;
+
+				&:hover,
+				&:focus,
+				&:active,
+				&:hover:focus,
+				&:hover:active,
+				&:focus:active {
+					background-color: darken($brand-kia, 10%);
+					border-color: darken($brand-kia, 10%);
+				}
+			}
+		}
+	}
+
+	.staff-member {
+		> figure {
+			> a {
+				span {
+					background-color: $brand-kia;
+				}
+			}
+		}
+	}
+
+	// Job plugin.
+	// ==========================================================================
+
+	.entry-content {
+		.single_job_listing {
+			.meta {
+				.jop-posting,
+				.full-time,
+				.part-time,
+				.temporary,
+				.internship,
+				.freelance {
+					background-color: $brand-kia;
+				}
+			}
+		}
+	}
+
+	// Product Carousel.
+	// ==========================================================================
+
+	.carousel {
+		.btn {
+			background-color: $brand-kia;
+			border-color: $brand-kia;
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:hover:focus,
+			&:hover:active,
+			&:focus:active {
+				background-color: darken($brand-kia, 10%);
+				border-color: darken($brand-kia, 10%);
+			}
+		}
+	}
+
+	// Float Nav.
+	// ==========================================================================
+
+	#float-nav {
+		a {
+			background-color: $brand-kia;
+
+			&:hover {
+				background-color: #222;
+			}
+		}
+	}
+
+	// Incentives Page.
+	// ==========================================================================
+
+	.srp-vi-filters .filter-payment output .value,
+	.srp-vi-results .actions a:hover,
+	.srp-vi-results .details [data-trigger="price-tooltip"] {
+		color: $brand-kia;
+	}
+
+	.srp-vi-results .details > td,
+	.custom-checkbox-list label,
+	.custom-radio-list label {
+		background: $brand-kia;
+		border-color: $brand-kia;
+		color: $color-white !important;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	.custom-checkbox-list label:hover,
+	.custom-checkbox-list label:focus,
+	.custom-radio-list label:hover,
+	.custom-radio-list label:focus {
+		background: darken($brand-kia, 10%);
+		border-color: darken($brand-kia, 10%);
+		color: $color-white;
+	}
+
+	.custom-checkbox-list label:hover,
+	.custom-checkbox-list label:focus,
+	.custom-radio-list label:hover,
+	.custom-radio-list label:focus,
+	.srp-vi-results header .table-actions a.active {
+		background: darken($brand-kia, 10%);
+		border-color: darken($brand-kia, 10%);
+		color: $color-white;
+	}
+
+	.filter-options .checkbox-list,
+	.filter-years .radio-list,
+	.custom-radio-list {
+		input:checked {
+			+ label {
+				border-color: darken($brand-kia, 10%);
+				background: darken($brand-kia, 10%);
+				color: $color-white;
+			}
+		}
+	}
+
+	.details {
+		h5 {
+			color: #fff;
+		}
+
+		td {
+			color: #000;
+		}
+	}
+}

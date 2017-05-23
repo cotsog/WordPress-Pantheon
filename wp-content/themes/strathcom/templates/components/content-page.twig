@@ -1,0 +1,9 @@
+<article id="post-{{ post.ID }}" class="{{ post.class }}">
+	<header class="entry-header">
+		{% include 'components/entry-title.twig' %}
+	</header>
+
+	<div class="group-content entry-content">
+		{{ post.content|replace( text_replace ) }}
+	</div>
+</article>

@@ -1,0 +1,42 @@
+// 'Value My Trade In' form styling
+$value-tradein-gutter-width: $grid-gutter-width / 4;
+
+.value-tradein {
+	color: $gray-light;
+	font-size: $font-size-sm;
+	font-weight: bold;
+
+	.form-control {
+		font-size: $font-size-sm;
+		font-weight: normal;
+	}
+
+	.btn[type="submit"] {
+		display: block;
+		width: 100%;
+	}
+
+	@include media-breakpoint-up(md) {
+		fieldset {
+			margin: 0;
+		}
+
+		.vehicle-details {
+			.form-group {
+				width: 33.3333%;
+				float: left;
+				padding-left: $value-tradein-gutter-width;
+				padding-right: $value-tradein-gutter-width;
+
+				&:nth-child(3n + 1) {
+					clear: both;
+					padding-left: 0;
+				}
+
+				&:nth-child(3n + 3) {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}

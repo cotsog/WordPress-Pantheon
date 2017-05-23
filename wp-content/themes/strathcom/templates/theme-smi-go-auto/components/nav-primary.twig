@@ -1,0 +1,9 @@
+{% if menu_primary %}
+    <div class="site-navigation">
+        <nav class="site-primary-navigation" role="navigation">
+            <!--<button class="btn-trigger-primary-menu" data-toggle="dropdown-nested" data-target=".primary-menu">Menu
+            </button>-->
+            {% include "components/recursive-menu.twig" with {'menu_primary': menu_primary.get_items, 'top_level': 'true'} %}
+        </nav>
+    </div>
+{% endif %}

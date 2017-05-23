@@ -1,0 +1,48 @@
+// ==========================================================================
+// Content w/ Sidebar.
+// ==========================================================================
+
+.content-sidebar {
+	padding-bottom: 1.5rem;
+
+	&.content-left {
+		.content-left-col {
+
+			@extend .col-lg-8;
+		}
+
+		.content-right-col {
+
+			@extend .col-lg-4;
+
+			a {
+				display: block;
+				margin: 0 0 0.5em;
+			}
+		}
+	}
+
+	&.content-right {
+		.content-left-col {
+
+			@extend .col-lg-4;
+
+			a {
+				display: block;
+				margin: 0 0 0.5em;
+			}
+		}
+
+		.content-right-col {
+
+			@extend .col-lg-8;
+		}
+	}
+
+	.full-col {
+
+		@include make-col();
+		@include make-col-span(12);
+	}
+}
+

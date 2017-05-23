@@ -1,0 +1,11 @@
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="row">
+			{% if footer_widgets | trim %}
+				<div class="footer-widgets">
+					{{ footer_widgets|replace( text_replace ) }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</footer>

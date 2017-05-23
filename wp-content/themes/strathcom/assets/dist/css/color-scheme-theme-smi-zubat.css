@@ -1,0 +1,520 @@
+body {
+  background: #f1f1f1;
+  color: #54565f;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #54565f;
+}
+
+body h1 b,
+body h1 strong,
+body h2 b,
+body h2 strong,
+body h3 b,
+body h3 strong,
+body h4 b,
+body h4 strong,
+body h5 b,
+body h5 strong,
+body h6 b,
+body h6 strong {
+  color: #2d96cd;
+}
+
+.color-light a:hover, .color-light a:focus {
+  color: #fff;
+}
+
+._bpcolor {
+  color: #2d96cd;
+}
+
+._bscolor {
+  color: #1b4caf;
+}
+
+._bpcolordark {
+  color: #2477a3;
+}
+
+._bpback {
+  background-color: #2d96cd;
+}
+
+._bsback {
+  background-color: #1b4caf;
+}
+
+._bpbackddark {
+  background-color: #2477a3;
+}
+
+a,
+.page-link {
+  color: #2d96cd;
+}
+
+a:hover, a:focus,
+.page-link:hover,
+.page-link:focus {
+  color: #1b4caf;
+}
+
+.btn-primary,
+.gform_button,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit],
+.application_button,
+span.btn,
+.quick-search-button {
+  border-color: #2d96cd;
+  background-color: #2d96cd;
+  color: #fff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:hover:focus, .btn-primary:hover:active, .btn-primary:focus:active,
+.gform_button:hover,
+.gform_button:focus,
+.gform_button:active,
+.gform_button:hover:focus,
+.gform_button:hover:active,
+.gform_button:focus:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:focus,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:hover:active,
+.cctor-pro-coupons-content .cctor-pro-filters-wrapper input[type=submit]:focus:active,
+.application_button:hover,
+.application_button:focus,
+.application_button:active,
+.application_button:hover:focus,
+.application_button:hover:active,
+.application_button:focus:active,
+span.btn:hover,
+span.btn:focus,
+span.btn:active,
+span.btn:hover:focus,
+span.btn:hover:active,
+span.btn:focus:active,
+.quick-search-button:hover,
+.quick-search-button:focus,
+.quick-search-button:active,
+.quick-search-button:hover:focus,
+.quick-search-button:hover:active,
+.quick-search-button:focus:active {
+  border-color: #2477a3;
+  background-color: #2477a3;
+  color: #fff;
+}
+
+.btn-secondary {
+  border-color: #1b4caf;
+  background-color: #1b4caf;
+  color: #fff;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary:hover:focus, .btn-secondary:hover:active, .btn-secondary:focus:active {
+  border-color: #143983;
+  background-color: #143983;
+  color: #fff;
+}
+
+.btn-info {
+  border-color: #fff;
+  background-color: #fff;
+  color: #2d96cd;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info:hover:focus, .btn-info:hover:active, .btn-info:focus:active {
+  border-color: #2477a3;
+  background-color: #2477a3;
+  color: #fff;
+}
+
+a.btn.btn-ghost:hover, a.btn.btn-ghost:focus {
+  border-color: #143983;
+  background: #143983;
+  color: #fff;
+}
+
+.product-tabs .tabs-nav {
+  border-bottom-color: #2477a3;
+}
+
+.product-tabs .tabs-nav a {
+  color: #1d1e21;
+}
+
+.product-tabs .tabs-nav a:hover {
+  color: #fff;
+  background-color: #2477a3;
+}
+
+.product-tabs .tabs-nav a.active,
+.product-tabs .tabs-nav a.active:hover,
+.product-tabs .tabs-nav a.active:focus,
+.product-tabs .tabs-nav a:focus,
+.product-tabs .tabs-nav a:focus:hover {
+  color: #fff;
+  background-color: #2477a3;
+}
+
+.page-item.active .page-link, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+  background-color: #2d96cd;
+  border-color: #2d96cd;
+}
+
+.site-header {
+  background-color: #1d1e21;
+  color: #fff;
+}
+
+.site-header .site-branding {
+  border-right: 1px solid #41434a;
+}
+
+.site-header a {
+  color: #81838c;
+}
+
+.site-header a:hover, .site-header a:focus {
+  color: #2d96cd;
+}
+
+.site-header .text-logo {
+  color: #fff;
+}
+
+.site-header .site-top-bar {
+  border-bottom: 1px solid #41434a;
+}
+
+.site-header .scratchpad-toggle a {
+  color: #fff;
+}
+
+.site-header .scratchpad-toggle a:hover, .site-header .scratchpad-toggle a:focus {
+  color: #fff;
+}
+
+.site-header .scratchpad-toggle .count {
+  border-color: #1d1e21;
+  color: #fff;
+  background: transparent;
+}
+
+.site-header .scratchpad-toggle:hover .count, .site-header .scratchpad-toggle:focus .count {
+  color: #fff;
+  background: transparent;
+}
+
+body .primary-menu > li > a {
+  border-right: 1px solid #41434a !important;
+}
+
+.primary-menu._bpback {
+  background: #2d96cd;
+}
+
+@media (min-width: 992px) {
+  .primary-menu._bpback {
+    background: transparent;
+  }
+}
+
+.primary-menu > li > a {
+  color: #fff;
+}
+
+.primary-menu > li > a:hover {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .primary-menu > li > a {
+    color: #fff;
+  }
+  .primary-menu > li > a:hover {
+    color: #2d96cd;
+  }
+}
+
+.primary-menu > li .dropdown-menu {
+  background: #2d96cd;
+}
+
+@media (max-width: 991px) {
+  .primary-menu > li .dropdown-menu li {
+    background: #2d96cd;
+  }
+}
+
+.primary-menu > li .dropdown-menu a {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .primary-menu > li .dropdown-menu .dropdown-menu > li {
+    background: #2477a3;
+  }
+}
+
+.primary-menu > li.mega-menu > .dropdown-menu {
+  background: #f7f7f7;
+  border-top-color: #2d96cd;
+}
+
+.primary-menu .dropdown-trigger::before {
+  color: #fff;
+}
+
+.primary-menu .scratchpad-toggle a,
+.primary-menu .scratchpad-toggle .count {
+  color: #fff;
+}
+
+.primary-menu .scratchpad-toggle a:hover,
+.primary-menu .scratchpad-toggle .count:hover {
+  color: #fff;
+}
+
+.site-footer,
+.dark-footer {
+  color: #fff;
+  background-color: #505157;
+}
+
+.site-footer p,
+.dark-footer p {
+  color: #fff;
+}
+
+.site-footer a,
+.dark-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover, .site-footer a:focus,
+.dark-footer a:hover,
+.dark-footer a:focus {
+  color: #fff;
+}
+
+.site-footer h5,
+.dark-footer h5 {
+  color: #81838c;
+}
+
+.footer-widgets a {
+  color: #fff;
+}
+
+.footer-widgets a:hover, .footer-widgets a:focus {
+  color: #fff;
+}
+
+.dark-footer {
+  background: #1d1e21;
+  color: #fff;
+}
+
+.scratchpad {
+  color: #fff;
+  background-color: #37383d;
+}
+
+.scratchpad header h3 {
+  color: #fff;
+}
+
+.scratchpad header h3 .count {
+  border-color: transparent;
+  color: #fff;
+  background: #1b4caf;
+}
+
+.scratchpad a {
+  color: #fff;
+}
+
+.scratchpad a:hover, .scratchpad a:focus {
+  color: #2d96cd;
+}
+
+.scratchpad h5 {
+  color: #818a91;
+}
+
+.scratchpad ul .remove:hover,
+.scratchpad ul .view:hover {
+  background-color: #818a91;
+}
+
+.single-inventory {
+  background-color: #f5f5f5;
+  color: #1d1e21;
+}
+
+.single-inventory h1 {
+  color: #1d1e21;
+}
+
+.single-inventory .layout-srp h2,
+.single-inventory .layout-srp h3,
+.single-inventory .layout-srp h4,
+.single-inventory .layout-srp h5,
+.single-inventory .layout-srp .card-car h5,
+.single-inventory .layout-vdp h2,
+.single-inventory .layout-vdp h3,
+.single-inventory .layout-vdp h4,
+.single-inventory .layout-vdp h5,
+.single-inventory .layout-vdp .card-car h5 {
+  color: #1d1e21;
+}
+
+.filter-stock-type a.state-active,
+.filter-stock-type a:hover,
+.filter-stock-type:hover a.state-active:hover {
+  color: #2d96cd;
+}
+
+.product-brochure .product-info dt {
+  color: #2d96cd;
+}
+
+.search-results .special-deal {
+  background: #37383d;
+}
+
+.search-results .savings-price {
+  color: #37383d;
+  border-color: #37383d;
+}
+
+._bpbackinv {
+  color: #2d96cd;
+  background-color: transparent;
+}
+
+._bpbackinv.active, ._bpbackinv:hover, ._bpbackinv:focus {
+  color: #fff;
+  background-color: #2d96cd;
+}
+
+.staff-departments li a {
+  background-color: #2d96cd;
+  border-color: #2d96cd;
+}
+
+.staff-departments li a:hover, .staff-departments li a:focus, .staff-departments li a:active, .staff-departments li a:hover:focus, .staff-departments li a:hover:active, .staff-departments li a:focus:active {
+  background-color: #2477a3;
+  border-color: #2477a3;
+}
+
+.staff-member > figure > a span {
+  background-color: #2d96cd;
+}
+
+.entry-content .single_job_listing .meta .jop-posting,
+.entry-content .single_job_listing .meta .full-time,
+.entry-content .single_job_listing .meta .part-time,
+.entry-content .single_job_listing .meta .temporary,
+.entry-content .single_job_listing .meta .internship,
+.entry-content .single_job_listing .meta .freelance {
+  background-color: #2d96cd;
+}
+
+.carousel-direction-nav a {
+  color: #fff;
+}
+
+.carousel-direction-nav a::before {
+  background-color: #1d1e21;
+}
+
+.carousel-direction-nav a:hover {
+  color: #fff;
+}
+
+#float-nav a {
+  background-color: #2d96cd;
+  color: #fff;
+}
+
+#float-nav a:hover, #float-nav a:focus {
+  background-color: #37383d;
+  color: #fff;
+}
+
+.map-flag {
+  background-color: #2d96cd;
+}
+
+.map-flag h4 {
+  color: #fff;
+}
+
+.map-flag a {
+  color: #fff;
+}
+
+.map-flag a:hover, .map-flag a:focus {
+  color: #1d1e21;
+}
+
+.layout-vdp-twenty-seventeen .vdp-dealer-info .phone-number {
+  background: #2d96cd;
+}
+
+.srp-vi-filters .filter-payment output .value,
+.srp-vi-results .actions a:hover,
+.srp-vi-results .details [data-trigger="price-tooltip"] {
+  color: #2d96cd;
+}
+
+.srp-vi-results .details,
+.custom-checkbox-list label,
+.custom-radio-list label {
+  background: #2d96cd;
+  border-color: #2d96cd;
+  color: #fff !important;
+}
+
+.srp-vi-results .details::after,
+.custom-checkbox-list label::after,
+.custom-radio-list label::after {
+  display: none;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus {
+  background: #2477a3;
+  border-color: #2477a3;
+  color: #fff;
+}
+
+.custom-checkbox-list label:hover,
+.custom-checkbox-list label:focus,
+.custom-radio-list label:hover,
+.custom-radio-list label:focus,
+.srp-vi-results header .table-actions a.active {
+  background: #2477a3;
+  border-color: #2477a3;
+  color: #fff;
+}
+
+.filter-options .checkbox-list input:checked + label,
+.filter-years .radio-list input:checked + label,
+.custom-radio-list input:checked + label {
+  border-color: #2477a3;
+  background: #2477a3;
+  color: #fff;
+}

@@ -1,0 +1,38 @@
+// ==========================================================================
+// Site logo.
+// ==========================================================================
+$site-logo-max-height: rem(140) !default;
+
+.site-logo {
+	display: block;
+	padding: #{$spacer / 2} 0;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	> .logo {
+
+		@extend .img-fluid;
+		display: none;
+
+		.expanded-header & {
+			display: block;
+			max-height: $site-logo-max-height - 2rem;
+
+			@include media-breakpoint-up(lg) {
+				max-height: none;
+			}
+		}
+	}
+
+	// Hide site title heading if there is a logo image (when header is expanded).
+	.expanded-header &:not(.heading-only) > .text-logo {
+		display: none;
+	}
+}
+
+.mobile-call-tracking {
+
+	@extend .hidden-lg-up;
+}

@@ -1,0 +1,67 @@
+/*
+Error: File to import not found or unreadable: bootstrap/scss/variables.
+       Load paths:
+         /Users/melissamcnally/Sites/theme-cms-sliderless-hero-theme/sliderless_hero_theme
+         /Users/melissamcnally/Sites/theme-cms-dark-fluid-theme/dark_fluid_theme
+         /Users/melissamcnally/Sites/theme-cms-mercedes-theme/mercedes_theme
+         /Users/melissamcnally/Sites/theme-cms-ford-theme-one/ford_theme_one
+         /Users/melissamcnally/Sites/theme-cms-core-theme-three-theme/core_theme_three_theme
+         /Users/melissamcnally/Sites/theme-cms-sentes-theme/sentes_theme
+         /Users/melissamcnally/Sites/theme-cms-regency-theme/regency_theme
+         /Users/melissamcnally/Sites/base-theme/theme
+         /Users/melissamcnally/Sites/theme-cms-standard-theme/standard_theme
+         /Users/melissamcnally/Sites/theme-cms-core-theme-two-theme/core_theme_two_theme
+         /Users/melissamcnally/Sites/theme-cms-core-theme-six-theme/core_theme_six_theme
+         /Users/melissamcnally/Sites/vagrant-local/vvv/www/strathcomcms.com/wp-content/themes/strathcom/assets/src/scss
+         Sass::Globbing::Importer
+        on line 13 of /Users/melissamcnally/Sites/vagrant-local/vvv/www/strathcomcms.com/wp-content/themes/strathcom/assets/src/scss/style-theme-mercedes.scss
+
+8: @import "common/variables";
+9: 
+10: // Import local variables, extend them with core Bootstrap variables (imported
+11: // from 'bower_components') and then import Bootstrap partials
+12: @import "theme-mercedes/variables-bootstrap";
+13: @import "bootstrap/scss/variables";
+14: @import "theme-mercedes/bootstrap";
+15: @import "theme-mercedes/variables-custom";
+16: 
+17: // Import third-party stylesheets
+18: @import "baguettebox.js/src/baguetteBox.scss";
+
+Backtrace:
+/Users/melissamcnally/Sites/vagrant-local/vvv/www/strathcomcms.com/wp-content/themes/strathcom/assets/src/scss/style-theme-mercedes.scss:13
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:45:in `import'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `block in with_base'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/stack.rb:115:in `with_frame'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/stack.rb:79:in `with_base'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/tree/root_node.rb:20:in `render'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/engine.rb:278:in `render'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:423:in `run'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:52:in `parse'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/lib/sass/exec/base.rb:19:in `parse!'
+/Users/melissamcnally/Downloads/CodeKit 2.app/Contents/Resources/engines/scss/bin/scss:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: bootstrap/scss/variables.\A        Load paths:\A          /Users/melissamcnally/Sites/theme-cms-sliderless-hero-theme/sliderless_hero_theme\A          /Users/melissamcnally/Sites/theme-cms-dark-fluid-theme/dark_fluid_theme\A          /Users/melissamcnally/Sites/theme-cms-mercedes-theme/mercedes_theme\A          /Users/melissamcnally/Sites/theme-cms-ford-theme-one/ford_theme_one\A          /Users/melissamcnally/Sites/theme-cms-core-theme-three-theme/core_theme_three_theme\A          /Users/melissamcnally/Sites/theme-cms-sentes-theme/sentes_theme\A          /Users/melissamcnally/Sites/theme-cms-regency-theme/regency_theme\A          /Users/melissamcnally/Sites/base-theme/theme\A          /Users/melissamcnally/Sites/theme-cms-standard-theme/standard_theme\A          /Users/melissamcnally/Sites/theme-cms-core-theme-two-theme/core_theme_two_theme\A          /Users/melissamcnally/Sites/theme-cms-core-theme-six-theme/core_theme_six_theme\A          /Users/melissamcnally/Sites/vagrant-local/vvv/www/strathcomcms.com/wp-content/themes/strathcom/assets/src/scss\A          Sass::Globbing::Importer\A         on line 13 of /Users/melissamcnally/Sites/vagrant-local/vvv/www/strathcomcms.com/wp-content/themes/strathcom/assets/src/scss/style-theme-mercedes.scss\A \A 8: @import \"common/variables\";\A 9: \A 10: // Import local variables, extend them with core Bootstrap variables (imported\A 11: // from 'bower_components') and then import Bootstrap partials\A 12: @import \"theme-mercedes/variables-bootstrap\";\A 13: @import \"bootstrap/scss/variables\";\A 14: @import \"theme-mercedes/bootstrap\";\A 15: @import \"theme-mercedes/variables-custom\";\A 16: \A 17: // Import third-party stylesheets\A 18: @import \"baguettebox.js/src/baguetteBox.scss\";"; }

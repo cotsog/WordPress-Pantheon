@@ -1,0 +1,56 @@
+{% extends "widgets/base-widget.twig" %}
+
+{% if content_image_src or secondary_description %}
+	{% set content_position = content_position | default('left') %}
+{# without an image, there is no need for a white image box, and the content moves to the left #}
+{% else %}
+	{% set content_position = 'left' %}
+{% endif %}
+
+{% set title_type = title_type | default('h2') %}
+
+{% block content %}
+	<section class="container-slant content-{{ content_position }} {{ custom_class }}" style="{{ macros.background_hex_value( background_hex_value ) }}">
+			{% if content_position | default('left') == 'right' %}
+				<div class="block">
+					<figure {% if secondary_description == '' %}class="slant-invisible"{% endif %}>
+						{{ secondary_description | urldecode | apply_filters('the_content') }}
+						{% if content_image_src %}
+							<span class="image-block">
+								{{ macros.image_block( content_image_src, title ) }}
+							</span>
+						{% endif %}
+						{%- for btn in secondary_buttons -%}
+							{{ macros.button( btn, btn.class ) }}
+						{% endfor -%}
+					</figure>
+				</div>
+			{% endif %}
+			<div class="block" style="{{ macros.background_image( background_image_src ) }}">
+				<div class="content">
+					{% if title -%}
+						<{{ title_type }}>{{ title | e }}</{{ title_type }}>
+					{%- endif %}
+					{{ description | urldecode | apply_filters('the_content') }}
+					{% for btn in buttons %}
+						{{ macros.button( btn, btn.class ) }}
+					{% endfor %}
+				</div>
+			</div>
+			{% if content_position | default('left') == 'left' %}
+				<div class="block">
+					<figure {% if secondary_description == '' %}class="slant-invisible"{% endif %}>
+						{{ secondary_description | urldecode | apply_filters('the_content') }}
+						{% if content_image_src %}
+							<span class="image-block">
+								{{ macros.image_block( content_image_src, title ) }}
+							</span>
+						{% endif %}
+						{%- for btn in secondary_buttons -%}
+							{{ macros.button( btn, btn.class ) }}
+						{% endfor -%}
+					</figure>
+				</div>
+			{% endif %}
+	</section>
+{% endblock %}

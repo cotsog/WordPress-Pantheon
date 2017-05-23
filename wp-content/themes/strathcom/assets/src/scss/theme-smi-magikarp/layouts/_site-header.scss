@@ -1,0 +1,165 @@
+// ==========================================================================
+// Site Header
+// ==========================================================================
+// If header is sticky, add some padding to the top
+
+body {
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 9rem;
+
+		&.logged-in {
+			.site-header {
+				top: rem(30);
+			}
+		}
+	}
+}
+
+%contain-it {
+	max-width: 1200px;
+	margin: 0 auto;
+
+	@include media-breakpoint-up(lg) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+// Head
+
+.site-header {
+	width: 100%;
+
+	.inner {
+
+		@include clearfix;
+		@extend %contain-it;
+	}
+
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		top: 0;
+		z-index: 999;
+	}
+
+	.site-branding {
+
+		@extend .col-sm-12;
+		@extend .col-lg-5;
+		@extend .text-xs-center;
+		@extend .text-lg-left;
+
+		.site-logo {
+			padding: 0.5rem 0;
+
+			img {
+				max-height: rem(100);
+
+				@include media-breakpoint-down(lg) {
+					margin: 0 auto;
+				}
+			}
+		}
+
+		.text-logo {
+			padding: 0.25rem 2rem;
+			text-transform: uppercase;
+			display: inline-block;
+		}
+	}
+
+	.site-top-bar {
+
+		@extend .col-xs-7;
+		display: none;
+		padding: 1rem 0.5rem;
+		text-align: right;
+		font-size: 0.95rem;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+	}
+
+	.scratchpad-toggle {
+
+		@include media-breakpoint-up(lg) {
+			display: inline-block;
+		}
+	}
+
+	.site-navigation {
+		.main-navigation-block {
+
+			@extend .col-xs-12;
+			@extend .col-lg-10;
+			@extend .col-xl-10;
+
+			.scratchpad-toggle {
+				.count {
+					bottom: 0.5rem;
+				}
+
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	button.btn-trigger-primary-menu {
+		text-indent: 0;
+		width: 8rem;
+		padding: 0.5rem 1rem;
+		text-align: left;
+
+		&::before {
+			left: 1rem;
+		}
+	}
+
+	.mobile-call-tracking {
+		.widget_strathcom_social_widget {
+			display: none;
+			text-align: right;
+
+			a {
+				font-size: 1.2rem;
+				padding: 1rem .5rem 0;
+			}
+
+			@include media-breakpoint-up(lg) {
+				display: block !important;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: block !important;
+		}
+	}
+
+	.mobile-call,
+	.mobile-call-tracking .widget_text a {
+		float: right;
+		position: relative;
+		margin-top: -2.5rem;
+		margin-right: 1rem;
+
+		&::before {
+			font-family: 'FontAwesome';
+			content: '\f095';
+			display: block;
+			float: left;
+			margin-right: 0.5rem;
+			font-size: 1.15rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}

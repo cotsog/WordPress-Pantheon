@@ -1,0 +1,85 @@
+// ==========================================================================
+// Hero.
+// ==========================================================================
+
+.splash {
+	max-width: 100%;
+	background: #000;
+	background-size: cover;
+	background-position: top center;
+
+	@include media-breakpoint-up(lg) {
+		height: rem(700);
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	&.splash-video { // no image on
+
+		@include media-breakpoint-up(lg) {
+			background-image: none !important;
+		}
+	}
+
+	.hero-content {
+		padding: 5%;
+		top: 4%;
+
+		@include media-breakpoint-up(md) {
+			top: 30%;
+			padding: 10%;
+		}
+	}
+
+	.btn {
+		display: block;
+		font-size: 1.25rem;
+		margin: 0.5rem;
+		padding: 0.5rem 3rem;
+
+		@include media-breakpoint-up(lg) {
+			display: inline-block;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p {
+		color: #fff;
+		text-shadow: 0 0 1rem #333;
+		margin-bottom: 2rem;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-size: 2rem;
+
+		@include media-breakpoint-up(md) {
+			font-size: 2.6rem;
+		}
+	}
+
+	&.quick-search-on {
+
+		@include media-breakpoint-up(md) {
+			.hero-content {
+				top: 12.5%;
+			}
+		}
+	}
+}
+
+#querySearchForm,
+#quicksearchForm {
+	padding: 0 0 2rem;
+
+	.quick-search-button {
+
+		@include rounded(5px);
+	}
+}
+

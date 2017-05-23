@@ -1,0 +1,610 @@
+// Default Variables
+// ==========================================================================
+$vdp-background: #000;
+$vdp-highlight-background: #e5e5e5;
+$vdp-highlight-color: #2ece32;
+$vdp-special-color: $brand-primary;
+$font-size-lg: 1.55rem;
+$font-size-sm: 0.8rem;
+
+%no-padding {
+	padding: 0;
+}
+
+%vdp-padding-sm {
+	padding: 0.5rem;
+}
+
+%vdp-padding-xl {
+	padding: 3rem 1rem;
+}
+
+%vdp-padding-lg {
+	padding: 1rem;
+}
+
+%vdp-tb-padding-lg {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+%vdp-bottom {
+	margin-bottom: 2rem;
+}
+
+%vdp-bottom-sm {
+	margin-bottom: 1rem;
+}
+
+%font-awesome {
+	font-family: 'FontAwesome';
+}
+// VDP
+// ==========================================================================
+.layout-vdp-twenty-seventeen {
+
+	@extend %vdp-tb-padding-lg;
+	line-height: 1.5;
+
+	a {
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+
+	.vdp-top-block,
+	.vdp-left-column-row {
+
+		@extend .row;
+	}
+
+	h6 {
+		font-size: 1.5rem;
+		//margin-bottom: 1rem;
+	}
+
+	.title-block {
+		.vdp-heading {
+
+			@extend .col-xs-12;
+			@extend %vdp-bottom-sm;
+
+			h2 {
+
+				@extend .text-xs-center;
+				@extend .text-md-left;
+				font-size: 2rem;
+				margin-bottom: 0;
+				line-height: 1.75;
+
+				@include media-breakpoint-down(sm) {
+					span.trim {
+						display: block;
+						color: lighten($body-color, 10%);
+						font-size: $font-size-h6;
+					}
+				}
+
+				@include media-breakpoint-up(md) {
+					font-size: $font-size-h4;
+
+					span.trim {
+						color: lighten($body-color, 10%);
+						font-size: $font-size-h6;
+					}
+				}
+			}
+
+			.back {
+
+				@extend %vdp-padding-sm;
+				@extend .text-xs-center;
+				@extend .hidden-md-up;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.carproof-certified {
+
+			@extend .hidden-md-down;
+			@extend .text-xs-right;
+			min-height: rem(60);
+			display: none;
+
+			div {
+				display: inline-block;
+			}
+
+			.carproof-block {
+				div {
+					text-align: right;
+
+					div {
+						width: rem(335) !important;
+						min-height: 4rem;
+						max-width: 8.125rem;
+					}
+				}
+
+				.carproof-logo {
+					img {
+						margin-top: 4px;
+					}
+				}
+			}
+
+			.certified-block {
+				img {
+					max-width: rem(130);
+				}
+			}
+		}
+
+		.has-certified { // Has Certified
+			.vdp-heading {
+
+				@extend .col-lg-9;
+			}
+
+			.carproof-certified {
+
+				@extend .col-lg-3;
+				display: block;
+			}
+		}
+
+		.has-carproof { // Has Carproof
+			.vdp-heading {
+
+				@extend .col-lg-6;
+			}
+
+			.carproof-certified {
+
+				@extend .col-lg-6;
+				display: block;
+			}
+		}
+
+		.vdp-breadcrumbs {
+
+			@extend .hidden-md-down;
+			@extend .col-lg-8;
+
+			ul {
+
+				@extend .list-unstyled;
+				margin-bottom: 0;
+
+				li {
+					display: inline-block;
+
+					&::after {
+
+						@extend .pull-xs-right;
+						@extend %font-awesome;
+						content: '\f105';
+						padding: 0 0.5rem;
+					}
+
+					&:last-child {
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+		.vdp-share {
+
+			@extend .hidden-md-down;
+			@extend .col-lg-4;
+			@extend .text-xs-right;
+
+			a {
+				padding-left: 1rem;
+			}
+		}
+	}
+
+	.vdp-gallery {
+
+		@extend .col-lg-8;
+
+		figure {
+			margin-bottom: 0;
+		}
+
+		.product-gallery {
+			position: relative;
+
+			.product-views {
+				position: absolute;
+				z-index: 2;
+				right: 0;
+			}
+
+			.tabs-content {
+
+				@extend %vdp-bottom-sm;
+			}
+
+			.image-count {
+
+				@extend %vdp-bottom-sm;
+				background: none;
+
+				a {
+					color: $body-color;
+					float: none;
+					padding: 0.25rem 0.5rem;
+					font-size: 0.9rem;
+
+					&._bpback {
+						color: #fff;
+					}
+
+					&:hover,
+					&:focus {
+						background: transparent;
+						color: darken($body-color, 100%);
+					}
+				}
+			}
+		}
+	}
+
+	.pricing-table {
+
+		@extend .col-lg-4;
+
+		&#sticky-stop {
+
+			@include clearfix;
+			width: 100%;
+		}
+
+		.inner {
+
+			@include media-breakpoint-up(lg) {
+				width: 345px;
+			}
+
+			@include media-breakpoint-down(lg) {
+				position: static !important;
+			}
+		}
+
+		.box {
+
+			@include drop-shadow(0, 5px, 5px, 0.2);
+			margin: 0;
+			padding: 0.5rem 1rem;
+			color: darken($body-color, 10%);
+			background: $vdp-highlight-background;
+		}
+
+		ul {
+
+			@extend .list-unstyled;
+
+			> li {
+
+				@extend %vdp-padding-sm;
+				@extend .row;
+				margin: 0;
+				border-bottom: 1px solid darken($vdp-highlight-background, 15%);
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				#priceBreakdown,
+				#paymentDetails {
+					font-size: $font-size-sm;
+				}
+
+				&.price-full {
+					.price-title {
+						display: none;
+					}
+				}
+
+				span {
+
+					@extend .col-xs-7;
+					@extend %no-padding;
+
+					&.price-title {
+						font-size: 1.2rem;
+						padding-top: 0.75rem;
+					}
+
+					&:nth-child(even) {
+
+						@extend .col-xs-5;
+						@extend .text-xs-right;
+					}
+
+					&.biweekly,
+					&.price {
+
+						@extend %no-padding;
+						font-size: $font-size-lg;
+						font-weight: bold;
+					}
+
+					a,
+					small {
+						display: block;
+						font-size: $font-size-sm;
+					}
+
+					b {
+						display: block;
+					}
+
+					// Colors
+					&.price {
+						color: $vdp-highlight-color;
+
+						small {
+							color: $body-color;
+						}
+					}
+
+					&.msrp {
+
+						@extend %no-padding;
+						color: $vdp-special-color;
+					}
+
+					// Remove col padding on low breakpoints
+
+					@include media-breakpoint-down(lg) {
+						padding: 0;
+					}
+				}
+
+				&.price-full { // if no price, full width
+					span {
+						&:nth-child(even) {
+
+							@extend .col-xs-12;
+							@extend .text-xs-left;
+							@extend %no-padding;
+						}
+					}
+				}
+			}
+		}
+
+		.vdp-cta-block {
+			.btn {
+
+				@extend %vdp-padding-sm;
+				@extend .text-xs-left;
+				@extend .btn-block;
+				margin: 1rem 0 0.5rem;
+				border-radius: 0;
+
+				&::after { // doesn't work in FF?
+
+					@extend .pull-xs-right;
+					@extend %font-awesome;
+					content: '\f105';
+					padding-right: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.vdp-left-column {
+
+		@extend .col-xs-12;
+		@extend .col-lg-8;
+	}
+
+	.specs-table {
+
+		@extend %vdp-padding-sm;
+		@extend %vdp-bottom-sm;
+		@include clearfix;
+		border: 1px solid darken($vdp-highlight-background, 15%);
+
+		ul {
+
+			@extend .list-unstyled;
+
+			li {
+
+				@extend %vdp-padding-sm;
+				@extend .col-xs-6;
+				@extend .col-lg-4;
+
+				b,
+				strong {
+					display: block;
+					color: darken($body-color, 15%);
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.carproof-certified-mobile {
+
+		@extend .hidden-lg-up;
+		@extend .text-xs-center;
+
+		.carproof-badge {
+			div {
+				padding: 0 !important;
+				width: auto !important;
+			}
+		}
+
+		.certified-block {
+			img {
+				max-height: 5.5rem;
+				padding: 1rem;
+			}
+		}
+	}
+
+	.vdp-accordion-section {
+		ul {
+
+			@extend .list-unstyled;
+
+			li {
+				.card-block {
+					border: 1px solid #ddd;
+				}
+
+				a {
+
+					@extend %vdp-padding-lg;
+					background: darken($body-bg, 10%);
+					border-bottom: 1px solid $body-bg;
+					display: block;
+					width: 100%;
+					font-weight: bold;
+					color: darken($body-color, 20%);
+					text-decoration: none;
+
+					&::after {
+
+						@extend .pull-xs-right;
+						@extend %font-awesome;
+						content: '\f067';
+					}
+
+					&:hover {
+						background: darken($body-bg, 15%);
+						transition: background-color $transition-slow;
+					}
+				}
+
+				h1 {
+					font-size: $font-size-lg;
+				}
+
+				.vdp-specs {
+					border: 1px solid darken($vdp-highlight-background, 15%);
+
+					h6 {
+
+						@extend %vdp-padding-lg;
+						background: #f3f3f3;
+						color: $body-color;
+						border-bottom: 1px solid darken($vdp-highlight-background, 15%);
+
+						&::after {
+
+							@extend .pull-xs-right;
+							@extend %font-awesome;
+							content: '\f067';
+						}
+
+						&:hover {
+							background: darken($vdp-highlight-background, 10%);
+							transition: background-color $transition-slow;
+						}
+					}
+
+					.spec-list {
+						dd,
+						dt,
+						dl {
+
+							@extend %vdp-padding-lg;
+
+							&:hover {
+								background-color: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.gform_anchor,
+		.field_li_ivi {
+			display: none;
+		}
+	}
+
+	.vdp-dealer-info {
+
+		@extend %vdp-padding-lg;
+		border: 1px solid darken($vdp-highlight-background, 15%);
+		margin-bottom: 1rem;
+
+		.dealer-left,
+		.dealer-right {
+
+			@extend .col-md-6;
+		}
+
+		h6 {
+			padding: 0 1rem;
+		}
+
+		.phone-number {
+
+			@extend %vdp-padding-sm;
+			@extend .text-xs-center;
+			display: block;
+			color: #fff;
+			font-size: $font-size-lg;
+		}
+	}
+
+	.similar-vehicles {
+
+		@extend %vdp-padding-xl;
+		background: $vdp-highlight-background;
+
+		ul {
+
+			@extend .list-unstyled;
+
+			li {
+
+				@extend .col-lg-3;
+
+				h6 {
+
+					@extend .text-xs-center;
+					margin-bottom: 0;
+
+					span {
+
+						@extend %vdp-padding-sm;
+						color: lighten($body-color, 10%);
+						font-size: 0.9rem;
+						display: block;
+					}
+
+					.price {
+
+						@extend %vdp-padding-sm;
+						display: block;
+						margin-bottom: 0.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	.vdp-disclaimer {
+		@extend %vdp-padding-lg;
+		font-size: $font-size-xs;
+		color: #444;
+		margin-top: 3rem;
+	}
+}

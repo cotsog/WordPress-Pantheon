@@ -1,0 +1,65 @@
+.hours-of-operation {
+	display: table;
+
+	.department-alt-heading {
+		display: none;
+	}
+
+	@include media-breakpoint-only(md) {
+		.department-alt-heading {
+			display: table-row;
+		}
+
+		.department-alt-th,
+		tbody tr:not(.department-alt-heading) th {
+			display: none;
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		thead {
+			display: none;
+		}
+
+		tr,
+		tbody {
+			display: block;
+			width: 100%;
+		}
+
+		th,
+		td {
+			display: block;
+			width: 100%;
+		}
+
+		tbody {
+			th {
+				font-family: $headings-font-family;
+				font-weight: $headings-font-weight;
+				line-height: $headings-line-height;
+				font-size: $font-size-h3;
+				margin: $headings-margin-bottom 0;
+				padding-left: 0;
+				border: none;
+			}
+
+			td:last-child {
+				border-bottom: $table-border-width solid $table-border-color;
+			}
+		}
+
+		td[title]::before {
+			content: attr(title);
+			display: inline-block;
+			min-width: rem(110);
+			font-weight: bold;
+		}
+	}
+
+	@include media-breakpoint-down(xs) {
+		td[title]::before {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+// ==========================================================================
+// Site Footer
+// ==========================================================================
+
+footer {
+	&.site-footer {
+		background-image: url('../img/footer-bg-greyscale.png');
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 2rem;
+		font-size: 0.95rem;
+		line-height: 2.5;
+		-webkit-font-smoothing: antialiased;
+
+		@include media-breakpoint-up(lg) {
+			padding: 7rem 1.5rem;
+		}
+
+		h5 {
+			font-size: 1.5rem;
+			font-weight: 300;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 0;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	.footer-container {
+
+		@extend .container;
+	}
+
+	.menu-footer-col-one-container,
+	.menu-footer-col-two-container,
+	.menu-footer-col-three-container {
+
+		@extend .col-xs-6;
+		@extend .col-md-4;
+		@extend .col-lg-2;
+
+		ul {
+
+			@extend .list-unstyled;
+
+			a {
+				display: block;
+			}
+		}
+	}
+
+	.block-dealer-info {
+
+		@extend .col-xs-12;
+		@extend .col-lg-5;
+		@extend .col-lg-offset-1;
+	}
+
+	.widget_strathcom_social_widget,
+	.copyright {
+
+		@extend .col-xs-12;
+
+		li {
+			margin: 1.5rem 1rem 1.5rem 0;
+			font-size: 2rem;
+		}
+	}
+
+	.copyright,
+	.block-dealer-info p {
+		display: none;
+
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+	}
+
+	.footer-dealer-info,
+	.strathcom-footer {
+		display: none;
+	}
+}
+

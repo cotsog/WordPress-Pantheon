@@ -1,0 +1,98 @@
+{% macro menu_anchor( item ) %}
+	<a href="{{ item.get_link|e('html_attr') }}"{% if item.target %} target="{{ item.target|escape('html_attr') }}"{% endif %}{% if item.description %} title="{{ item.description|escape('html_attr') }}"{% endif %}>{{ item.title }}</a>
+{% endmacro %}
+
+{% macro button( btn, type ) %}
+	{% if btn.text or btn.icon %}
+		<a href="{{ btn.url | e('html_attr') }}" class="btn {% if btn.class != '' -%}
+			btn-{{ btn.class | e('html_attr') -}}
+		{%- endif -%}">{% if btn.icon %}
+				<i class="icon-{{ btn.icon | e('html_attr') }}"></i> {% endif %}{{ btn.text | e }}</a>
+	{% endif %}
+{% endmacro %}
+
+{% macro background_image( image_src ) %}
+	{%- spaceless %}
+		{% if ( image_src ) -%}
+			background-image:url( {{- image_src | apply_filters('photon_url') | e('html_attr') -}} );
+		{% endif %}
+	{% endspaceless -%}
+{% endmacro %}
+
+{% macro figure_block( image_src, alt, figure_class, img_class ) %}
+	{% if image_src %}
+		<div class="block">
+			<figure {% if figure_class %}class="{{- figure_class | e('html_attr') -}}"{% endif %}>
+				<img src="{{ image_src | apply_filters('photon_url') | e('html_attr') }}" alt="{{ alt | e('html_attr') }}" {% if img_class %}class="{{- img_class | e('html_attr') -}}"{% endif %}>
+			</figure>
+		</div>
+	{% endif %}
+{% endmacro %}
+
+{% macro image_block( image_src, alt, img_class ) %}
+	{% if image_src %}
+		<img src="{{ image_src | apply_filters('photon_url') | e('html_attr') }}" alt="{{ alt | e('html_attr') }}" {% if img_class %}class="{{- img_class | e('html_attr') -}}"{% endif %}>
+	{% endif %}
+{% endmacro %}
+
+{% macro description_block( text, type ) %}
+	{% if text %}
+		<p {% if type %} class="{{- type -}}" {%- endif -%}>{{ text | e }}</p>
+	{% endif %}
+{% endmacro %}
+
+{% macro background_hex_value( text ) %}
+	{%- spaceless %}
+		{% if text %}
+			background-color: {{ text | e }};
+		{% endif %}
+	{% endspaceless -%}
+{% endmacro %}
+
+{% macro stylesheet_tag( style ) %}
+	{%- spaceless %}
+		{% set media = style.media|default( 'screen' ) %}
+
+		{% set data = '' %}
+		{% for key, val in style.data %}
+			{% set data = data ~ ' data-' ~ key ~ '="' ~ val ~ '"' %}
+		{% endfor %}
+
+		{% if style.inline|default( false ) %}
+			<style type="text/css" media="{{ media }}" id="{{ style.handle }}" {{ data }}>{{ style.href }}</style>
+		{% else %}
+			{%- if 'style' == style.handle -%}
+				{# The main stylesheet is replaced for IE lt 10, since it regularly exceeds the browser's selector limit. #}
+				<!--[if gte IE 10]><!-->
+			{%- endif -%}
+			<link type="text/css" rel="stylesheet" media="{{ media }}" id="{{ style.handle }}" href="{{ style.href }}" {{ data }}>
+			{%- if 'style' == style.handle %}
+				<!--<![endif]-->
+			{% endif -%}
+		{% endif %}
+	{% endspaceless -%}
+{% endmacro %}
+
+{% macro ie_stylesheet_tag( style_href ) %}
+	{%- spaceless %}
+		<!--[if lt IE 10]>
+		<link rel="stylesheet" href="{{ style_href }}" as="style-ie9"><![endif]-->
+	{% endspaceless -%}
+{% endmacro %}
+
+{% macro async_stylesheet_tag( style_href ) %}
+	{%- spaceless %}
+		<link rel="preload" href="{{ style_href }}" as="style" onload="this.rel='stylesheet'">
+		<noscript>
+			<link rel="stylesheet" href="{{ style_href }}">
+		</noscript>
+	{% endspaceless -%}
+{% endmacro %}
+
+{% macro terms_markup( terms, separator ) %}
+	{% set markup = [] %}
+	{%- for term in terms %}
+		{% set markup = markup|merge( ['<a href="' ~ term.link ~ '">' ~ term.name ~ '</a>'] ) %}
+	{% endfor -%}
+	{{ markup|join( separator ) }}
+{% endmacro %}

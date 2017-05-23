@@ -1,0 +1,85 @@
+// ==========================================================================
+// Site Header
+// ==========================================================================
+// Head
+.site-header {
+
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 999;
+		padding: 0.5rem 0 0;
+	}
+
+	.site-branding {
+
+		@extend .container;
+		padding: 0.75rem 0;
+
+		.logo {
+
+			@extend .col-xs-12;
+			@extend .col-sm-6;
+			@extend .col-lg-4;
+			@extend .col-xl-3;
+			padding-top: 0.5rem;
+		}
+
+		.site-top-bar {
+
+			@extend .col-xl-9;
+			@extend .col-xl-7;
+			@extend .hidden-lg-down;
+
+			i {
+				padding-left: 1rem;
+			}
+		}
+		background: url("../img/theme-southgate-avw/audi-brand-logo.jpg") right no-repeat;
+
+		@include media-breakpoint-down(sm) {
+			background: #fff right no-repeat;
+		}
+	}
+
+	.mobile-call,
+	.mobile-call-tracking a {
+		color: $color-white;
+		float: right;
+		position: relative;
+		margin-top: -2.5rem;
+		margin-right: 2rem;
+
+		&::before {
+			font-family: 'FontAwesome';
+			content: '\f095';
+			display: block;
+			float: left;
+			margin-right: 0.5rem;
+			color: $color-white;
+			font-size: 1.15rem;
+		}
+
+		@include media-breakpoint-up(sm) {
+			margin-right: 4rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}
+
+#vw {
+	.site-header {
+		.site-branding {
+			background: url("../img/theme-southgate-avw/volkswagen-brand-logo.jpg") right no-repeat;
+
+			@include media-breakpoint-down(sm) {
+				background: #fff right no-repeat;
+			}
+		}
+	}
+}
+

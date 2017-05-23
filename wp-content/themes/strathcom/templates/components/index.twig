@@ -1,0 +1,28 @@
+<article id="post-{{ post.ID }}" class="{{ post.class }}">
+    <header class="entry-header">
+        {% include 'components/entry-title.twig' %}
+    </header>
+
+    {% if not featured_image_deactivated | default(false) %}
+        {% include 'components/featured-image.twig' with { src: post.thumbnail.src( 'large' ) } %}
+    {% endif %}
+
+    <div class="entry-content">
+        {% if post.post_excerpt is not empty %}
+        {{ post.get_preview(40) }}
+        {% else %}
+        {{ post.content|replace( text_replace ) }}
+        {% endif %}
+    </div>
+
+    <footer class="entry-footer">
+		<span class="posted-on">
+			<span class="screen-reader-text">Posted on </span><a href="{{ post.link }}" rel="bookmark">{{ post.post_date|date('F j, Y') }}</a>
+		</span>
+        {% if post.categories %}
+            <span class="cat-links">
+				<span class="screen-reader-text">Categories: </span>{{ macros.terms_markup( post.categories, ', ' ) }}
+			</span>
+        {% endif %}
+    </footer><!-- .entry-footer -->
+</article>

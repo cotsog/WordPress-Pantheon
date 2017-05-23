@@ -1,0 +1,14 @@
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="row">
+			{% if footer_widgets | trim %}
+				<div class="footer-widgets">
+					{{ footer_widgets|replace( text_replace ) }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</footer>
+<footer class="dark-footer">
+	Website designed & powered by <a href="http://www.strathcom.com/" target="_blank">Strathcom Media</a>
+</footer>

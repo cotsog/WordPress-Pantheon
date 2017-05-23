@@ -1,0 +1,122 @@
+// ==========================================================================
+// Search results.
+// ==========================================================================
+
+.search-results {
+
+	@include reset-list;
+	@include clearfix;
+	margin-top: rem(15);
+	margin-bottom: rem(15);
+	color: $gray-dark;
+	border-top: $hr-border-width solid $hr-border-color;
+	font-weight: bold;
+
+	> li {
+		position: relative;
+		background-color: transparent;
+		border-bottom: $hr-border-width solid $hr-border-color;
+		cursor: pointer;
+		transition: background-color $transition-base;
+
+		&:hover {
+			background-color: $gray-lightest;
+
+			.product-thumbnail {
+				figcaption {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.special-deal {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		display: inline-block;
+		padding: rem(8) rem(12);
+		background-color: $brand-danger;
+		color: #fff;
+	}
+
+	.product-thumbnail {
+		position: relative;
+
+		img {
+			width: 100%;
+		}
+
+		figcaption {
+			position: relative;
+			margin-top: rem(-32);
+			height: rem(32);
+			width: 100%;
+			padding: rem(6);
+			background: rgba(#000, .3);
+			color: #fff;
+			text-align: center;
+			font-size: $font-size-xs;
+			line-height: rem(16);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			opacity: 0;
+			transition: opacity $transition-base;
+
+			&::before {
+
+				@include fa-icon();
+				content: $fa-var-picture-o;
+				margin-right: .5em;
+			}
+		}
+	}
+
+	.product-description {
+		[itemprop="itemCondition"] {
+			display: none;
+		}
+
+		.carproof-badge {
+			clear: both;
+
+			> div {
+				box-sizing: content-box;
+			}
+		}
+	}
+
+	// Common/Extra-small screen size layout.
+	// ==========================================================================
+
+	> li {
+		padding: rem(15) 0;
+	}
+
+	.product-thumbnail,
+	.product-description,
+	.product-price,
+	.product-cta {
+		padding-left: rem(15);
+		padding-right: rem(15);
+	}
+
+	.spec-compact,
+	.spec-compact-trigger {
+		display: none;
+	}
+
+	.product-cta {
+		margin: rem(15) 0 0;
+
+		.btn {
+			display: block;
+		}
+	}
+
+	.no-price {
+		font-size: $font-size-lg;
+	}
+}

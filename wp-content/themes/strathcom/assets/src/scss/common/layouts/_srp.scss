@@ -1,0 +1,463 @@
+// ==========================================================================
+// Search Results Page layout.
+// ==========================================================================
+$search-result-compact-breakpoint: md !default;
+$col-padder: 0.9375rem !default;
+$search-filters-bg: #f5f5f5;
+
+.single-inventory {
+	.site-content > .group {
+		padding-bottom: 0;
+
+		nav {
+			text-align: center;
+		}
+	}
+
+	h1 {
+
+		@extend .col-xs-12;
+	}
+}
+
+.layout-srp {
+	.filter-actions {
+		margin-left: -$col-padder;
+		margin-right: -$col-padder;
+		padding-left: $col-padder;
+		padding-right: $col-padder;
+		background-color: $search-filters-bg;
+
+		.btn-refine {
+			margin-left: -$col-padder;
+			margin-right: -$col-padder;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-top: $col-padder;
+			padding-bottom: 5px;
+		}
+	}
+
+	.filters {
+		margin-top: -5px;
+		margin-left: -$col-padder;
+		margin-right: -$col-padder;
+		padding: $col-padder;
+		background-color: $search-filters-bg;
+	}
+
+	.group-content {
+
+		@include media-breakpoint-up(lg) {
+			float: right;
+			width: 75%;
+			padding-right: $col-padder;
+			padding-left: $col-padder;
+		}
+	}
+
+	.group-sidebar {
+		display: block;
+
+		@include media-breakpoint-up(lg) {
+			float: left;
+			width: 25%;
+			padding-right: $col-padder;
+			padding-left: $col-padder;
+		}
+	}
+}
+
+.single-inventory {
+	h1 {
+
+		@extend .col-xs-12;
+	}
+}
+// Custom title.
+// ==========================================================================
+
+.title-custom {
+	text-align: center;
+
+	h1 {
+		margin-bottom: rem(30);
+
+		@include media-breakpoint-up(md) {
+			font-size: rem(40);
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: rem(48);
+		}
+
+		small {
+			margin-top: rem(15);
+			text-transform: none;
+
+			@include media-breakpoint-up(md) {
+				font-size: rem(16);
+				margin-top: rem(20);
+			}
+		}
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+// Compact view definition (used on mobile).
+// ==========================================================================
+
+@mixin search-results-compact-view() {
+	.product-description {
+		width: 100%;
+		margin: 0;
+
+		h4 {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.product-price {
+		width: 100%;
+		text-align: center;
+		line-height: 1.5;
+	}
+
+	.price-breakdown {
+		left: auto;
+		right: 0;
+
+		&::after {
+			left: auto;
+			right: 5%;
+		}
+	}
+
+	.product-cta {
+		clear: both;
+	}
+
+	.product-badges {
+		display: none;
+	}
+
+	.srp-certified {
+		img {
+			max-width: rem(100);
+		}
+	}
+}
+// List view definition.
+// ==========================================================================
+
+@mixin search-results-list-view() {
+	> li {
+
+		@include clearfix;
+		padding: rem(25) 0 0;
+	}
+
+	.product-thumbnail {
+		width: 30%;
+		float: left;
+	}
+
+	.product-description {
+		width: 45%;
+		float: left;
+	}
+
+	.product-price,
+	.product-cta {
+		width: 25%;
+		float: right;
+		text-align: right;
+	}
+
+	.product-cta {
+		clear: right;
+	}
+
+	.spec-compact {
+		display: block;
+	}
+
+	.product-badges {
+		display: block;
+		clear: both;
+		width: 100%;
+
+		div {
+			display: inline-block;
+			padding: 0 0.5rem 0.5rem;
+		}
+
+		img {
+			max-width: 5.5rem;
+		}
+
+		.carproof-badge {
+			div {
+				padding: 0 !important; // remove thrid party js padding
+			}
+		}
+	}
+}
+// Grid view definition.
+// ==========================================================================
+
+@mixin search-results-grid-view() {
+	> li {
+		width: 33.3333%;
+		float: left;
+
+		&:nth-child(3n + 1) {
+			clear: both;
+		}
+	}
+
+	.product-description,
+	.product-price,
+	.product-cta {
+		width: 100%;
+		float: none;
+		clear: none;
+	}
+
+	.product-description {
+		h4 {
+			margin: 0 0 rem(6);
+		}
+	}
+
+	.product-price {
+		text-align: center;
+	}
+
+	.special-price,
+	.savings-price {
+		display: none;
+	}
+
+	.product-badges,
+	.srp-certified {
+		display: none;
+	}
+}
+// Apply search results layouts.
+// ==========================================================================
+
+.search-results {
+
+	@include media-breakpoint-up(xs) {
+
+		@include search-results-compact-view;
+	}
+
+	@include media-breakpoint-up($search-result-compact-breakpoint) {
+		&.list {
+
+			@include search-results-list-view;
+		}
+
+		&.grid {
+
+			@include search-results-grid-view;
+		}
+
+		.product-description {
+			padding-bottom: rem(15);
+
+			h4,
+			h5 {
+				margin-bottom: 0.5rem;
+				font-size: 1.35rem;
+			}
+
+			h5 {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+// Results meta / Pagination / Listing mode.
+// ==========================================================================
+
+.results-meta {
+
+	@include clearfix;
+	line-height: 2.12rem;
+	padding-top: $col-padder;
+	text-align: center;
+	background-color: #f5f5f5;
+	margin-left: -$col-padder;
+	margin-right: -$col-padder;
+
+	@include media-breakpoint-up(md) {
+		background-color: transparent;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.total-count {
+		font-size: rem(12);
+
+		@include media-breakpoint-up(md) {
+			float: left;
+			width: 220px;
+			max-width: 23%;
+			margin-right: 2%;
+			font-size: rem(16);
+		}
+	}
+
+	.page-length-control {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 0 rem(10);
+
+		@include media-breakpoint-up(md) {
+			float: left;
+			width: 220px;
+			max-width: 23%;
+			margin-bottom: 0;
+		}
+
+		li {
+			display: inline-block;
+
+			@include media-breakpoint-up(md) {
+				float: left;
+				padding: 0 1px;
+			}
+		}
+
+		a {
+			display: inline-block;
+			padding: 0 5px;
+			font-size: rem(14);
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			@include media-breakpoint-up(md) {
+				float: left;
+				font-size: rem(16);
+			}
+		}
+	}
+
+	.page-sorting {
+		text-align: center;
+		margin-bottom: rem(20);
+
+		@include media-breakpoint-up(md) {
+			float: left;
+			width: 260px;
+			max-width: 27%;
+			margin-bottom: 0;
+		}
+
+		select {
+			border: 1px solid #ccc;
+			background-color: #fff;
+			color: $gray;
+			padding: 0 12px;
+			height: 34px;
+			line-height: 34px;
+			appearance: none;
+			cursor: pointer;
+			box-sizing: content-box;
+			outline: none;
+
+			&:hover,
+			&:focus {
+				background-color: #ececec;
+				box-shadow: none;
+				outline-style: none;
+			}
+
+			&::-ms-expand {
+				display: none;
+			}
+		}
+	}
+
+	.view-toggle {
+		float: right;
+	}
+}
+// View toggle.
+// ==========================================================================
+
+.view-toggle {
+	display: none;
+
+	@include media-breakpoint-up($search-result-compact-breakpoint) {
+
+		@include clearfix;
+		display: block;
+
+		> [class*="toggle-"] {
+			display: inline-block;
+			overflow: hidden;
+			padding: rem(6);
+			width: rem(36);
+			height: rem(34);
+			text-align: center;
+			text-indent: -999px;
+
+			@include hover-focus {
+				text-decoration: none;
+			}
+
+			&::before {
+
+				@include fa-icon;
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-indent: 0;
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+
+.toggle-list-view::before {
+	content: $fa-var-list-ul;
+}
+
+.toggle-grid-view::before {
+	content: $fa-var-th;
+}
+
+[data-trigger="price-tooltip"] {
+	&::after,
+	.tooltip {
+		left: auto;
+		right: 0;
+		width: 200%;
+	}
+
+	.tooltip {
+		&::after {
+			left: auto;
+			right: 10%;
+		}
+	}
+}
+// Range slider.
+// ==========================================================================
+
+.noUi-connect {
+	background: #666;
+}

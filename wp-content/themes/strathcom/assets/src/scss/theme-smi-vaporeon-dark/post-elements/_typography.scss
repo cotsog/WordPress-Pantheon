@@ -1,0 +1,113 @@
+// ==========================================================================
+// Typography.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/post-elements/typography";
+// Overrides and custom styling.
+// ==========================================================================
+
+@font-face {
+	font-family: 'nissan_brandregular';
+	src: url('../fonts/nissan/nissan_brand_regular-webfont.eot');
+	src: url('../fonts/nissan/nissan_brand_regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/nissan/nissan_brand_regular-webfont.woff2') format('woff2'), url('../fonts/nissan/nissan_brand_regular-webfont.woff') format('woff'), url('../fonts/nissan/nissan_brand_regular-webfont.ttf') format('truetype'), url('../fonts/nissan/nissan_brand_regular-webfont.svg#nissan_brandregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'InfinitiBrand-Light';
+	src: url('../fonts/infiniti/InfinitiBrand-Light.eot');
+	src: url('../fonts/infiniti/InfinitiBrand-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/infiniti/InfinitiBrand-Light.woff2') format('woff2'), url('../fonts/infiniti/InfinitiBrand-Light.woff') format('woff'), url('../fonts/infiniti/InfinitiBrand-Light.ttf') format('truetype'), url('../fonts/infiniti/InfinitiBrand-Light.svg#nissan_brandregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'InfinitiBrand-Regular';
+	src: url('../fonts/infiniti/InfinitiBrand-Regular.eot');
+	src: url('../fonts/infiniti/InfinitiBrand-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/infiniti/InfinitiBrand-Light.woff2') format('woff2'), url('../fonts/infiniti/InfinitiBrand-Light.woff') format('woff'), url('../fonts/infiniti/InfinitiBrand-Light.ttf') format('truetype'), url('../fonts/infiniti/InfinitiBrand-Light.svg#nissan_brandregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	&#infiniti {
+		font-family: 'InfinitiBrand-Light', Helvetica, Arial, sans-serif;
+
+		p {
+			font-family: 'InfinitiBrand-Regular', Helvetica, Arial, sans-serif;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			text-transform: uppercase;
+		}
+	}
+
+	&#nissan {
+		font-family: 'nissan_brandregular', Helvetica, Arial, sans-serif;
+	}
+}
+
+body,
+.btn {
+	font-weight: 300;
+	line-height: 2;
+}
+
+b,
+strong {
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin-bottom: 1.5rem;
+	-webkit-font-smoothing: antialiased;
+}
+
+h5 {
+	margin-bottom: 1.5rem;
+}
+
+a {
+
+	@include hover-focus {
+		text-decoration: none;
+	}
+}
+
+h1 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2.8rem;
+	}
+}
+
+h2 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2.35rem;
+	}
+}
+
+h3 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2rem;
+	}
+}
+
+h4 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 1.8rem;
+	}
+}

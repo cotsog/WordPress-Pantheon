@@ -1,0 +1,149 @@
+// ==========================================================================
+// Product price block.
+// ==========================================================================
+
+.product-price {
+	text-align: center;
+
+	@include media-breakpoint-up(sm) {
+		text-align: left;
+	}
+
+	.price {
+		display: block;
+		padding: 0 #{$spacer / 4};
+		font-size: $font-size-h3;
+	}
+}
+
+.retail-price {
+	display: block;
+	padding: 0 #{$spacer / 4};
+	color: $gray-light;
+	font-size: $font-size-sm;
+}
+
+.special-price {
+	display: block;
+	padding: 0 #{$spacer / 4};
+}
+
+.branding-block {
+	display: none;
+	margin: rem(5) 0;
+
+	[data-pricing-pos="above"] &.branding-image-above,
+	[data-pricing-pos="below"] &.branding-image-below {
+		display: block;
+	}
+
+	img[src="#"] {
+		display: none;
+	}
+}
+
+[data-trigger="price-tooltip"] {
+	display: inline-block;
+	position: relative;
+	padding: 0 #{$spacer / 4};
+	border-bottom: 1px dotted $gray-light;
+	font-size: $font-size-sm;
+	font-weight: 400;
+	cursor: default;
+
+	&.savings-price {
+		color: $brand-danger;
+		border-bottom-color: $brand-danger;
+	}
+
+	&::before {
+
+		@include fa-icon();
+		content: $fa-var-info-circle;
+		margin-right: 4px;
+	}
+
+	&::after {
+		content: " ";
+		display: block;
+		position: absolute;
+		left: -75%;
+		bottom: 100%;
+		width: 250%;
+		height: 20px;
+	}
+
+	@include hover-focus-active {
+		.tooltip {
+			overflow: visible;
+			max-height: 200px;
+			padding: #{$spacer / 2};
+			opacity: 1;
+			transform: translateY(-10px);
+			transition: opacity $transition-fast, transform $transition-fast;
+		}
+	}
+
+	.tooltip {
+		display: block;
+		overflow: hidden;
+		position: absolute;
+		bottom: 80%;
+		left: -75%;
+		width: 250%;
+		max-width: 300px;
+		max-height: 0;
+		padding: 0;
+		color: #fff;
+		background-color: rgba(#000, .8);
+		opacity: 0;
+		border-radius: .5rem;
+		font-size: $font-size-xs;
+		font-weight: 300;
+		line-height: 1.5;
+		text-align: left;
+		transition: none;
+
+		@include media-breakpoint-up(sm) {
+			max-width: none;
+		}
+
+		&::after {
+
+			@include arrow($width: 20px, $height: 10px, $direction: down, $color: rgba(#000, .8));
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin-left: -10px;
+		}
+	}
+}
+
+.in-stock-indicator {
+	display: inline-block;
+	margin: #{$spacer / 2} #{$spacer / 4} 0;
+	padding: #{$spacer / 4} #{$spacer / 2};
+	color: #fff;
+	background-color: $brand-success;
+	border-radius: .2rem;
+	font-size: $font-size-sm;
+	line-height: 1;
+	cursor: default;
+
+	&::before {
+
+		@include fa-icon();
+		content: $fa-var-check-square-o;
+		margin-right: 4px;
+	}
+
+	&.-inactive {
+		color: $gray-light;
+		background-color: $gray-lighter;
+
+		&::before {
+			content: "\f05e"; // .fa-ban
+		}
+	}
+}

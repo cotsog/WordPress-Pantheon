@@ -1,0 +1,51 @@
+// Product specification section
+
+.product-specification {
+	[data-toggle="collapse"] {
+		margin: #{ - $hr-border-width} 0 0;
+		padding: #{$spacer * 2 / 3} #{$spacer / 4};
+		font-size: $font-size-h5;
+		text-transform: uppercase;
+		color: $body-color;
+		border-top: $hr-border-width solid $hr-border-color;
+		border-bottom: $hr-border-width solid $hr-border-color;
+		transition: color $transition-fast;
+
+		&.collapsed {
+			color: $gray-light;
+
+			@include hover-focus {
+				color: $body-color;
+			}
+		}
+
+		&:nth-of-type(2n + 1) {
+			background-color: $gray-lightest;
+		}
+
+		&:last-of-type {
+			border-bottom: $hr-border-width solid $hr-border-color;
+		}
+
+		+ .collapse,
+		+ .collapsing {
+			margin-top: -$hr-border-width;
+
+			> ul.spec-list {
+
+				@include media-breakpoint-up(sm) {
+					border-top: $hr-border-width solid $hr-border-color;
+
+					> li:first-child,
+					> li:nth-child(2) {
+						border-top: none;
+					}
+				}
+			}
+		}
+	}
+
+	.disclaimer {
+		margin-top: $spacer;
+	}
+}

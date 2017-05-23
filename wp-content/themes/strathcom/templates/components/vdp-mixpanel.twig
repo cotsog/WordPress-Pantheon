@@ -1,0 +1,45 @@
+{# Non-Script stuff #}
+{% set difference = date( vehicle.created|date('Y/m/d') ).diff( date('now'|date('Y/m/d') ) ) %}
+{% set leftDays = difference.days %}
+
+<script>
+	// Set variables required
+	var fuelConsumption = [];
+
+	// Set all the vehicle data
+	var name = '{{ vehicle.year ?: 'N/A' }} {{ vehicle.make ?: 'N/A' }} {{ vehicle.model ?: 'N/A' }}',
+		year = '{{ vehicle.year ?: 'N/A' }}',
+		make = '{{ vehicle.make ?: 'N/A' }}',
+		model = '{{ vehicle.model ?: 'N/A' }}',
+		bodyType = '{{ vehicle.body_type ?: 'N/A' }}',
+		stockStatus = '{{ vehicle.stock_status ?: 'N/A' }}',
+		stockNumber = '{{ vehicle.stock_number ?: 'N/A' }}',
+		stockType = '{{ vehicle.stock_type ?: 'N/A' }}',
+		vin = '{{ vehicle.identifiers.vin ?: 'N/A' }}',
+		trim = '{{ vehicle.trim.variation ?: 'N/A' }}',
+		trimDescription = '{{ vehicle.trim.description ?: 'N/A' }}',
+		acode = '{{ vehicle.identifiers.autodata ?: 'N/A' }}',
+		price = '{{ vehicle.pricingData.regular ?: 'N/A' }}',
+		specialPrice = '{{ vehicle.pricingData.current ?: 'N/A' }}',
+		isSpecialPrice = '{{ vehicle.on_special ? 'yes': 'no' }}',
+		isCertified = '{{ vehicle.certifications ? 'true': 'false' }}',
+		odometer = '{{ vehicle.odometer_value ?: 'N/A' }}',
+		itemKey = '{{ vehicle.id ?: 'N/A' }}',
+		dealerId = '{{ vehicle.dealer.id ?: 'N/A' }}',
+		color = '{{ vehicle.color.exterior.generic ?: 'N/A' }}',
+		interiorColor = '{{ vehicle.color.interior.generic ?: 'N/A' }}',
+		engineConfiguration = '{{ vehicle.engine.config_abbrv ? vehicle.engine.config_abbrv : 'N/A' }}',
+		engineLitres = '{{ vehicle.engine.litres ? vehicle.engine.litres : 'N/A' }}',
+		engineCylinders = '{{ vehicle.engine.cylinders  ? vehicle.engine.cylinders  : 'N/A' }}',
+		transmission = '{{ vehicle.transmission ?: 'N/A' }}',
+		driveTrain = '{{ vehicle.driveType ?: 'N/A' }}',
+		fuelType = '{{ vehicle.specifications['Fuel Economy']['Recommended fuel'] ?: 'N/A' }}',
+		doors = '{{ vehicle.doors ?: 'N/A' }}',
+		photoCount = '{{ vehicle.photos|length }}',
+		daysInStock = '{{ leftDays }}',
+		seatingCapacity = '{{ vehicle.specifications["Capacity"]["Seating capacity"] ?: 'N/A' }}';
+
+	fuelConsumption.Highway = '{{ vehicle.specifications['Fuel Economy']['Fuel economy - highway (L/100 km)'] }}  L/100 km';
+	fuelConsumption.City = '{{ vehicle.specifications['Fuel Economy']['Fuel economy - city (L/100 km)'] }} L/100 km';
+	fuelConsumption.Combined = '{{ vehicle.specifications['Fuel Economy']['Fuel economy - combined (L/100 km)'] }} L/100 km';
+</script>

@@ -1,0 +1,23 @@
+{% if vehicle.carproof.hasCarproof and vehicle.form_carproof_type != 'buttons' %}
+	<div class="carproof-logo-block">
+        {% if vehicle.form_carproof_type == 'form' %}
+            <div class="carproof-logo">
+                {% if vehicle.carproof_logo %}
+                    <a href="#carproof"><img src="{{ vehicle.carproof_logo }}" /></a>
+                {% endif %}
+            </div>
+            <div class="carproof-button-wrap">
+                <a href="#carproof" class="carproof-button btn btn-primary">{{ text.carproof_button | e('html') }}</a>
+            </div>
+        {% else %}
+            <div class="carproof-logo">
+                {% if vehicle.carproof_logo %}
+                    <a href="{{ vehicle.carproof_url }}" target="_blank"><img src="{{ vehicle.carproof_logo }}" /></a>
+                {% endif %}
+            </div>
+            <div class="carproof-button-wrap">
+                <a href="{{ vehicle.carproof_url }}" class="carproof-button btn btn-primary" target="_blank">{{ text.carproof_button | e('html') }}</a>
+            </div>
+        {% endif %}
+	</div>
+{% endif %}

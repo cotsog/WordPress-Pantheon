@@ -1,0 +1,87 @@
+// ==========================================================================
+// Splash block e.g. on homepage
+// ==========================================================================
+$splash-max-height: 100%;
+$overlay-color: rgba(#000, .4);
+
+.splash {
+	background-color: $body-color;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-height: $splash-max-height;
+	color: $body-color;
+	clear: both;
+	min-height: rem(200);
+
+	@include media-breakpoint-up(md) {
+		background-attachment: fixed;
+		max-height: none;
+		height: $splash-max-height;
+	}
+
+	&.splash-video {
+		background-color: $overlay-color;
+
+		&::after {
+			content: "";
+			display: block;
+			position: relative;
+			z-index: -1;
+			top: 100%;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background: $body-bg;
+		}
+
+		iframe#youtube-video-splash {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			//min-height: 100%;
+			max-width: none;
+			z-index: -100;
+			transform: translate(-50%, -50%);
+
+			.mce-content-body & {
+				position: absolute;
+			}
+		}
+
+		div#youtube-video-splash {
+			position: absolute;
+			z-index: -100;
+			width: 100%;
+			height: $splash-max-height;
+			background-size: cover;
+			background-position: center;
+
+			@include media-breakpoint-up(md) {
+				background-attachment: fixed;
+				height: 100%;
+			}
+		}
+	}
+
+	.hero-content {
+		position: relative;
+		top: 40%;
+
+		@include media-breakpoint-up(md) {
+			top: 70%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: 65%;
+		}
+
+		.group {
+
+			@extend .text-xs-center;
+		}
+	}
+}
+

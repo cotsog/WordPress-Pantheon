@@ -1,0 +1,46 @@
+// Similar products
+
+.similar-products {
+	> h4 {
+		margin: $spacer auto;
+		padding: 0 0 #{$spacer};
+		color: $gray-light;
+		border-bottom: $hr-border-width solid $hr-border-color;
+		font-family: $font-family-sans-serif;
+		font-size: $font-size-lg;
+	}
+
+	> ul {
+
+		@include reset-list;
+		@include clearfix;
+
+		> li {
+			width: 50%;
+			float: left;
+			padding: 0 0 #{$spacer / 2};
+
+			&:nth-child(2n + 1) {
+				padding-right: $grid-gutter-width / 4;
+			}
+
+			&:nth-child(2n + 2) {
+				padding-left: $grid-gutter-width / 4;
+			}
+
+			@include media-breakpoint-up(md) {
+				width: 25%;
+				padding-left: $grid-gutter-width / 4;
+				padding-right: $grid-gutter-width / 4;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}

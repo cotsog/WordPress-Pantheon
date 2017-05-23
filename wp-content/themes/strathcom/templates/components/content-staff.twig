@@ -1,0 +1,79 @@
+{# Staff member card is linked only if it was not disabled from parent template
+ and there is post content available. #}
+{% if is_linked is not defined %}
+	{% set is_linked = ( '' != post.post_content|trim ) %}
+{% endif %}
+
+{# Show bio only if it was not disabled in parent theme and there is post
+ content. #}
+{% if is_bio is not defined %}
+	{% set is_bio = ( '' != post.post_content|trim ) %}
+{% endif %}
+
+{# List of fields that are output and styled manually in this template. #}
+{% set default_fields = [ 'position', 'email', 'phone_number', 'website' ] %}
+
+<article id="post-{{ post.ID }}" class="staff-member {{ post.class }}">
+
+	<figure class="photo entry-image">
+		{% if is_linked %}
+			<a href="{{ post.link }}">
+				{% block member_picture %}
+					{% if post.thumbnail %}
+						<img src="{{ post.thumbnail.src| resize( 220, 330 ) | apply_filters('photon_url') }}" alt="{{ ( post.post_title ~ ' - ' ~ post.position )|e( 'html_attr' ) }}" class="wp-post-image"
+							srcset="{{ post.thumbnail.src|resize( 220, 330 ) | apply_filters('photon_url') }} 1x,
+								{{ post.thumbnail.src| resize( 440, 660 ) | apply_filters('photon_url') }} 2x,
+								{{ post.thumbnail.src| resize( 660, 990 ) | apply_filters('photon_url') }} 3x">
+					{% else %}
+						<div class="no-image"></div>
+					{% endif %}
+				{% endblock %}
+				<span>{{ text.view_profile }}</span>
+			</a>
+		{% else %}
+			{{ block( 'member_picture' ) }}
+		{% endif %}
+	</figure>
+
+	<header class="details entry-header">
+		<h3 class="name entry-title">{{ post.post_title }}</h3>
+		<h4 class="position">{{ post.position }}</h4>
+	</header>
+
+	{%- if block( 'staff_contact' )|trim %}
+		<ul class="staff-contact">
+			{% block staff_contact %}
+				{% if post.email %}
+					<li>
+						<a href="mailto:{{ post.email }}" class="contact-email">{{ text.send_email }}</a>
+					</li>
+				{% endif %}
+				{% if post.phone_number %}
+					<li>
+						<a href="{{ post.phone_number|phone_as_url }}" class="contact-phone">{{ post.phone_number }}</a>
+					</li>
+				{% endif %}
+				{% if post.website %}
+					<li>
+						<a href="{{ post.website }}" class="contact-website" target="_blank">{{ post.website }}</a>
+					</li>
+				{% endif %}
+
+				{# Render custom fields. #}
+				{% for key, attr in post.custom if ( attr is not empty ) and ( key not in default_fields ) and not ( key starts with 'social_' ) and not ( key starts with '_' ) %}
+					<li>
+						<strong>{{ staff_fields_schema[ key ]['name']|default( key ) }}:</strong> {{ attr }}
+					</li>
+				{% endfor %}
+			{% endblock %}
+		</ul>
+	{% endif %}
+
+	{% if is_bio %}
+		<div class="bio entry-content">
+			{{ post.content|replace( text_replace ) }}
+		</div>
+	{% endif %}
+
+	{% include 'components/staff-social-links.twig' %}
+</article>

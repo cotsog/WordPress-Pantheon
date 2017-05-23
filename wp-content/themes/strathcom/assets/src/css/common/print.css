@@ -1,0 +1,150 @@
+.visible-print-block {
+  display: none !important; }
+
+@media print {
+  .visible-print-block {
+    display: block !important; }
+  .hidden-print {
+    display: none !important; } }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+.single-inventory {
+  font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .single-inventory * {
+    box-sizing: border-box; }
+  .single-inventory > *,
+  .single-inventory .site-navigation,
+  .single-inventory .site-branding h1,
+  .single-inventory .site-footer .dealer-description,
+  .single-inventory .footer-social,
+  .single-inventory .footer-widgets,
+  .single-inventory .product-brochure-header,
+  .single-inventory .product-brochure-utils,
+  .single-inventory .product-price .savings-price .price-breakdown,
+  .single-inventory .product-price .in-stock-indicator,
+  .single-inventory .image-carousel,
+  .single-inventory .carousel-direction-nav,
+  .single-inventory .similar-products,
+  .single-inventory .scratchpad,
+  .single-inventory .notifier {
+    display: none; }
+  .single-inventory .page-wrapper {
+    display: block;
+    position: relative;
+    width: 57.5rem;
+    margin: 0 auto;
+    padding: 1.875rem;
+    border: 0.625rem solid #ccc; }
+  .single-inventory .product-description {
+    width: 100%;
+    margin-bottom: 1.25rem; }
+  .single-inventory .product-gallery {
+    float: left;
+    width: 30%;
+    height: 15rem;
+    margin: 0; }
+  .single-inventory .product-price,
+  .single-inventory .product-info {
+    width: 67%;
+    margin-left: 33%; }
+  .single-inventory .product-price {
+    margin-top: 1.25rem; }
+  .single-inventory .product-tabs,
+  .single-inventory .product-equipment {
+    clear: both;
+    width: 100%; }
+  .single-inventory .site-branding .site-logo,
+  .single-inventory .site-branding .site-logo img {
+    display: block; }
+  .single-inventory .site-branding .site-logo img {
+    max-height: 6em; }
+  .single-inventory .site-footer {
+    position: absolute;
+    top: 1.875rem;
+    right: 1.875rem; }
+  .single-inventory .product-description {
+    text-align: center; }
+    .single-inventory .product-description h2 {
+      margin: 0.625rem auto 0;
+      font-size: 2.375rem; }
+    .single-inventory .product-description h3 {
+      margin: 0 auto 0.625rem;
+      font-size: 1.75rem;
+      font-weight: normal; }
+  .single-inventory .product-price {
+    margin-bottom: 0.625rem;
+    padding: 0.625rem 0;
+    font-size: 1.125rem;
+    text-align: center;
+    background-color: #ccc; }
+    .single-inventory .product-price .retail-price {
+      display: block; }
+    .single-inventory .product-price .current-price .price {
+      font-size: 2.25rem;
+      margin: 0; }
+    .single-inventory .product-price .savings-price {
+      display: block;
+      color: black !important; }
+  .single-inventory .product-info ul {
+    margin: 0.625rem 0;
+    padding: 0;
+    list-style: none; }
+    .single-inventory .product-info ul::after {
+      display: table;
+      clear: both;
+      content: ""; }
+    .single-inventory .product-info ul li {
+      float: left;
+      width: 50%; }
+  .single-inventory .product-gallery {
+    overflow: hidden; }
+    .single-inventory .product-gallery ul,
+    .single-inventory .product-gallery li {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+    .single-inventory .product-gallery ul,
+    .single-inventory .product-gallery li,
+    .single-inventory .product-gallery img {
+      max-width: 100% !important;
+      height: auto !important; }
+  .single-inventory .product-tabs .tabs-nav {
+    display: none; }
+  .single-inventory .product-tabs .tab-pane {
+    padding: 1.25rem 0 0;
+    margin: 1.25rem auto 0;
+    border-top: 1px solid #ccc; }
+    .single-inventory .product-tabs .tab-pane::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      font-size: 120%;
+      text-transform: uppercase; }
+  .single-inventory .product-tabs #specifications {
+    display: none; }
+  .single-inventory .product-tabs #overview * {
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  .single-inventory .product-equipment {
+    border-top: 1px solid #ccc; }
+    .single-inventory .product-equipment h4 {
+      margin: 0.9375rem auto;
+      font-weight: bold;
+      font-size: 120%;
+      text-transform: uppercase; }
+    .single-inventory .product-equipment ul {
+      list-style: none;
+      margin: 0.625rem -0.625rem;
+      padding: 0; }
+      .single-inventory .product-equipment ul::after {
+        display: table;
+        clear: both;
+        content: ""; }
+    .single-inventory .product-equipment li {
+      float: left;
+      width: 25%;
+      padding: 0 0.625rem; }
+      .single-inventory .product-equipment li:nth-child(4n+1) {
+        clear: both; }

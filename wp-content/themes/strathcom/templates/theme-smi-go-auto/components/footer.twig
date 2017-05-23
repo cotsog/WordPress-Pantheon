@@ -1,0 +1,34 @@
+<footer class="site-footer">
+	<div class="footer-bar">
+        Have questions? We’re happy to help!
+    </div>
+    <div class="footer-container">
+        <div class="row">
+            {% if footer_widgets | trim %}
+                <div class="footer-widgets">
+                    {{ footer_widgets }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="social">
+                <h5>Follow Us</h5>
+                <a href="https://twitter.com/go_auto" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="https://www.facebook.com/goauto.ca" target="_blank"><i class="icon-facebook"></i></a>
+                <a href="https://www.youtube.com/user/goautotv" target="_blank"><i class="icon-youtube-play"></i></a>
+                <a href="https://www.instagram.com/goauto/" target="_blank"><i class="icon-instagram"></i></a>
+            </div>
+
+            <div class="amvic">
+                <img src="{{function('bloginfo','template_directory')}}/assets/src/img/go-auto/logo.amvic.svg">
+            </div>
+        </div>
+    </div>
+
+    {% if footer_social | trim %}
+        <div class="footer-secondary">
+            {{ footer_social }}
+        </div>
+    {% endif %}
+</footer>

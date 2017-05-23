@@ -1,0 +1,101 @@
+// Vehicle Detail Page layout
+
+@function calc-vdp-col-full($left) {
+	$right: 100% - abs($left);
+
+	@return ($left / $right + 1) * 100%;
+}
+
+@function calc-vdp-col-left($left) {
+	$right: 100% - abs($left);
+
+	@return ($left / $right) * 100%;
+}
+
+.layout-vdp {
+
+	@extend .container;
+	$vdp-col-lg-left: 61%;
+
+	.product-brochure {
+		> * + * {
+			margin-top: $spacer; // Vertical rythm
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			@include clearfix;
+			margin-left: $vdp-col-lg-left;
+		}
+	}
+
+	.product-brochure-utils,
+	.product-brochure-header {
+
+		@include media-breakpoint-up(lg) {
+			width: calc-vdp-col-full($vdp-col-lg-left);
+			margin-left: calc-vdp-col-left(-$vdp-col-lg-left);
+		}
+	}
+
+	.product-brochure-utils + .product-brochure-header {
+		margin-top: 0;
+
+		@include media-breakpoint-up(md) {
+			margin-top: $spacer / 2;
+		}
+	}
+
+	.product-gallery,
+	.product-tabs {
+
+		@include media-breakpoint-up(lg) {
+			float: left;
+			clear: left;
+			width: calc-vdp-col-left($vdp-col-lg-left - 1%);
+			margin-left: calc-vdp-col-left(-$vdp-col-lg-left);
+		}
+	}
+
+	.product-description,
+	.product-price,
+	.product-contact-form,
+	.product-info {
+
+		@include media-breakpoint-up(lg) {
+			float: right;
+			clear: right;
+			width: 100%;
+		}
+	}
+
+	.product-contact-form {
+		.contact-details {
+			.form-group {
+				&:nth-of-type(2) {
+					width: 50%;
+					float: left;
+					padding-right: $spacer / 2;
+				}
+
+				&:nth-of-type(3) {
+					width: 50%;
+					float: left;
+					padding-left: $spacer / 2;
+				}
+			}
+		}
+	}
+
+	.map-block {
+		margin: $spacer auto;
+	}
+
+	.disclaimer {
+		margin-top: $spacer * 2;
+	}
+
+	.site-footer {
+		margin-top: $spacer * 3;
+	}
+}

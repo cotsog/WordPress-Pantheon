@@ -1,0 +1,37 @@
+{% if vehicle.similar and vehicle.similar.vehicles %}
+<section class="similar-vehicles">
+	<div class="container">
+		{% if 'fr' in site.language %}
+			<h6>Véhicules Similaires</h6>
+		{% else %}
+			<h6>Similar Vehicles</h6>
+		{% endif %}
+		<ul class="slides">
+			{% for svehicle in vehicle.similar.vehicles %}
+				{% set stitleTrim = svehicle.trim.variation ? svehicle.trim.variation : '' %}
+				{% set name =  svehicle.year ~ ' ' ~ svehicle.make ~ ' ' ~ svehicle.model %}
+				{% set trim =  stitleTrim %}
+				<li>
+					<a href="{{ svehicle.url | e('html_attr') }}" class="card-car">
+						{% if svehicle.first_photo %}
+							<figure>
+								<img src="{{ svehicle.first_photo | apply_filters('photon_url') | e('html_attr') }}" alt="{{ name | e('html_attr') }}">
+							</figure>
+						{% endif %}
+						<h6>{{ name | e( 'html' ) }} <span>{{ trim | e( 'html' ) }}</span></h6>
+						{% if svehicle.pricingData %}
+							<strong class="price _bpcolor">
+								{% if 0 == svehicle.pricingData.current %}
+									{{ vehicle.no_price_text | e( 'html' ) }}
+								{% else %}
+									${{ svehicle.pricingData.current | number_format | e( 'html' ) }}
+								{% endif %}
+							</strong>
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section> <!-- /.similar-vehicles -->
+{% endif %}

@@ -1,0 +1,20 @@
+// stylelint-disable max-empty-lines, at-rule-empty-line-before
+// Configuration.
+// ==========================================================================
+
+@import "../theme-smi-vaporeon-dark/style.scss";
+$body-bg: #f5f5f5;
+$body-color: #696969;
+
+.btn {
+
+	@include drop-shadow(0, 0.5rem, 1rem, 0.2);
+}
+
+.arrow {
+
+	@include media-breakpoint-up(lg) {
+		background-image: url("../img/vaporeon-arrow-overlay-light.png");
+	}
+}
+

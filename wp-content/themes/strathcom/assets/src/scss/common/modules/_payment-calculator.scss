@@ -1,0 +1,283 @@
+// ==========================================================================
+// Responsive payment calculator.
+// ==========================================================================
+
+// Layout.
+// ==========================================================================
+
+.payment-calculator {
+	.initial-payment {
+
+		@extend .row;
+
+		> p {
+
+			@extend .col-xs-12;
+			@extend .col-md-4;
+			margin-bottom: 0;
+		}
+	}
+
+	.finance-terms,
+	.lease-terms {
+
+		@extend .row;
+
+		legend {
+
+			@extend .col-xs-12;
+		}
+
+		.payment,
+		.kms {
+
+			@extend .col-xs-12;
+			@extend .col-md-8;
+
+			p > label {
+				margin-bottom: 0;
+			}
+		}
+
+		.kms {
+			clear: both;
+		}
+
+		.rate,
+		.residual {
+
+			@extend .col-xs-12;
+			@extend .col-md-4;
+		}
+	}
+
+	.payment-summary {
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+}
+
+// Styling.
+// ==========================================================================
+
+.payment-calculator {
+	$form-padding: rem(15);
+	padding: $form-padding;
+	background-color: $gray-lightest;
+
+	> .calculator {
+		> h2 {
+			margin: 0 auto $form-padding;
+
+			span {
+				display: none;
+
+				@include media-breakpoint-up(sm) {
+					display: inline;
+				}
+			}
+		}
+
+		> h3 {
+			margin: $form-padding #{$form-padding * -1};
+			padding: rem(10) $form-padding;
+			font-family: $font-family-sans-serif;
+			font-size: $font-size-lg;
+
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
+
+		legend {
+			color: $gray-dark;
+		}
+
+		label {
+			font-weight: bold;
+		}
+
+		.custom-radio-list {
+
+			@include clearfix;
+
+			> p {
+				display: block;
+				float: left;
+				margin: #{$input-btn-border-width * -1} #{$input-btn-border-width * -1} 0 0;
+
+				label {
+					border: $input-btn-border-width solid $input-border-color;
+					padding: 1rem;
+				}
+			}
+		}
+
+		.initial-payment {
+			.find-trade-in-link {
+				font-size: $font-size-xs;
+
+				&::before {
+
+					@include fa-icon();
+					content: $fa-var-info-circle;
+					margin-right: .5em;
+				}
+			}
+		}
+
+		.payment-summary {
+			margin: $form-padding #{$form-padding * -1} #{$form-padding * 2};
+			padding: #{$form-padding * 2} 0;
+			text-align: center;
+			background-color: #fff;
+
+			> * {
+				max-width: rem(280);
+			}
+		}
+
+		.next-steps {
+			margin: $form-padding auto;
+
+			h3 {
+
+				@extend legend;
+				margin-bottom: $form-padding;
+				font-family: $font-family-sans-serif;
+			}
+
+			p {
+				font-size: $font-size-xs;
+			}
+		}
+
+		.button-section {
+
+			@include clearfix;
+			margin: $form-padding auto 0;
+
+			button {
+				margin: rem(30) auto rem(15);
+				font-size: $font-size-lg;
+
+				@include media-breakpoint-up(md) {
+					margin: rem(15) 0 rem(30);
+					width: 50%;
+					float: left;
+				}
+
+				&::before {
+					content: none;
+				}
+			}
+		}
+
+		.disclaimer-link {
+			margin: 0;
+			text-align: right;
+
+			@include media-breakpoint-up(md) {
+				margin-top: rem(25);
+				width: 50%;
+				float: right;
+			}
+
+			a {
+				font-size: $font-size-sm;
+
+				&::before {
+
+					@include fa-icon();
+					content: $fa-var-info-circle;
+					margin-right: .5em;
+				}
+			}
+		}
+	}
+
+	> .incentive-disclaimer {
+		font-size: $font-size-xs;
+	}
+
+	> .lead-form {
+		padding-top: $form-padding * 2;
+
+		.ginput_container_radio {
+
+			@include clearfix;
+
+			li {
+				float: left;
+				width: 32%;
+
+				& + li {
+					margin-left: 2%;
+				}
+			}
+		}
+
+		.gsection {
+			padding: $spacer 0 0;
+			border-top: $hr-border-width solid $hr-border-width;
+			border-bottom: none;
+		}
+
+		.ginput_container_checkbox {
+			margin-top: -.5rem;
+			font-size: $font-size-xs;
+		}
+	}
+}
+
+// Shortcode.
+// ==========================================================================
+
+#payment-calculator-container {
+	ul {
+
+		@extend .list-unstyled;
+	}
+
+	li {
+
+		@extend .text-xs-center;
+		@extend .text-md-left;
+		padding: 1rem 2rem;
+
+		&:nth-child(odd) {
+			background: #eee;
+		}
+	}
+
+	label {
+		padding-right: 2rem;
+	}
+
+	input {
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			width: 33%;
+		}
+	}
+
+	span.payments {
+		font-size: 2.5rem;
+		padding: 0.5rem 2rem;
+	}
+
+	p {
+		font-size: 0.9rem;
+	}
+
+	.btn {
+
+		@include media-breakpoint-down(sm) {
+			display: block;
+			width: 100%;
+		}
+	}
+}

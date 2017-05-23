@@ -1,0 +1,136 @@
+// ==========================================================================
+// Splash
+// ==========================================================================
+
+.splash {
+	background: #000;
+	min-height: rem(250);
+	max-width: 100%;
+	background-size: cover;
+	background-position: top left;
+
+	@include media-breakpoint-up(md) {
+		height: rem(600);
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: top center;
+	}
+
+	&.splash-video { // no image on
+
+		@include media-breakpoint-up(lg) {
+			background-image: none !important;
+		}
+	}
+
+	.hero-content {
+		position: relative;
+		padding: 10% 5%;
+		z-index: 99;
+
+		@include media-breakpoint-up(sm) {
+			top: 20%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			top: 40%;
+			padding: 0% 5%;
+		}
+
+		h2,
+		h3 {
+			font-size: 2.25rem;
+		}
+
+		.btn {
+			font-size: 1.25rem;
+			padding: 1rem !important; // ? fix
+			display: block;
+			margin-bottom: .25rem;
+
+			&.btn-ghost {
+				border-color: #fff;
+				color: #fff;
+
+				&:hover {
+					background: #000;
+				}
+			}
+
+			@include media-breakpoint-up(md) {
+				margin: 1rem .5rem;
+				display: inline-block;
+			}
+		}
+
+		.btn-link {
+			color: #fff;
+			display: none;
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+			@include media-breakpoint-up(lg) {
+				display: inline-block;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	#querySearchForm,
+	#quicksearchForm {
+
+		@extend %heading;
+
+		input,
+		select {
+			text-transform: uppercase;
+			color: #000;
+		}
+
+		.quick-search-button {
+			padding: 0 1rem !important;
+		}
+	}
+
+	i {
+
+		@include rounded(9rem);
+		display: inline-block;
+		width: 4.5rem;
+		height: 4.5rem;
+		border: 1px solid #fff;
+		color: #fff;
+		font-size: 1.8rem;
+		padding-top: 0.75rem;
+		margin-top: 1rem;
+
+		&:hover {
+			opacity: 0.5;
+			transition: 0.5s;
+		}
+	}
+}
+
+.quick-search-shortcode.title-left {
+	display: none;
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	input {
+		text-transform: uppercase;
+		color: #000;
+		font-weight: 600 !important;
+	}
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+}
+
+.home .btn.hidden-lg-up {
+	display: block;
+}

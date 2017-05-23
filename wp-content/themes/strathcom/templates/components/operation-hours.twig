@@ -1,0 +1,43 @@
+{% set single_department = ( 1 == departments|length ) %}
+
+{% if single_department %}
+	<h3>{{ ( departments|first ).name }}</h3>
+{% endif %}
+
+<table class="table hours-of-operation">
+	<thead>
+		<tr>
+			{% if not single_department %}
+				<th class="department-alt-th">{{ text.department }}</th>
+			{% endif %}
+
+			{% for name in days %}
+				<th>{{ name }}</th>
+			{% endfor %}
+		</tr>
+	</thead>
+
+	<tbody>
+		{% for department in departments %}
+
+			{% if not single_department %}
+				<tr class="department-alt-heading">
+					<th colspan="7">{{ department.name }}</th>
+				</tr>
+			{% endif %}
+
+			<tr>
+
+				{% if not single_department %}
+					<th>{{ department.name }}</th>
+				{% endif %}
+
+				{% for item in department.operation_hours %}
+					<td title="{{ days[ loop.index0 ] | e( 'html_attr' ) }}:">{{ item }}</td>
+				{% endfor %}
+
+			</tr>
+		{% endfor %}
+	</tbody>
+
+</table>

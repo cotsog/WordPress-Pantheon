@@ -1,0 +1,30 @@
+// ==========================================================================
+// Screatchpad
+// ==========================================================================
+
+@import "../common/modules/scratchpad";
+// Custom Styles
+
+.scratchpad {
+	header h3,
+	span.price {
+		font-family: $font-family-monospace;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	ul .car-info h5 {
+		font-family: $font-family-sans-serif;
+		text-transform: none;
+		letter-spacing: 0;
+		max-height: 3.25rem;
+	}
+
+	ul {
+		figure {
+			background: #fff;
+			height: rem(120);
+		}
+	}
+}
+

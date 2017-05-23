@@ -1,0 +1,177 @@
+{% extends "widgets/base-widget.twig" %}
+
+{# Background image or video poster #}
+{% set classname = 'splash' %}
+{% set title_type = title_type | default('h2') %}
+
+{# Change classname and style if fullscreen video is requested #}
+{% if background_video_src | default( false ) %}
+	{% set classname = classname ~ ' splash-video' %}
+{% endif %}
+
+{% set title_type = title_type | default('h2') %}
+
+{% block content %}
+	<section class="{{ classname }} {{ add_quick_search }} {{ custom_class }}" {% if background_image_src -%} style="{{ macros.background_image( background_image_src ) }}" {%- endif %}>
+
+		{% if background_video_src %}
+			<div id="youtube-video-splash"></div>
+
+			<script>
+				(function( global ) {
+					'use strict';
+
+					if ( 770 > global.innerWidth ) {
+						return;
+					}
+
+					var player, onPlayerReady, onStateChange, stopVideo, updateSize, setOpacity, iframe,
+						aspectRatio = 16 / 9,
+						scriptElement = document.createElement( 'script' ),
+						scriptTag = document.getElementsByTagName( 'script' )[ 0 ];
+
+					scriptElement.src = 'https://www.youtube.com/iframe_api';
+					scriptTag.parentNode.insertBefore( scriptElement, scriptTag );
+
+					global.onYouTubeIframeAPIReady = function() {
+						{% set player_vars = {
+						'playlist':       background_video_src,
+						'playsinline':    0,
+						'controls':       0,
+						'disablekb':      1,
+						'fs':             0,
+						'iv_load_policy': 3,
+						'autoplay':       1,
+						'loop':           1,
+						'modestbranding': 1,
+						'rel':            0,
+						'showinfo':       0,
+						'enablejsapi':    1,
+						'wmode':   'opaque',
+						}|merge( background_video_src_params ) %}
+
+						player = new YT.Player( 'youtube-video-splash', {
+							'videoId': '{{ background_video_src }}',
+							'height': '360',
+							'width': '640',
+							'playerVars':     {{ player_vars|json_encode() }},
+							'events': {
+								'onReady': onPlayerReady,
+								'onStateChange': onStateChange
+							}
+						} );
+						document.getElementById( 'youtube-video-splash' ).style.backgroundImage = '';
+						iframe = player.getIframe();
+						iframe.style.opacity = 0;
+						global.strathcomVideoSplashPlayer = player;
+
+						// Rewind video before it actually ends to prevent YouTube spinner being shown.
+						setInterval( function() {
+							if ( player.getCurrentTime() >= player.getDuration() - 1 ) {
+								player.seekTo( 0 );
+							}
+						}, 1000 );
+					};
+
+					// Actions to do when player is ready.
+					onPlayerReady = function() {
+						updateSize();
+						player.mute();
+					};
+
+					// Update player on video state change.
+					onStateChange = function() {
+						updateSize();
+						setOpacity();
+					};
+
+					// Update player size.
+					updateSize = function() {
+						var height = global.innerHeight,
+							width = aspectRatio * height;
+						player.setSize( width, height );
+					};
+
+					// Hide iframe if video is neither played, paused nor bufferring.
+					setOpacity = function() {
+						var state = player.getPlayerState(),
+							showIframe = 0;
+
+						if ( 1 === state || 2 === state || 3 === state ) {
+							showIframe = 1;
+						}
+						iframe.style.opacity = showIframe;
+					};
+
+					stopVideo = function() {
+						player.stopVideo();
+					};
+				})( window );
+			</script>
+
+		{% endif %}
+		<div class="hero-content">
+			<div class="group">
+                <{{ title_type }}>{{ title | e }}</{{ title_type }}>
+
+			{% if subtitle -%}
+				{{ subtitle | apply_filters('the_content') }}
+			{%- endif -%}
+
+			{% if description -%}
+				{{ description | urldecode | apply_filters('the_content') }}
+			{%- endif -%}
+
+			{% if add_quick_search | default('off') == 'quick-search-on' %}
+				<div class="container">
+					<form action="/inventory/search" id="quicksearchForm">
+						<div class="row">
+							<div class="type-col">
+								<select name="stock_type" class="form-control" required>
+									<option value>- Type -</option>
+								</select>
+							</div>
+							<div class="year-col">
+								<select name="year" class="form-control">
+									<option value>- Year -</option>
+								</select>
+							</div>
+							<div class="make-col">
+								<select name="make" class="form-control">
+									<option value>- Make -</option>
+								</select>
+							</div>
+							<div class="model-col">
+								<select name="model" class="form-control">
+									<option value>- Model -</option>
+								</select>
+							</div>
+							<div class="button-col">
+								<button type="submit" id="quickSearchSubmit" class="btn quick-search-button">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			{% elseif add_quick_search | default('off') == 'keyword-search-on' %}
+				<div class="container">
+					<form action="/inventory/search" id="querySearchForm" class="keyword-search-form">
+						<div class="row">
+							<div class="the-input">
+								<label class="sr-only" for="query">Find a vehicle</label>
+								<input class="form-control" type="text" name="query" placeholder="Search by make, model or keyword"/>
+							</div>
+							<div class="button-col">
+								<button type="submit" id="quickSearchSubmit" class="btn quick-search-button">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			{% endif %}
+
+			{% for btn in buttons %}
+				{{ macros.button( btn, btn.class ) }}
+			{% endfor %}
+		</div>
+		</div>
+	</section>
+{% endblock %}

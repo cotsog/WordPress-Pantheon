@@ -1,0 +1,148 @@
+// ==========================================================================
+// Typography.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/post-elements/typography";
+// Overrides and custom styling.
+// ==========================================================================
+
+%regular {
+	font-family: $font-family-sans-serif;
+	font-weight: 300;
+}
+
+%bold {
+	font-family: $font-family-sans-serif;
+	font-weight: 700;
+}
+
+%regular-c {
+	font-family: $font-family-sans-serif-condensed;
+	font-weight: 300;
+}
+
+%bold-c {
+	font-family: $font-family-sans-serif-condensed;
+	font-weight: 700;
+}
+
+%serif {
+	font-family: $font-family-serif;
+	font-style: italic;
+}
+
+body {
+	font-family: $font-family-sans-serif;
+	color: $gray-light;
+	line-height: 2.25;
+}
+
+a {
+
+	@include hover-focus {
+		text-decoration: none;
+	}
+}
+
+h1,
+h2,
+h3,
+h5 {
+
+	@extend %regular-c;
+	text-transform: uppercase;
+	color: $color-grey;
+	margin-bottom: 1.5rem;
+}
+
+h1 {
+	text-align: center;
+
+	&::before {
+		content: '';
+		display: block;
+		width: 10rem;
+		border-top: 0.75rem solid $color-grey;
+		margin: 0 auto 2.5rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 3rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.single-inventory {
+	h1 {
+		font-size: 1.5rem;
+	}
+}
+
+h2 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2.2rem;
+	}
+}
+
+h3 {
+
+	@include media-breakpoint-up(lg) {
+		font-size: 1.8rem;
+	}
+}
+
+h4 {
+
+	@extend %serif;
+	font-size: 1rem;
+	text-align: center;
+	margin: 2rem;
+	color: lighten($color-grey, 40%);
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+.home {
+	h1,
+	h2,
+	h3 {
+		text-align: center;
+	}
+}
+
+.heading-top-bar {
+	h2,
+	h3 {
+		&::before {
+			content: '';
+			display: block;
+			width: 10rem;
+			border-top: 0.75rem solid $color-grey;
+			margin: 0 auto 2.5rem;
+		}
+	}
+
+	&.color-light {
+		h2,
+		h3 {
+			&::before {
+				border-color: $color-white;
+			}
+		}
+	}
+}
+
+.serif {
+
+	@extend %serif;
+}

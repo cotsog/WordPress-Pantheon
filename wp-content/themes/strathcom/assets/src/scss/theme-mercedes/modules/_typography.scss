@@ -1,0 +1,24 @@
+// ==========================================================================
+// Typography.
+// ==========================================================================
+// Import common styles for all content blocks.
+// ==========================================================================
+
+@import "../../common/post-elements/typography";
+// Overrides and custom styling.
+// ==========================================================================
+
+body {
+	font-weight: 300;
+}
+
+%serif {
+	font-family: $font-family-serif;
+	font-style: italic;
+	-webkit-font-smoothing: antialiased;
+}
+
+.story {
+
+	@extend %serif;
+}

@@ -1,0 +1,545 @@
+// ==========================================================================
+// Vehicle Incentives list (search results) styling.
+// ==========================================================================
+
+// SRP VI list layout.
+// ==========================================================================
+
+.srp-vi-results {
+	.incentive-list {
+		& + .incentive-list {
+			padding-top: $spacer;
+		}
+
+		table {
+			background: #fff;
+			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1), 0 1px 50px rgba(0, 0, 0, 0.12);
+		}
+
+		&[aria-hidden="true"] {
+			display: none;
+		}
+	}
+
+	table,
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+		width: 100%;
+	}
+
+	thead {
+		display: none;
+	}
+
+	@include media-breakpoint-up(sm) {
+		tr {
+
+			@include clearfix;
+		}
+
+		th,
+		td {
+			float: left;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		table {
+			display: table;
+		}
+
+		thead {
+			display: table-header-group;
+		}
+
+		tbody {
+			display: table-row-group;
+		}
+
+		tr {
+			display: table-row;
+		}
+
+		th,
+		td {
+			display: table-cell;
+			float: none;
+		}
+	}
+
+	tr {
+		&[aria-hidden="true"] {
+			display: none;
+		}
+
+		> .image,
+		> .description {
+
+			@include media-breakpoint-up(sm) {
+				width: percentage(1/2);
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: percentage(1/6);
+			}
+		}
+
+		> .finance,
+		> .lease,
+		> .cash-incentive {
+
+			@include media-breakpoint-up(sm) {
+				width: percentage(1/3);
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: percentage(1/6);
+			}
+		}
+
+		> .finance {
+
+			@include media-breakpoint-only(sm) {
+				clear: left;
+			}
+		}
+
+		> .actions {
+
+			@include media-breakpoint-up(sm) {
+				width: 100%;
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: percentage(1/6);
+			}
+		}
+	}
+
+	&[data-tables-mode="payments"] table .rates,
+	&[data-tables-mode="rates"] table .payments {
+		display: none;
+	}
+
+	.details {
+		border-top: none;
+		margin-top: 0;
+
+		.incentives-table {
+			& + .incentives-table {
+				margin-top: $spacer;
+				padding-top: $spacer;
+				border-top: $hr-border-width solid $hr-border-color;
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding-left: $spacer / 2;
+				padding-right: $spacer / 2;
+
+				& + .incentives-table {
+					margin-top: 0;
+					padding-top: 0;
+					border-top: none;
+				}
+			}
+		}
+
+		&.has-two-tables {
+			.incentives-table {
+
+				@include media-breakpoint-up(lg) {
+					width: 50%;
+					float: left;
+				}
+			}
+		}
+
+		> td {
+			padding: #{$spacer / 2} $spacer;
+
+			@include media-breakpoint-up(lg) {
+				padding-left: #{$spacer / 2};
+				padding-right: #{$spacer / 2};
+			}
+		}
+
+		table {
+			display: table;
+			width: 100%;
+
+			thead {
+				display: table-header-group;
+
+				tr {
+					border-bottom: $hr-border-width solid $hr-border-color;
+				}
+			}
+
+			tbody {
+				display: table-row-group;
+			}
+
+			tr {
+				display: table-row;
+			}
+
+			th,
+			td {
+				display: table-cell;
+				width: 25%;
+				text-align: center;
+
+				&:last-child {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+
+// SRP VI list styling.
+// ==========================================================================
+
+.srp-vi-results {
+	header {
+
+		@include clearfix;
+
+		h3 {
+
+			@extend .col-xs-12;
+			@extend .col-lg-4;
+			display: inline-block;
+			text-transform: none;
+			text-align: center;
+			margin-bottom: 0;
+
+			@include media-breakpoint-up(md) {
+				margin: #{$spacer * 2} 0 0;
+				text-align: left;
+			}
+		}
+
+		.meta {
+
+			@extend .col-xs-12;
+			@extend .col-lg-8;
+			text-align: center;
+
+			@include media-breakpoint-up(md) {
+				text-align: right;
+			}
+		}
+
+		.offer-info {
+			margin: 0;
+		}
+
+		.table-actions {
+			span {
+				display: none;
+
+				@include media-breakpoint-up(md) {
+					display: inline-block;
+				}
+			}
+
+			a {
+
+				@extend .btn;
+				@extend .btn-block;
+				margin: #{$spacer / 2} 0;
+				padding: 0.5rem;
+				color: $gray;
+				background-color: $gray-lighter;
+				border-color: $gray-lighter;
+				font-size: 0.9rem;
+				transition: background-color $transition-fast, color $transition-fast, border-color $transition-fast;
+
+				&:hover {
+					background-color: darken($gray-lighter, 10%);
+					border-color: darken($gray-lighter, 10%);
+				}
+
+				@include media-breakpoint-up(md) {
+					display: inline-block;
+					width: auto;
+					font-size: 1rem;
+					margin: rem(5) 0 rem(5) #{$spacer / 2};
+				}
+			}
+		}
+	}
+
+	table {
+		padding: $spacer;
+
+		* {
+			vertical-align: top;
+		}
+	}
+
+	thead {
+		tr {
+			background-color: $gray-lighter;
+		}
+
+		tr > * {
+			width: auto;
+			padding: #{$spacer / 2} #{$spacer / 4};
+			text-align: center;
+			text-transform: uppercase;
+			line-height: 1.5;
+			font-size: $font-size-base;
+			font-weight: bold;
+			color: $gray-dark;
+			vertical-align: middle;
+
+			small {
+				font-size: $font-size-xs;
+				font-weight: normal;
+				display: block;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	tr + tr {
+		margin-top: $spacer / 2;
+		padding-top: $spacer / 2;
+		border-top: $hr-border-width solid $hr-border-color;
+	}
+
+	.image {
+		padding: 0;
+
+		@include media-breakpoint-up(lg) {
+			padding: $spacer;
+		}
+
+		img {
+
+			@extend .img-fluid;
+		}
+	}
+
+	.description {
+		padding: $spacer;
+		margin-bottom: $spacer;
+		border-bottom: $hr-border-width solid $hr-border-color;
+		text-align: center;
+
+		@include media-breakpoint-up(sm) {
+			padding: #{$spacer * 3} #{$spacer * 2} #{$spacer * 6};
+			border-bottom: none;
+			text-align: left;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+			padding: #{$spacer * 2.5} $spacer #{$spacer * 2};
+			text-align: left;
+			font-size: $font-size-base;
+		}
+
+		h4 {
+			margin: 0;
+			font-size: $font-size-h5;
+			font-weight: normal;
+
+			@include media-breakpoint-up(sm) {
+				font-size: $font-size-h4;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: $font-size-base;
+			}
+		}
+
+		[itemprop*="model"] {
+			font-weight: bold;
+		}
+
+		p {
+			margin: 0;
+			font-size: $font-size-h6;
+
+			@include media-breakpoint-up(lg) {
+				line-height: 1.5;
+				font-size: $font-size-base;
+			}
+
+			strong {
+
+				@include media-breakpoint-up(lg) {
+					color: $gray-dark;
+				}
+			}
+		}
+	}
+
+	.finance,
+	.lease,
+	.cash-incentive {
+
+		@include clearfix;
+		padding: #{$spacer / 2};
+		margin-bottom: #{$spacer / 2};
+
+		@include media-breakpoint-up(sm) {
+			padding-left: $spacer * 2 / 3;
+			padding-right: $spacer * 2 / 3;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding: #{$spacer * 2.5} $spacer #{$spacer * 2};
+		}
+
+		&::before {
+			content: attr(title);
+			display: block;
+			float: left;
+			width: 50%;
+			padding-right: $spacer / 2;
+			font-weight: bold;
+			color: $gray-dark;
+
+			@include media-breakpoint-up(sm) {
+				width: 100%;
+				float: none;
+			}
+
+			@include media-breakpoint-up(lg) {
+				content: none;
+			}
+		}
+
+		&::after {
+
+			@include media-breakpoint-up(lg) {
+				content: none;
+			}
+		}
+
+		p {
+			float: left;
+			width: 50%;
+			margin: 0;
+			text-align: right;
+			line-height: 1.25;
+
+			@include media-breakpoint-up(sm) {
+				width: 100%;
+				float: none;
+				text-align: left;
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding: 0;
+				text-align: center;
+				line-height: 1.5;
+				font-size: $font-size-base;
+			}
+
+			strong {
+				display: block;
+				font-size: $font-size-h4;
+
+				@include media-breakpoint-up(lg) {
+					display: inline;
+					font-size: $font-size-base;
+					color: $gray-dark;
+				}
+			}
+		}
+	}
+
+	.actions {
+		padding: #{$spacer / 2};
+		line-height: 1.5;
+		font-weight: bold;
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding: #{$spacer * 1.5} $spacer $spacer;
+			text-align: right;
+		}
+
+		a {
+			display: block;
+			color: $gray-dark;
+
+			@include media-breakpoint-up(md) {
+				white-space: nowrap;
+			}
+
+			&::after {
+
+				@include fa-icon;
+				content: $fa-var-angle-right;
+				margin-left: .5em;
+				transition: transform $transition-base;
+			}
+
+			&:hover {
+				color: $brand-primary;
+				text-decoration: none;
+			}
+
+			&.active {
+				&::after {
+					transform: rotateZ(90deg);
+				}
+			}
+		}
+	}
+
+	.details {
+		h5 {
+			margin: 0 auto $spacer;
+			text-transform: uppercase;
+			line-height: 1.5;
+			font-size: $font-size-base;
+			font-weight: bold;
+			font-family: $font-family-base;
+			color: #fff;
+			font-style: normal;
+		}
+
+		tr {
+			border-color: $gray-lighter;
+		}
+
+		> td {
+			background-color: $brand-primary;
+			padding: $spacer * 2;
+			color: $gray-dark;
+			font-size: $font-size-sm;
+		}
+
+		table {
+			thead tr > * {
+				text-transform: none;
+				line-height: 1.25;
+				background: $gray-lightest;
+				font-size: $font-size-sm;
+			}
+		}
+
+		[data-trigger="price-tooltip"] {
+			border-bottom: none;
+			color: $brand-primary;
+
+			.tooltip {
+				min-width: rem(150);
+				right: -33%;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+// Links list
+
+.links-list {
+	> .list {
+
+		@include clearfix;
+		@include reset-list;
+	}
+}

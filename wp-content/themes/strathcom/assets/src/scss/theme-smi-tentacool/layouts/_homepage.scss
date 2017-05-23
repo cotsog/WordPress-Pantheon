@@ -1,0 +1,73 @@
+// ==========================================================================
+// Homepage.
+// ==========================================================================
+
+.lead-bar {
+	padding: 1.25rem;
+
+	h2,
+	h3 {
+		font-size: 2.8rem;
+		margin: 0;
+	}
+
+	.btn {
+		margin: 0.5em 0;
+		display: block;
+
+		@include media-breakpoint-up(lg) {
+			width: 45%;
+			float: left;
+			margin: 1% 2.5%;
+		}
+	}
+}
+
+.home {
+	.main-container {
+
+		@include media-breakpoint-up(lg) {
+			padding-top: 3rem;
+		}
+	}
+}
+
+.main-home {
+	padding: 4rem 1rem;
+
+	@include media-breakpoint-up(lg) {
+		padding: 7rem 1rem;
+	}
+}
+
+.incentive-boxes {
+	padding: 2rem 0;
+}
+
+.home-colorblock {
+
+	@extend .text-xs-center;
+	padding: 3rem;
+
+	.content-block {
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+			margin: 0 auto;
+		}
+
+		p {
+
+			@extend %serif;
+		}
+
+		a {
+			margin-top: 1rem;
+			font-style: normal;
+		}
+	}
+
+	img {
+		margin: 0 auto -8.5rem;
+	}
+}

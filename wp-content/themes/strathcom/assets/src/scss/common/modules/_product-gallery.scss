@@ -1,0 +1,114 @@
+// ==========================================================================
+// Product gallery based on FlexSlider.
+// Base styles are included in _carousel.scss
+// ==========================================================================
+
+.product-gallery {
+	.carousel {
+		background-color: $gray-lightest;
+
+		.slides {
+			> li {
+				> a {
+					display: block;
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						z-index: 1;
+					}
+
+					&:hover {
+						opacity: 0.7;
+						transition: opacity $transition-base;
+					}
+				}
+
+				&.carousel-active-slide a::after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	.image-slider + .image-carousel {
+		margin-top: 1px;
+	}
+
+	.image-carousel {
+		img {
+			max-height: 90px;
+		}
+
+		.carousel-direction-nav a {
+			width: rem(25);
+			height: rem(50);
+			margin-top: rem(-25);
+		}
+	}
+
+	.image-count {
+
+		@include clearfix;
+		background-color: mix(#000, #aaa, 40%);
+
+		a {
+			float: right;
+			margin: 0;
+			padding: rem(4) rem(10);
+			font-size: $font-size-xs;
+			text-align: center;
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: #fff;
+				background-color: #999;
+			}
+
+			&::before {
+
+				@include fa-icon;
+			}
+		}
+
+		.photos-count::before {
+			content: $fa-var-camera;
+		}
+
+		.videos-count::before {
+			content: $fa-var-play-circle-o;
+		}
+	}
+
+	.iframe-embed {
+		position: relative;
+		padding-top: percentage(9/16);
+
+		iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+// 2017 VDP
+
+.layout-vdp-twenty-seventeen {
+	.image-carousel {
+		.carousel-viewport {
+			li {
+				padding: 0.5rem 0.33rem;
+			}
+		}
+	}
+}
+

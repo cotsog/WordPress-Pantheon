@@ -1,0 +1,39 @@
+// ==========================================================================
+// Floating Sidebar Nav.
+// ==========================================================================
+
+#float-nav {
+	display: none;
+	position: fixed;
+	z-index: 99;
+	top: 40%;
+	width: rem(250);
+	right: rem(-175);
+	text-transform: uppercase;
+
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+
+	a {
+		display: block;
+		position: relative;
+		right: -0.7rem;
+		padding: rem(15);
+		margin-bottom: 0.2rem;
+		font-size: 0.9em;
+		transition: 1s, ease-out;
+
+		i {
+			font-size: 1.25rem;
+			padding: 2% 10% 2% 5%;
+		}
+
+		&:hover {
+			right: rem(150);
+			transition: 1s, ease-out;
+			text-decoration: none;
+		}
+	}
+}
+

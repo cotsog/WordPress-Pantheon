@@ -1,0 +1,31 @@
+<?php
+function strathcom_get_color_scheme() {
+	return array(
+		array( 'name' => 'body-color', 'default' => '#6c6d75', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'body-bg', 'default' => '#f2f2f2', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'body-bg-darker', 'default' => '#ccc', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-white', 'default' => '#fff', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-black', 'default' => '#151618', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-black-lighter', 'default' => '#393b41', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'color-black-darker', 'default' => '#292a30', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-primary', 'default' => '#195fd3', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-primary-darker', 'default' => '#144aa5', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-secondary', 'default' => '#0c7bc1', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-secondary-darker', 'default' => '#095c91', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-tertiary', 'default' => '$color-black', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-links-color', 'default' => '$brand-primary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'brand-links-color-hover', 'default' => '$brand-secondary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-color', 'default' => '$color-white', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-bg', 'default' => '$color-black', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'header-links-color', 'default' => '#fff', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-color', 'default' => '#93949b', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-links-color', 'default' => '$body-bg', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-hover-color', 'default' => '#4e89ea', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-bg', 'default' => '#242529', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'footer-primary', 'default' => '$brand-primary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-color', 'default' => '$color-black', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-links-color', 'default' => '$brand-primary', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-bg', 'default' => '$body-bg', 'label_en' => '', 'label_fr' => '' ),
+		array( 'name' => 'scratchpad-primary', 'default' => '$brand-secondary', 'label_en' => '', 'label_fr' => '' ),
+	);
+}

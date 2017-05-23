@@ -1,0 +1,131 @@
+// ==========================================================================
+// Content blocks styling.
+// ==========================================================================
+// Import common styles for all content blocks.
+// ==========================================================================
+// Instead of importing all content blocks at once, only the ones that are
+// needed in the theme can be imported, like:
+//
+// @import "../../common/content-blocks/color-block";
+// @import "../../common/content-blocks/container-slant";
+// ...
+
+@import "../../common/content-blocks/all";
+
+// Overrides and custom styling.
+// ==========================================================================
+
+.half-column-layout {
+	padding: 5rem 0;
+
+	.half-column {
+		.col {
+
+			@extend .col-sm-12;
+			@extend .col-md-6;
+		}
+	}
+
+	.container-optional {
+
+		@extend .container;
+	}
+}
+
+.featured-vehicles {
+	padding-top: 5rem;
+	padding-bottom: 3rem;
+}
+
+.home {
+	.carousel-direction-nav {
+		a.carousel-prev {
+			left: -40px;
+		}
+
+		a.carousel-next {
+			right: -40px;
+		}
+	}
+}
+
+.similar-products {
+	p {
+		font-size: 2.2rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.carousel-viewport {
+		min-height: 18rem;
+	}
+
+	.slides {
+		a {
+
+			@include drop-shadow(0, .15rem, .15rem, 0.2);
+			position: relative;
+			display: block;
+			background: #fff;
+			margin: 0 rem(15);
+
+			h5 {
+
+				@extend %default;
+				padding: 1rem;
+				text-align: left;
+				color: #000;
+			}
+
+			strike {
+				display: none;
+			}
+
+			.price {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				text-align: left;
+				background: rgba(0, 0, 0, 0.6);
+				color: white;
+				font-size: 1.2rem;
+				padding: .25rem .5rem;
+
+				@include media-breakpoint-up(lg) {
+					top: 95px;
+				}
+
+				@include media-breakpoint-up(xl) {
+					top: 125px;
+				}
+			}
+
+			.fv-button {
+				display: none;
+			}
+
+			figure {
+				padding-bottom: 65%;
+			}
+		}
+	}
+}
+
+#querySearchForm,
+#quicksearchForm {
+	&.both-keyword-search-form,
+	&.both-quick-search-form {
+		button {
+			padding: .75rem 0;
+			text-transform: none;
+		}
+
+		input,
+		select {
+			border-radius: 0;
+			border-color: #ddd;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// ==========================================================================
+// Coupons plugin styling.
+// ==========================================================================
+
+.cctor-pro-coupons-content {
+	.cctor-pro-filters-wrapper {
+		.cctor-pro-filters-form {
+			padding-top: 12px;
+		}
+
+		.cctor-pro-filters-group-heading {
+			margin-left: 0;
+			margin-right: 0;
+			font-family: $font-family-sans-serif;
+		}
+
+		.cctor-pro-filter-item:nth-child(2) {
+			margin-bottom: 15px;
+
+			@media only screen and (min-width: 600px) {
+				margin-bottom: 0;
+			}
+		}
+
+		input[type=submit] {
+
+			@extend .btn;
+			margin: 0 0 8px;
+			padding-top: 2px;
+
+			@media only screen and (min-width: 600px) {
+				margin-top: -4px;
+			}
+		}
+	}
+}

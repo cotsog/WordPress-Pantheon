@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block head %}{% endblock %}
+
+{% block top_bar %}
+	{% include 'components/featured-image.twig' with { classname: 'featured-image' } %}
+	{% include 'components/top-bar.twig' %}
+{% endblock %}
+
+{% block content %}
+	{% include 'components/content-inventory.twig' %}
+
+	<div class="group layout-srp" data-trigger="srp"></div>
+
+	{# <script src="{{function('bloginfo','template_directory')}}/assets/src/js/mixpanel/srp-mixpanel.js"></script> #}
+{% endblock %}

@@ -1,0 +1,24 @@
+<title>{{ wp_title }}</title>
+<meta charset="{{ site.charset }}">
+<link rel="pingback" href="{{ site.pingback_url }}" />
+<meta name="description" content="{{ site.description }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+{% for style in ie_stylesheets %}
+	{{ macros.ie_stylesheet_tag( style ) }}
+{% endfor %}
+{% for style in stylesheets %}
+	{{ macros.stylesheet_tag( style ) }}
+{% endfor %}
+{% for style in async_stylesheets %}
+	{{ macros.async_stylesheet_tag( style ) }}
+{% endfor %}
+{% if default_vehicle_image_src %}
+	<style type="text/css">
+		.no-photo div { background-image: url( {{ default_vehicle_image_src }} ); }
+	</style>
+{% endif %}
+
+{{ wp_head }}

@@ -1,0 +1,9 @@
+<div class="site-branding {% if not logo_src %}full-width-brand{% endif %}">
+	<a href="{{ site.url|e('html_attr') }}" class="site-logo {% if not logo_src -%} heading-only {%- endif %}" rel="home">
+		{% if logo_src %}
+			<img src="{{ logo_src | apply_filters('photon_url') | e('html_attr') }}" alt="{{ site.title|e('html_attr') }}" class="logo">
+		{% else %}
+			<div class="text-logo">{{ site.name }}</div>
+		{% endif %}
+	</a>
+</div>

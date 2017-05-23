@@ -1,0 +1,17 @@
+<footer class="site-footer">
+	<div class="footer-container">
+		<div class="row">
+			{% if footer_widgets | trim %}
+				<div class="footer-widgets">
+					{{ footer_widgets|replace( text_replace ) }}
+				</div>
+			{% endif %}
+			<div class="footer-social">
+				<h5>Follow Us</h5>
+				{{ footer_social }}
+				<img src="{{function('bloginfo','template_directory')}}/assets/src/img/wheaton/amvic-logo.png" alt="AMVIC">
+			</div>
+			{%- include 'widgets/dealer-info.twig' with dealer_location -%}
+		</div>
+	</div>
+</footer>

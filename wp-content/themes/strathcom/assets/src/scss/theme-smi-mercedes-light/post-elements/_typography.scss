@@ -1,0 +1,209 @@
+// ==========================================================================
+// Typography.
+// ==========================================================================
+// Import common styles for all content blocks.
+// ==========================================================================
+
+@import "../../common/post-elements/typography";
+// Overrides and custom styling.
+// ==========================================================================
+
+@font-face {
+	font-family: 'for_smart_lightbold';
+	src: url('../fonts/smart/forsmartbold-webfont.woff2') format('woff2'), url('../fonts/smart/forsmartbold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'for_smartlight';
+	src: url('../fonts/smart/forsmartlight-webfont.woff2') format('woff2'), url('../fonts/smart/forsmartlight-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'for_smartspecial';
+	src: url('../fonts/smart/forsmartspecial-webfont.woff2') format('woff2'), url('../fonts/smart/forsmartspecial-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+%regular {
+	font-family: 'Corporate S W01 Light1487081', Arial, sans-serif;
+}
+
+%serif {
+	font-family: 'Corporate A Condensed W01 Rg', Times, sans-serif;
+}
+
+%smartb {
+	font-family: 'for_smart_lightbold', Courier, sans-serif;
+}
+
+%smartl {
+	font-family: 'for_smartlight', Courier, sans-serif;
+}
+
+%smarts {
+	font-family: 'for_smartspecial', Courier, sans-serif;
+}
+
+%bordertop {
+	&::before {
+		content: "";
+		display: block;
+		border-top: 0.6rem solid $body-color;
+		width: 6rem;
+		margin-bottom: 2rem;
+
+		@include clearfix;
+	}
+}
+
+body {
+
+	@extend %regular;
+	font-size: 18px;
+	line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1;
+}
+
+.home,
+.site-footer {
+	h2,
+	h3,
+	h4 {
+
+		@extend %serif;
+	}
+
+	h2 {
+		font-size: 2.6rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+}
+
+.white-container {
+	h2,
+	h3 {
+
+		@extend %bordertop;
+	}
+}
+
+h1 {
+
+	@extend %bordertop;
+	@extend %serif;
+	font-size: 2rem;
+	margin: 0 0 2rem;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 3.2rem;
+
+		&::before {
+			width: 10rem !important;
+		}
+	}
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin: 0 0 1.5rem;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 2rem;
+	}
+}
+
+h3 {
+	font-weight: 100;
+	margin: 0 0 1.5rem;
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+	line-height: 1;
+	margin: 1.25rem 0;
+}
+
+hr {
+	border-color: $color-grey;
+}
+
+.text-xs-center {
+	h1,
+	h2,
+	h3 {
+		&::before {
+			margin: 0 auto 2rem;
+		}
+	}
+}
+// Mercedes Underline
+p {
+	a {
+		text-decoration: underline;
+	}
+}
+
+a,
+button {
+	&.btn {
+		text-decoration: none;
+	}
+}
+// Text Color Classes
+.color-light {
+	color: $color-white;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: $color-white;
+	}
+}
+
+.color-dark {
+	color: $color-grey;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: $color-grey;
+	}
+}
+
+.product-specification {
+	h4 {
+		font-family: 'Corporate S W01 Light1487081', Arial, sans-serif !important;
+	}
+}
+
+.single-inventory {
+	h1 {
+		&::before {
+			border-top: 0;
+		}
+	}
+}
+
+.serif {
+
+	@extend %serif;
+}

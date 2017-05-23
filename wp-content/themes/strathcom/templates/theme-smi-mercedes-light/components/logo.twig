@@ -1,0 +1,10 @@
+<div class="site-branding">
+	<a href="{{ site.url|e('html_attr') }}" class="site-logo {% if not logo_src -%} heading-only {%- endif %}" rel="home">
+			{% if 'fr' in site.language %}
+				<img src="{{function('bloginfo','template_directory')}}/assets/src/img/mercedes-fr-logo.png" alt="{{ site.title|e('html_attr') }}" class="logo logo-fr">
+			{% else %}
+				<img src="{{ logo_src | apply_filters('photon_url') | e('html_attr') }}" alt="{{ site.title|e('html_attr') }}" class="logo">
+			{% endif %}
+	</a>
+	<div class="site-name-mobile">{{ site.name }}</div>
+</div>

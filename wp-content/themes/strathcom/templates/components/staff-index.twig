@@ -1,0 +1,14 @@
+{% set departments = [] %}
+{% for department in terms if department.count %}
+	{% set departments = departments|merge( [department] ) %}
+{% endfor %}
+
+<div class="staff-wrapper staff-index">
+	<ul class="staff-departments count-{{ departments|length }}">
+		{% for department in departments %}
+			<li>
+				<a href="{{ department.link }}">{{ department.name }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

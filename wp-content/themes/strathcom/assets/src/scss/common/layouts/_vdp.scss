@@ -1,0 +1,253 @@
+// ==========================================================================
+// Vehicle Detail Page layout.
+// ==========================================================================
+
+@function calc-vdp-col-full($left) {
+	$right: 100% - abs($left);
+
+	@return ($left / $right + 1) * 100%;
+}
+
+@function calc-vdp-col-left($left) {
+	$right: 100% - abs($left);
+
+	@return ($left / $right) * 100%;
+}
+
+.layout-vdp {
+
+	@extend .container;
+	$vdp-col-lg-left: 61%;
+
+	.product-brochure {
+		> * + * {
+			margin-top: $spacer; // Vertical rythm
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			@include clearfix;
+			margin-left: $vdp-col-lg-left;
+		}
+	}
+
+	.product-brochure-utils,
+	.product-brochure-header {
+
+		@include media-breakpoint-up(lg) {
+			width: calc-vdp-col-full($vdp-col-lg-left);
+			margin-left: calc-vdp-col-left(-$vdp-col-lg-left);
+		}
+	}
+
+	.product-brochure-utils + .product-brochure-header {
+		margin-top: 0;
+
+		@include media-breakpoint-up(md) {
+			margin-top: $spacer / 2;
+		}
+	}
+
+	.product-views,
+	.product-gallery,
+	.product-tabs {
+
+		@include media-breakpoint-up(lg) {
+			float: left;
+			clear: left;
+			width: calc-vdp-col-left($vdp-col-lg-left - 1%);
+			margin-left: calc-vdp-col-left(-$vdp-col-lg-left);
+		}
+	}
+
+	.product-gallery {
+
+		@include media-breakpoint-up(sm) {
+			margin-top: 0;
+		}
+	}
+
+	.product-views {
+
+		@include media-breakpoint-up(sm) {
+			position: relative;
+			overflow: visible;
+			z-index: 1;
+			height: 0;
+			text-align: right;
+		}
+	}
+
+	.product-description,
+	.product-price,
+	.product-contact-form,
+	.product-alerts-form,
+	.product-info {
+
+		@include media-breakpoint-up(lg) {
+			float: right;
+			clear: right;
+			width: 100%;
+		}
+	}
+
+	.current-price {
+
+		@include clearfix;
+
+		.price {
+			float: left;
+			margin-bottom: $spacer / 2;
+			line-height: rem(38);
+		}
+
+		.btn-primary {
+			float: right;
+		}
+
+		.carproof-logo {
+			img {
+				max-width: 140px;
+				padding: 1rem 0;
+			}
+		}
+
+		.carproof-button-wrap {
+			display: none;
+		}
+
+		.certified-logo {
+			img {
+				max-width: 140px;
+			}
+		}
+	}
+
+	.product-price {
+		.branding-image {
+			max-width: rem(115);
+		}
+
+		.current-price {
+			.btn.btn-primary {
+				clear: right;
+			}
+		}
+	}
+
+	.product-contact-form {
+		.contact-details {
+			.form-group {
+				&:nth-of-type(2) {
+					width: 50%;
+					float: left;
+					padding-right: $spacer / 2;
+				}
+
+				&:nth-of-type(3) {
+					width: 50%;
+					float: left;
+					padding-left: $spacer / 2;
+				}
+			}
+		}
+	}
+
+	.product-tabs {
+		.carproof-logo-block {
+			width: 100%;
+			padding-top: rem(29);
+			margin-top: 2rem;
+
+			.carproof-logo {
+				float: left;
+				max-width: 140px;
+			}
+
+			.carproof-button-wrap {
+				float: right;
+			}
+
+			@include media-breakpoint-up(md) {
+				border-top: 1px solid #ccc;
+			}
+		}
+	}
+
+	.product-alerts-form {
+		margin-top: 1.25rem;
+	}
+
+	.map-block {
+		margin: $spacer auto;
+
+		#gmap-canvas {
+			width: 100%;
+			height: 350px;
+			overflow: hidden;
+		}
+	}
+
+	.disclaimer {
+		margin-top: $spacer * 2;
+	}
+
+	.site-footer {
+		margin-top: $spacer * 3;
+	}
+}
+// Incentives.
+// ==========================================================================
+
+#incentives {
+	h3 {
+		margin-bottom: rem(8);
+	}
+}
+
+table.costs {
+	width: 100%;
+	margin-bottom: rem(20);
+	font-size: rem(14);
+	line-height: 1.5em;
+	background-color: #f9f9f9;
+	color: #333;
+
+	thead {
+		th,
+		td {
+			background-color: transparent;
+			font-weight: bold;
+		}
+	}
+
+	th,
+	td {
+		border: 1px solid #dedede;
+		padding: rem(8);
+	}
+
+	tbody {
+		tr:nth-child(odd) {
+			th,
+			td {
+				background-color: #ececec;
+			}
+		}
+	}
+
+	.borrowing-cost {
+		border-bottom: none;
+		padding-left: rem(8);
+		padding-right: rem(8);
+
+		.tooltip {
+			min-width: 200px;
+			right: -14px;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: rem(16);
+	}
+}

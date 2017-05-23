@@ -1,0 +1,44 @@
+// ==========================================================================
+// Similar products.
+// ==========================================================================
+
+.similar-products {
+	> h4 {
+		margin: $spacer auto;
+		padding: 0 0 #{$spacer};
+		color: $gray-light;
+		border-bottom: $hr-border-width solid $hr-border-color;
+		font-size: $font-size-lg;
+		text-align: left;
+	}
+
+	.slides {
+
+		@include reset-list;
+		@include clearfix;
+		text-align: center;
+	}
+
+	&.state-static {
+		.slides {
+			li {
+				margin-bottom: 1rem;
+			}
+
+			@include media-breakpoint-up(md) {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 1rem;
+
+				> li {
+					flex: 1 0 23%;
+					padding: 0 10px;
+					margin-bottom: 0;
+					max-width: 50%;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}

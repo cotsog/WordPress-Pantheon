@@ -1,0 +1,13 @@
+{{ site.name }} <br/>
+{% if (street) -%}
+	{{ street | e }}&nbsp;
+{%- endif %}
+{% if (locality) -%}
+	{{ locality | e }},&nbsp;
+{%- endif %}
+{% if (region) -%}
+	{{ region | e }}&nbsp;
+{%- endif %}
+{% if (postal) -%}
+	{{ postal | e }}
+{%- endif %}

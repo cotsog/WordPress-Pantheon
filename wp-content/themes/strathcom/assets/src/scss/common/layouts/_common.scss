@@ -1,0 +1,276 @@
+// stylelint-disable no-eol-whitespace
+// ==========================================================================
+// Common page layouts.
+// ==========================================================================
+// Various site layouts. Default variable values:
+$grid-sidebar-left-columns: 3 !default;
+$grid-sidebar-right-columns: 3 !default;
+$grid-columns: 12 !default;
+$color-white: #fff;
+$color-black: #000;
+// Expected markup:
+//
+// <div class="container">
+// 	<div class="group">
+// 		<div class="group-content">
+// 			...
+// 		</div>
+// 		<div class="group-sidebar">
+// 			...
+// 		</div>
+// 	</div>
+// </div>
+//
+// Layout class should be applied to container element, e.g. <body>
+
+body {
+	overflow-x: hidden;
+	background: $body-bg;
+}
+// Prevent odd squeezing on very small screens.
+// ==========================================================================
+
+.container {
+	min-width: 320px;
+}
+// Use more semantic class name instead of `row`.
+// ==========================================================================
+
+.group {
+
+	@extend .row;
+
+	.site-content > & {
+		padding-bottom: $spacer * 2;
+	}
+}
+
+.group-sidebar {
+	.widget + .widget {
+		margin-top: $spacer * 2;
+	}
+}
+// Make page header full-width.
+// ==========================================================================
+
+.hentry.page > .entry-header {
+
+	@extend .col-xs-12;
+}
+// Full-width layout.
+// ==========================================================================
+
+.layout-full-width,
+.layout-full-width-no-padding {
+	.entry-content {
+		> ul,
+		> ol,
+		> dl {
+
+			@extend .group;
+			margin-top: $spacer / 2;
+			margin-bottom: $spacer / 2;
+		}
+	}
+}
+// Layout default padding.
+// ==========================================================================
+
+.site-content {
+	&.layout-full-width {
+		padding: #{$spacer * 2};
+
+		@include media-breakpoint-up(lg) {
+			padding: #{$spacer * 3} 0;
+		}
+	}
+
+	&.layout-default,
+	&.layout-sidebar-right {
+		padding: #{$spacer * 2};
+
+		@include media-breakpoint-up(lg) {
+			padding: #{$spacer * 4} 0;
+		}
+	}
+}
+
+.home {
+	.site-content {
+		&.layout-full-width,
+		&.layout-default {
+			padding: 0;
+		}
+	}
+}
+// Set background color so splash video does not bleed through
+// ==========================================================================
+
+.site-footer {
+	background: $body-bg;
+}
+
+.footer-dealer-info {
+	.dealer-contact {
+		display: block;
+	}
+}
+// Default layout with sidebar to the right.
+// ==========================================================================
+
+.group-content,
+.group-sidebar {
+
+	@extend .col-xs-#{$grid-columns};
+}
+
+.layout-sidebar-right {
+
+	@extend .container;
+
+	.group-content {
+
+		@extend .col-xs-#{$grid-columns};
+		@extend .col-md-#{$grid-columns - $grid-sidebar-right-columns};
+	}
+
+	.group-sidebar {
+
+		@extend .col-xs-#{$grid-columns};
+		@extend .col-md-#{$grid-sidebar-right-columns};
+	}
+}
+
+.layout-sidebar-left {
+
+	@extend .container;
+
+	.group-content {
+
+		@extend .col-xs-#{$grid-columns};
+		@extend .col-md-#{$grid-columns - $grid-sidebar-left-columns};
+		@extend .col-md-push-#{$grid-sidebar-left-columns};
+	}
+
+	.group-sidebar {
+
+		@extend .col-xs-#{$grid-columns};
+		@extend .col-md-#{$grid-sidebar-left-columns};
+		@extend .col-md-pull-#{$grid-columns - $grid-sidebar-left-columns};
+	}
+}
+
+.layout-default {
+
+	@extend .container;
+
+	.group-content {
+
+		@extend .col-xs-#{$grid-columns};
+	}
+
+	.group-sidebar {
+		display: none; // In case sidebar exists in the markup, hide it
+	}
+}
+// 404 Page.
+// ==========================================================================
+
+.oops {
+
+	@extend .text-xs-center;
+	padding: 2rem 0;
+}
+// Success Page.
+// ==========================================================================
+
+.posted-on {
+	display: none;
+}
+// Helper classes.
+// ==========================================================================
+
+.main-container { // hide splash video overflow
+	background: $body-bg;
+	color: $body-color;
+}
+
+.reverse-container { // reverse coloring
+	color: $body-bg;
+	background: $body-color;
+}
+
+.color-light {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: $color-white;
+	}
+}
+
+.color-dark {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		color: $color-black;
+	}
+}
+
+.contain-it { // Add this class to any custom class - inner/container optional to become .container
+	.container-optional,
+	.inner {
+
+		@extend .container;
+	}
+}
+
+.parallax {
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.heading-centre {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-align: center;
+	}
+}
+// Buttons + Ghost button.
+// ==========================================================================
+
+.btn {
+	white-space: normal; // Make sure nowrap is gone.
+
+	&.btn-ghost {
+		background-color: transparent;
+		border: 0.13rem solid $color-white;
+		color: $color-white;
+
+		@include hover-focus {
+			color: $color-black;
+			border-color: $color-black;
+		}
+	}
+}
+// Font Awesome.
+// ==========================================================================
+
+.font-awesome {
+	font-family: "FontAwesome";
+}
+
+.text-center {
+	text-align: center;
+}

@@ -1,0 +1,18 @@
+// ==========================================================================
+// Product Brochure.
+// ==========================================================================
+// Import common styles.
+// ==========================================================================
+
+@import "../../common/modules/product-brochure";
+// Overrides and custom styling.
+// ==========================================================================
+
+.product-description {
+	h2 {
+		font-family: $font-family-serif;
+		font-style: italic;
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+	}
+}
