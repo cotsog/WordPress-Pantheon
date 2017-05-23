@@ -1,9 +1,0 @@
-{% if post.content is not empty %}
-    <div class="group hidden-print">
-        <article id="post-{{ post.ID | e('html_attr') }}" class="{{ post.class | e('html_attr') }}">
-            <div class="entry-content">
-                {{ post.content|replace( text_replace ) }}
-            </div>
-        </article>
-    </div>
-{% endif %}
