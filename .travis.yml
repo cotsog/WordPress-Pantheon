@@ -42,7 +42,7 @@ after_success:
         if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
             echo "build gulp.\n"
             cd wp-content/themes/strathcom/assets
-            npm install gulp
+            npm install -g gulp
             gulp
         fi
 
