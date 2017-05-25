@@ -33,6 +33,10 @@ install:
   $DEV_LIB_PATH; fi
 - set -x
 - source $DEV_LIB_PATH/travis.install.sh
+- npm install --global gulp-cli
+- npm install --save-dev gulp
+- npm install
+
 script:
 - source $DEV_LIB_PATH/travis.script.sh
 after_script:
@@ -40,15 +44,11 @@ after_script:
 
 # for gulp build
 after_success:
+
     - |
         if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
             echo "Install gulp.\n"
             cd wp-content/themes/strathcom/assets
-
-            npm rm --global gulp
-            npm install --global gulp-cli
-            npm install --save-dev gulp
-            npm install
 
             echo "Running gulp...\n"
             gulp
