@@ -36,7 +36,6 @@ install:
 - cd wp-content/themes/strathcom/assets
 - npm install -g gulp
 - npm install -g bower
-- bower install
 
 
 script:
