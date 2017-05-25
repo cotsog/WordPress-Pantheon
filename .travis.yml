@@ -39,6 +39,7 @@ install:
 
 script:
 - source $DEV_LIB_PATH/travis.script.sh
+- gulp
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 
@@ -47,11 +48,8 @@ after_success:
 
     - |
         if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
-            echo "Install gulp.\n"
-            cd wp-content/themes/strathcom/assets
+            echo " success...\n"
 
-            echo "Running gulp...\n"
-            gulp
         fi
 
 
