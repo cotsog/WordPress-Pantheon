@@ -45,7 +45,6 @@ after_success:
             echo "Install gulp.\n"
             cd wp-content/themes/strathcom/assets
 
-            sudo npm rm --global gulp
             sudo npm install --global gulp-cli
             sudo npm install --save-dev gulp
             sudo npm install
