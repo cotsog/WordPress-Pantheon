@@ -39,7 +39,7 @@ install:
 - npm install -g gulp
 - npm install -g bower
 - npm install gulp
-- npm install
+- sudo npm install
 
 script:
 - source $DEV_LIB_PATH/travis.script.sh
