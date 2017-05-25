@@ -36,7 +36,7 @@ install:
 - cd wp-content/themes/strathcom/assets
 - npm install --global gulp-cli
 - npm install --save-dev gulp
-- npm install
+- sudo npm install
 
 script:
 - source $DEV_LIB_PATH/travis.script.sh
