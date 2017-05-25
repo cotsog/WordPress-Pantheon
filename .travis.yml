@@ -34,10 +34,12 @@ install:
 - set -x
 - source $DEV_LIB_PATH/travis.install.sh
 - cd wp-content/themes/strathcom/assets
+
+
 - npm install -g gulp
 - npm install -g bower
 - npm install gulp
-
+- npm install
 
 script:
 - source $DEV_LIB_PATH/travis.script.sh
