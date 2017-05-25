@@ -33,6 +33,7 @@ install:
   $DEV_LIB_PATH; fi
 - set -x
 - source $DEV_LIB_PATH/travis.install.sh
+- cd wp-content/themes/strathcom/assets
 - npm install --global gulp-cli
 - npm install --save-dev gulp
 - npm install
