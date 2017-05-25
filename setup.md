@@ -8,7 +8,7 @@
 <body>
 
 # otestsite
-For testing out environment / devOp / WP workflow tools.
+For testing out WP workflow tools.
 [![Build Status](https://travis-ci.org/OWL-Labs/WordPress-Pantheon.svg?branch=master)](https://travis-ci.org/OWL-Labs/WordPress-Pantheon)
 
 <p style="text-align: center">
@@ -49,15 +49,15 @@ git checkout master && git pull origin && git push pantheon
 1. Get otestsite git repo.
 
 ```
-cd ../www/otestsite
+cd [workspace]
 then
-git clone --recursive git@github.com:OWL-Labs/WordPress-Pantheon.git htdocs
+git clone --recursive git@github.com:OWL-Labs/WordPress-Pantheon.git otestsite/htdocs
 cd htdocs
 ```
 
 2. Config values.
 
-These are found in the `private` folder.
+These are found in the `Dev Scripts` folder.
   
 </body>
 </html>
