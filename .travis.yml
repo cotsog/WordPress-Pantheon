@@ -37,14 +37,16 @@ script:
 - source $DEV_LIB_PATH/travis.script.sh
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
+
+# for gulp build
 after_success:
     - |
         if [ $TRAVIS_BRANCH == 'testGulp1' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]; then
             echo "build gulp.\n"
             cd wp-content/themes/strathcom/assets
-            npm install bower -g
-            npm install gulp
-            npm install
+            
+            sudo npm rm --global gulp && sudo npm install --global gulp-cli && sudo npm install --save-dev gulp && sudo npm install
+
             gulp
         fi
 
