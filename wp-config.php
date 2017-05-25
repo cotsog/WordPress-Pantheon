@@ -67,7 +67,7 @@ else:
 
     /** A couple extra tweaks to help things run well on Pantheon. **/
     if (isset($_SERVER['HTTP_HOST'])) {
-        // HTTP is still the default scheme for now. 
+        // HTTP is still the default scheme for now.
         $scheme = 'http';
         // If we have detected that the end use is HTTPS, make sure we pass that
         // through here, so <img> tags and the like don't generate mixed-mode
@@ -150,14 +150,14 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 
 
 
-define( 'WP_ALLOW_MULTISITE', true );
-define( 'MULTISITE', true );
-define( 'SUBDOMAIN_INSTALL', false );
-$base = '/';
-define( 'DOMAIN_CURRENT_SITE', 'otestsite.local' );
-define( 'PATH_CURRENT_SITE', '/' );
-define( 'SITE_ID_CURRENT_SITE', 1 );
-define( 'BLOG_ID_CURRENT_SITE', 1 );
+// define( 'WP_ALLOW_MULTISITE', true );
+// define( 'MULTISITE', true );
+// define( 'SUBDOMAIN_INSTALL', false );
+// $base = '/';
+// define( 'DOMAIN_CURRENT_SITE', 'otestsite.local' );
+// define( 'PATH_CURRENT_SITE', '/' );
+// define( 'SITE_ID_CURRENT_SITE', 1 );
+// define( 'BLOG_ID_CURRENT_SITE', 1 );
 
 /* That's all, stop editing! Happy Pressing. */
 
