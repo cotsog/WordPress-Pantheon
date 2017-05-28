@@ -43,12 +43,14 @@ cd ..
 #rm -rf out/**/* || exit 0
 
 # Now let's go have some fun with the cloned repo
-cd out
+# cd out
+#
+# ls -l
+# pwd
+# # step into the assets folder
+# cd wp-content/themes/strathcom/assets
+cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/out/wp-content/themes/strathcom/assets
 
-ls -l
-pwd
-# step into the assets folder
-cd wp-content/themes/strathcom/assets
 
 # Run gulp  Build here or above
 #gulp
@@ -56,6 +58,8 @@ cd wp-content/themes/strathcom/assets
 #add file
 touch somefile22.txt
 
+
+cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/out
 
 git config user.name "Travis CI"
 git config user.email "merenuou@yahoomail.com"
