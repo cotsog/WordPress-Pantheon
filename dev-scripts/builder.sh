@@ -6,18 +6,6 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="testGulp1"
 TARGET_BRANCH="testGulp2"
 
-chmod 755 wp-content/themes/strathcom/assets
-# install and setup build environment
-cd wp-content/themes/strathcom/assets
-
-ls -al
-# npm install global gulp-cli
-# sudo npm i -g npm-check-updates
-# npm-check-updates -u
-# rm -r node_modules
-# npm install
-
-
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
@@ -47,19 +35,25 @@ echo "line 45"
 pwd
 
 # step into the assets folder
-# cd wp-content/themes/strathcom/assets
-cd wp-content/themes
+cd wp-content/themes/strathcom/assets
 
 ls -l
 echo "line 53"
 pwd
+
+# Install gulp and dependencies
+# npm install global gulp-cli
+# sudo npm i -g npm-check-updates
+# npm-check-updates -u
+# rm -r node_modules
+# npm install
 
 # Run gulp  Build here or above
 #gulp
 
 #add file
 touch somefile22.txt
-
+ls
 
 git config user.name "Travis CI"
 git config user.email "merenuou@yahoomail.com"
