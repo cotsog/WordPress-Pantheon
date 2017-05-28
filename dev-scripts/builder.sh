@@ -47,7 +47,7 @@ pwd
 
 # step into the assets folder
 # cd wp-content/themes/strathcom/assets
-cd /wp-content/themes/strathcom/assets
+cd wp-content/themes
 
 ls -l
 echo "line 53"
