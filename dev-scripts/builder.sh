@@ -21,14 +21,13 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 
 # Clean out existing contents
-#rm -rf out/**/* || exit 0
+rm -rf out/**/* || exit 0
 
 ls -l
 echo "line 45"
@@ -38,8 +37,6 @@ pwd
 cd wp-content/themes/strathcom/assets
 
 ls -l
-echo "line 53"
-pwd
 
 # Install gulp and dependencies
 # npm install global gulp-cli
@@ -52,7 +49,7 @@ pwd
 #gulp
 
 #add file
-touch somefile22.txt
+touch somefile22.php
 ls
 
 git config user.name "Travis CI"
