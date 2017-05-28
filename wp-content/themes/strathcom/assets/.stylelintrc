@@ -1,9 +1,0 @@
-{
-  "extends": "stylelint-config-standard",
-  "rules": {
-    "block-no-empty": null,
-    "block-opening-brace-space-before": "always-single-line",
-    "indentation": "tab",
-    "number-leading-zero": null,
-  }
-}

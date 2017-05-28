@@ -1,31 +1,16 @@
 {
-  "name": "strathcom",
-  "version": "0.0.1",
-  "homepage": "https://github.com/xwp/strathcom-cms",
+  "name": "gulp-project-template",
+  "version": "0.0.4",
+  "homepage": "https://github.com/bernardogfilho/gulp-project-template",
   "authors": [
-    "XWP <xwp.co>"
-  ],
-  "main": "html/index.html",
-  "moduleType": [
-    "node"
+    "Bernardo Gurgel <bernardogfilho@gmail.com>"
   ],
   "license": "MIT",
-  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha.2",
-    "components-font-awesome": "^4.5.0",
-    "flexslider": "^2.6.0",
-    "baguettebox.js": "^1.5.0",
-    "iframe-resizer": "^3.5.5",
-    "underscore": "^1.8.3",
-    "df-visible": "jquery-visible#^1.2.0",
-    "nouislider": "^8.5.1"
-  }
+  ]
 }

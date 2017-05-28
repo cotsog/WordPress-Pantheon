@@ -1,74 +1,73 @@
-HighStart
-=========
+### NOTE
 
-Front-end Mobile-First Barebone start created using the gulp task manager.
+**This project has moved as part of [GulpShot](https://github.com/bernardogfilho/gulp-shot) project. This repository is discontinued.**
 
-### System requirements:
+## [gulp.js](http://gulpjs.com/) project template <a href="http://badge.fury.io/js/gulp-project-template"><img src="https://badge.fury.io/js/gulp-project-template@2x.png" alt="NPM version" height="18"></a> [![Dependency Status](https://david-dm.org/bernardogfilho/gulp-project-template.svg?theme=shields.io)](https://david-dm.org/bernardogfilho/gulp-project-template)
 
-* **node** ver. >= 0.12 (recommended ver. 5+)
-* **npm** ver. >= 3.3
-* **bower**
+This is a template or a initial setup for a simple [gulp](http://gulpjs.com/) project. It aims to provide some common tasks to a web app development within a organized structure.
 
-Clone the repository, and, assuming your system matches the list of required software and versions above, from inside the theme's assets folder, run the following command to set things up:
-**`npm install`**
+### Features
 
-During the installation process, if the following tools are not already available, they will be installed globally:
+- CSS Autoprefixing
+- Automatically minify css files
+- Automatically compile Sass
+- Automatically compile CoffeeScript
+- Automatically lint scripts via jsHint
+- Automatically uglify script files
+- Automatically optimize image files (.jpg, .png, .gif)
+- Watches for changes
+- Initialize a preview server with LiveReload support
+- Generates a optimized build
+- Bundles js modules via browserify
+- SOON: Runs Mocha tests
 
-* **gulp** ver. >= 3.8.7
 
-### Production
+### Structure
 
-To generate production-ready, minified files run
-**`gulp`**
+A sample project strucutre would be:
 
-This runs through the following actions:
+```
+|-- app
+|  |-- vendors (bower_components)
+|  |-- styles
+|  |  |-- style_one.scss
+|  |  |-- style_two.scss
+|  |-- scripts
+|  |  |-- script_one.coffee
+|  |  |-- script_two.coffee
+|  |-- images
+|  |  |-- background.png
+|  |-- index.html
+|-- dist
+|  |-- styles
+|  |  |-- main.min.css
+|  |-- scripts
+|  |  |-- scripts.min.js
+|  |-- images
+|  |-- index.html
+|-- node_modules
+|-- test
+```
 
-* deleting the /dist folder contents
-* compiling (html, styles, js, images)
-* minifying (css, js), compressing images
+### Copyright
 
-### Development mode
+The MIT License (MIT)
+Copyright © 2014 Bernardo Gurgel Filho <bernardogfilho@gmail.com>
 
-To enable automatic compiling of the SASS files run:
-**`gulp watch`**
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This runs through the following actions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-* compiling (html, styles, js, images)
-* listening for changes on all these resources
-* issuing a [LiveReload](http://livereload.com/) server notice after a change is detected and the compilation finishes
-
-**! Tip:** Use [LiveReload Extensions](http://is.gd/aAB8Sp) for the src updates to be visible in the browser automatically.
-
-### Implementation description
-
-For SASS compiling (tasks inside sass.js), libSass is used (no ruby dependency). PostCSS is used for both code linting the SASS code and autoprefixing. Sourcemaps are not used for CSS due to the splitting of mobile and tablet/desktop styles with some custom media-queries grouping script done in order to increase the site loading speed.
-
-For Javascript (tasks inside scripts.js), JSHint is used for code linting. Browserify is used for dependency management.
-
-For production-optimised images (tasks inside media.js) are optimised using imagemin, while pngquant is the tool used to optimise specifically the PNG files.
-
-### Debugging tips
-
-If you receive errors like
-`EMFILE (too many open files)`
-you will need to increase the open file descriptor limit.
-
-The open file descriptor limit must be higher than 256 (this is the OSX default value).
-Read your current number with the following command, and look for the open files value:
-`ulimit -a`
-You can change the value by appending
-**`ulimit -n 4096`**
-to your ~/.profile and ~/.bash_profile files.
-
-due to the number of files that will be opened by npm install, the open file descriptor limit must be higher than 256 (osx default) - you can correct this using 'ulimit -a' to read your current number, and by adding something like 'ulimit -n 4096' to your ~/.profile file. This issue is identifiable by getting EMFILE (too many open files) errors while running npm install.
-
-### Recommendation:
-
-Make use of **[npm-check](http://is.gd/Y9B39x)** to keep your node and global modules up to date.
-
-To install npm-check:
-`npm install -g npm-check`
-
-Start the interactive console for upgrading the global node modules with the following command:
-`npm-check -g -u`
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

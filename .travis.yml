@@ -17,7 +17,6 @@ env:
 
 branches:
   only:
-  - production
   - testGulp1
 before_install:
 - openssl aes-256-cbc -K $encrypted_e20a70004f31_key -iv $encrypted_e20a70004f31_iv
@@ -33,17 +32,10 @@ install:
   $DEV_LIB_PATH; fi
 - set -x
 - source $DEV_LIB_PATH/travis.install.sh
-- cd wp-content/themes/strathcom/assets
-
-
-- npm install -g gulp
-- npm install -g bower
-- npm install gulp
-- sudo npm install
 
 script:
 - source $DEV_LIB_PATH/travis.script.sh
-- gulp
+- source dev-scripts/builder.sh
 after_script:
 - source $DEV_LIB_PATH/travis.after_script.sh
 

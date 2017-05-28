@@ -6,10 +6,22 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="testGulp1"
 TARGET_BRANCH="testGulp2"
 
+# install and setup build environment
+cd wp-content/themes/strathcom/assets
+# cd /vagrant/www/otestsite/wp-content/themes/strathcom/assets
+chmod 755 /vagrant/www/otestsite/wp-content/themes/strathcom/assets
+ls -al
+npm install global gulp-cli
+sudo npm i -g npm-check-updates
+npm-check-updates -u
+rm -r node_modules
+npm install
+
+
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
-    npm run spec
+    gulp
     exit 0
 fi
 
@@ -26,7 +38,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-#rm -rf out/**/* || exit 0
+rm -rf out/**/* || exit 0
 
 # Run our compile script
 #npm run spec
@@ -47,7 +59,7 @@ fi
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add .
-git commit -m "Deploy to GitHub Pages: ${SHA}"
+git commit -m "Deploy to branch: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt github_deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
