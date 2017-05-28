@@ -6,28 +6,23 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="testGulp1"
 TARGET_BRANCH="testGulp2"
 
-
-ls -al
-
-
-
-
 chmod 755 wp-content/themes/strathcom/assets
 # install and setup build environment
 cd wp-content/themes/strathcom/assets
-#cd /vagrant/www/otestsite/wp-content/themes/strathcom/assets
+
 ls -al
-npm install global gulp-cli
-sudo npm i -g npm-check-updates
-npm-check-updates -u
-rm -r node_modules
-npm install
+# npm install global gulp-cli
+# sudo npm i -g npm-check-updates
+# npm-check-updates -u
+# rm -r node_modules
+# npm install
 
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
-    gulp
+    #gulp
+    touch somefile.txt
     exit 0
 fi
 
@@ -46,11 +41,11 @@ cd ..
 # Clean out existing contents
 rm -rf out/**/* || exit 0
 
-# Run our compile script
-#npm run spec
-
 # Run gulp
-gulp
+#gulp
+
+touch somefile22.txt
+
 # Now let's go have some fun with the cloned repo
 cd out
 git config user.name "Travis CI"
