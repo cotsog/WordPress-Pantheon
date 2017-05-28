@@ -21,6 +21,7 @@ ls -al
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
+    # Build here or below
     #gulp
     touch somefile.txt
     exit 0
@@ -39,15 +40,21 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-ls -al out/**/* || exit 0
-
-# Run gulp
-#gulp
-
-touch somefile22.txt
+#rm -rf out/**/* || exit 0
 
 # Now let's go have some fun with the cloned repo
 cd out
+
+# step into the assets folder
+cd wp-content/themes/strathcom/assets
+
+# Run gulp  Build here or above
+#gulp
+
+#add file
+touch somefile22.txt
+
+
 git config user.name "Travis CI"
 git config user.email "merenuou@yahoomail.com"
 
