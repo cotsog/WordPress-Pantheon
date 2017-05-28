@@ -12,7 +12,6 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
     echo "Skipping deploy; just doing a build."
     # Build here or below
     #gulp
-    touch somefile.txt
     exit 0
 fi
 
@@ -39,17 +38,15 @@ cd wp-content/themes/strathcom/assets
 ls -l
 
 # Install gulp and dependencies
-# npm install global gulp-cli
-# sudo npm i -g npm-check-updates
-# npm-check-updates -u
-# rm -r node_modules
-# npm install
+npm install global gulp-cli
+sudo npm i -g npm-check-updates
+npm-check-updates -u
+rm -r node_modules
+npm install
 
 # Run gulp  Build here or above
-#gulp
+gulp
 
-#add file
-touch somefile22.php
 ls
 
 git config user.name "Travis CI"
