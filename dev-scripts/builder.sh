@@ -8,8 +8,8 @@ TARGET_BRANCH="testGulp2"
 
 # install and setup build environment
 cd wp-content/themes/strathcom/assets
-# cd /vagrant/www/otestsite/wp-content/themes/strathcom/assets
-chmod 755 /vagrant/www/otestsite/wp-content/themes/strathcom/assets
+#cd /vagrant/www/otestsite/wp-content/themes/strathcom/assets
+chmod 755 wp-content/themes/strathcom/assets
 ls -al
 npm install global gulp-cli
 sudo npm i -g npm-check-updates
