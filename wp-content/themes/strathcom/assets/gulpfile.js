@@ -1,115 +1,102 @@
-/* globals require, exports */
+/*ignore jslint start*/
+/* jshint ignore:start */
+/*jshint -W117 */
+/*jshint node: true, unused: false*/
+/*global require*/
 
-'use strict';
+var gulp = require( 'gulp' );
+var requireDir = require( 'require-dir' );
+var livereload = require( 'gulp-livereload' );
+var fs = require('fs');
+var taskListing = require('gulp-task-listing');
 
-// gulp plugins
-var gulp     = require('gulp'),
-gutil        = require('gulp-util'),
-es           = require('event-stream'),
-sass         = require('gulp-sass'),
-autoprefixer = require('gulp-autoprefixer'),
-jshint       = require('gulp-jshint'),
-coffee       = require('gulp-coffee'),
-clean        = require('gulp-clean'),
-connect      = require('gulp-connect'),
-browserify   = require('gulp-browserify'),
-usemin       = require('gulp-usemin'),
-imagemin     = require('gulp-imagemin'),
-rename = require('gulp-rename');
+var paths = require( './config' ).paths;
 
-// Connect Task
-gulp.task('connect', connect.server({
-  root: ['./app'],
-  port: 1337,
-  livereload: true
-}));
+requireDir( './gulp-tasks' );
 
-// Html reload
-gulp.task('html', function () {
-  return gulp.src('./app/**/*.html')
-    .pipe(connect.reload());
+// Add a task to render the output
+gulp.task('help', taskListing);
+
+// Remove pre-existing content from output and test folders
+gulp.task( 'clean:dist', [
+	'clean:css',
+	'clean:js',
+	'clean:images',
+	'clean:html',
+	'clean:fonts'
+] );
+
+// Compile files
+gulp.task( 'compile', function() {
+	return gulp.start(
+		'build:html',
+		'build:fonts',
+		'build:styles',
+		'build:color-scheme',
+		'compile:js',
+		'build:images',
+		'cache-buster'
+	);
+} );
+
+// Recompile scripts
+gulp.task( 'compile:js', [ 'clean:js' ], function() {
+	return gulp.start(
+		'build:scripts',
+		'build:vendor',
+		'build:modernizr'
+	);
+} );
+
+// Minify files
+gulp.task( 'minify', [
+	'uglify:scripts',
+	'minify:styles'
+] );
+
+// Compile files for production ( default )
+gulp.task( 'default', [ 'compile' ], function() {
+	return gulp.start(
+		'minify'
+	);
+} );
+
+// Compile files for development ( watch for changes )
+gulp.task( 'watch', function() {
+	return gulp.start(
+		'listen'
+	);
+} );
+
+// https://github.com/sindresorhus/gulp-rev
+// https://www.npmjs.com/package/gulp-hash
+gulp.task('cache-buster', function(cb){
+	//new Date().getTime()
+	fs.writeFile( '../../../../wp-cache-buster.php', "<?php define( 'SMI_CACHE_BUSTER', " + new Date().getTime() + " );\n", cb );
 });
 
-// sass compiler task
-gulp.task('sass', function () {
-  return gulp.src('./app/styles/**/*.scss')
-    .pipe(sass({
-      onError: function (error) {
-        gutil.log(gutil.colors.red(error));
-        gutil.beep();
-      },
-      onSuccess: function () {
-        gutil.log(gutil.colors.green('Sass styles compiled successfully.'));
-      }
-    }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('./app/styles/'))
-    .pipe(connect.reload());
-});
-
-// Minify images
-gulp.task('imagemin', function () {
-  return es.concat(
-    gulp.src('./app/images/**/*.png')
-      .pipe(imagemin())
-      .pipe(gulp.dest('/dest/img')),
-    gulp.src('./app/images/**/*.jpg')
-      .pipe(imagemin())
-      .pipe(gulp.dest('/dest/img')),
-    gulp.src('./app/images/**/*.gif')
-      .pipe(imagemin())
-      .pipe(gulp.dest('/dest/img'))
-  );
-});
-
-// CoffeeScript compiler task
-gulp.task('coffee', function () {
-  return gulp.src('app/scripts/**/*.coffee')
-    .pipe(coffee({bare: true})).on('error', gutil.log)
-    .pipe(gulp.dest('app/scripts'));
-});
-
-// Script task
-gulp.task('scripts', ['coffee'], function () {
-  return gulp.src('app/scripts/app.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(browserify({
-      insertGlobals: true
-    }))
-    .pipe(rename(function (path) {
-      path.basename = 'bundle';
-    }))
-    .pipe(gulp.dest('app/scripts'))
-    .pipe(connect.reload());
-});
-
-gulp.task('watch', function () {
-  gulp.watch([ 'app/styles/**/*.scss'], ['sass']);
-  gulp.watch([ 'app/scripts' + '/**/*.js'], ['scripts']);
-  gulp.watch(['./app/**/*.html'], ['html']);
-});
-
-gulp.task('serve', ['connect', 'sass', 'scripts', 'watch']);
-
-gulp.task('clean', function () {
-  gutil.log('Clean task goes here...');
-});
-
-gulp.task('usemin', function () {
-  gulp.src('./app/**/*.html')
-    .pipe(usemin())
-    .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('clean-build', function () {
-  return gulp.src('dist/', {read: false})
-    .pipe(clean());
-});
-
-gulp.task('build', ['clean-build', 'sass', 'scripts', 'imagemin', 'usemin'], function () {
-});
-
-gulp.task('default', function () {
-  gutil.log('Default task goes here...');
-});
+// Listen for file changes
+gulp.task( 'listen', function() {
+	livereload.listen();
+	gulp.watch( paths.html.input ).on( 'change', function() {
+		gulp.start( 'build:html' );
+	} );
+	gulp.watch( paths.fonts.input ).on( 'change', function() {
+		gulp.start( 'build:fonts' );
+	} );
+	gulp.watch( paths.styles.input ).on( 'change', function() {
+		gulp.start( 'build:styles' );
+		gulp.start( 'build:color-scheme' );
+	} );
+	gulp.watch( paths.scripts.watch ).on( 'change', function() {
+		gulp.start( 'build:scripts' );
+	} );
+	gulp.watch( paths.scripts.vendor ).on( 'change', function() {
+		gulp.start( 'build:vendor' );
+	} );
+	gulp.watch( paths.images.input ).on( 'change', function() {
+		gulp.start( 'build:images' );
+	} );
+} );
+/* jshint ignore:end */
+/*ignore jslint end*/
