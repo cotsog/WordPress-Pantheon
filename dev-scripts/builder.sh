@@ -45,6 +45,7 @@ cd ..
 # Now let's go have some fun with the cloned repo
 cd out
 
+ls -al
 # step into the assets folder
 cd wp-content/themes/strathcom/assets
 
