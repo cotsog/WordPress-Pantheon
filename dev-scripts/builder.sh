@@ -37,20 +37,30 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+
+
+ls -l
+echo "line 43"
+pwd
+
 cd ..
+
+ls -l
+echo "line 49"
+pwd
 
 # Clean out existing contents
 #rm -rf out/**/* || exit 0
 
 # Now let's go have some fun with the cloned repo
-# cd out
-#
-# ls -l
-# pwd
-# # step into the assets folder
-# cd wp-content/themes/strathcom/assets
-cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/out/wp-content/themes/strathcom/assets
+cd out
 
+ls -l
+echo "line 59"
+pwd
+# step into the assets folder
+# cd wp-content/themes/strathcom/assets
+# cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/outwp-content/themes/strathcom/assets
 
 # Run gulp  Build here or above
 #gulp
@@ -58,8 +68,6 @@ cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/as
 #add file
 touch somefile22.txt
 
-
-cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/out
 
 git config user.name "Travis CI"
 git config user.email "merenuou@yahoomail.com"
