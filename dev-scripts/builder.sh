@@ -6,6 +6,12 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="testGulp1"
 TARGET_BRANCH="testGulp2"
 
+
+ls -al
+
+
+
+
 # install and setup build environment
 cd wp-content/themes/strathcom/assets
 #cd /vagrant/www/otestsite/wp-content/themes/strathcom/assets
