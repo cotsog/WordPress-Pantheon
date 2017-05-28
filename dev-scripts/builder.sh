@@ -38,29 +38,20 @@ git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 
-
-ls -l
-echo "line 43"
-pwd
-
-cd ..
-
-ls -l
-echo "line 49"
-pwd
-
 # Clean out existing contents
 #rm -rf out/**/* || exit 0
 
-# Now let's go have some fun with the cloned repo
-cd out
-
 ls -l
-echo "line 59"
+echo "line 45"
 pwd
+
 # step into the assets folder
 # cd wp-content/themes/strathcom/assets
-# cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/outwp-content/themes/strathcom/assets
+cd /home/travis/build/OWL-Labs/WordPress-Pantheon/wp-content/themes/strathcom/assets/outwp-content/themes/strathcom/assets
+
+ls -l
+echo "line 53"
+pwd
 
 # Run gulp  Build here or above
 #gulp
