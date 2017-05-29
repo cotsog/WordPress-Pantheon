@@ -40,10 +40,11 @@ ls -l
 # Install gulp and dependencies
 npm install global gulp-cli
 npm install -g gulp
-# npm i -g npm-check-updates
-# npm-check-updates -u
+npm i -g npm-check-updates
+npm-check-updates -u
 rm -r node_modules
-npm install
+npm install -g npm@latest
+#npm install
 
 # Run gulp  Build here or above
 gulp
