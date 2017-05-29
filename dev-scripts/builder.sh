@@ -41,8 +41,8 @@ ls -l
 # Install gulp and dependencies
 npm install global gulp-cli
 npm install -g gulp
-npm cache clean -f
-npm install -g n
+sudo npm cache clean -f
+sudo npm install -g n
 sudo n stable
 npm i -g npm-check-updates
 npm-check-updates -u
