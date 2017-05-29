@@ -3,15 +3,7 @@
 
 set -e
 
-# Add the site name to the hosts file
-#already done by custom config yml file
-#echo "192.168.50.4 ${VVV_SITE_NAME}.dev # vvv-auto" >> "/etc/hosts"
 
-#VVV_SITE_NAME='otestsite'
-#VVV_PATH_TO_SITE='/vagrant/www/otestsite'
-
-
-echo "This is your site_name: '${VVV_SITE_NAME}'"
 
 
 # Export required PHP constants into Bash.

@@ -3,6 +3,9 @@
 #!/bin/bash
 
 SITE="otestsite"
+SOURCE_URL='live-s.pantheonsite.io'
+TEST_SITE_URL='test-s.pantheonsite.io'
+DEV_SITE_URL='dev-s.pantheonsite.io'
 ENV_L='live'
 ENV_T='test'
 ENV_D='dev'
@@ -20,7 +23,17 @@ if [ 0 -ne $? ] ; then
     alias terminus='/usr/local/bin/terminus'
 fi
 
-TOKEN=$(cat /home/vagrant/.terminus-machine-token)
+# terminus wp strathcom-cms.test -- search-replace <old_url> <new_url>  --url=<old_url> --network
+# terminus remote:wp ${SITE}.${ENV_T} -- search-replace ${SOURCE_URL} ${DESTINATION_URL} --url=${SOURCE_URL} --network
+# terminus wp strathcom-cms.dev -- search-replace live-strathcom-cms.pantheonsite.io dev-strathcom-cms.pantheonsite.io --url=live-strathcom-cms.pantheonsite.io --network
+
+
+# terminus wp ${SITE}.${ENV_T} -- search-replace ${SOURCE_URL} ${TEST_SITE_URL} --url=${SOURCE_URL} --network
+# terminus wp ${SITE}.${ENV_D} -- search-replace ${SOURCE_URL} ${DEV_SITE_URL} --url=${SOURCE_URL} --network
+
+
+
+#TOKEN=$(cat /home/vagrant/.terminus-machine-token)
 
 if [ -z TOKEN ]; then
     echo ""
@@ -38,5 +51,7 @@ terminus env:clone-content ${SITE}.${ENV_L} ${ENV_T}
 terminus env:clone-content ${SITE}.${ENV_L} ${ENV_D}
 
 # FLUSH ENVIRONMENTS
+wp cache flush
+terminus wp strathcom-cms.dev -- cache flush
 terminus remote:wp ${SITE}.${ENV_T} -- cache flush
 terminus remote:wp ${SITE}.${ENV_D} -- cache flush
