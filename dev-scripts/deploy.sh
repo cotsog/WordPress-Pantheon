@@ -13,11 +13,18 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
+# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
+# if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+#     echo ""
+#     exit 0
+# fi
 # Create a new empty branch if it doesn't exist yet
 git checkout $SOURCE_BRANCH
 git pull
 git fetch -p
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git pull
+git fetch -p
 git merge $SOURCE_BRANCH
 git config user.name "CI"
 git config user.email "merenuou@yahoomail.com"

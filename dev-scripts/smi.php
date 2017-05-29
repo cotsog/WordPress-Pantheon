@@ -1,15 +1,16 @@
 #!/usr/bin/php -q
 <?php
 ###############################################################
+# @todo expand logic and refactor
 #                     Setup script
 # to run script call : <scriptname> <sitename> <action>
-#                 eg : strathcom_conf.php strathcom-cms deploy
+#                 eg : smi_conf.php strathcom-cms deploy
 ###############################################################
 ###############################################################
 
 # Constants
 #define("USER", " ");
-#define("MAXSIZ", 100);
+#define("FILENAME", "myfile");
 
 function options( $argc , $argv ){
   $command = $argv[1];
@@ -24,14 +25,15 @@ function options( $argc , $argv ){
       case 'setup_local_db':
           setup_local();
           break;
-      case 'vvv':
-          vvv();
+      case 'test':
+          test();
           break;
       default:
-          default_handler();
+          default_handler($command);
     }
 
 }
+
 # deploy
 # run merge to production from master
 function deploy() {
@@ -56,11 +58,25 @@ function setup_local() {
   echo "\n";
   echo "Setting up multisite db..\n";
   echo "\n";
+  $output = `chmod 755 ms-local.sh`;
+  $output_ = `./ms-local.sh`;
 }
 
-# takes care of user error to default
-function default_handler(){
+# creates log with user and saves to file
+function logger($a,$b,$c){
 
+}
+
+function test() {
+  echo "\n";
+  echo "TEST HIT...\n";
+  sleep(7);
+  echo "\n";
+}
+
+# @todo expand logic
+# takes care of user error to default
+function default_handler($command){
 
   #$handle = fopen ("php://stdin","r");
 
@@ -76,13 +92,15 @@ function default_handler(){
 #     exit;
 #  }
 exit("
+The command '$command' is not available:
 To execute this script
 Your options are :
-'deploy',
-'setup' ( to set up your local env),
-'setup_local_db' ( to set up your local database with live on pantheon),
+i. deploy,
+ii. setup ( to set up your local env),
+iii. setup_local_db ( to set up your local database with live on pantheon),
 
-eg. [ php smi.php deploy ] ");
+eg. [ php smi.php deploy or ./smi.php setup ]
+");
 }
 
 
