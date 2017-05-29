@@ -6,24 +6,12 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="testGulp1"
 TARGET_BRANCH="testGulp2"
 
-chmod 755 wp-content/themes/strathcom/assets
-# install and setup build environment
-cd wp-content/themes/strathcom/assets
-
-ls -al
-# npm install global gulp-cli
-# sudo npm i -g npm-check-updates
-# npm-check-updates -u
-# rm -r node_modules
-# npm install
-
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
     # Build here or below
     #gulp
-    touch somefile.txt
     exit 0
 fi
 
@@ -32,33 +20,34 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing gh-pages for this repo into out/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 
 # Clean out existing contents
-#rm -rf out/**/* || exit 0
+rm -rf out/**/* || exit 0
 
 ls -l
 echo "line 45"
 pwd
 
 # step into the assets folder
-# cd wp-content/themes/strathcom/assets
-cd wp-content/themes
+cd wp-content/themes/strathcom/assets
 
 ls -l
-echo "line 53"
-pwd
+
+# Install gulp and dependencies
+npm install global gulp-cli
+sudo npm i -g npm-check-updates
+npm-check-updates -u
+rm -r node_modules
+npm install
 
 # Run gulp  Build here or above
-#gulp
+gulp
 
-#add file
-touch somefile22.txt
-
+ls
 
 git config user.name "Travis CI"
 git config user.email "merenuou@yahoomail.com"
