@@ -38,11 +38,11 @@ function options( $argc , $argv ){
 # run merge to production from master
 function deploy() {
   echo "\n";
-  echo "Setting up deploy...\n";
+  echo "Deploying to dev environment on Pantheon...\n";
   sleep(7);
   echo "\n";
   $output = `chmod 755 deploy.sh`;
-  $output = `./deploy.sh`;
+#  $output = `./deploy.sh`;
 }
 
 function setup_env(){
