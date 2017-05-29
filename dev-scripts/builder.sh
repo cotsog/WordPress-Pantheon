@@ -21,12 +21,12 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-git clone $REPO out
-cd out
+git clone $REPO smi_
+cd smi_
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 
-# Clean out existing contents
-rm -rf out/**/* || exit 0
+# Clean smi_ existing contents
+rm -rf smi_/**/* || exit 0
 
 ls -l
 echo "line 45"
@@ -68,7 +68,7 @@ ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
 ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in github_deploy_key.enc -out github_deploy_key -d
+openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in github_deploy_key.enc -smi_ github_deploy_key -d
 chmod 600 github_deploy_key
 eval `ssh-agent -s`
 ssh-add github_deploy_key
