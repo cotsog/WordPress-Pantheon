@@ -24,8 +24,8 @@ function options( $argc , $argv ){
       case 'setup_local_db':
           setup_local();
           break;
-      case 'test':
-          test();
+      case 'vvv':
+          vvv();
           break;
       default:
           default_handler();
@@ -43,58 +43,48 @@ function deploy() {
   $output = `./deploy.sh`;
 }
 
-# Prepare dev and test environments
-# on Pantheon for tests
-# runs the unify-env script
 function setup_env(){
-
   echo "\n";
   echo "Setting up for unifying test and dev to match the live site...\n";
   echo "\n";
-
   $output = `chmod 755 unify-env.sh`;
   $output_ = `./unify-env.sh`;
-
-
 }
 
 # Setup local VVV
 function setup_local() {
-
-
-}
-
-function test() {
-
-echo 'hit test! ';
-echo "\n";
+  echo "\n";
+  echo "Setting up multisite db..\n";
+  echo "\n";
 }
 
 # takes care of user error to default
 function default_handler(){
-  echo "Your options are :
-  'deploy',
-  'setup' ( to set up your local env),
-  'setup_local_db' ( to set up your local database with live on pantheon),
-    ";
 
-  $handle = fopen ("php://stdin","r");
 
-  echo "Insert new command : ";
-  sleep(3);
+  #$handle = fopen ("php://stdin","r");
 
-  $line = trim(fgets($handle));
-  $sol[1] = $line;
-  options('false' , $sol);
+  #echo "Insert new command : ";
+  #sleep(3);
+
+  #$line = trim(fgets($handle));
+#  $sol[1] = $line;
+#  options('false' , $sol);
 
 #  if(trim($line) != 'yes'){
 #     echo "ABORTING!\n";
 #     exit;
 #  }
+exit("
+To execute this script
+Your options are :
+'deploy',
+'setup' ( to set up your local env),
+'setup_local_db' ( to set up your local database with live on pantheon),
 
+eg. [ php smi.php deploy ] ");
 }
 
 
-
-    # Exec
-    options($argc, $argv);
+# Exec
+options($argc, $argv);
