@@ -44,7 +44,7 @@ npm i -g npm-check-updates
 npm-check-updates -u
 rm -r node_modules
 npm install -g npm@latest
-#npm install
+npm install
 
 # Run gulp  Build here or above
 gulp
