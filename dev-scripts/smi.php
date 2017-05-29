@@ -8,11 +8,8 @@
 ###############################################################
 
 # Constants
-#define("USER", "Welcome !");
+#define("USER", " ");
 #define("MAXSIZ", 100);
-
-
-
 
 function options( $argc , $argv ){
   $command = $argv[1];
@@ -40,7 +37,9 @@ function options( $argc , $argv ){
 function deploy() {
   echo "\n";
   echo "Setting up deploy...\n";
+  sleep(7);
   echo "\n";
+  $output = `chmod 755 deploy.sh`;
   $output = `./deploy.sh`;
 }
 
@@ -53,8 +52,8 @@ function setup_env(){
   echo "Setting up for unifying test and dev to match the live site...\n";
   echo "\n";
 
-    $output = `chmod 755 unify-env.sh`;
-    $output_ = `./unify-env.sh`;
+  $output = `chmod 755 unify-env.sh`;
+  $output_ = `./unify-env.sh`;
 
 
 }
@@ -62,47 +61,31 @@ function setup_env(){
 # Setup local VVV
 function setup_local() {
 
-  //   if(trim($line) != 'yes'){
-  //      echo "ABORTING!\n";
-  //      exit;
-  //   }
+
 }
-// $out = shell_exec(cd ../);
-// var_dump($out);
-// //
-// $output = shell_exec('git status');
-// echo "<pre>$output</pre>";
 
-// $i = 0;
-//
-// while ( $i < 140 ) {
-//   // Write some output
-//   fwrite(STDOUT, $i."-");
-//   sleep(5);
-//   $i++;
-//  }
+function test() {
 
-//   echo "Are you sure you want to do this?  Type 'yes' to continue: ";
-//
-//   $handle = fopen ("php://stdin","r");
-//   $line = fgets($handle);
-//
-function test(){
-  echo "test hit";
+echo 'hit test! ';
+echo "\n";
 }
 
 # takes care of user error to default
 function default_handler(){
-  echo "Your options are :<pre>
+  echo "Your options are :
   'deploy',
   'setup' ( to set up your local env),
   'setup_local_db' ( to set up your local database with live on pantheon),
-  </pre> ";
+    ";
 
   $handle = fopen ("php://stdin","r");
-  $line = fgets($handle);
 
-  options($line);
+  echo "Insert new command : ";
+  sleep(3);
+
+  $line = trim(fgets($handle));
+  $sol[1] = $line;
+  options('false' , $sol);
 
 #  if(trim($line) != 'yes'){
 #     echo "ABORTING!\n";
